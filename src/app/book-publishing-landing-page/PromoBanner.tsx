@@ -16,7 +16,7 @@ export default function PromoBanner() {
                     <div className="relative w-[240px] aspect-2/3">
                         {/* Placeholder. Replace with 'New Girl In Town' cover */}
                         <Image
-                            src="/book-landing-page-11.png"
+                            src="/book-landing-page-11.webp"
                             alt="Book Mockup"
                             fill
                             className="object-contain"
@@ -26,7 +26,7 @@ export default function PromoBanner() {
 
                 {/* Center Content */}
                 <div className="flex-2 text-center max-w-[800px] mx-auto flex flex-col items-center py-8">
-                    <h2 className="text-[40px] font-syne font-medium leading-[1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
+                    <h2 className="text-[40px] font-syne font-medium leading-[1.1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
                         Don’t Let A Great  <span className="text-brand-secondary font-shaded max-sm:text-[40px] text-[50px] font-[300]">Book Get Held</span> Back By A Weak Launch
                     </h2>
                     <p className="text-gray-200 font-poppins text-[16px] leading-relaxed mb-8 max-w-[700px] mx-auto">
@@ -35,7 +35,7 @@ export default function PromoBanner() {
                     {/* Buttons as requested */}
                     <div className="flex flex-wrap gap-4 pt-4">
                         <Button font="poppins" variant="secondary" className="max-sm:text-[14px] max-sm:px-4">
-                            <a href="tel:+13108350771">310 835 0771</a>
+                            <a href="tel:+14242823304">+1424 282 3304</a>
                         </Button>
                         <Button
                             variant="secondary"
@@ -52,7 +52,7 @@ export default function PromoBanner() {
                     <div className="relative w-[300px] aspect-square rotate-[-5deg]">
                         {/* Placeholder. Replace with the hand-held book image */}
                         <Image
-                            src="/book-landing-page-10.png"
+                            src="/book-landing-page-10.webp"
                             alt="Hand holding book"
                             fill
                             className="object-contain"

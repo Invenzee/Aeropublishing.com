@@ -42,22 +42,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "KDP Account Setup & Configuration",
             description: "We configure your KDP account, including tax details, royalty preferences, and payment settings. Every account element is structured correctly to ensure compliance, accuracy, and a seamless publishing experience."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Kindle eBook & Print Formatting",
             description: "Your manuscript is professionally formatted for Kindle and print editions, with proper margins, fonts, trim sizes, and layout standards. Paperback and hardcover files are prepared to meet Amazon’s technical requirements."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Metadata & Keyword Optimization",
             description: "We structure your title and subtitle strategically, select relevant categories, and research backend keywords to improve indexing and search visibility within Amazon’s marketplace."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Publishing Setup & Release Management",
             description: "We manage the final upload process, configure pricing and distribution territories, and conduct pre-launch checks to ensure your book goes live without technical errors or delays."
         }
@@ -82,7 +82,7 @@ export default function page() {
                     "Professional formatting for Kindle and print editions",
                     "Strategic metadata and category optimization"
                 ]}
-                imageSrc="/amazon-publishing-1.jpg"
+                imageSrc="/amazon-publishing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -92,7 +92,7 @@ export default function page() {
                 boldTitle='Done for You'
                 description='We manage the technical, creative, and strategic elements required to publish your book in full compliance with Amazon KDP standards, positioning it for professional presentation and long-term visibility.'
                 features={features}
-                imageUrl='/amazon-publishing-3.jpg'
+                imageUrl='/amazon-publishing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Authors Choose Aero"
@@ -133,7 +133,7 @@ export default function page() {
                     highlight: "Confidence"
                 }}
                 description="Amazon offers global reach, but successful publishing requires careful execution. We manage manuscript refinement, interior formatting for digital and print editions, cover development, account configuration, and listing setup, all aligned with KDP standards. With a structured publishing process and strategic optimization, your book launches professionally while you maintain full ownership and earnings."
-                imageSrc="/amazon-publishing-2.jpg"
+                imageSrc="/amazon-publishing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

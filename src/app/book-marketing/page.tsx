@@ -42,22 +42,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Amazon Listing Optimization",
             description: "We optimize your book’s Amazon presence to improve visibility and conversions. From keyword research and metadata to compelling descriptions and category placement, we ensure your listing is positioned to attract the right readers and perform competitively in the U.S. marketplace."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Book Launch Strategy",
             description: "We develop a focused launch plan tailored to your goals, genre, and audience. Our team coordinates timing, messaging, and promotional activities to help your book gain momentum at release and establish a strong foundation for long-term visibility."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Social Media Campaign Setup",
             description: "We create targeted social media campaigns designed to build awareness and engagement around your book. From platform selection to content direction and audience targeting, we help you connect with readers and drive interest across key channels."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Press & Media Outreach",
             description: "We support your book’s exposure through strategic media and promotional outreach. By identifying relevant opportunities and crafting professional messaging, we help expand your reach and introduce your book to broader audiences across the U.S. and beyond."
         }
@@ -85,7 +85,7 @@ export default function page() {
                     "Targeted Marketing Strategies Built for Authors",
                     "100% Ownership of Your Book & Campaigns"
                 ]}
-                imageSrc="/marketing-1.jpg"
+                imageSrc="/marketing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -94,7 +94,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing—and marketing—doesn’t need to be complicated. We offer a clear, honest, and author-focused marketing experience that keeps you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/marketing-2.jpg'
+                imageUrl='/marketing-2.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Book Marketing with Aero?"
@@ -137,7 +137,7 @@ export default function page() {
                 description="Grow your readership with Aero Publishing’s professional book marketing solutions. We help authors build visibility, attract the right audience, and create momentum through strategic marketing campaigns designed for today’s publishing landscape.
                 Whether you’re launching a new release or scaling an existing title, our team provides clear strategy, expert execution, and ongoing support—so your book doesn’t just get published, it gets noticed.
                 "
-                imageSrc="/marketing-3.jpg"
+                imageSrc="/marketing-3.webp"
                 isReversed={true}
                 subtitle=""
             />

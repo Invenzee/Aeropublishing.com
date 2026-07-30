@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Custom Front Cover Design",
             description: "Each cover is designed from scratch to reflect your story, genre expectations, and target audience—ensuring originality and market relevance."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Spine & Back Cover Layout",
             description: "We professionally design the spine and back cover, including typography, barcode placement, and layout compliance for print platforms."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Genre-Specific Market Research",
             description: "Our designers analyze top-performing titles in your genre to ensure your cover aligns with reader expectations while standing out competitively."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Print & Digital Platform Optimization",
             description: "Your final cover is optimized for both print and digital distribution, meeting specifications for Amazon KDP, IngramSpark, and other major platforms in the U.S. and beyond."
         }
@@ -84,8 +84,11 @@ export default function page() {
                     "Copyright & ISBN Assistance",
                     "You Retain 100% of Your Book Rights"
                 ]}
-                imageSrc="/business-1.png"
+                imageSrc="/business-1.webp"
                 hasFeatures={true}
+                noImageRadius
+                imageContain
+                imageWidthPercent={80}
             />
             <WhyAeroSection
                 highlightTitle="What"
@@ -93,7 +96,10 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused design experience—keeping you informed, in control, and confident at every stage.'
                 features={features}
-                imageUrl='/business-2.png'
+                imageUrl='/business-2.webp'
+                noImageRadius
+                imageContain
+                imageWidthPercent={80}
             />
             <BenefitsGridSection
                 subtitle="Why Book Cover Design with Aero?"
@@ -136,9 +142,12 @@ export default function page() {
                 description="Your book’s cover is the first impression readers see—and often the deciding factor in whether they click, browse, or buy.
                 At Aero Publishing, we design covers that don’t just look good—they sell. Our team combines creative design with genre research and marketplace trends to ensure your book stands out while meeting professional publishing standards.
                 Every project includes guided collaboration, revision rounds, and platform-ready delivery—so your book is polished, credible, and ready for readers."
-                imageSrc="/business-3.png"
+                imageSrc="/business-3.webp"
                 isReversed={true}
                 subtitle=""
+                noImageRadius
+                imageContain
+                imageWidthPercent={80}
             />
             <ConnectWithUsSection />
             <TestimonialsSection />

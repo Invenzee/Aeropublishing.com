@@ -44,7 +44,7 @@ export default function ServicesSection() {
                 <div className="text-center max-w-4xl mx-auto mb-16">
 
                     <h2 className="text-[50px] text-brand-primary text-center font-syne font-bold leading-[1.1] max-sm:text-[32px] ">
-                        <span className="text-brand-secondary font-shaded font-[300] text-[60px] max-sm:text-[40px] leading-[.8]"> What</span>{" "}
+                        <span className="text-brand-secondary font-shaded font-[300] text-[50px] max-sm:text-[36px]"> What</span>{" "}
                         Does Aero Publishing Services Consist Of?
                     </h2>
                     <p className="text-gray-700 w-2xl mx-auto font-poppins text-[15px]">
@@ -82,7 +82,7 @@ export default function ServicesSection() {
                         {/* Buttons as requested */}
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+13108350771">310 835 0771</a>
+                                <a href="tel:+14242823304">+1424 282 3304</a>
                             </Button>
                             <Button
                                 variant="secondary"
@@ -99,7 +99,7 @@ export default function ServicesSection() {
                         <div className="relative w-full max-w-[400px] aspect-3/4">
                             {/* Using placeholder. Update to the Schizophrenia book image later */}
                             <Image
-                                src="/book-landing-page-7.png"
+                                src="/book-landing-page-7.webp"
                                 alt="Book Publishing Services"
                                 fill
                                 className="object-contain"

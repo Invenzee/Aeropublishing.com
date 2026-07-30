@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromoPopup from "@/components/PromoPopup";
 import FacebookPixel from "@/components/FacebookPixel";
+import TrackingProvider from "@/components/TrackingProvider";
 
 const ShadedLarsh = localFont({
   src: "../../public/fonts/shaded-larsh.ttf",
@@ -29,7 +30,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aeropublishing.us"),
+  metadataBase: new URL("https://aeropublishing.com"),
   title: "Publish Your Book with Aero Publishing – Ghostwriting, Editing & More",
   description:
     "Turn your manuscript into a published book with Aero Publishing’s expert services—ghostwriting, editing, design, and global book marketing included.",
@@ -45,11 +46,11 @@ export const metadata: Metadata = {
     title: "Publish Your Book with Aero Publishing – Ghostwriting, Editing & More",
     description:
       "Turn your manuscript into a published book with Aero Publishing’s expert services—ghostwriting, editing, design, and global book marketing included.",
-    url: "https://aeropublishing.us",
+    url: "https://aeropublishing.com",
     siteName: "Aero Publishing",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/main-blog-image.webp",
         width: 1200,
         height: 630,
         alt: "Aero Publishing",
@@ -62,10 +63,10 @@ export const metadata: Metadata = {
     title: "Publish Your Book with Aero Publishing – Ghostwriting, Editing & More",
     description:
       "Turn your manuscript into a published book with Aero Publishing’s expert services—ghostwriting, editing, design, and global book marketing included.",
-    images: ["/og-image.jpg"],
+    images: ["/main-blog-image.webp"],
   },
   icons: {
-    icon: "/favicon-3.png",
+    icon: "/favicon-3.webp",
   },
 };
 
@@ -94,7 +95,7 @@ export default function RootLayout({
 
         <meta name="msvalidate.01" content="7000FF60495EE20E0D4689F671EDA603" />
         <meta name="google-site-verification" content="70KQU6GQM-v5XdEOb0Zykiq6Q3sYzR1QO6o3LlfzSmo" />
-        <link rel="icon" href="/favicon-3.png" />
+        <link rel="icon" href="/favicon-3.webp" />
       </head>
       <body
         className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased`}
@@ -118,6 +119,7 @@ export default function RootLayout({
         {/* ✅ Suspense wrapper for search params */}
         <Suspense fallback={null}>
           <FacebookPixel />
+          <TrackingProvider />
         </Suspense>
 
         {/* Noscript fallbacks */}

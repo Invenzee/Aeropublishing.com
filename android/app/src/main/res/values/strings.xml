@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">aeropublishing</string>
+    <string name="title_activity_main">aeropublishing</string>
+    <string name="package_name">com.aero.app</string>
+    <string name="custom_url_scheme">com.aero.app</string>
+</resources>

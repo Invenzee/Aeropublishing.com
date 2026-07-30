@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "../Button";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -70,7 +71,11 @@ export default function ContactForm() {
     setStatus({ submitting: true, success: null, message: "" });
 
     try {
-      const result = await sendEmail({ ...formData, formType: "Contact Page Form" });
+      const result = await sendEmail({
+        ...formData,
+        formType: "Contact Page Form",
+        ...getFormTrackingPayload(),
+      });
       if (result.success) {
         router.push("/thank-you");
       } else {
@@ -91,8 +96,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-[url('/why-aero-gradient-bg.png')] bg-contain bg-no-repeat bg-left">
-      {/* <Image src="/carousel-bg.png" className="absolute right-0" alt="" width={500} height={500} /> */}
+    <div className="bg-[url('/why-aero-gradient-bg.webp')] bg-contain bg-no-repeat bg-left">
+      {/* <Image src="/carousel-bg.webp" className="absolute right-0" alt="" width={500} height={500} /> */}
       <form
         onSubmit={handleSubmit}
         className="max-w-[1140px] mx-auto bg-white p-8 rounded-xl shadow"

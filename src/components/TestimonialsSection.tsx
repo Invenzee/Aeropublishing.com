@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 import { FaQuoteRight } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ const testimonials = [
         quote: "You can always edit a bad page. You can’t edit a blank page.",
         details: "This includes professional editing, cover design, formatting, and distribution strategies tailored to your genre.",
         authorImage: "/quote-1.webp",
-        mainImage: "/why-aero-book.png"
+        mainImage: "/why-aero-book.webp"
     },
     {
         id: 2,
@@ -21,21 +21,19 @@ const testimonials = [
         quote: "If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.",
         details: "Our team of experts will guide you through every step of the publishing process, ensuring your book reaches its full potential.",
         authorImage: "/quote-2.webp",
-        mainImage: "/why-aero-book.png"
+        mainImage: "/why-aero-book.webp"
     },
     {
         id: 3,
-        name: "Stephen King",
+        name: "Jodi Picoult",
         quote: "The scariest moment is always just before you start.",
         details: "We provide comprehensive marketing plans to get your book in front of the right readers and maximize your sales.",
         authorImage: "/quote-3.webp",
-        mainImage: "/why-aero-book.png"
+        mainImage: "/why-aero-book.webp"
     }
 ];
 
 export default function TestimonialsSection() {
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
     const [activeId, setActiveId] = useState(testimonials[0].id);
 
     const activeTestimonial = testimonials.find((t) => t.id === activeId) || testimonials[0];
@@ -44,20 +42,21 @@ export default function TestimonialsSection() {
         <section className="relative py-20 bg-brand-light overflow-hidden max-sm:py-12  overflow-x-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-transparent to-[#D4E9F7] opacity-50 pointer-events-none" />
 
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6 relative z-10">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10">
 
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-16"
                 >
                     <p className="text-md font-poppins text-brand-primary font-semibold tracking-wider uppercase mb-2">
                         Did you know                    </p>
-                    <h2 className="text-[40px] font-syne font-[500] leading-[1] text-brand-primary max-sm:text-[32px]">
+                    <h2 className="text-[40px] font-syne font-[500] leading-[1.1] text-brand-primary max-sm:text-[32px]">
                         Why Most Books
-                        <span className="text-brand-secondary text-[50px] font-shaded font-[400] max-sm:text-[40px]"> Never Reach</span><br />
+                        <span className="text-brand-secondary text-[46px] font-shaded font-[400] max-sm:text-[36px]"> Never Reach</span><br />
                         Readers <span className="font-[700]"> And How We Change That</span>
                     </h2>
                 </motion.div>
@@ -66,7 +65,8 @@ export default function TestimonialsSection() {
 
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                         className="relative lg:w-1/2 w-full flex justify-center lg:justify-end pr-8"
                     >
@@ -88,7 +88,8 @@ export default function TestimonialsSection() {
                     {/* Right Side: Content */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                         className="lg:w-1/2 w-full space-y-8 pl-4 mb-14"
                     >
@@ -104,7 +105,7 @@ export default function TestimonialsSection() {
                             {/* Author Profile Image */}
                             <div className="relative">
                                 <div className="w-32 h-40 rounded-lg overflow-hidden border-2 border-white shadow-md">
-                                    <Image src='/testimonial.png' alt='Testimonial author' fill className="object-cover" loading="lazy" />
+                                    <Image src='/testimonial.webp' alt='Testimonial author' fill className="object-cover" loading="lazy" />
                                 </div>
                                 <div className="absolute -top-2 -right-2 text-brand-secondary bg-white leading-[1] text-xl p-2 rounded-sm font-serif">
                                     <FaQuoteRight />
@@ -140,7 +141,8 @@ export default function TestimonialsSection() {
                             onClick={() => setActiveId(testimonial.id)}
                             whileHover={{ y: -5 }}
                             initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5, delay: 0.6 + (testimonial.id * 0.1) }}
                             className={`bg-white rounded-2xl p-8 border-2 cursor-pointer transition-all duration-300 flex flex-col items-center text-center shadow-lg relative group overflow-hidden
                         ${activeId === testimonial.id ? "border-brand-primary ring-1 ring-brand-primary" : "border-[#D4E9F7]"}

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CounterSection from "@/components/CounterSection";
 import WhyAeroSection from "@/components/WhyAeroSection";
@@ -15,7 +14,7 @@ import PortfolioSection from "./book-publishing-landing-page/PortfolioSection";
 import BlogSection from "@/components/Blog/BlogSection";
 
 export const metadata: Metadata = {
-  title: "Publish Your Book with Aero – Ghostwriting, Editing & More",
+  title: "Publish Your Book with Aero Publishing – Ghostwriting, Editing & More",
   description:
     "Turn your manuscript into a published book with Aero Publishing’s expert services—ghostwriting, editing, design, and global book marketing included.",
 };
@@ -47,22 +46,22 @@ export default function Home() {
 
   const features = [
     {
-      icon: "/feature-icon-1.png",
+      icon: "/feature-icon-1.webp",
       title: "Professional Publishing Without Compromise",
       description: "We provide industry-standard publishing services from manuscript preparation to final release—handled with precision, care, and attention to detail for both print and digital formats."
     },
     {
-      icon: "/feature-icon-2.png",
+      icon: "/feature-icon-2.webp",
       title: "Expert-Led Editorial and Design Support",
       description: "Work with experienced editors and designers who refine your manuscript, craft engaging interiors, and design covers that reflect your vision and appeal to your audience."
     },
     {
-      icon: "/feature-icon-3.png",
+      icon: "/feature-icon-3.webp",
       title: "Full Creative Control and 100% Royalties",
       description: "You retain complete ownership of your work and receive 100% of your royalties. We support and guide the process—your intellectual property always remains yours."
     },
     {
-      icon: "/feature-icon-4.png",
+      icon: "/feature-icon-4.webp",
       title: "Global Distribution Across Major Platforms",
       description: "Your book is professionally formatted and distributed across leading online retailers, reaching readers in the United States and worldwide in both print and digital formats."
     }
@@ -70,8 +69,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      
-      <Header />
       <HeroSection />
       <CounterSection />
       <WhyAeroSection description="" highlightTitle="Publishing" normalTitle="Your Book Should Be " boldTitle="Simple, Transparent, and Author-First" features={features} />
@@ -84,8 +81,6 @@ export default function Home() {
       <AuthorsShowcaseSection />
       <BlogSection />
       <FAQSection faqs={faqs} />
-      
-      
       <PromoSection />
     </main>
   );

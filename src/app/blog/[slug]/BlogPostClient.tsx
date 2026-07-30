@@ -3,13 +3,112 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { BlogPost } from "@/lib/blogData";
 import Button from "@/components/Button";
 
-// Simple markdown-like renderer for the content
+interface TocItem {
+    id: string;
+    text: string;
+    level: 2 | 3;
+}
+
+function slugify(text: string, index: number) {
+    return `section-${index}-${text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+}
+
+function renderInlineText(text: string, keyPrefix: string) {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, idx) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+            return (
+                <strong key={`${keyPrefix}-b-${idx}`} className="text-brand-primary font-semibold">
+                    {part.slice(2, -2)}
+                </strong>
+            );
+        }
+
+        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        const linkParts = part.split(linkRegex);
+
+        if (linkParts.length > 1) {
+            return linkParts.map((linkPart, linkIdx) => {
+                if (linkIdx > 0 && linkIdx % 3 === 1) {
+                    const url = linkParts[linkIdx + 1];
+                    return (
+                        <a
+                            key={`${keyPrefix}-l-${linkIdx}`}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-secondary font-medium underline decoration-2 underline-offset-2 hover:text-brand-primary transition-colors duration-200"
+                        >
+                            {linkPart}
+                        </a>
+                    );
+                }
+                if (linkIdx % 3 === 0) return linkPart;
+                return null;
+            });
+        }
+
+        return part;
+    });
+}
+
+function FAQAccordion({ items }: { items: { question: string; answer: string }[] }) {
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    return (
+        <div className="mt-6 space-y-3">
+            {items.map((item, idx) => (
+                <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                    <button
+                        type="button"
+                        onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left bg-brand-light hover:bg-brand-light/80 transition-colors"
+                    >
+                        <span className="font-syne font-semibold text-brand-primary text-base">{item.question}</span>
+                        <span className="text-brand-secondary text-xl font-bold shrink-0">{openIndex === idx ? "−" : "+"}</span>
+                    </button>
+                    {openIndex === idx && (
+                        <p className="px-5 py-4 text-gray-700 font-poppins text-[15px] leading-relaxed border-t border-gray-100">
+                            {item.answer}
+                        </p>
+                    )}
+                </div>
+            ))}
+        </div>
+    );
+}
+
 function renderContent(content: string) {
-    const lines = content.trim().split("\n");
+    const faqMatch = content.match(/\[FAQ\]([\s\S]*?)\[\/FAQ\]/);
+    const faqItems: { question: string; answer: string }[] = [];
+
+    if (faqMatch) {
+        const faqBlock = faqMatch[1].trim();
+        const faqLines = faqBlock.split("\n").filter(Boolean);
+        let currentQ = "";
+        let currentA = "";
+
+        faqLines.forEach((line) => {
+            if (line.startsWith("Q: ")) {
+                if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
+                currentQ = line.replace("Q: ", "");
+                currentA = "";
+            } else if (line.startsWith("A: ")) {
+                currentA = line.replace("A: ", "");
+            }
+        });
+        if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
+    }
+
+    const bodyContent = content.replace(/\[FAQ\][\s\S]*?\[\/FAQ\]/g, "").trim();
+    const lines = bodyContent.split("\n");
     const elements: React.ReactNode[] = [];
+    const headings: TocItem[] = [];
+    let headingIndex = 0;
     let i = 0;
 
     while (i < lines.length) {
@@ -21,55 +120,55 @@ function renderContent(content: string) {
         }
 
         if (line.startsWith("## ")) {
+            const text = line.replace("## ", "");
+            const id = slugify(text, headingIndex++);
+            headings.push({ id, text, level: 2 });
             elements.push(
-                <h2
-                    key={i}
-                    className="text-2xl md:text-3xl font-syne font-bold text-brand-primary mt-10 mb-4 leading-tight"
-                >
-                    {line.replace("## ", "")}
+                <h2 key={`h2-${i}`} id={id} className="text-2xl md:text-3xl font-syne font-bold text-brand-primary mt-10 mb-4 leading-tight scroll-mt-32">
+                    {text}
                 </h2>
             );
         } else if (line.startsWith("### ")) {
+            const text = line.replace("### ", "");
+            const id = slugify(text, headingIndex++);
+            headings.push({ id, text, level: 3 });
             elements.push(
-                <h3
-                    key={i}
-                    className="text-xl font-syne font-semibold text-brand-primary mt-8 mb-3 leading-tight"
-                >
-                    {line.replace("### ", "")}
+                <h3 key={`h3-${i}`} id={id} className="text-xl font-syne font-semibold text-brand-primary mt-8 mb-3 leading-tight scroll-mt-32">
+                    {text}
                 </h3>
             );
-        } else if (line.startsWith("- **")) {
-            // Collect all list items
-            const listItems: string[] = [];
-            while (i < lines.length && lines[i].trim().startsWith("- ")) {
-                listItems.push(lines[i].trim().replace(/^- /, ""));
+        } else if (line.startsWith("| ")) {
+            const tableRows: string[][] = [];
+            while (i < lines.length && lines[i].trim().startsWith("|")) {
+                const row = lines[i].trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
+                if (!row.every((cell) => /^-+$/.test(cell))) tableRows.push(row);
                 i++;
             }
-            elements.push(
-                <ul key={`list-${i}`} className="space-y-2 mb-6 pl-4">
-                    {listItems.map((item, idx) => {
-                        const boldMatch = item.match(/^\*\*(.+?)\*\*(.*)$/);
-                        return (
-                            <li
-                                key={idx}
-                                className="flex items-start gap-3 text-gray-700 font-poppins text-[15px] leading-relaxed"
-                            >
-                                <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-secondary flex-shrink-0" />
-                                <span>
-                                    {boldMatch ? (
-                                        <>
-                                            <strong className="text-brand-primary">{boldMatch[1]}</strong>
-                                            {boldMatch[2]}
-                                        </>
-                                    ) : (
-                                        item
-                                    )}
-                                </span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            );
+            if (tableRows.length > 0) {
+                const [header, ...body] = tableRows;
+                elements.push(
+                    <div key={`table-${i}`} className="my-8 overflow-x-auto rounded-lg shadow-sm border border-gray-100">
+                        <table className="w-full min-w-[600px] border-collapse text-sm">
+                            <thead>
+                                <tr>
+                                    {header.map((cell, idx) => (
+                                        <th key={idx} className="bg-brand-primary text-white px-4 py-3 text-left font-syne font-semibold">{cell}</th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {body.map((row, rowIdx) => (
+                                    <tr key={rowIdx} className="hover:bg-gray-50">
+                                        {row.map((cell, cellIdx) => (
+                                            <td key={cellIdx} className="border-t border-gray-100 px-4 py-3 text-gray-700 font-poppins align-top">{cell}</td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            }
             continue;
         } else if (line.startsWith("- ")) {
             const listItems: string[] = [];
@@ -80,65 +179,18 @@ function renderContent(content: string) {
             elements.push(
                 <ul key={`list-${i}`} className="space-y-2 mb-6 pl-4">
                     {listItems.map((item, idx) => (
-                        <li
-                            key={idx}
-                            className="flex items-start gap-3 text-gray-700 font-poppins text-[15px] leading-relaxed"
-                        >
-                            <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-secondary flex-shrink-0" />
-                            <span>{item}</span>
+                        <li key={idx} className="flex items-start gap-3 text-gray-700 font-poppins text-[15px] leading-relaxed">
+                            <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-secondary shrink-0" />
+                            <span>{renderInlineText(item, `li-${idx}`)}</span>
                         </li>
                     ))}
                 </ul>
             );
             continue;
         } else {
-            // Regular paragraph — handle **bold** inline and [text](url) links
-            const parts = line.split(/(\*\*[^*]+\*\*)/g);
             elements.push(
-                <p
-                    key={i}
-                    className="text-gray-700 font-poppins text-[15px] md:text-[16px] leading-[1.9] mb-5"
-                >
-                    {parts.map((part, idx) => {
-                        if (part.startsWith("**") && part.endsWith("**")) {
-                            return (
-                                <strong key={idx} className="text-brand-primary font-semibold">
-                                    {part.slice(2, -2)}
-                                </strong>
-                            );
-                        }
-                        // Handle markdown links [text](url)
-                        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-                        const linkParts = part.split(linkRegex);
-                        
-                        if (linkParts.length > 1) {
-                            return linkParts.map((linkPart, linkIdx) => {
-                                // Check if this is a link text, URL, or regular text
-                                if (linkIdx > 0 && linkIdx % 3 === 1) {
-                                    // This is the link text
-                                    const url = linkParts[linkIdx + 1];
-                                    return (
-                                        <a
-                                            key={linkIdx}
-                                            href={url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-brand-secondary font-medium underline decoration-2 underline-offset-2 hover:text-brand-primary transition-colors duration-200"
-                                        >
-                                            {linkPart}
-                                        </a>
-                                    );
-                                } else if (linkIdx % 3 === 0) {
-                                    // Regular text
-                                    return linkPart;
-                                }
-                                // Skip URL parts (they're handled with the text)
-                                return null;
-                            });
-                        }
-                        
-                        return part;
-                    })}
+                <p key={`p-${i}`} className="text-gray-700 font-poppins text-[15px] md:text-[16px] leading-[1.9] mb-5">
+                    {renderInlineText(line, `p-${i}`)}
                 </p>
             );
         }
@@ -146,7 +198,11 @@ function renderContent(content: string) {
         i++;
     }
 
-    return elements;
+    if (faqItems.length > 0) {
+        elements.push(<div key="faq-section"><FAQAccordion items={faqItems} /></div>);
+    }
+
+    return { elements, headings };
 }
 
 interface Props {
@@ -155,6 +211,8 @@ interface Props {
 }
 
 export default function BlogPostClient({ post, relatedPosts }: Props) {
+    const { elements, headings } = renderContent(post.content);
+
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
@@ -186,7 +244,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                     >
                         {post.title}
                     </motion.h1>
-                    
+
                     {/* Meta row */}
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -226,7 +284,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                     initial={{ opacity: 0, y: 30, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/7]"
+                    className="relative rounded-3xl overflow-hidden shadow-2xl aspect-16/7"
                 >
                     <Image
                         src={post.image}
@@ -236,7 +294,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                         priority
                     />
                     {/* Subtle overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-brand-primary/20 to-transparent" />
                 </motion.div>
             </div>
 
@@ -259,7 +317,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
 
                     {/* Content */}
                     <div className="prose-content">
-                        {renderContent(post.content)}
+                        {elements}
                     </div>
 
                     {/* Tags / Share row */}
@@ -295,7 +353,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                 className="w-8 h-8 rounded-full bg-gray-100 hover:bg-brand-primary transition-colors duration-200 flex items-center justify-center group"
                             >
                                 <svg className="w-3.5 h-3.5 text-gray-500 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                                 </svg>
                             </a>
                         </div>
@@ -307,9 +365,9 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="mt-10 bg-gradient-to-br from-brand-primary/5 to-brand-secondary/5 rounded-3xl p-6 md:p-8 border border-brand-primary/10 flex gap-5 items-start"
+                        className="mt-10 bg-linear-to-br from-brand-primary/5 to-brand-secondary/5 rounded-3xl p-6 md:p-8 border border-brand-primary/10 flex gap-5 items-start"
                     >
-                        <div className="w-16 h-16 rounded-2xl bg-brand-primary flex items-center justify-center flex-shrink-0">
+                        <div className="w-16 h-16 rounded-2xl bg-brand-primary flex items-center justify-center shrink-0">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                             </svg>
@@ -347,7 +405,27 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                         transition={{ duration: 0.7, delay: 0.6 }}
                         className="sticky top-28 space-y-6"
                     >
-                        <div className="bg-gradient-to-br from-brand-primary to-[#6259a8] rounded-3xl p-6 text-white relative overflow-hidden">
+                        {/* Table of Contents */}
+                        {headings.length > 0 && (
+                            <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+                                <h4 className="font-syne font-bold text-brand-primary text-base mb-4">Contents</h4>
+                                <nav className="space-y-2 max-h-[50vh] overflow-y-auto">
+                                    {headings.map((item) => (
+                                        <a
+                                            key={item.id}
+                                            href={`#${item.id}`}
+                                            className={`block text-sm font-poppins text-gray-600 hover:text-brand-secondary transition-colors border-l-2 border-transparent hover:border-brand-secondary ${
+                                                item.level === 3 ? "pl-6" : "pl-3"
+                                            }`}
+                                        >
+                                            {item.text}
+                                        </a>
+                                    ))}
+                                </nav>
+                            </div>
+                        )}
+
+                        <div className="bg-linear-to-br from-brand-primary to-[#6259a8] rounded-3xl p-6 text-white relative overflow-hidden">
                             {/* Decorative circle */}
                             <div className="absolute -top-8 -right-8 w-28 h-28 bg-white/10 rounded-full" />
                             <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-brand-secondary/30 rounded-full" />
@@ -362,7 +440,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                 </p>
                                 <div className="flex flex-col gap-3">
                                     <Button variant="secondary" className="w-full justify-center">
-                                        <a href="tel:+13108350771">Call Us: 310 835 0771</a>
+                                        <a href="tel:+14242823304">Call Us: +1424 282 3304</a>
                                     </Button>
                                     <button
                                         onClick={() => (window as any).Tawk_API?.maximize()}
@@ -394,7 +472,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                                 href={`/blog/${related.slug}`}
                                                 className="flex gap-4 group"
                                             >
-                                                <div className="relative w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                                                <div className="relative w-20 h-16 rounded-xl overflow-hidden shrink-0">
                                                     <Image
                                                         src={related.image}
                                                         alt={related.title}
@@ -442,7 +520,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
 
             {/* More Posts Section */}
             {relatedPosts.length > 0 && (
-                <section className="bg-[url('/why-aero-gradient-bg.png')] bg-contain bg-no-repeat bg-left py-20">
+                <section className="bg-[url('/why-aero-gradient-bg.webp')] bg-contain bg-no-repeat bg-left py-20">
                     <div className="max-w-[1140px] mx-auto px-6">
                         {/* Section Header */}
                         <motion.div
@@ -471,7 +549,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                 >
                                     <Link href={`/blog/${related.slug}`} className="block">
                                         {/* Image */}
-                                        <div className="relative aspect-[4/3] overflow-hidden">
+                                        <div className="relative aspect-4/3 overflow-hidden">
                                             <Image
                                                 src={related.image}
                                                 alt={related.title}

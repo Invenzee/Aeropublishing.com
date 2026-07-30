@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface CounterProps {
@@ -12,11 +12,10 @@ interface CounterProps {
 
 function Counter({ end, duration = 2, suffix = "" }: CounterProps) {
     const [count, setCount] = useState(0);
-    const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [hasAnimated, setHasAnimated] = useState(false);
 
     useEffect(() => {
-        if (!isInView) return;
+        if (!hasAnimated) return;
 
         let startTime: number | null = null;
         const animateCount = (timestamp: number) => {
@@ -32,19 +31,20 @@ function Counter({ end, duration = 2, suffix = "" }: CounterProps) {
         };
 
         requestAnimationFrame(animateCount);
-    }, [isInView, end, duration]);
+    }, [hasAnimated, end, duration]);
 
     return (
-        <div ref={ref} className="text-[60px] font-syne font-bold text-brand-primary leading-none max-sm:text-[40px]">
+        <motion.div
+            onViewportEnter={() => setHasAnimated(true)}
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-[60px] font-syne font-bold text-brand-primary leading-none max-sm:text-[40px]"
+        >
             {count}{suffix}
-        </div>
+        </motion.div>
     );
 }
 
 export default function CounterSection() {
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
     const stats = [
         {
             icon: (
@@ -88,7 +88,7 @@ export default function CounterSection() {
                 }}
             >
                 <Image
-                    src="/triangle.png"
+                    src="/triangle.webp"
                     alt="Triangle decoration"
                     width={176}
                     height={176}
@@ -96,13 +96,14 @@ export default function CounterSection() {
                 />
             </motion.div>
 
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6">
+            <div className="max-w-[1140px] mx-auto px-6">
                 <div className="grid grid-cols-3 gap-12 max-sm:grid-cols-1 max-sm:gap-8">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
                             transition={{
                                 duration: 0.6,
                                 delay: index * 0.2,
@@ -113,7 +114,8 @@ export default function CounterSection() {
                             {/* Icon */}
                             <motion.div
                                 initial={{ scale: 0 }}
-                                animate={isInView ? { scale: 1 } : { scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true, amount: 0.3 }}
                                 transition={{
                                     duration: 0.5,
                                     delay: index * 0.2 + 0.2,
@@ -130,7 +132,8 @@ export default function CounterSection() {
                             {/* Label */}
                             <motion.p
                                 initial={{ opacity: 0 }}
-                                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.3 }}
                                 transition={{
                                     duration: 0.5,
                                     delay: index * 0.2 + 0.4

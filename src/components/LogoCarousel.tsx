@@ -6,11 +6,11 @@ import Image from "next/image";
 export default function LogoCarousel() {
     // Logo data - will be replaced with actual logo images
     const logos = [
-        { id: 1, src: "/client-logo-1.png", alt: "Silicon Angle" },
-        { id: 2, src: "/client-logo-2.png", alt: "WSJ" },
-        { id: 3, src: "/client-logo-3.png", alt: "Startup Rise America" },
-        { id: 4, src: "/client-logo-4.png", alt: "Publishers Weekly" },
-        { id: 5, src: "/client-logo-5.png", alt: "Fortune" },
+        { id: 1, src: "/client-logo-1.webp", alt: "Silicon Angle" },
+        { id: 2, src: "/client-logo-2.webp", alt: "WSJ" },
+        { id: 3, src: "/client-logo-3.webp", alt: "Startup Rise America" },
+        { id: 4, src: "/client-logo-4.webp", alt: "Publishers Weekly" },
+        { id: 5, src: "/client-logo-5.webp", alt: "Fortune" },
     ];
 
     // Duplicate logos for seamless infinite scroll

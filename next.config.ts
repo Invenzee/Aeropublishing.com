@@ -12,10 +12,7 @@ const nextConfig: NextConfig = {
   
   // Enable experimental features for better performance
   experimental: {
-    // Inline small CSS for faster initial load
-    optimizeCss: true,
-    // Reduce JavaScript bundle size
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react'],
   },
   
   // Reduce JavaScript bundle size

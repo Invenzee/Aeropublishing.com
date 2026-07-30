@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Print-On-Demand Setup",
             description: "We configure your book for efficient print-on-demand production, ensuring high-quality output without upfront inventory costs."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Offset Printing Options",
             description: "For bulk orders and special editions, we provide offset printing solutions with superior color accuracy, paper quality, and binding durability."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Paper & Binding Customization",
             description: "Choose from multiple trim sizes, paper stocks, finishes, and binding styles to match your book’s genre and audience expectations."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "ISBN & Barcode Placement",
             description: "We ensure proper ISBN assignment and barcode placement so your book is fully compliant with U.S. and global retail standards."
         }
@@ -84,7 +84,7 @@ export default function page() {
                     "Copyright & ISBN Assistance",
                     "Retain 100% Ownership of Your Book"
                 ]}
-                imageSrc="/book-printing-1.jpg"
+                imageSrc="/book-printing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -93,7 +93,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. Aero Publishing offers a clear, honest, and author-focused printing experience—keeping you informed, in control, and confident from start to finish.'
                 features={features}
-                imageUrl='/book-printing-3.png'
+                imageUrl='/book-printing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Book Printing with Aero?"
@@ -135,7 +135,7 @@ export default function page() {
                 }}
                 description="Take full control of your book’s production with Aero Publishing’s expert-managed printing services. We guide you through every step—from selecting print specifications to preparing final files—ensuring your book is polished, durable, and market-ready.
                 Whether you need short-run copies or scalable print solutions, our team ensures your book meets professional publishing standards while preserving your rights and creative vision."
-                imageSrc="/book-printing-2.jpg"
+                imageSrc="/book-printing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

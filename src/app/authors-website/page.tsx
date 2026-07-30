@@ -44,22 +44,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Custom Author Website Design",
             description: "We design a custom website tailored to your author brand, genre, and audience. Every layout is crafted to reflect your identity while presenting your books and content professionally."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Book Showcase & Landing Pages",
             description: "Your books are highlighted through dedicated pages designed to inform, engage, and convert visitors—supporting launches, promotions, and long-term visibility."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "SEO-Optimized Website Structure",
             description: "We build your site with search visibility in mind, using SEO-friendly structure and best practices to help readers find you through search engines."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Mobile-Responsive Development",
             description: "Your website is fully responsive and optimized for all devices. We ensure smooth performance, readability, and navigation across desktop, tablet, and mobile screens."
         }
@@ -86,7 +86,7 @@ export default function page() {
                     "Professional Website Design & Setup",
                     "100% Ownership of Your Website & Content"
                 ]}
-                imageSrc="/author-1.jpg"
+                imageSrc="/author-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -95,7 +95,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description="Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused website experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust."
                 features={features}
-                imageUrl='/author-3.jpg'
+                imageUrl='/author-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Authors Website with Aero?"
@@ -138,7 +138,7 @@ export default function page() {
                 description="Establish a professional online presence with Aero Publishing’s author website design services. We help authors create websites that showcase books, highlight achievements, and connect directly with readers.
                 Whether you’re just starting out or rebranding your author platform, our team delivers clean design, clear structure, and reliable functionality—so your website works for you, not against you.
                 "
-                imageSrc="/author-2.jpg"
+                imageSrc="/author-2.webp"
                 isReversed={true}
                 subtitle=""
             />

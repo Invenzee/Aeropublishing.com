@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Print-Ready Interior formatting",
             description: "We format your book interior for print with clean layouts, proper margins, and professional spacing—ensuring your book meets industry and printer requirements."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "eBook formatting for Kindle & EPUB",
             description: "Your manuscript is formatted for major eBook platforms, including Kindle and EPUB formats, ensuring compatibility, readability, and smooth digital performance."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Typography & Layout Optimization",
             description: "We refine typography, spacing, and layout elements to improve readability and visual consistency—creating a professional reading experience across all formats."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Platform-Specific Submission Files",
             description: "We prepare final, platform-ready files for major retailers and distributors. Your book is correctly formatted, checked, and ready for upload in both U.S. and global marketplaces."
         }
@@ -85,7 +85,7 @@ export default function page() {
                     "Print & Digital formatting Support",
                     "100% Ownership of Your Book Files"
                 ]}
-                imageSrc="/book-formatting-1.jpg"
+                imageSrc="/book-formatting-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -94,7 +94,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused formatting experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/book-formatting-3.jpg'
+                imageUrl='/book-formatting-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Book Formatting with Aero?"
@@ -137,7 +137,7 @@ export default function page() {
                 description="Prepare your manuscript for publication with Aero Publishing’s professional book formatting services. We help authors transform raw documents into clean, polished interiors that meet industry standards and platform guidelines.
                 Whether you’re publishing in print, digital, or both, our team ensures your book is formatted accurately and consistently—so it’s ready for readers, not revisions.
                 "
-                imageSrc="/book-formatting-2.jpg"
+                imageSrc="/book-formatting-2.webp"
                 isReversed={true}
                 subtitle=""
             />

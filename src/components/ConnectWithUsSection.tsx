@@ -1,17 +1,16 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import Button from "./Button";
 import { Check } from "lucide-react";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ConnectWithUsSection() {
     const router = useRouter();
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
     const [status, setStatus] = useState<{
         submitting: boolean;
         success: boolean | null;
@@ -34,7 +33,7 @@ export default function ConnectWithUsSection() {
         };
 
         try {
-            const result = await sendEmail(data);
+            const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
             if (result.success) {
                 router.push("/thank-you");
             } else {
@@ -58,19 +57,20 @@ export default function ConnectWithUsSection() {
             className="relative py-10 bg-cover bg-center overflow-hidden max-sm:py-12  overflow-x-hidden"
             style={{ backgroundImage: "url('/connect-with-us.webp')" }}
         >
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6 relative z-10">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10">
                 <div className="flex items-center gap-12 max-lg:flex-col max-lg:gap-8">
 
                     {/* Left Side: Logo */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="w-1/3 flex justify-center max-lg:w-full"
                     >
                         <div className="relative w-full">
                             <Image
-                                src="/connect-with-us-logo.png"
+                                src="/connect-with-us-logo.webp"
                                 alt="Connect with us logo"
                                 width={500}
                                 height={500}
@@ -85,12 +85,13 @@ export default function ConnectWithUsSection() {
                     {/* Right Side: Form */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                         className="w-2/3 max-lg:w-full border-l border-white/70 pl-12 max-lg:pl-0 max-lg:border-l-0"
                     >
-                        <h2 className="text-[40px] font-syne font-medium leading-[1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
-                            Connect With <span className="text-brand-secondary font-shaded max-sm:text-[40px] text-[50px] font-[300]">Leading</span> Book<br className="max-sm:hidden" /> Publishers in USA Today
+                        <h2 className="text-[40px] font-syne font-medium leading-[1.1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
+                            Connect With <span className="text-brand-secondary font-shaded max-sm:text-[36px] text-[46px] font-[300]">Leading</span> Book<br className="max-sm:hidden" /> Publishers in USA Today
                         </h2>
 
                         <form onSubmit={handleSubmit} className="space-y-6">

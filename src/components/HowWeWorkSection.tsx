@@ -1,16 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import Button from "./Button";
 import { ChevronRight, Dot } from "lucide-react";
 import Image from "next/image";
 
 export default function HowWeWorkSection() {
     const router = useRouter();
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
     const [activeStep, setActiveStep] = useState(0);
 
     const steps = [
@@ -21,7 +19,7 @@ export default function HowWeWorkSection() {
             description: [
                 "Upload your manuscript through our secure submission system and provide a few essential details about your project. Our publishing team carefully reviews your work to understand your goals, assess readiness, and recommend clear, practical next steps to move your book forward with confidence.",
             ],
-            illustration: "/how_we_work_section.png"
+            illustration: "/how_we_work_section.webp"
         },
         {
             id: 2,
@@ -30,7 +28,7 @@ export default function HowWeWorkSection() {
             description: [
                 "Our experienced editors and designers collaborate closely to refine your manuscript’s language, structure, and overall presentation. We professionally format your book, design engaging interiors and covers, and ensure your final product meets industry standards for both print and digital publication.",
             ],
-            illustration: "/how_we_work_section.png"
+            illustration: "/how_we_work_section.webp"
         },
         {
             id: 3,
@@ -39,7 +37,7 @@ export default function HowWeWorkSection() {
             description: [
                 "We manage ISBN registration and handle all technical publishing requirements on your behalf. Your book is properly prepared, formatted, and configured for release across major publishing platforms, ensuring accuracy, compliance, and smooth distribution in the correct formats."
             ],
-            illustration: "/how_we_work_section.png"
+            illustration: "/how_we_work_section.webp"
         },
         {
             id: 4,
@@ -48,7 +46,7 @@ export default function HowWeWorkSection() {
             description: [
                 "Your book is launched across leading online retailers, making it available to readers throughout the United States and worldwide. We ensure your title is accessible in both print and digital editions, helping your work reach a broad and diverse audience."
             ],
-            illustration: "/how_we_work_section.png"
+            illustration: "/how_we_work_section.webp"
         }
     ];
 
@@ -57,19 +55,20 @@ export default function HowWeWorkSection() {
             className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12  overflow-x-hidden"
             style={{ backgroundImage: "url('/why-aero-bg.webp')" }}
         >
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6">
+            <div className="max-w-[1140px] mx-auto px-6">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-12 max-sm:mb-8"
                 >
                     <p className="text-md font-poppins text-brand-primary font-semibold tracking-wider uppercase mb-3">
-                        How We Work
+                        Why Aero
                     </p>
-                    <h2 className="text-[50px] text-brand-primary font-syne font-[500] leading-[1] max-sm:text-[32px]">
-                        How Our Book Publishing<span className="text-brand-secondary font-shaded font-[300] text-[60px] max-sm:text-[40px]"> Process</span>{" "}
+                    <h2 className="text-[50px] text-brand-primary font-syne font-[500] leading-[1.1] max-sm:text-[32px]">
+                        How Our Book Publishing<span className="text-brand-secondary font-shaded font-[300] text-[50px] max-sm:text-[36px]"> Process</span>{" "}
                         <span className="font-[500]"> Works</span>
                         <br />
                         <span className="font-bold">From Manuscript to Market</span>
@@ -82,7 +81,8 @@ export default function HowWeWorkSection() {
                 <div className="bg-white rounded-3xl shadow-2xl py-12 px-16 max-sm:p-6 border-4 border-[#D4E9F7]">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                         className="flex justify-between gap-4 mb-12 max-sm:grid max-sm:grid-cols-1 max-sm:gap-3"
                     >
@@ -103,7 +103,8 @@ export default function HowWeWorkSection() {
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                         className=""
                     >

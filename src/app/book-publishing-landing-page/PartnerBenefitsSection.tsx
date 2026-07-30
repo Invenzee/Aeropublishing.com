@@ -26,7 +26,7 @@ export default function PartnerBenefitsSection() {
                     {/* Left Content */}
                     <div className="w-full lg:w-1/2 flex flex-col items-start z-20">
 
-                        <h2 className="text-[50px] mb-4 font-syne font-medium leading-[1] text-brand-primary max-sm:text-[32px]">
+                        <h2 className="text-[50px] mb-4 font-syne font-medium leading-[1.1] text-brand-primary max-sm:text-[32px]">
                             
                             What You Get When You <span className=" text-brand-secondary font-shaded font-[400] s"> Partner </span><span className="font-bold">With Us</span>
                         </h2>
@@ -65,7 +65,7 @@ export default function PartnerBenefitsSection() {
                             {/* Tilted Book */}
                             <div className="absolute w-[75%] h-[115%] transform -rotate-12 hover:-translate-y-2 transition-transform duration-500 ease-in-out cursor-pointer z-10">
                                 <Image
-                                    src="/book-landing-page-4.png" // placeholder for "Descent Into The Void"
+                                    src="/book-landing-page-4.webp" // placeholder for "Descent Into The Void"
                                     alt="Book Mockup"
                                     fill
                                     className="object-contain drop-shadow-2xl"
@@ -79,7 +79,7 @@ export default function PartnerBenefitsSection() {
                 {/* Buttons as requested */}
                 <div className="flex flex-wrap gap-4 pt-4 mt-10">
                     <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                        <a href="tel:+13108350771">310 835 0771</a>
+                        <a href="tel:+14242823304">+1424 282 3304</a>
                     </Button>
                     <Button
                         variant="secondary"

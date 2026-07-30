@@ -6,12 +6,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 
 const badges = [
-    "/hero-badge-1.png",
-    "/hero-badge-2.png",
-    "/hero-badge-3.png",
-    "/hero-badge-4.png",
+    "/hero-badge-1.webp",
+    "/hero-badge-2.webp",
+    "/hero-badge-3.webp",
+    "/hero-badge-4.webp",
 ]
 
 export default function HeroSection({ title, description, showButton = true, className = "", hasForm = true }: { title: string, description: string, showButton?: boolean, className?: string, hasForm?: boolean }) {
@@ -52,7 +53,7 @@ export default function HeroSection({ title, description, showButton = true, cla
         };
 
         try {
-            const result = await sendEmail(data);
+            const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
             if (result.success) {
                 router.push("/thank-you");
             } else {
@@ -72,7 +73,7 @@ export default function HeroSection({ title, description, showButton = true, cla
     };
 
     return (
-        <section className={`${className} relative min-h-screen flex items-center pt-20 overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center`}>
+        <section className={`${className} relative min-h-screen flex items-center pt-[120px] overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center`}>
             <div className="max-w-[1140px] mx-auto my-24 relative z-10 w-full flex justify-between gap-5 items-center max-sm:flex-col max-sm:my-12 max-sm:px-6">
 
                 {/* Left Column: Content */}
@@ -82,7 +83,7 @@ export default function HeroSection({ title, description, showButton = true, cla
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className={`space-y-2 ${hasForm ? '' : 'mx-auto'}`}
                 >
-                    <h1 className={`text-[60px] font-syne font-semibold leading-[1] text-brand-primary max-sm:text-[40px] ${hasForm ? 'text-left' : 'text-center'}`}>
+                    <h1 className={`text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px] ${hasForm ? 'text-left' : 'text-center'}`}>
                         {title}
                     </h1>
 
@@ -93,7 +94,7 @@ export default function HeroSection({ title, description, showButton = true, cla
                     {showButton && (
                         <div className={`flex flex-wrap gap-4 pt-4 ${hasForm ? 'justify-start' : 'justify-center'}`}>
                             <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+13108350771">310 835 0771</a>
+                                <a href="tel:+14242823304">+1424 282 3304</a>
                             </Button>
                             <Button
                                 variant="secondary"

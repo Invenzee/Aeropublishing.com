@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Script Development & Creative Storyboarding",
             description: "We develop a compelling trailer script and visual storyboard that captures your book’s core theme, tone, and audience appeal—ensuring every second has purpose."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Professional Video Editing & Animation",
             description: "Our editors create polished trailers using cinematic transitions, motion graphics, typography, and pacing designed to engage readers instantly."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Background Music & Voiceover Integration",
             description: "Choose from licensed music tracks and optional professional voiceovers to enhance emotion, clarity, and memorability."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Social Media & Amazon-Optimized Formats",
             description: "Your trailer is delivered in multiple formats optimized for Amazon listings, YouTube, Instagram, Facebook, TikTok, and author websites—ready to publish immediately."
         }
@@ -85,7 +85,7 @@ export default function page() {
                     "Copyright & Creative Ownership Secured",
                     "Retain 100% of Your Book Rights"
                 ]}
-                imageSrc="/video-trailer-1.jpg"
+                imageSrc="/video-trailer-1.webp"
             />
             <WhyAeroSection
                 highlightTitle="What"
@@ -93,7 +93,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a transparent, author-focused creative experience—keeping you informed, in control, and confident while delivering professional promotional assets you can trust.'
                 features={features}
-                imageUrl='/video-trailer-3.jpg'
+                imageUrl='/video-trailer-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Video Trailer with Aero?"
@@ -135,7 +135,7 @@ export default function page() {
                 }}
                 description="Create buzz before launch—or reignite interest after publication—with a professional book video trailer. Aero Publishing delivers cinematic visuals that highlight your story’s emotion, genre, and appeal.
                 From scripting to final export, everything is handled through one intuitive process with a dedicated account manager guiding you at every step."
-                imageSrc="/video-trailer-2.jpg"
+                imageSrc="/video-trailer-2.webp"
                 isReversed={true}
                 subtitle=""
             />

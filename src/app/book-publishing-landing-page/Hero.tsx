@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/components/Button";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -38,7 +39,7 @@ export default function Hero() {
         };
 
         try {
-            const result = await sendEmail(data);
+            const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
             if (result.success) {
                 router.push("/thank-you");
             } else {
@@ -64,7 +65,7 @@ export default function Hero() {
 
                     {/* Left Column: Content */}
                     <div className="space-y-8">
-                        <h1 className="text-[60px] font-syne font-semibold leading-[1] text-brand-primary max-sm:text-[40px]">
+                        <h1 className="text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px]">
                             Premium Publishing Services
                         </h1>
 
@@ -74,7 +75,7 @@ export default function Hero() {
 
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+13108350771">310 835 0771</a>
+                                <a href="tel:+14242823304">+1424 282 3304</a>
                             </Button>
                             <Button
                                 variant="secondary"

@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Topic Research & Outline Creation",
             description: "We begin with in-depth research and a clear, structured outline to ensure your ebook is informative, focused, and aligned with reader expectations."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Professional Manuscript Writing",
             description: "Our experienced writers craft engaging, original content in your preferred tone and style—designed to educate, inspire, or convert your audience."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "SEO-Optimized Ebook Structure",
             description: "We optimize headings, flow, and content structure to improve discoverability and performance across major ebook platforms."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Editing & Quality Review",
             description: "Every manuscript undergoes thorough editing and quality checks for clarity, consistency, grammar, and originality—ensuring a polished final product."
         }
@@ -84,7 +84,7 @@ export default function page() {
                     "Copyright & ISBN Certification",
                     "Retain 100% of Your Book Rights"
                 ]}
-                imageSrc="/ebook-writing-1.jpg"
+                imageSrc="/ebook-writing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -93,7 +93,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused publishing experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/ebook-writing-3.jpg'
+                imageUrl='/ebook-writing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Ebook Writing with Aero?"
@@ -135,7 +135,7 @@ export default function page() {
                 }}
                 description="Take full control of your publishing journey with Aero Publishing’s ebook writing services. Whether you’re launching your first ebook or expanding your catalog, our experienced writers and editors work closely with you to produce compelling, well-structured content tailored to your audience.
                 From idea to final manuscript, we ensure your ebook is professionally written, market-ready, and aligned with your goals—while you remain in control every step of the way."
-                imageSrc="/ebook-writing-2.jpg"
+                imageSrc="/ebook-writing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

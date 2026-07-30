@@ -19,48 +19,48 @@ export default function GlobalAudienceSection() {
    const books = [
         {
             id: 1,
-            image: "/book-landing-page-11.png",
+            image: "/book-landing-page-11.webp",
             title: "Book 1"
         },
         {
             id: 2,
-            image: "/book-landing-page-4.png",
+            image: "/book-landing-page-4.webp",
             title: "Book 2"
         },
         {
             id: 3,
-            image: "/book-landing-page-5.png",
+            image: "/book-landing-page-5.webp",
             title: "Book 3"
         },
         {
             id: 4,
-            image: "/book-landing-page-6.png",
+            image: "/book-landing-page-6.webp",
             title: "Book 4"
         },
         {
             id: 5,
-            image: "/book-landing-page-7.png",
+            image: "/book-landing-page-7.webp",
             title: "Book 5"
         },
         {
             id: 6,
-            image: "/book-landing-page-8.png",
+            image: "/book-landing-page-8.webp",
             title: "Book 6"
         },
         {
             id: 7,
-            image: "/book-landing-page-9.png",
+            image: "/book-landing-page-9.webp",
             title: "Book 7"
         },
         {
             id: 8,
-            image: "/book-landing-page-10.png",
+            image: "/book-landing-page-10.webp",
             title: "Book 8"
         }
     ];
 
     return (
-        <section className="relative py-20 max-sm:py-12 bg-[url('/carousel-bg.png')] bg-contain bg-right bg-no-repeat  overflow-x-hidden">
+        <section className="relative py-20 max-sm:py-12 bg-[url('/carousel-bg.webp')] bg-contain bg-right bg-no-repeat  overflow-x-hidden">
 
             <div ref={containerRef} className="max-w-[1140px] mx-auto px-6">
                 {/* Header */}
@@ -70,9 +70,9 @@ export default function GlobalAudienceSection() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-16 max-sm:mb-10"
                 >
-                    <h2 className="text-[50px] font-syne font-bold leading-[1] max-sm:text-[32px]">
+                    <h2 className="text-[50px] font-syne font-bold leading-[1.1] max-sm:text-[32px]">
                         <span className="text-brand-primary font-[500]">Your Book </span>
-                        <span className="text-brand-secondary font-shaded font-[300] text-[60px] max-sm:text-[40px]">Deserves</span>
+                        <span className="text-brand-secondary font-shaded font-[300] text-[50px] max-sm:text-[36px]">Deserves</span>
                         <span className="text-brand-primary font-[500]"> a</span>
                         <br />
                         <span className="text-brand-primary">Global Audience</span>

@@ -16,7 +16,7 @@ const reviews = [
         date: "Feb 28, 2026",
         title: "My interaction with Aero Publishing was…",
         text: "My interaction with Aero Publishing was excellent. the staff was really helpful, and their service was seamless and professional. overall, I'm rather happy with the experience!",
-        avatar: "/review-2.jpg",
+        avatar: "/review-2.webp",
         width: "w-[420px] max-sm:w-[300px]"
     },
         {
@@ -27,7 +27,7 @@ const reviews = [
         date: "6 days ago",
         title: "I had a new and wonderful experience...",
         text: "I had a new and wonderful experience with Aero Publishing. the group produced high-caliber work on schedule and with professionalism and assistance. I truly value their commitment and service, and communication was clear. strongly advised. ",
-        avatar: "/review-1.png",
+        avatar: "/review-1.webp",
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -38,7 +38,7 @@ const reviews = [
         date: "Feb 20, 2026",
         title: "Fantastic encounter with Aero…",
         text: "Fantastic encounter with Aero Publishing. Excellent service, a seamless process, and a really professional team. extremely happy and very impressive!",
-        avatar: "/review-3.jpg",
+        avatar: "/review-3.webp",
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -49,7 +49,7 @@ const reviews = [
         date: "Feb 13, 2026",
         title: "My interaction with Aero Publishing was…",
         text: "My interaction with Aero Publishing was excellent throughout the process, their team demonstrated professionalism, assistance, and responsiveness. everything went smoothly and on schedule and the service quality was outstanding. I am truly pleased with the outcome and am quite pleased with their service. strongly advised.",
-        avatar: "/review-4.jpg",        
+        avatar: "/review-4.webp",        
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -60,7 +60,7 @@ const reviews = [
         date: "Jul 18, 2025",
         title: "After months of poor sales",
         text: "After months of poor sales, Aero Publishing marketing turned everything around. My book is now consistently ranking in its category.",
-        avatar: "/review-5.jpg",
+        avatar: "/review-5.webp",
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -71,7 +71,7 @@ const reviews = [
         date: "Jun 24, 2025",
         title: "I appreciated Aero Publishing attention…",
         text: "I appreciated Aero Publishing attention to detail and quick responses. Their editing improved my manuscript’s quality significantly.",
-        avatar: "/review-6.jpg",        
+        avatar: "/review-6.webp",        
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -82,7 +82,7 @@ const reviews = [
         date: "Jun 24, 2025",
         title: "Aero Publishing helped me polish my…",
         text: "Aero Publishing helped me polish my paper and understand journal submission better. Their support reduced my stress and improved my chances of acceptance.",
-        avatar: "/review-7.jpg",        
+        avatar: "/review-7.webp",        
         width: "w-[420px] max-sm:w-[300px]"
     },
     {
@@ -93,7 +93,7 @@ const reviews = [
         date: "Jun 4, 2025",
         title: "I couldn't believe the difference once…",
         text: "I couldn't believe the difference once Aero Publishing got involved. Their book marketing services not only increased visibility but also amplified it. Sales increased significantly, as did engagement on my social media and Amazon pages.",
-        avatar: "/review-8.jpg",        
+        avatar: "/review-8.webp",        
         width: "w-[420px] max-sm:w-[300px]"
     }
 ];
@@ -158,9 +158,9 @@ export default function AuthorsShowcaseSection() {
         <section className="relative py-20 bg-brand-light overflow-hidden">
             {/* Header */}
             <div className="text-center mb-16 relative z-10 px-6">
-                <h2 className="text-[50px] font-syne font-[400] leading-[1] text-brand-primary max-sm:text-[32px]">
+                <h2 className="text-[50px] font-syne font-[400] leading-[1.1] text-brand-primary max-sm:text-[32px]">
                     Authors Around the World Trust <br />
-                    <span className="text-brand-secondary font-shaded font-[400] text-[60px]max-sm:text-[40px]"> Aero Publishing </span>
+                    <span className="text-brand-secondary font-shaded font-[400] text-[50px] max-sm:text-[36px]"> Aero Publishing </span>
                     <span className="font-bold">With Their Books</span>
                 </h2>
                 <p className="text-black text-center font-poppins text-sm leading-relaxed max-w-4xl max-sm:text-[14px] mx-auto mt-4">
@@ -221,7 +221,7 @@ function getInitials(name: string): string {
 }
 
 function ReviewCard({ item }: { item: any }) {
-    const hasAvatar = item.avatar && item.avatar.trim() !== '' && !item.avatar.includes('testimonial.png');
+    const hasAvatar = item.avatar && item.avatar.trim() !== '' && !item.avatar.includes('testimonial.webp');
     
     return (
         <div className={`bg-white p-5 max-sm:p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col gap-3 shrink-0 transition-all hover:shadow-md min-h-[320px] max-sm:min-h-auto ${item.width}`}>

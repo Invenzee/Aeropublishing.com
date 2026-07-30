@@ -44,22 +44,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "ISBN Registration & Copyright Assistance",
             description: "We deliver industry-standard publishing services without cutting corners. From manuscript preparation to final release, every step is handled with precision, care, and attention to detail—so your book meets professional publishing standards in both print and digital formats."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Manuscript Formatting & Layout",
             description: "Your book is supported by experienced editors and designers who understand both storytelling and market expectations. We work collaboratively to refine your manuscript, develop compelling interiors, and create covers that reflect your vision while appealing to your audience."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Cover Design Integration",
             description: "You retain complete ownership of your work. Every creative decision remains yours, and you earn 100% of your royalties. Our role is to support, guide, and execute—not to take control of your intellectual property."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Platform Upload & Distribution",
             description: "Your book is prepared for distribution across leading online retailers and platforms worldwide. We ensure your title is professionally formatted and positioned to reach readers in the United States and beyond, in both print and digital marketplaces."
         }
@@ -87,7 +87,7 @@ export default function page() {
                     "Copyright & ISBN Registration",
                     "100% Ownership of Your Book Rights"
                 ]}
-                imageSrc="/publishing-1.jpg"
+                imageSrc="/publishing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -96,7 +96,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We provide a clear, honest, and author-focused publishing experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/publishing-3.jpg'
+                imageUrl='/publishing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Book Publish with Aero?"
@@ -139,7 +139,7 @@ export default function page() {
                 description="Bring your manuscript to life with Aero Publishing’s professional book publishing services. We help authors transform their ideas into polished, publication-ready books through expert editing, design, and production support.
                 Whether you’re publishing for the first time or refining a finished manuscript, our team ensures your book meets industry standards and is ready for print and digital distribution. With a clear process and dedicated guidance, we make publishing approachable, transparent, and author-focused.
                 "
-                imageSrc="/publishing-2.jpg"
+                imageSrc="/publishing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

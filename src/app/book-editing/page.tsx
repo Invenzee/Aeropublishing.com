@@ -44,22 +44,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "ISBN Registration & Copyright Assistance",
             description: "We take care of ISBN registration and copyright support to ensure your book is properly identified and protected. Our team manages the technical requirements with accuracy and care, so your book is ready for publication in both print and digital formats."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Manuscript Formatting & Layout",
             description: "Your manuscript is professionally formatted to meet industry standards and platform requirements. We focus on clean layouts, readability, and consistency, ensuring your book looks polished and professional across all editions."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Cover Design Integration",
             description: "We integrate your cover design seamlessly into the publishing process. Our team ensures your cover meets technical specifications, aligns with market expectations, and presents your book professionally across all platforms."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Platform Upload & Distribution",
             description: "We prepare and upload your book to major online retailers and distribution platforms. Your title is correctly formatted, positioned, and ready to reach readers throughout the United States and worldwide in both print and digital marketplaces."
         }
@@ -89,7 +89,7 @@ export default function page() {
                     "Professional Editorial Review by Industry Experts",
                     "Full Creative Control & 100% Author Rights"
                 ]}
-                imageSrc="/book-editing-1.jpg"
+                imageSrc="/book-editing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -98,7 +98,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused editing experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/editing-3.jpg'
+                imageUrl='/editing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Book Editing with Aero?"
@@ -142,7 +142,7 @@ export default function page() {
 
                 From initial manuscript review to final polish, we combine editorial expertise with a streamlined process to ensure your book is professional, polished, and publication-ready. With dedicated support at every step, we help you move forward confidently toward print and digital release—without sacrificing ownership or creative control.
                 `}
-                imageSrc="/editing-2.jpeg"
+                imageSrc="/editing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

@@ -76,9 +76,9 @@ export default function TermsAndConditions() {
 
                         <ul className="list-disc pl-6 mt-4 space-y-2">
                             <li>Claim your refund specifying your concern by contacting us via any of the following three modes:</li>
-                            <li><a href="tel:+1760280184">Toll free #: 310 835 0771</a></li>
+                            <li><a href="tel:+14242823304">Toll free #: +1424 282 3304</a></li>
                             <li>Live Chat</li>
-                            <li><a href="mailto:info@aeropublishing.com">info@aeropublishing.com</a></li>
+                            <li><a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a></li>
                         </ul>
 
                         <p className="mt-4">
@@ -94,7 +94,7 @@ export default function TermsAndConditions() {
                         </p>
 
                         <p className="mt-3">
-                            If you have any questions or concerns about our Refund Policy, please contact us by clicking here <a href="mailto:info@aeropublishing.com">info@aeropublishing.com</a>
+                            If you have any questions or concerns about our Refund Policy, please contact us by clicking here <a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a>
                         </p>
                     </div>
 
@@ -183,7 +183,7 @@ export default function TermsAndConditions() {
                             Communication Policy
                         </h2>
                         <p>
-                            YOU agree that The Book Publisher LLC is not liable for any correspondence from email address(es) other than the ones followed by our own domain. <a href="mailto:info@aeropublishing.com">info@aeropublishing.com</a> or/and any toll-free number that is not mentioned on our website. The Book Publisher LLC should not be held responsible for any damage(s) caused by such correspondence. We only take responsibility of any communication through email address(es) under our own domain name or/and via toll free number i.e., already mentioned on The Book Publisher LLC Website.
+                            YOU agree that The Book Publisher LLC is not liable for any correspondence from email address(es) other than the ones followed by our own domain. <a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a> or/and any toll-free number that is not mentioned on our website. The Book Publisher LLC should not be held responsible for any damage(s) caused by such correspondence. We only take responsibility of any communication through email address(es) under our own domain name or/and via toll free number i.e., already mentioned on The Book Publisher LLC Website.
                         </p>
                     </div>
 

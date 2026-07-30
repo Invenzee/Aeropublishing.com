@@ -28,21 +28,6 @@
   --font-shaded: var(--font-shaded-larsh);
 }
 
-/* Force GPU acceleration for animations */
-@media (prefers-reduced-motion: no-preference) {
-  [style*="transform"],
-  [style*="opacity"] {
-    will-change: transform, opacity;
-    transform: translateZ(0);
-  }
-}
-
-/* Optimize transitions */
-.transition-all {
-  transition-property: transform, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -57,6 +42,17 @@ h4,
 h5,
 h6 {
   font-family: var(--font-syne), sans-serif;
+  line-height: 1.15;
+}
+
+h1 .font-shaded,
+h2 .font-shaded,
+h3 .font-shaded,
+h4 .font-shaded,
+h5 .font-shaded,
+h6 .font-shaded {
+  line-height: 1;
+  vertical-align: baseline;
 }
 
 #eapps-instagram-feed-2{

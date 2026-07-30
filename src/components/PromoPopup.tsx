@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Button from "./Button";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -45,7 +46,7 @@ export default function PromoPopup() {
         };
 
         try {
-            const result = await sendEmail(data);
+            const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
             if (result.success) {
                 closePopup();
                 router.push("/thank-you");
@@ -84,7 +85,7 @@ export default function PromoPopup() {
                         <div className="w-full md:w-[50%] bg-brand-primary text-white flex flex-col justify-between relative overflow-hidden max-sm:hidden">
                             {/* OPTIMIZED: eager loading, fetchPriority="high", quality optimized for LCP */}
                             <Image
-                                src="/popup-image.png"
+                                src="/popup-image.webp"
                                 alt="Book cover"
                                 fill
                                 className="w-full h-full object-cover filter drop-shadow-2xl brightness-110"

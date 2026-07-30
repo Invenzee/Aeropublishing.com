@@ -44,22 +44,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Plot Development & Story Structuring",
             description: "We help shape strong story arcs, pacing, and chapter flow to keep readers engaged from start to finish."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Character Creation & World-Building",
             description: "Develop memorable characters and believable worlds that resonate with your target audience."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Dialogue & Narrative Crafting",
             description: "Natural dialogue, compelling narration, and emotionally driven scenes crafted by experienced fiction writers."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Genre-Specific Writing Expertise",
             description: "Our writers specialize in multiple fiction genres—romance, fantasy, sci-fi, thrillers, mystery, and more—ensuring market-aligned storytelling."
         }
@@ -86,7 +86,7 @@ From concept to final manuscript, we combine human storytelling expertise with m
                     "Copyright & ISBN Certificate",
                     "Retain 100% of Your Book Rights"
                 ]}
-                imageSrc="/fiction-writing-1.jpg"
+                imageSrc="/fiction-writing-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -95,7 +95,7 @@ From concept to final manuscript, we combine human storytelling expertise with m
                 boldTitle=' Services Include'
                 description=''
                 features={features}
-                imageUrl='/fiction-writing-3.jpg'
+                imageUrl='/fiction-writing-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Fiction Writing with Aero?"
@@ -137,7 +137,7 @@ From concept to final manuscript, we combine human storytelling expertise with m
                 }}
                 description="Turn your ideas into a professionally written fiction book with Aero Publishing. We guide you through every step—from early brainstorming to a finished manuscript—ensuring your story is immersive, well-structured, and reader-ready.
                 Our collaborative process ensures your voice remains authentic while meeting modern fiction market expectations."
-                imageSrc="/fiction-writing-2.JPG"
+                imageSrc="/fiction-writing-2.webp"
                 isReversed={true}
                 subtitle=""
             />

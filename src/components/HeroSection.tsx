@@ -5,13 +5,14 @@ import Button from "./Button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 
 const badges = [
-    "/hero-badge-1.png",
-    // "/hero-badge-2.png",
-    "/hero-badge-3.png",
-    "/hero-badge-4.png",
+    "/hero-badge-1.webp",
+    "/hero-badge-2.webp",
+    "/hero-badge-3.webp",
+    "/hero-badge-4.webp",
 ]
 
 export default function HeroSection() {
@@ -52,7 +53,7 @@ export default function HeroSection() {
         };
 
         try {
-            const result = await sendEmail(data);
+            const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
             console.log(result)
             console.log(result.success)
             if (result.success) {
@@ -77,7 +78,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center">
+        <section className="relative min-h-screen flex items-center pt-[120px] overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center">
             <div className="max-w-[1140px] mx-auto my-24 relative z-10 w-full flex gap-12 items-start max-sm:flex-col max-sm:my-12 max-sm:px-6">
 
                 {/* Left Column: Content */}
@@ -87,8 +88,8 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="space-y-2"
                 >
-                    <h1 className="text-[60px] font-syne font-semibold leading-[1] text-brand-primary max-sm:text-[40px] max-sm:pt-8">
-                        <span className="font-shaded font-[300] text-brand-secondary mr-3 text-[65px] max-sm:text-[45px]">Trusted</span> Partner for Self-Publishing Success
+                    <h1 className="text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px] max-sm:pt-8">
+                        <span className="font-shaded font-[300] text-brand-secondary mr-3 text-[56px] max-sm:text-[42px]">Trusted</span> Partner for Self-Publishing Success
                     </h1>
 
                     <p className="text-black font-poppins text-sm leading-relaxed max-w-lg max-sm:text-[14px]">
@@ -104,7 +105,7 @@ export default function HeroSection() {
 
                     <div className="flex flex-wrap gap-4 pt-4">
                         <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                            <a href="tel:+13108350771">310 835 0771</a>
+                            <a href="tel:+14242823304">+1424 282 3304</a>
                         </Button>
                         <Button
                             variant="secondary"
@@ -134,7 +135,14 @@ export default function HeroSection() {
                                 name="name"
                                 type="text"
                                 required
-                                placeholder="First Name"
+                                placeholder="Name"
+                                className="w-full h-14 px-6 bg-transparent border border-[#818181] focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all font-poppins"
+                            />
+                            <input
+                                name="email"
+                                type="email"
+                                required
+                                placeholder="Email"
                                 className="w-full h-14 px-6 bg-transparent border border-[#818181] focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all font-poppins"
                             />
                             <input
@@ -142,13 +150,6 @@ export default function HeroSection() {
                                 type="tel"
                                 required
                                 placeholder="Phone Number"
-                                className="w-full h-14 px-6 bg-transparent border border-[#818181] focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all font-poppins"
-                            />
-                            <input
-                                name="email"
-                                type="email"
-                                required
-                                placeholder="Email Address"
                                 className="w-full h-14 px-6 bg-transparent border border-[#818181] focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-all font-poppins"
                             />
                             <textarea

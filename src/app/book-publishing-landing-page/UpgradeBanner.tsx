@@ -12,7 +12,7 @@ export default function UpgradeBanner() {
                 {/* Left Content */}
                 <div className="w-full md:w-[60%] flex flex-col items-start">
 
-                    <h2 className="text-[40px] font-syne font-medium leading-[1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
+                    <h2 className="text-[40px] font-syne font-medium leading-[1.1] text-white mb-8 max-sm:text-[28px] max-sm:text-center">
                         Let’s Upgrade Your Book From “Finished” To <span className="text-brand-secondary font-shaded max-sm:text-[40px] text-[50px] font-[300] mt-4"> “Publish-Ready”</span>
                     </h2>
 
@@ -23,7 +23,7 @@ export default function UpgradeBanner() {
                     {/* Buttons as requested */}
                     <div className="flex flex-wrap gap-4 pt-4">
                         <Button font="poppins" variant="secondary" className="max-sm:text-[14px] max-sm:px-4">
-                            <a href="tel:+13108350771">310 835 0771</a>
+                            <a href="tel:+14242823304">+1424 282 3304</a>
                         </Button>
                         <Button
                             variant="secondary"
@@ -40,7 +40,7 @@ export default function UpgradeBanner() {
                     <div className="relative w-full max-w-[320px] aspect-3/4 transform rotate-2">
                         {/* Placeholder. Update to the 'Between Love and Loathing' composite book image later */}
                         <Image
-                            src="/book-landing-page-9.png"
+                            src="/book-landing-page-9.webp"
                             alt="Publish Ready Books"
                             fill
                             className="object-contain drop-shadow-2xl"

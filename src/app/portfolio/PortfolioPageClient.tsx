@@ -50,42 +50,42 @@ export default function page() {
     const books = [
         {
             id: 1,
-            image: "/book-landing-page-11.png",
+            image: "/book-landing-page-11.webp",
             title: "Book 1"
         },
         {
             id: 2,
-            image: "/book-landing-page-4.png",
+            image: "/book-landing-page-4.webp",
             title: "Book 2"
         },
         {
             id: 3,
-            image: "/book-landing-page-5.png",
+            image: "/book-landing-page-5.webp",
             title: "Book 3"
         },
         {
             id: 4,
-            image: "/book-landing-page-6.png",
+            image: "/book-landing-page-6.webp",
             title: "Book 4"
         },
         {
             id: 5,
-            image: "/book-landing-page-7.png",
+            image: "/book-landing-page-7.webp",
             title: "Book 5"
         },
         {
             id: 6,
-            image: "/book-landing-page-8.png",
+            image: "/book-landing-page-8.webp",
             title: "Book 6"
         },
         {
             id: 7,
-            image: "/book-landing-page-9.png",
+            image: "/book-landing-page-9.webp",
             title: "Book 7"
         },
         {
             id: 8,
-            image: "/book-landing-page-10.png",
+            image: "/book-landing-page-10.webp",
             title: "Book 8"
         }
     ];

@@ -63,7 +63,7 @@ export default function PricingSection() {
     }, []);
 
     return (
-        <section className="py-20 bg-white overflow-hidden bg-[url('/why-aero-gradient-bg.png')] bg-contain bg-no-repeat bg-left">
+        <section className="py-20 bg-white overflow-hidden bg-[url('/why-aero-gradient-bg.webp')] bg-contain bg-no-repeat bg-left">
             <div className="max-w-[1140px] mx-auto px-6">
 
                 {/* Header Section */}
@@ -76,9 +76,9 @@ export default function PricingSection() {
                         className="relative inline-block"
                     >
                         <ImageDecorator />
-                        <h2 className="text-4xl md:text-5xl font-syne font-semibold text-brand-primary mb-12 relative z-10">
+                        <h2 className="text-4xl md:text-5xl font-syne font-semibold text-brand-primary mb-12 relative z-10 leading-[1.1]">
                             How many words does {isMobile ? "" : <br />}
-                            your <span className="text-brand-secondary italic font-shaded font-[300] text-[60px] max-sm:text-[40px]">book</span> have?
+                            your <span className="text-brand-secondary italic font-shaded font-[300] text-[50px] max-sm:text-[36px]">book</span> have?
                         </h2>
                     </motion.div>
 

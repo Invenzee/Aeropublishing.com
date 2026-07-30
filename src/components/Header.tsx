@@ -16,9 +16,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { name: "Editing", href: "/book-editing" },
-    { name: "Publishing", href: "/book-publishing" },
-    { name: "Marketing", href: "/book-marketing" },
+    { name: "Book Editing", href: "/book-editing" },
+    { name: "Book Publishing", href: "/book-publishing" },
+    { name: "Book Marketing", href: "/book-marketing" },
     {
         name: "Services",
         href: "/services",
@@ -26,19 +26,19 @@ const navItems: NavItem[] = [
             { name: "Amazon Publishing", href: "/amazon-publishing" },
             { name: "Audio Book Narration", href: "/audio-book-narration" },
             { name: "Authors Website", href: "/authors-website" },
-            { name: "Book Formatting", href: "/book-formatting" },
             { name: "Book Cover Design", href: "/book-cover-design" },
+            { name: "Book Formatting", href: "/book-formatting" },
             { name: "Book Printing", href: "/book-printing" },
             { name: "Children Book", href: "/children-book" },
             { name: "Ebook Writing", href: "/ebook-writing" },
-            { name: "Ghostwriting", href: "/ghostwriting" },
             { name: "Fiction Writing", href: "/fiction-writing" },
+            { name: "Ghostwriting", href: "/ghost-writing" },
             { name: "Proof Reading", href: "/proof-reading" },
             { name: "Video Trailer", href: "/video-trailer" },
         ]
     },
-    { name: "About Us", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "About Us", href: "/about" },
     { name: "Blog", href: "/blog" },
 ];
 
@@ -57,15 +57,15 @@ export default function Header() {
             <motion.header
                 className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 max-sm:overflow-x-hidden"
             >
-                <div className="w-full h-10 bg-brand-primary flex items-center justify-between px-36 max-sm:px-4">
+                <div className="w-full h-10 bg-brand-primary flex items-center justify-between px-8 lg:px-24 max-sm:px-4">
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2">
                             <Phone size={14} className="text-white cursor-pointer" />
-                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="tel:+13108350771">310 835 0771</a></span>
+                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="tel:+14242823304">+1424 282 3304</a></span>
                         </div>
                         <div className="flex items-center gap-1">
                             <Mail size={14} className="text-white cursor-pointer" />
-                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden">info@aeropublishing.us</span>
+                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a></span>
                         </div>
                     </div>
                     <div className="flex gap-4">
@@ -105,11 +105,11 @@ export default function Header() {
                     </div>
 
                 </div>
-                <div className="max-w-[1140px] mx-auto px-6 sm:px-6 lg:px-8">
+                <div className="max-w-[1140px] mx-auto px-6 sm:px-6 lg:px-0">
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                            <Image src="/logo.png" alt="Logo" width={100} height={100} onClick={() => window.location.href = "/"} />
+                            <Image src="/logo.webp" alt="Logo" width={100} height={100} onClick={() => window.location.href = "/"} />
                         </div>
 
                         {/* Desktop Navigation */}
@@ -147,7 +147,7 @@ export default function Header() {
                                                     transition={{ duration: 0.2, ease: "easeOut" }}
                                                     className="absolute top-full -left-6 w-64 pt-6 bg-transparent"
                                                 >
-                                                    <div className="bg-white max-h-100 rounded-xl shadow-xl border border-gray-100 p-2 overflow-y-auto">
+                                                    <div className="bg-white max-h-96 rounded-xl shadow-xl border border-gray-100 p-2 overflow-y-auto">
                                                         {item.subItems.map((subItem, i) => (
                                                             <Link
                                                                 key={subItem.name}
@@ -237,7 +237,7 @@ export default function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-30 right-0 bottom-0 w-[280px] bg-white shadow-2xl z-40 md:hidden overflow-y-auto"
+                            className="fixed top-[120px] right-0 bottom-0 w-[280px] bg-white shadow-2xl z-40 md:hidden overflow-y-auto"
                         >
                             <div className="p-6 space-y-6">
                                 {/* Mobile Navigation */}

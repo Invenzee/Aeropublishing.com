@@ -1,12 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 
 export default function FAQSection({ faqs }: { faqs: { id: number; question: string; answer: string }[] }) {
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
     const [activeId, setActiveId] = useState<number | null>(2); // Default open second item as in image
 
     return (
@@ -14,12 +12,13 @@ export default function FAQSection({ faqs }: { faqs: { id: number; question: str
             {/* Left Side Glow Effect */}
             <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#D4E9F7] rounded-full blur-[120px] opacity-60 -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6 relative z-10 flex max-lg:flex-col gap-12 lg:gap-24">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10 flex max-lg:flex-col gap-12 lg:gap-24">
 
                 {/* Left Side: Header */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="lg:w-1/3 pt-8"
                 >
@@ -35,7 +34,8 @@ export default function FAQSection({ faqs }: { faqs: { id: number; question: str
                 {/* Right Side: Accordion */}
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                     className="lg:w-2/3 w-full"
                 >

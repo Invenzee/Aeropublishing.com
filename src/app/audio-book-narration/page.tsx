@@ -43,22 +43,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Professional Voice Talent Casting",
             description: "We help select the right narrator for your book based on genre, tone, and audience. Our professional voice talent brings your story to life with clarity, emotion, and consistency."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Studio-Quality Recording & Production",
             description: "Your audiobook is recorded and produced using industry-standard equipment and techniques. We focus on clean audio, balanced sound, and a professional listening experience from start to finish."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Audio Editing & Mastering",
             description: "We carefully edit and master your audiobook to ensure smooth pacing, clear narration, and consistent audio levels—delivering a polished final product ready for distribution."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "ACX & Audible Compliance Formatting",
             description: "Your audiobook is prepared to meet ACX, Audible, and major platform requirements. We ensure proper formatting, technical compliance, and readiness for release in the U.S. and global marketplaces."
         }
@@ -85,7 +85,7 @@ export default function page() {
                     "Professional Audio Production Support",
                     "100% Ownership of Your Audiobook Rights"
                 ]}
-                imageSrc="/audio-book-1.jpg"
+                imageSrc="/audio-book-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -94,7 +94,7 @@ export default function page() {
                 boldTitle='Services Include'
                 description='Publishing doesn’t need to be complicated. We offer a clear, honest, and author-focused audiobook experience—keeping you informed, in control, and confident at every stage while delivering professional results you can trust.'
                 features={features}
-                imageUrl='/audio-book-3.jpg'
+                imageUrl='/audio-book-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Audio Book Narration with Aero?"
@@ -137,7 +137,7 @@ export default function page() {
                 description="Transform your book into a compelling listening experience with Aero Publishing’s audiobook narration services. We help authors connect with new audiences by producing high-quality audiobooks that are engaging, professional, and platform-ready.
                 Whether you’re expanding an existing title or launching an audiobook for the first time, our team provides expert guidance and reliable production—so your story is heard, not just read.
                 "
-                imageSrc="/audio-book-2.jpg"
+                imageSrc="/audio-book-2.webp"
                 isReversed={true}
                 subtitle=""
             />

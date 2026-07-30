@@ -1,25 +1,19 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function WhyAeroSection({ features, highlightTitle, normalTitle, boldTitle, description, imageUrl = "/why-aero-book.png", eyebrowTitle = "Why Aero" }: { features: any[], highlightTitle: string, normalTitle: string, boldTitle: string, description: string, imageUrl?: string, eyebrowTitle?: string }) {
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
+export default function WhyAeroSection({ features, highlightTitle, normalTitle, boldTitle, description, imageUrl = "/why-aero-book.webp", eyebrowTitle = "Why Aero", noImageRadius = false, imageContain = false, imageWidthPercent }: { features: any[], highlightTitle: string, normalTitle: string, boldTitle: string, description: string, imageUrl?: string, eyebrowTitle?: string, noImageRadius?: boolean, imageContain?: boolean, imageWidthPercent?: number }) {
     return (
         <section
             className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12 max-sm:overflow-x-hidden"
             style={{ backgroundImage: "url('/why-aero-bg.webp')" }}
         >
-            <div className="absolute inset-0 left-0 bottom-0">
-                <Image src="/why-aero-gradient-bg.png" alt="Why Aero" width={500} height={500} className="object-contain bg-no-repeat" loading="lazy" quality={75} />
-            </div>
-            <div ref={containerRef} className="max-w-[1140px] mx-auto max-sm:px-4 relative">
+            <div className="max-w-[1140px] mx-auto max-sm:px-4 relative">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="space-y-3 flex flex-col items-center mb-16"
                 >
@@ -27,7 +21,7 @@ export default function WhyAeroSection({ features, highlightTitle, normalTitle, 
                         {eyebrowTitle}
                     </p>
                     <h2 className="text-[50px] text-brand-primary text-center font-syne font-bold leading-[1.1] max-sm:text-[32px] max-w-2xl">
-                        <span className="text-brand-secondary font-shaded font-[300] text-[60px] max-sm:text-[40px] leading-[.8]">{highlightTitle}</span>{" "}
+                        <span className="text-brand-secondary font-shaded font-[300] text-[50px] max-sm:text-[36px]">{highlightTitle}</span>{" "}
                         {normalTitle && <span className="font-[500]">{normalTitle}</span>}
                         {boldTitle}
                     </h2>
@@ -35,16 +29,17 @@ export default function WhyAeroSection({ features, highlightTitle, normalTitle, 
                         {description}
                     </p>
                 </motion.div>
-                <div className="grid grid-cols-2 gap-16 items-center max-lg:grid-cols-1 max-lg:gap-12">
+                <div className="grid grid-cols-2 gap-16 items-stretch max-lg:grid-cols-1 max-lg:gap-12">
                     {/* Left Column: Content */}
-                    <div className="space-y-8">
+                    <div className="space-y-8 min-h-0">
                         {/* Features List */}
                         <div className="space-y-4">
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, x: -30 }}
-                                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
                                     transition={{
                                         duration: 0.5,
                                         delay: 0.2 + index * 0.1,
@@ -82,21 +77,34 @@ export default function WhyAeroSection({ features, highlightTitle, normalTitle, 
                     {/* Right Column: Image */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{
                             duration: 0.8,
                             delay: 0.3,
                             ease: "easeOut"
                         }}
-                        className="relative max-lg:order-first flex justify-end"
+                        className={`relative max-lg:order-first flex h-full min-h-0 ${imageWidthPercent ? "justify-center max-lg:justify-center" : "justify-end"}`}
                     >
-                        <div className="relative w-[90%] max-sm:w-full rounded-2xl overflow-hidden shadow-2xl">
+                        <div
+                            className={`relative h-full max-lg:h-auto max-lg:aspect-[4/5] max-lg:max-h-[420px] ${
+                                noImageRadius ? "" : "rounded-2xl overflow-hidden shadow-2xl"
+                            }`}
+                            style={imageWidthPercent ? { width: `${imageWidthPercent}%` } : { width: "90%" }}
+                        >
                             <Image
                                 src={imageUrl}
                                 alt="Open book"
-                                width={500}
-                                height={500}
-                                className="w-full rounded-[40px] min-h-[500px] max-sm:min-h-full max-sm:rounded-lg object-cover"
+                                fill
+                                className={`${
+                                    imageContain
+                                        ? "object-contain"
+                                        : "object-cover"
+                                } ${
+                                    noImageRadius
+                                        ? "rounded-none"
+                                        : "rounded-[40px] max-sm:rounded-lg"
+                                }`}
                                 priority
                                 sizes="(max-width: 768px) 400px, 500px"
                                 quality={80}

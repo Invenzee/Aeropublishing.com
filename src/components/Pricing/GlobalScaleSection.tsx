@@ -31,9 +31,9 @@ export default function GlobalScaleSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="flex flex-col items-center text-center space-y-4"
                 >
-                    <h2 className="relative inline-block text-[40px] sm:text-[50px] font-syne font-semibold text-brand-primary leading-[1]">
+                    <h2 className="relative inline-block text-[40px] sm:text-[50px] font-syne font-semibold text-brand-primary leading-[1.1]">
                         <span className="relative z-10">
-                            Want to publish on a <span className="text-brand-secondary italic font-shaded font-[300] text-[50px] sm:text-[60px]">global</span> scale?
+                            Want to publish on a <span className="text-brand-secondary italic font-shaded font-[300] text-[46px] sm:text-[50px]">global</span> scale?
                         </span>
                     </h2>
 

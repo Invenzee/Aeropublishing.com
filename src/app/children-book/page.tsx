@@ -43,27 +43,27 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Story Development for Young Readers",
             description: "We help shape age-appropriate narratives with engaging language, clear structure, and meaningful themes that resonate with children and parents alike."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Professional Illustration & Artwork",
             description: "Collaborate with skilled illustrators to create vibrant, expressive visuals that bring your story to life and capture young imaginations."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Age-Appropriate Editing",
             description: "Our editors ensure tone, vocabulary, pacing, and content are perfectly suited to your target age group—while preserving your unique voice."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Color Layout & Formatting",
             description: "We design visually balanced page layouts optimized for both print and digital formats, ensuring clarity, readability, and visual appeal across all platforms."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Print & Digital Readiness",
             description: "Your children’s book is professionally prepared for distribution across major US and global retailers, in both print and digital marketplaces."
         }
@@ -89,7 +89,7 @@ export default function page() {
                     "Copyright & ISBN Certification",
                     "Retain 100% of Your Book Rights"
                 ]}
-                imageSrc="/children-book-1.jpg"
+                imageSrc="/children-book-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -98,7 +98,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing children’s books doesn’t need to be complicated. We offer a transparent, author-focused experience—keeping you informed, involved, and confident while delivering high-quality results you can trust.'
                 features={features}
-                imageUrl='/children-book-3.jpg'
+                imageUrl='/children-book-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Children’s Book Publishing with Aero?"
@@ -140,7 +140,7 @@ export default function page() {
                 }}
                 description="Turn your idea into a beautifully illustrated children’s book with Aero Publishing’s guided self-publishing experience. Our personalized approach ensures your book is age-appropriate, visually engaging, and professionally produced—without sacrificing creative freedom or royalties.
                 From manuscript upload to global distribution, everything is managed in one place with the support of a dedicated publishing specialist at every stage."
-                imageSrc="/children-book-2.jpg"
+                imageSrc="/children-book-2.webp"
                 isReversed={true}
                 subtitle=""
             />

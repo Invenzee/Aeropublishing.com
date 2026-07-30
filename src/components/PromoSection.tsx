@@ -1,24 +1,22 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Button from "./Button";
-import { X } from "lucide-react";
 import { sendEmail } from "@/app/actions/email";
+import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function PromoSection() {
     const router = useRouter();
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
     return (
         <section className="relative py-20 overflow-hidden max-sm:py-12  overflow-x-hidden">
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6 relative z-10">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="bg-brand-light rounded-[30px] shadow-2xl overflow-hidden flex max-md:flex-col  border border-gray-300"
                 >
@@ -51,7 +49,7 @@ export default function PromoSection() {
                                 if (submitBtn) submitBtn.disabled = true;
 
                                 try {
-                                    const result = await sendEmail(data);
+                                    const result = await sendEmail({ ...data, ...getFormTrackingPayload() });
                                     if (result.success) {
                                         router.push("/thank-you");
                                     } else {
@@ -121,7 +119,7 @@ export default function PromoSection() {
                     {/* Right Side: Image */}
                     <div className="w-1/2 relative bg-[#1A2E35] max-md:w-full min-h-[300px]">
                         <Image
-                            src="/popup-image.png"
+                            src="/popup-image.webp"
                             alt="Book cover"
                             className="w-full h-full object-cover filter drop-shadow-2xl brightness-110"
                             width={500}

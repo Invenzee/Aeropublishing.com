@@ -13,12 +13,11 @@ export default function BlogSection() {
         ...post,
         readTime: calculateReadTime(post.content)
     }));
-    
-    // Get only first 3 posts for homepage
-    const displayPosts = postsWithReadTime.slice(0, 3);
-    
+
+    const displayPosts = postsWithReadTime;
+
     return (
-        <section className="py-20 bg-white bg-[url('/why-aero-gradient-bg.png')] bg-contain bg-no-repeat bg-left">
+        <section className="py-20 bg-white bg-[url('/why-aero-gradient-bg.webp')] bg-contain bg-no-repeat bg-left">
             <div className="max-w-[1140px] mx-auto px-6">
 
                 <h1 className="text-3xl md:text-6xl max-auto mb-12 leading-[1.2] font-syne font-semibold text-brand-primary text-center">
@@ -31,7 +30,7 @@ export default function BlogSection() {
                     <motion.div
                         initial={{ opacity: 0, x: -50, scale: 0.95 }}
                         whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.8 }}
                         className="flex-1 w-full"
                     >
@@ -50,7 +49,7 @@ export default function BlogSection() {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex-1 space-y-3"
                     >
@@ -81,13 +80,13 @@ export default function BlogSection() {
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group flex flex-col h-full"
                         >
                             {/* Image Container */}
-                            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] mb-6 shadow-md group-hover:shadow-xl transition-all duration-300">
-                                <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105"  />
+                            <div className="relative rounded-4xl overflow-hidden aspect-4/3 mb-6 shadow-md group-hover:shadow-xl transition-all duration-300">
+                                <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
 
                                 {/* Badge */}
                                 <div className="absolute top-4 right-4">

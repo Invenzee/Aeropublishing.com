@@ -36,7 +36,7 @@ export default function WhyChooseFrontline() {
                         {/* Main background image of the book flatlay */}
                         <div className="relative w-full max-w-[480px] aspect-4/5 lg:mr-10">
                             <Image
-                                src="/book-landing-page-12.jpg" // placeholder for "Shadow's Mystery" book flatlay
+                                src="/book-landing-page-12.webp" // placeholder for "Shadow's Mystery" book flatlay
                                 alt="Book publishing process"
                                 fill
                                 className="object-cover"
@@ -46,7 +46,7 @@ export default function WhyChooseFrontline() {
                             <div className="absolute -bottom-16 -left-4 md:-left-12 w-[70%] aspect-4/3 bg-[#21432c] p-2 shadow-2xl z-10">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/blog-2.jpg" // placeholder for hands writing flatlay
+                                        src="/blog-2.webp" // placeholder for hands writing flatlay
                                         alt="Writing process"
                                         fill
                                         className="object-cover"
@@ -59,7 +59,7 @@ export default function WhyChooseFrontline() {
                     {/* Right Content */}
                     <div className="w-full lg:w-1/2 flex flex-col items-start z-20">
 
-                        <h2 className="text-[40px] font-syne font-medium leading-[1] text-brand-primary mb-8 max-sm:text-[28px] max-sm:text-center">
+                        <h2 className="text-[40px] font-syne font-medium leading-[1.1] text-brand-primary mb-8 max-sm:text-[28px] max-sm:text-center">
                             Why Authors Choose  <span className="text-brand-secondary font-shaded max-sm:text-[40px] text-[50px] font-[300]">Aero Publishing</span>
 
                         </h2>
@@ -82,7 +82,7 @@ export default function WhyChooseFrontline() {
                         {/* Buttons as requested */}
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+13108350771">310 835 0771</a>
+                                <a href="tel:+14242823304">+1424 282 3304</a>
                             </Button>
                             <Button
                                 variant="secondary"

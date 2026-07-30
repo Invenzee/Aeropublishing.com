@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Handshake, Copyright, UserCheck, Store, Share2, Target } from "lucide-react";
 
 const features = [
@@ -20,7 +19,7 @@ const features = [
     {
         icon: UserCheck,
         title: "Genre-Specialized Editors and Designers",
-        description: "Your book is matched with editors and designers who understand your genre, audience expectations, and market positioning.",
+        description: "All required publishing identifiers and compliance steps are handled correctly, ensuring your book meets industry and retailer standards.",
         highlight: false
     },
     {
@@ -44,9 +43,6 @@ const features = [
 ];
 
 export default function WhyChooseUsSection() {
-    const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
     return (
         <section className="relative py-20 bg-brand-light overflow-hidden max-sm:py-12  overflow-x-hidden">
             {/* Subtle background glow effect if needed, similar to image light blue tint */}
@@ -54,15 +50,16 @@ export default function WhyChooseUsSection() {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-[100px] opacity-30 pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
 
-            <div ref={containerRef} className="max-w-[1140px] mx-auto px-6 relative z-10">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-[50px] mb-4 font-syne font-medium leading-[1] text-brand-primary max-sm:text-[32px]">
+                    <h2 className="text-[50px] mb-4 font-syne font-medium leading-[1.1] text-brand-primary max-sm:text-[32px]">
                           Why Authors Choose<span className="text-brand-secondary font-shaded font-[400]"> Aero Publishing</span> Over <span className="font-bold">Generic Publishing Platforms</span>
                     </h2>
                     <p className="text-black text-center font-poppins text-sm leading-relaxed max-w-4xl max-sm:text-[14px] mx-auto">
@@ -76,7 +73,8 @@ export default function WhyChooseUsSection() {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.5 }}
                             whileHover={{ y: -10 }}
                             className={`rounded-[30px] p-8 text-center flex flex-col items-center transition-all duration-300 shadow-sm hover:shadow-xl hover:bg-brand-primary hover:text-white group cursor-pointer

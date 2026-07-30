@@ -42,22 +42,22 @@ export default function page() {
 
     const features = [
         {
-            icon: "/feature-icon-1.png",
+            icon: "/feature-icon-1.webp",
             title: "Grammar, Spelling & Punctuation Corrections",
             description: "We identify and correct grammatical errors, spelling mistakes, punctuation issues, and typographical inconsistencies to ensure your manuscript reads smoothly and professionally."
         },
         {
-            icon: "/feature-icon-2.png",
+            icon: "/feature-icon-2.webp",
             title: "Sentence Clarity & Consistency Review",
             description: "Our editors refine sentence flow, improve readability, and ensure consistency in tone, tense, and style — without altering your authorial voice."
         },
         {
-            icon: "/feature-icon-3.png",
+            icon: "/feature-icon-3.webp",
             title: "Formatting & Layout Error Checks",
             description: "We review spacing, indentation, headings, page breaks, and layout inconsistencies to ensure your book meets industry formatting standards."
         },
         {
-            icon: "/feature-icon-4.png",
+            icon: "/feature-icon-4.webp",
             title: "Final Pre-Publication Quality Assurance",
             description: "Before distribution, your manuscript undergoes a final quality check to confirm it is polished, error-free, and ready for print and digital platforms in the U.S. and beyond."
         }
@@ -85,7 +85,7 @@ export default function page() {
                     "Copyright & ISBN Support Available",
                     "Retain 100% Ownership of Your Work"
                 ]}
-                imageSrc="/proof-reading-1.jpg"
+                imageSrc="/proof-reading-1.webp"
                 hasFeatures={true}
             />
             <WhyAeroSection
@@ -94,7 +94,7 @@ export default function page() {
                 boldTitle=' Services Include'
                 description='Publishing doesn’t have to feel overwhelming. Our proofreading services are designed to give authors clarity, control, and confidence — delivering professional results without unnecessary complexity.'
                 features={features}
-                imageUrl='/proof-reading-3.jpg'
+                imageUrl='/proof-reading-3.webp'
             />
             <BenefitsGridSection
                 subtitle="Why Proof Reading with Aero?"
@@ -137,7 +137,7 @@ export default function page() {
                 description="Your manuscript deserves a final review that leaves no room for doubt. Aero Publishing provides thorough proofreading that prepares your book for professional release — in print and digital formats.
                 We review your manuscript with precision, correcting surface-level errors while ensuring consistency across chapters, headings, dialogue, and formatting. Our goal is simple: deliver a clean, credible, and polished book that readers trust.
                 With Aero Publishing, you’re supported by a dedicated team that understands both storytelling and publishing standards — guiding your book confidently to the finish line."
-                imageSrc="/proof-reading-2.jpg"
+                imageSrc="/proof-reading-2.webp"
                 isReversed={true}
                 subtitle=""
             />

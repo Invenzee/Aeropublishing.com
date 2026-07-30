@@ -12,7 +12,7 @@ export default function JourneySection() {
                         {/* We use an existing book image as a placeholder. The user can swap to the exact "History's Unsolved Mysteries" if needed. */}
                         <div className="relative w-full max-w-[800px] aspect-4/3">
                             <Image
-                                src="/book-landing-page-hero.png"
+                                src="/book-landing-page-hero.webp"
                                 alt="Book Publishing Journey"
                                 fill
                                 className="object-contain"
@@ -22,9 +22,9 @@ export default function JourneySection() {
 
                     {/* Right: Text Content */}
                     <div className="space-y-6 lg:pl-4 z-10 pt-16 lg:pt-0">
-                        <h2 className="text-4xl md:text-[40px] leading-[1] font-syne font-semibold text-brand-primary ">
+                        <h2 className="text-4xl md:text-[40px] leading-[1.1] font-syne font-semibold text-brand-primary ">
                             Are You Ready To Take Your {" "}
-                            <span className="text-brand-secondary font-shaded font-[300] text-5xl md:text-[50px] ">
+                            <span className="text-brand-secondary font-shaded font-[300] text-[44px] md:text-[46px] ">
                                 Publishing Journey
                             </span> {" "}
                             <br className="max-sm:hidden" />
@@ -39,7 +39,7 @@ export default function JourneySection() {
                         {/* Buttons as requested */}
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+13108350771">310 835 0771</a>
+                                <a href="tel:+14242823304">+1424 282 3304</a>
                             </Button>
                             <Button
                                 variant="secondary"

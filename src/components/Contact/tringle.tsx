@@ -62,7 +62,7 @@ export default function CounterSection() {
                 }}
             >
                 <Image
-                    src="/triangle.png"
+                    src="/triangle.webp"
                     alt="Triangle decoration"
                     className="w-full h-full object-contain"
                     width={100}

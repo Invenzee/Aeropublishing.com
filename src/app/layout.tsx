@@ -225,7 +225,7 @@ export default function RootLayout({
         /> */}
 
 
-        <Script
+        {/* <Script
           id="tawk-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
@@ -246,7 +246,7 @@ s0.parentNode.insertBefore(s1,s0);
               };
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );

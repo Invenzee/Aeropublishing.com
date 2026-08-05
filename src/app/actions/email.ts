@@ -94,11 +94,16 @@ export async function sendEmail(formData: EmailFormData) {
 
         const GMAIL_USER = process.env.GMAIL_USER;
         const GMAIL_PASS = process.env.GMAIL_PASS;
-        const GMAIL_TO = process.env.GMAIL_TO || GMAIL_USER;
+        const GMAIL_TO = (process.env.GMAIL_TO || GMAIL_USER || "")
+            .split(",")
+            .map((address) => address.trim())
+            .filter(Boolean);
 
         if (!GMAIL_USER || !GMAIL_PASS) {
             throw new Error("Email service is not configured.");
         }
+
+        const recipients = GMAIL_TO.length > 0 ? GMAIL_TO : [GMAIL_USER];
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -146,7 +151,7 @@ User Agent: ${user_agent || "N/A"}
 
         const mailOptions = {
             from: `Aero Publishing <${GMAIL_USER}>`,
-            to: GMAIL_TO,
+            to: recipients,
             replyTo: toDisplayValue(email) !== "N/A" ? String(email) : GMAIL_USER,
             subject: `New Lead: ${toDisplayValue(formType)}${utm_campaign ? ` | ${utm_campaign}` : ""}`,
             text: `

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Button from "./Button";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { sendEmail } from "@/app/actions/email";
 import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,6 @@ const badges = [
 
 export default function HeroSection() {
     const router = useRouter();
-    const [isMobile, setIsMobile] = useState(false);
     const [status, setStatus] = useState<{
         submitting: boolean;
         success: boolean | null;
@@ -27,16 +26,6 @@ export default function HeroSection() {
         success: null,
         message: "",
     });
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, []);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -83,12 +72,12 @@ export default function HeroSection() {
 
                 {/* Left Column: Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-2"
+                    className="space-y-2 w-full min-w-0"
                 >
-                    <h1 className="text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px] max-sm:pt-8">
+                    <h1 className="text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px] max-sm:pt-8 break-words">
                         <span className="font-shaded font-[300] text-brand-secondary mr-3 text-[56px] max-sm:text-[42px]">Trusted</span> Partner for Self-Publishing Success
                     </h1>
 
@@ -97,9 +86,18 @@ export default function HeroSection() {
                     </p>
 
                     {/* Badges Placeholder */}
-                    <div className="flex gap-4 items-center py-2">
+                    <div className="flex gap-2 sm:gap-4 items-center py-2 max-w-full">
                         {badges.map((badge, i) => (
-                            <Image key={i} src={badge} alt="Badge" width={i === 1 && !isMobile ? 70 : isMobile ? 60 : 80} height={i === 1 && !isMobile ? 70 : isMobile ? 60 : 80} priority={i === 0} quality={80} />
+                            <Image
+                                key={i}
+                                src={badge}
+                                alt="Badge"
+                                width={80}
+                                height={80}
+                                className={`h-auto w-[48px] sm:w-[60px] md:w-20 object-contain shrink-0 ${i === 1 ? "md:w-[70px]" : ""}`}
+                                priority={i === 0}
+                                quality={80}
+                            />
                         ))}
                     </div>
 
@@ -119,10 +117,10 @@ export default function HeroSection() {
 
                 {/* Right Column: form */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="flex flex-col items-center lg:items-end w-full mt-4"
+                    className="flex flex-col items-center lg:items-end w-full min-w-0 mt-4"
                 >
                     <div className="w-full max-w-md">
                         <div className="text-center mb-6">

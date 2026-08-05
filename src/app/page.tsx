@@ -68,7 +68,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full max-w-full overflow-x-hidden">
       <HeroSection />
       <CounterSection />
       <WhyAeroSection description="" highlightTitle="Publishing" normalTitle="Your Book Should Be " boldTitle="Simple, Transparent, and Author-First" features={features} />

@@ -169,7 +169,7 @@ export default function AuthorsShowcaseSection() {
             </div>
 
             {/* Scroll Container */}
-            <div ref={containerRef} className="flex flex-col gap-6 relative pb-10">
+            <div ref={containerRef} className="flex flex-col gap-6 relative pb-10 overflow-x-hidden">
 
                 {/* Left Gradient Overlay - using brand-light color #F3F3F3 */}
                 <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-[#F3F3F3] to-transparent z-20 pointer-events-none" />

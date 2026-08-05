@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
@@ -85,27 +85,29 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-3.webp" />
       </head>
       <body
-        className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased`}
+        className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased overflow-x-hidden`}
       >
-        <SiteScripts />
+        <div className="w-full max-w-full overflow-x-hidden">
+          <SiteScripts />
 
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=1595522894901835&ev=PageView&noscript=1`}
-            alt="facebook-pixel"
-          />
-        </noscript>
-        <Suspense fallback={null}>
-          <TrackingProvider />
-        </Suspense>
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=1595522894901835&ev=PageView&noscript=1`}
+              alt="facebook-pixel"
+            />
+          </noscript>
+          <Suspense fallback={null}>
+            <TrackingProvider />
+          </Suspense>
 
-        <Header />
-        {children}
-        <Footer />
-        <PromoPopup />
+          <Header />
+          {children}
+          <Footer />
+          <PromoPopup />
+        </div>
       </body>
     </html>
   );

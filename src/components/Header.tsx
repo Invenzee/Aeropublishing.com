@@ -55,10 +55,10 @@ export default function Header() {
     return (
         <>
             <motion.header
-                className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 max-sm:overflow-x-hidden"
+                className="fixed top-0 left-0 right-0 z-50 w-full max-w-full bg-white/80 backdrop-blur-md border-b border-gray-100 overflow-x-hidden"
             >
-                <div className="w-full h-10 bg-brand-primary flex items-center justify-between px-8 lg:px-24 max-sm:px-4">
-                    <div className="flex items-center gap-6">
+                <div className="w-full h-10 bg-brand-primary flex items-center justify-between px-4 sm:px-8 lg:px-24">
+                    <div className="flex items-center gap-2 sm:gap-6 shrink-0">
                         <div className="flex items-center gap-2">
                             <Phone size={14} className="text-white cursor-pointer" />
                             <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="tel:+14242823304">+1424 282 3304</a></span>
@@ -68,7 +68,7 @@ export default function Header() {
                             <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a></span>
                         </div>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-2 sm:gap-4 shrink-0">
                         <a href="https://www.facebook.com/people/Aero-Publishing/100069250598189/" className="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all duration-300 group">
                             <FaFacebookF size={15} className="group-hover:scale-110 transition-transform text-white group-hover:text-brand-primary" />
                         </a>

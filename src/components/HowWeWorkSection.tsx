@@ -52,7 +52,7 @@ export default function HowWeWorkSection() {
 
     return (
         <section
-            className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12  overflow-x-hidden"
+            className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12 w-full max-w-full overflow-x-clip overflow-hidden"
             style={{ backgroundImage: "url('/why-aero-bg.webp')" }}
         >
             <div className="max-w-[1140px] mx-auto px-6">
@@ -96,7 +96,7 @@ export default function HowWeWorkSection() {
                                     }`}
                             >
                                 <div className="text-xs opacity-70 mb-1">Step {step.id}</div>
-                                <div className="whitespace-nowrap">{step.label}</div>
+                                <div className="max-sm:whitespace-normal sm:whitespace-nowrap">{step.label}</div>
                             </button>
                         ))}
                     </motion.div>

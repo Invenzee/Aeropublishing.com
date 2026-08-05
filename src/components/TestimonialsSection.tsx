@@ -64,13 +64,13 @@ export default function TestimonialsSection() {
                 <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start mb-16">
 
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                        className="relative lg:w-1/2 w-full flex justify-center lg:justify-end pr-8"
+                        className="relative lg:w-1/2 w-full min-w-0 flex justify-center lg:justify-end lg:pr-8"
                     >
-                        <div className="absolute top-0 right-24 w-[90%] h-[90%] bg-brand-secondary rounded-2xl -z-10 translate-x-4 -translate-y-4 shadow-lg" />
+                        <div className="absolute top-0 right-8 lg:right-24 w-[90%] h-[90%] bg-brand-secondary rounded-2xl -z-10 translate-y-[-1rem] shadow-lg max-w-[500px]" />
 
                         <div className="relative w-full max-w-[500px] aspect-[6/5] rounded-2xl overflow-hidden shadow-2xl z-10">
                             <Image
@@ -87,16 +87,14 @@ export default function TestimonialsSection() {
 
                     {/* Right Side: Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                        className="lg:w-1/2 w-full space-y-8 pl-4 mb-14"
+                        className="lg:w-1/2 w-full min-w-0 space-y-8 pl-0 lg:pl-4 mb-14"
                     >
-                        {/* Speech Bubble & Profile */}
-                        <div className="flex items-center gap-6">
-                            {/* Speech Bubble */}
-                            <div className="rounded-2xl  -mr-8 z-20 bg-white p-4 border border-gray-300 relative max-w-[250px]">
+                        <div className="flex items-center gap-4 max-sm:flex-col max-sm:items-start">
+                            <div className="rounded-2xl z-20 bg-white p-4 border border-gray-300 relative max-w-[250px]">
                                 <p className="text-sm font-syne text-brand-black">
                                     Helping  <span className="text-brand-secondary font-shaded !text-lg">Authors</span> Turn Manuscripts Into Published Books
                                 </p>

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { sendEmail } from "@/app/actions/email";
 import { getFormTrackingPayload } from "@/lib/tracking";
+import { openZendeskChat } from "@/lib/zendesk";
 
 const badges = [
     "/hero-badge-1.webp",
@@ -99,7 +100,7 @@ export default function HeroSection({ title, description, showButton = true, cla
                             <Button
                                 variant="secondary"
                                 className="max-sm:text-[14px] max-sm:px-4"
-                                onClick={() => (window as any).Tawk_API?.maximize()}
+                                onClick={openZendeskChat}
                             >
                                 Chat Now
                             </Button>

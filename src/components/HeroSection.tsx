@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { sendEmail } from "@/app/actions/email";
 import { getFormTrackingPayload } from "@/lib/tracking";
+import { openZendeskChat } from "@/lib/zendesk";
 import { useRouter } from "next/navigation";
 
 const badges = [
@@ -67,8 +68,8 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center pt-[120px] overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center">
-            <div className="max-w-[1140px] mx-auto my-24 relative z-10 w-full flex gap-12 items-start max-sm:flex-col max-sm:my-12 max-sm:px-6">
+        <section className="relative min-h-screen flex items-center pt-[120px] overflow-x-clip overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center w-full max-w-full">
+            <div className="max-w-[1140px] mx-auto my-24 relative z-10 w-full min-w-0 flex gap-12 items-start max-sm:flex-col max-sm:my-12 max-sm:px-6">
 
                 {/* Left Column: Content */}
                 <motion.div
@@ -108,7 +109,7 @@ export default function HeroSection() {
                         <Button
                             variant="secondary"
                             className="max-sm:text-[14px] max-sm:px-4"
-                            onClick={() => (window as any).Tawk_API?.maximize()}
+                            onClick={openZendeskChat}
                         >
                             Chat Now
                         </Button>

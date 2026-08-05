@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Button from "../Button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { openZendeskChat } from "@/lib/zendesk";
 
 const badges = [
     "/hero-badge-1.webp",
@@ -53,7 +54,7 @@ export default function HeroSection() {
                         <Button
                             variant="secondary"
                             className="max-sm:text-[14px] max-sm:px-4"
-                            onClick={() => (window as any).Tawk_API?.maximize()}
+                            onClick={openZendeskChat}
                         >
                             Chat Now
                         </Button>

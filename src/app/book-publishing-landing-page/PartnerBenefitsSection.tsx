@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/Button";
+import { openZendeskChat } from "@/lib/zendesk";
 import Image from "next/image";
 
 export default function PartnerBenefitsSection() {
@@ -84,7 +85,7 @@ export default function PartnerBenefitsSection() {
                     <Button
                         variant="secondary"
                         className="max-sm:text-[14px] max-sm:px-4"
-                        onClick={() => (window as any).Tawk_API?.maximize()}
+                        onClick={openZendeskChat}
                     >
                         Chat Now
                     </Button>

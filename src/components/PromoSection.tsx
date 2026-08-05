@@ -11,17 +11,17 @@ export default function PromoSection() {
     const router = useRouter();
 
     return (
-        <section className="relative py-20 overflow-hidden max-sm:py-12  overflow-x-hidden">
-            <div className="max-w-[1140px] mx-auto px-6 relative z-10">
+        <section className="relative py-20 overflow-x-clip overflow-hidden max-sm:py-12 w-full max-w-full">
+            <div className="max-w-[1140px] mx-auto px-6 relative z-10 w-full min-w-0">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="bg-brand-light rounded-[30px] shadow-2xl overflow-hidden flex max-md:flex-col  border border-gray-300"
+                    className="bg-brand-light rounded-[30px] shadow-2xl overflow-hidden flex max-md:flex-col border border-gray-300 w-full min-w-0"
                 >
                     {/* Left Side: Form */}
-                    <div className="w-1/2 p-12 max-md:w-full max-sm:p-8 bg-[#F8F9FA]">
+                    <div className="w-full md:w-1/2 p-12 max-md:w-full max-sm:p-8 bg-[#F8F9FA] min-w-0">
                         <div className="mb-8">
                             <h3 className="text-2xl font-syne font-medium text-brand-black mb-1 max-sm:text-[18px]">
                                 Activate Your Coupon Now!
@@ -117,7 +117,7 @@ export default function PromoSection() {
                     </div>
 
                     {/* Right Side: Image */}
-                    <div className="w-1/2 relative bg-[#1A2E35] max-md:w-full min-h-[300px]">
+                    <div className="w-full md:w-1/2 relative bg-[#1A2E35] max-md:w-full min-h-[300px] min-w-0">
                         <Image
                             src="/popup-image.webp"
                             alt="Book cover"

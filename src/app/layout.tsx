@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en" className="overflow-x-clip">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
@@ -85,9 +85,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-3.webp" />
       </head>
       <body
-        className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased overflow-x-hidden`}
+        className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased overflow-x-clip`}
       >
-        <div className="w-full max-w-full overflow-x-hidden">
+        <div className="w-full max-w-full">
           <SiteScripts />
 
           <noscript>

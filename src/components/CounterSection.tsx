@@ -73,13 +73,12 @@ export default function CounterSection() {
     ];
 
     return (
-        <section className="relative bg-brand-light py-10 max-sm:py-12 overflow-x-hidden">
+        <section className="relative bg-brand-light py-10 max-sm:py-12 w-full max-w-full overflow-x-clip overflow-hidden">
             {/* Triangle Decoration */}
             <motion.div
-                className="absolute left-20 -top-16 w-44 h-44 max-sm:w-20 max-sm:h-20 max-sm:left-10 max-sm:-top-8"
+                className="absolute left-4 sm:left-20 top-0 w-20 h-20 sm:w-44 sm:h-44 pointer-events-none"
                 animate={{
                     y: [0, -20, 0],
-                    x: [0, 10, 0]
                 }}
                 transition={{
                     duration: 4,

@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function WhyAeroSection({ features, highlightTitle, normalTitle, boldTitle, description, imageUrl = "/why-aero-book.webp", eyebrowTitle = "Why Aero", noImageRadius = false, imageContain = false, imageWidthPercent }: { features: any[], highlightTitle: string, normalTitle: string, boldTitle: string, description: string, imageUrl?: string, eyebrowTitle?: string, noImageRadius?: boolean, imageContain?: boolean, imageWidthPercent?: number }) {
     return (
         <section
-            className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12 max-sm:overflow-x-hidden"
+            className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12 w-full max-w-full overflow-x-clip overflow-hidden"
             style={{ backgroundImage: "url('/why-aero-bg.webp')" }}
         >
-            <div className="max-w-[1140px] mx-auto max-sm:px-4 relative">
+            <div className="max-w-[1140px] mx-auto max-sm:px-4 relative w-full min-w-0">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -37,8 +37,8 @@ export default function WhyAeroSection({ features, highlightTitle, normalTitle, 
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.2 }}
                                     transition={{
                                         duration: 0.5,

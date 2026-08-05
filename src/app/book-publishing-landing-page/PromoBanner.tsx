@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Button from "@/components/Button";
+import { openZendeskChat } from "@/lib/zendesk";
 
 export default function PromoBanner() {
     return (
@@ -40,7 +41,7 @@ export default function PromoBanner() {
                         <Button
                             variant="secondary"
                             className="max-sm:text-[14px] max-sm:px-4"
-                            onClick={() => (window as any).Tawk_API?.maximize()}
+                            onClick={openZendeskChat}
                         >
                             Chat Now
                         </Button>

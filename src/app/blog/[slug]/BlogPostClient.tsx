@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { BlogPost } from "@/lib/blogData";
 import Button from "@/components/Button";
+import { openZendeskChat } from "@/lib/zendesk";
 
 interface TocItem {
     id: string;
@@ -443,7 +444,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                         <a href="tel:+14242823304">Call Us: +1424 282 3304</a>
                                     </Button>
                                     <button
-                                        onClick={() => (window as any).Tawk_API?.maximize()}
+                                        onClick={openZendeskChat}
                                         className="w-full h-10 rounded-full border border-white/40 text-white font-poppins text-sm font-semibold hover:bg-white/10 transition-colors duration-200"
                                     >
                                         Chat Now

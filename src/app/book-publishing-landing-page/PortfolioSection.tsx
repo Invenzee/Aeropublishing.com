@@ -39,7 +39,7 @@ export default function PortfolioSection({
     );
 
     return (
-        <section className="w-full bg-white py-16 px-4 md:px-8 lg:px-16 relative z-40">
+        <section className="w-full max-w-full bg-white py-16 px-4 md:px-8 lg:px-16 relative z-40 overflow-x-clip overflow-hidden">
             <div className="max-w-7xl mx-auto">
 
                 {/* Title */}

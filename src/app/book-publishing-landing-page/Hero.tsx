@@ -6,6 +6,7 @@ import { sendEmail } from "@/app/actions/email";
 import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { openZendeskChat } from "@/lib/zendesk";
 
 export default function Hero() {
     const router = useRouter();
@@ -80,7 +81,7 @@ export default function Hero() {
                             <Button
                                 variant="secondary"
                                 className="max-sm:text-[14px] max-sm:px-4"
-                                onClick={() => (window as any).Tawk_API?.maximize()}
+                                onClick={openZendeskChat}
                             >
                                 Chat Now
                             </Button>

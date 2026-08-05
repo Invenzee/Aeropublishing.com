@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight, Phone, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 interface NavItem {
     name: string;
@@ -57,18 +57,24 @@ export default function Header() {
             <motion.header
                 className="fixed top-0 left-0 right-0 z-50 w-full max-w-full bg-white/80 backdrop-blur-md border-b border-gray-100 overflow-x-hidden"
             >
-                <div className="w-full h-10 bg-brand-primary flex items-center justify-between px-4 sm:px-8 lg:px-24">
-                    <div className="flex items-center gap-2 sm:gap-6 shrink-0">
-                        <div className="flex items-center gap-2">
-                            <Phone size={14} className="text-white cursor-pointer" />
-                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="tel:+14242823304">+1424 282 3304</a></span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <Mail size={14} className="text-white cursor-pointer" />
-                            <span className="text-white text-sm font-poppins font-normal cursor-pointer max-sm:hidden"><a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a></span>
-                        </div>
+                <div className="w-full min-h-10 bg-brand-primary flex items-center justify-between gap-2 px-4 sm:px-8 lg:px-24 py-1.5 sm:py-0 sm:h-10">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 min-w-0 flex-1">
+                        <a
+                            href="tel:+14242823304"
+                            className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors"
+                        >
+                            <Phone size={13} className="shrink-0" />
+                            <span>+1424 282 3304</span>
+                        </a>
+                        <a
+                            href="mailto:admin@aeropublishing.com"
+                            className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors min-w-0"
+                        >
+                            <Mail size={13} className="shrink-0" />
+                            <span className="truncate">admin@aeropublishing.com</span>
+                        </a>
                     </div>
-                    <div className="flex gap-2 sm:gap-4 shrink-0">
+                    <div className="hidden sm:flex gap-2 sm:gap-4 shrink-0">
                         <a href="https://www.facebook.com/people/Aero-Publishing/100069250598189/" className="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-brand-primary transition-all duration-300 group">
                             <FaFacebookF size={15} className="group-hover:scale-110 transition-transform text-white group-hover:text-brand-primary" />
                         </a>

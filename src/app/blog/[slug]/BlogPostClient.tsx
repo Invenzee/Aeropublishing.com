@@ -214,7 +214,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
     const { elements, headings } = renderContent(post.content);
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-white w-full max-w-full overflow-x-hidden">
             {/* Hero Section */}
             <section className="relative overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center pt-40 pb-20">
                 {/* Overlay */}

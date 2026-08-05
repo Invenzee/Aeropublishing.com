@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function page() {
     return (
-        <main className="min-h-screen bg-white pb-20">
+        <main className="min-h-screen bg-white pb-20 w-full max-w-full overflow-x-hidden">
             <HeroSection
                 hasForm={false}
                 title="Publishing Made Simple"

@@ -55,7 +55,7 @@ export default function Header() {
     return (
         <>
             <motion.header
-                className="fixed top-0 left-0 right-0 z-50 w-full max-w-full bg-white/80 backdrop-blur-md border-b border-gray-100 overflow-x-hidden"
+                className="fixed top-0 left-0 right-0 z-50 w-full max-w-full bg-white/80 backdrop-blur-md border-b border-gray-100"
             >
                 <div className="w-full min-h-10 bg-brand-primary flex items-center justify-between gap-2 px-4 sm:px-8 lg:px-24 py-1.5 sm:py-0 sm:h-10">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 min-w-0 flex-1">
@@ -111,16 +111,16 @@ export default function Header() {
                     </div>
 
                 </div>
-                <div className="max-w-[1140px] mx-auto px-6 sm:px-6 lg:px-0">
-                    <div className="flex justify-between items-center h-20">
+                <div className="max-w-[1140px] mx-auto px-6 sm:px-6 lg:px-0 overflow-visible">
+                    <div className="flex justify-between items-center h-20 overflow-visible">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
                             <Image src="/logo.webp" alt="Logo" width={100} height={100} onClick={() => window.location.href = "/"} />
                         </div>
 
                         {/* Desktop Navigation */}
-                        <div className="flex items-center gap-12">
-                            <nav className="hidden md:flex space-x-8 items-center">
+                        <div className="flex items-center gap-12 overflow-visible">
+                            <nav className="hidden md:flex space-x-8 items-center overflow-visible">
                                 {navItems.map((item, index) => (
                                     <div
                                         key={item.name}
@@ -151,7 +151,7 @@ export default function Header() {
                                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                                    className="absolute top-full -left-6 w-64 pt-6 bg-transparent"
+                                                    className="absolute top-full -left-6 w-64 pt-6 bg-transparent z-[60]"
                                                 >
                                                     <div className="bg-white max-h-96 rounded-xl shadow-xl border border-gray-100 p-2 overflow-y-auto">
                                                         {item.subItems.map((subItem, i) => (
@@ -265,7 +265,7 @@ export default function Header() {
                                                                 initial={{ height: 0, opacity: 0 }}
                                                                 animate={{ height: "auto", opacity: 1 }}
                                                                 exit={{ height: 0, opacity: 0 }}
-                                                                className="overflow-hidden pl-4"
+                                                                className="overflow-y-hidden pl-4"
                                                             >
                                                                 {item.subItems.map(subItem => (
                                                                     <Link

@@ -95,7 +95,7 @@ For the duration of your bestseller push, price your Kindle eBook between $0.99 
 
 If your book is enrolled in KDP Select, the Countdown Deal feature lets you run a timed promotional price while still earning royalties at your standard rate. This offers a meaningful financial advantage over manually lowering your price. KDP Select does require Amazon exclusivity, meaning you cannot simultaneously sell your eBook on other platforms like Apple Books or Kobo. Still, in exchange, you gain access to Countdown Deals, Free Book Promotions, and inclusion in Kindle Unlimited, where page reads generate additional income alongside sales.
 
-Whether that trade-off makes sense depends entirely on where your readers are. For most self-published authors launching their first or second book whose audience primarily lives on Amazon, KDP Select is worth serious consideration. If you want a fuller walkthrough of how KDP publishing works end-to-end, Aero Publishing's guide on [How to Publish a Poetry eBook on Amazon KDP](https://aeropublishing.com/how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide/) covers the platform setup in practical detail.
+Whether that trade-off makes sense depends entirely on where your readers are. For most self-published authors launching their first or second book whose audience primarily lives on Amazon, KDP Select is worth serious consideration. If you want a fuller walkthrough of how KDP publishing works end-to-end, Aero Publishing's guide on [How to Publish a Poetry eBook on Amazon KDP](https://aeropublishing.com/blog/how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide) covers the platform setup in practical detail.
 
 ### Your Day-by-Day Launch Week Timeline
 
@@ -143,7 +143,7 @@ Your bestseller badge opens a door. It signals credibility to people who have ne
 
 Sustained visibility is not a single campaign. It is a habit — and the foundation of any long-term writing career. Two of the most powerful book marketing tools available to authors building a long-term readership are short-form video and email. The most effective author platforms use both together.
 
-BookTok—the book community on TikTok—and Instagram Reels have launched unknown authors to bestseller status with a single viral video. More importantly, they build the kind of ongoing discoverability that keeps new readers finding your book months after launch. Showing up consistently with content that speaks directly to your target reader is a long-term investment that compounds over time. Aero Publishing's guide on [How to Promote Your eBook on BookTok](https://aeropublishing.com/how-to-promote-your-ebook-on-booktok-instagram-linkedin/) is a practical starting point if you are building out your social strategy from scratch.
+BookTok—the book community on TikTok—and Instagram Reels have launched unknown authors to bestseller status with a single viral video. More importantly, they build the kind of ongoing discoverability that keeps new readers finding your book months after launch. Showing up consistently with content that speaks directly to your target reader is a long-term investment that compounds over time. Aero Publishing's guide on [How to Promote Your eBook on BookTok](https://aeropublishing.com/blog/how-to-promote-your-ebook-on-booktok-instagram-linkedin) is a practical starting point if you are building out your social strategy from scratch.
 
 Email remains the highest-converting channel for direct book sales. A warm subscriber who has opted in to hear from you is worth far more than a cold follower scrolling past your post. Build your list continuously, nurture it genuinely, and it will serve every book you ever publish.
 
@@ -277,7 +277,7 @@ Digital publishing also provides useful data on how readers are engaging with a 
 
 ### Repurpose Existing Content
 
-Many writers already have far more usable material than they realise, sitting unused and ready to become a short e-book. [Blog posts, newsletters, social media threads, online articles, and educational content can all be transformed into valuable digital books](https://aeropublishing.com/how-to-convert-your-blog-into-an-ebook-make-money-by-selling-it-online/).
+Many writers already have far more usable material than they realise, sitting unused and ready to become a short e-book. [Blog posts, newsletters, social media threads, online articles, and educational content can all be transformed into valuable digital books](https://aeropublishing.com/blog/turn-your-blog-into-book).
 
 Reusing content saves time and money, since much of the work is already done. This is a great strategy for experts, freelance writers, and teachers who continuously generate content for the web — instead of constantly creating new material, they can repurpose existing knowledge into additional income-generating products.
 
@@ -449,7 +449,7 @@ For most bloggers, Kindle Direct Publishing is the natural starting point. It is
 
 The $2.99–$9.99 window is also where blog-based ebooks tend to convert best. Pricing a blog-sourced ebook at $24.99 is a harder sell when the underlying content is freely available online. Pricing it at $0.99 signals low value. The middle range, typically $4.99 to $7.99 for a focused, well-formatted ebook, positions it as a professional product without pricing out the impulse buyer.
 
-For print distribution beyond Amazon, independent bookstores, libraries, and international retailers, IngramSpark is the practical complement to KDP. Running both in parallel is common; you simply need to opt out of KDP Select exclusivity to do so. Once your book is published, your next priority should be creating a strong [Amazon launch strategy](https://aeropublishing.com/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy/) to maximize visibility, generate early sales, and improve your chances of reaching bestseller status.
+For print distribution beyond Amazon, independent bookstores, libraries, and international retailers, IngramSpark is the practical complement to KDP. Running both in parallel is common; you simply need to opt out of KDP Select exclusivity to do so. Once your book is published, your next priority should be creating a strong [Amazon launch strategy](https://aeropublishing.com/blog/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy) to maximize visibility, generate early sales, and improve your chances of reaching bestseller status.
 
 ### Marketing with the Audience You Already Have
 
@@ -459,7 +459,7 @@ A basic launch sequence that works: email your list with a pre-announcement a we
 
 Social media helps sustain visibility after the initial launch, particularly short-form video on platforms like TikTok and Instagram Reels, where book content finds organic reach through the reading community.
 
-Social media can continue generating visibility long after launch, particularly through TikTok, Instagram Reels, and LinkedIn, where readers regularly discover new books through creator recommendations and educational content. Rather than treating promotion as a one-time event, develop an ongoing marketing plan that keeps your ebook visible over time. If you want practical ideas for using these platforms effectively, our guide on [promoting your ebook through social media](https://aeropublishing.com/how-to-promote-your-ebook-on-booktok-instagram-linkedin/) provides step-by-step strategies. Authors looking for a more comprehensive promotional approach may also benefit from [professional book marketing services](https://aeropublishing.com/book-marketing/) to help expand their reach after publication.
+Social media can continue generating visibility long after launch, particularly through TikTok, Instagram Reels, and LinkedIn, where readers regularly discover new books through creator recommendations and educational content. Rather than treating promotion as a one-time event, develop an ongoing marketing plan that keeps your ebook visible over time. If you want practical ideas for using these platforms effectively, our guide on [promoting your ebook through social media](https://aeropublishing.com/blog/how-to-promote-your-ebook-on-booktok-instagram-linkedin) provides step-by-step strategies. Authors looking for a more comprehensive promotional approach may also benefit from [professional book marketing services](https://aeropublishing.com/book-marketing/) to help expand their reach after publication.
 
 ## Ready to Turn Your Blog into Something More?
 
@@ -698,7 +698,7 @@ Aviation entrepreneurs and executives are another significant group: founders of
 
 One pattern that comes up consistently in publishing work: the clients who produce the richest manuscripts are those who begin the ghostwriting process while still active in aviation, or immediately after leaving. The sensory and procedural detail — the situational awareness that shaped a decision at 35,000 feet — is significantly harder to reconstruct five years after retirement than six months after. If you are considering an aviation memoir or career book, starting earlier is genuinely better than waiting.
 
-For anyone weighing the broader publishing process alongside ghostwriting, understanding [the full cost of self-publishing a book](https://aeropublishing.com/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide/) helps put the investment in context, from editing and design to distribution and marketing.
+For anyone weighing the broader publishing process alongside ghostwriting, understanding [the full cost of self-publishing a book](https://aeropublishing.com/blog/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide) helps put the investment in context, from editing and design to distribution and marketing.
 
 ## How the Aviation Ghostwriting Process Works
 
@@ -742,7 +742,7 @@ A few honest observations about these numbers. The lowest-priced options in the 
 
 Per-project pricing is generally preferable to per-word pricing for books. It aligns incentives: the ghostwriter is motivated to produce a complete, well-structured manuscript rather than to extend the word count. Retainer arrangements make more sense for ongoing content like LinkedIn posts or a series of articles.
 
-For aviation professionals planning their overall publishing budget, the [costs involved in self-publishing a book](https://aeropublishing.com/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide/) extend well beyond ghostwriting fees, including editing, formatting, cover design, ISBNs, printing, and marketing.
+For aviation professionals planning their overall publishing budget, the [costs involved in self-publishing a book](https://aeropublishing.com/blog/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide) extend well beyond ghostwriting fees, including editing, formatting, cover design, ISBNs, printing, and marketing.
 
 ## Does Your Ghostwriter Need to Know Aviation?
 
@@ -784,7 +784,7 @@ The two primary self-publishing routes for aviation books are [Amazon Kindle Dir
 
 Before submission to either platform, the manuscript needs professional interior formatting specific to the chosen output format, a cover designed to the technical specifications of the publishing platform, and an ISBN. For aviation books positioned as professional or authoritative works, the production quality of these elements directly affects how the book is perceived. A poorly formatted interior or a generic cover undermines the credibility a well-written aviation book is meant to establish.
 
-For authors planning an Amazon launch, understanding [how Amazon's bestseller rankings work](https://aeropublishing.com/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy/) can make a significant difference during launch week, particularly when choosing categories and coordinating early sales. Likewise, [promoting your book on LinkedIn, Instagram, and BookTok](https://aeropublishing.com/how-to-promote-your-ebook-on-booktok-instagram-linkedin/) can help extend your reach beyond Amazon by connecting with readers, aviation professionals, and niche communities interested in your subject.
+For authors planning an Amazon launch, understanding [how Amazon's bestseller rankings work](https://aeropublishing.com/blog/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy) can make a significant difference during launch week, particularly when choosing categories and coordinating early sales. Likewise, [promoting your book on LinkedIn, Instagram, and BookTok](https://aeropublishing.com/blog/how-to-promote-your-ebook-on-booktok-instagram-linkedin) can help extend your reach beyond Amazon by connecting with readers, aviation professionals, and niche communities interested in your subject.
 
 ## Ready to Get Started?
 

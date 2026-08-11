@@ -81,7 +81,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://static.zdassets.com" />
         <meta name="msvalidate.01" content="7000FF60495EE20E0D4689F671EDA603" />
-        <meta name="google-site-verification" content="70KQU6GQM-v5XdEOb0Zykiq6Q3sYzR1QO6o3LlfzSmo" />
+        <meta name="google-site-verification" content="ROiFaEOVsREbtiohpnzCc7_R8WV_m6inTfBrUQsVtD4" />
         <link rel="icon" href="/favicon-3.webp" />
       </head>
       <body

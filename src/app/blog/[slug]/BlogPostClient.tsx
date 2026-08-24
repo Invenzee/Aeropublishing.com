@@ -210,21 +210,15 @@ function renderContent(content: string) {
     const faqRegex = /\[FAQ\]([\s\S]*?)\[\/FAQ\]/;
     const faqMatch = content.match(faqRegex);
     const faqItems = faqMatch ? parseFaqItems(faqMatch[1]) : [];
-    const faqIndex = faqMatch ? content.search(faqRegex) : -1;
-
-    const beforeFaq = faqIndex >= 0 ? content.slice(0, faqIndex) : content;
-    const afterFaq = faqIndex >= 0 ? content.slice(faqIndex).replace(faqRegex, "") : "";
+    const bodyContent = content.replace(faqRegex, "");
 
     const headings: TocItem[] = [];
-    const before = renderMarkdownChunk(beforeFaq, "before", headings, 0);
-    const elements: React.ReactNode[] = [...before.elements];
+    const body = renderMarkdownChunk(bodyContent, "body", headings, 0);
+    const elements: React.ReactNode[] = [...body.elements];
 
     if (faqItems.length > 0) {
         elements.push(<div key="faq-section"><FAQAccordion items={faqItems} /></div>);
     }
-
-    const after = renderMarkdownChunk(afterFaq, "after", headings, before.headingIndex);
-    elements.push(...after.elements);
 
     return { elements, headings };
 }

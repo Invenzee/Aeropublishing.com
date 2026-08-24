@@ -932,6 +932,14 @@ Reasonable to defer: audiobook. An audiobook is a meaningful additional audience
 
 Reasonable to minimize: marketing spend at launch for debut authors. Amazon advertising before a novel has at least 10–15 reviews produces poor results because there is no social proof to convert the traffic. Building the review base first, then activating paid promotion, generates much better return on ad spend. For a structured approach to [building visibility after publication](https://aeropublishing.com/blog/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy), the sequencing of promotion tactics matters more than the size of the initial budget.
 
+## The Budget Decision That Shapes Everything Else
+
+The cost to self-publish a novel is not fixed; it is a set of decisions you make about where professional quality matters and where it does not. The authors who see the strongest long-term results from self-publishing are not the ones with the largest budgets. They are the ones who invested in the two things readers judge immediately: whether the story works (editing) and whether the cover earns a click (design).
+
+Everything else — formatting, ISBNs, distribution platforms, audiobooks, marketing can be phased in as the novel earns revenue. Those first two investments cannot be added later. A novel's reputation is formed in its first weeks of publication based on the reviews it receives from early readers. Protecting that launch window with a professionally edited, well-designed book is where the budget conversation should start.
+
+If you are ready to plan your novel's publishing budget in detail, [professional self-publishing support](https://aeropublishing.com/book-publishing/) covers every stage from manuscript to market.
+
 ## Frequently Asked Questions
 
 [FAQ]
@@ -953,14 +961,6 @@ A: Traditional publishing costs the author nothing upfront and may include an ad
 Q: How many copies does a self-published novel typically sell?
 A: Industry estimates suggest the median self-published novel sells fewer than 250 copies. However, this average is heavily dragged down by books with no editing investment, weak covers, and no marketing. Professionally produced self-published novels with active marketing campaigns in defined genre categories perform significantly better. A novel that breaks even on its production investment within 12 to 18 months is a realistic and achievable target for a market-ready debut.
 [/FAQ]
-
-## The Budget Decision That Shapes Everything Else
-
-The cost to self-publish a novel is not fixed; it is a set of decisions you make about where professional quality matters and where it does not. The authors who see the strongest long-term results from self-publishing are not the ones with the largest budgets. They are the ones who invested in the two things readers judge immediately: whether the story works (editing) and whether the cover earns a click (design).
-
-Everything else — formatting, ISBNs, distribution platforms, audiobooks, marketing can be phased in as the novel earns revenue. Those first two investments cannot be added later. A novel's reputation is formed in its first weeks of publication based on the reviews it receives from early readers. Protecting that launch window with a professionally edited, well-designed book is where the budget conversation should start.
-
-If you are ready to plan your novel's publishing budget in detail, [professional self-publishing support](https://aeropublishing.com/book-publishing/) covers every stage from manuscript to market.
 `;
 
 export const featuredPost: BlogPost = {

@@ -86,33 +86,34 @@ function FAQAccordion({ items }: { items: { question: string; answer: string }[]
     );
 }
 
-function renderContent(content: string) {
-    const faqMatch = content.match(/\[FAQ\]([\s\S]*?)\[\/FAQ\]/);
+function parseFaqItems(faqBlock: string) {
     const faqItems: { question: string; answer: string }[] = [];
+    const faqLines = faqBlock.trim().split("\n").filter(Boolean);
+    let currentQ = "";
+    let currentA = "";
 
-    if (faqMatch) {
-        const faqBlock = faqMatch[1].trim();
-        const faqLines = faqBlock.split("\n").filter(Boolean);
-        let currentQ = "";
-        let currentA = "";
+    faqLines.forEach((line) => {
+        if (line.startsWith("Q: ")) {
+            if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
+            currentQ = line.replace("Q: ", "");
+            currentA = "";
+        } else if (line.startsWith("A: ")) {
+            currentA = line.replace("A: ", "");
+        }
+    });
+    if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
+    return faqItems;
+}
 
-        faqLines.forEach((line) => {
-            if (line.startsWith("Q: ")) {
-                if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
-                currentQ = line.replace("Q: ", "");
-                currentA = "";
-            } else if (line.startsWith("A: ")) {
-                currentA = line.replace("A: ", "");
-            }
-        });
-        if (currentQ) faqItems.push({ question: currentQ, answer: currentA.trim() });
-    }
-
-    const bodyContent = content.replace(/\[FAQ\][\s\S]*?\[\/FAQ\]/g, "").trim();
-    const lines = bodyContent.split("\n");
+function renderMarkdownChunk(
+    markdown: string,
+    keyPrefix: string,
+    headings: TocItem[],
+    headingIndexStart: number
+) {
+    const lines = markdown.split("\n");
     const elements: React.ReactNode[] = [];
-    const headings: TocItem[] = [];
-    let headingIndex = 0;
+    let headingIndex = headingIndexStart;
     let i = 0;
 
     while (i < lines.length) {
@@ -128,7 +129,7 @@ function renderContent(content: string) {
             const id = slugify(text, headingIndex++);
             headings.push({ id, text, level: 2 });
             elements.push(
-                <h2 key={`h2-${i}`} id={id} className="text-2xl md:text-3xl font-syne font-bold text-brand-primary mt-10 mb-4 leading-tight scroll-mt-32">
+                <h2 key={`${keyPrefix}-h2-${i}`} id={id} className="text-2xl md:text-3xl font-syne font-bold text-brand-primary mt-10 mb-4 leading-tight scroll-mt-32">
                     {text}
                 </h2>
             );
@@ -137,7 +138,7 @@ function renderContent(content: string) {
             const id = slugify(text, headingIndex++);
             headings.push({ id, text, level: 3 });
             elements.push(
-                <h3 key={`h3-${i}`} id={id} className="text-xl font-syne font-semibold text-brand-primary mt-8 mb-3 leading-tight scroll-mt-32">
+                <h3 key={`${keyPrefix}-h3-${i}`} id={id} className="text-xl font-syne font-semibold text-brand-primary mt-8 mb-3 leading-tight scroll-mt-32">
                     {text}
                 </h3>
             );
@@ -151,7 +152,7 @@ function renderContent(content: string) {
             if (tableRows.length > 0) {
                 const [header, ...body] = tableRows;
                 elements.push(
-                    <div key={`table-${i}`} className="my-8 overflow-x-auto rounded-lg shadow-sm border border-gray-100">
+                    <div key={`${keyPrefix}-table-${i}`} className="my-8 overflow-x-auto rounded-lg shadow-sm border border-gray-100">
                         <table className="w-full min-w-[600px] border-collapse text-sm">
                             <thead>
                                 <tr>
@@ -181,11 +182,11 @@ function renderContent(content: string) {
                 i++;
             }
             elements.push(
-                <ul key={`list-${i}`} className="space-y-2 mb-6 pl-4">
+                <ul key={`${keyPrefix}-list-${i}`} className="space-y-2 mb-6 pl-4">
                     {listItems.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-gray-700 font-poppins text-[15px] leading-relaxed">
                             <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-secondary shrink-0" />
-                            <span>{renderInlineText(item, `li-${idx}`)}</span>
+                            <span>{renderInlineText(item, `${keyPrefix}-li-${idx}`)}</span>
                         </li>
                     ))}
                 </ul>
@@ -193,8 +194,8 @@ function renderContent(content: string) {
             continue;
         } else {
             elements.push(
-                <p key={`p-${i}`} className="text-gray-700 font-poppins text-[15px] md:text-[16px] leading-[1.9] mb-5">
-                    {renderInlineText(line, `p-${i}`)}
+                <p key={`${keyPrefix}-p-${i}`} className="text-gray-700 font-poppins text-[15px] md:text-[16px] leading-[1.9] mb-5">
+                    {renderInlineText(line, `${keyPrefix}-p-${i}`)}
                 </p>
             );
         }
@@ -202,9 +203,28 @@ function renderContent(content: string) {
         i++;
     }
 
+    return { elements, headingIndex };
+}
+
+function renderContent(content: string) {
+    const faqRegex = /\[FAQ\]([\s\S]*?)\[\/FAQ\]/;
+    const faqMatch = content.match(faqRegex);
+    const faqItems = faqMatch ? parseFaqItems(faqMatch[1]) : [];
+    const faqIndex = faqMatch ? content.search(faqRegex) : -1;
+
+    const beforeFaq = faqIndex >= 0 ? content.slice(0, faqIndex) : content;
+    const afterFaq = faqIndex >= 0 ? content.slice(faqIndex).replace(faqRegex, "") : "";
+
+    const headings: TocItem[] = [];
+    const before = renderMarkdownChunk(beforeFaq, "before", headings, 0);
+    const elements: React.ReactNode[] = [...before.elements];
+
     if (faqItems.length > 0) {
         elements.push(<div key="faq-section"><FAQAccordion items={faqItems} /></div>);
     }
+
+    const after = renderMarkdownChunk(afterFaq, "after", headings, before.headingIndex);
+    elements.push(...after.elements);
 
     return { elements, headings };
 }

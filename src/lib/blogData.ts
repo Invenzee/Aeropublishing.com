@@ -15,6 +15,18 @@ export interface BlogPost {
     content: string;
 }
 
+export const BLOG_CATEGORIES = [
+    "Self-Publishing Guides",
+    "Amazon KDP",
+    "Book Marketing",
+    "Writing & Editing",
+    "eBook Publishing",
+    "Book Design & Formatting",
+    "Author Resources",
+    "Publishing Costs & ISBN",
+    "Children's Books",
+] as const;
+
 export function calculateReadTime(content: string): string {
     const wordsPerMinute = 200;
     const text = content.replace(/\[FAQ\][\s\S]*?\[\/FAQ\]/g, "").replace(/\|/g, " ");
@@ -985,8 +997,8 @@ export const blogPosts: BlogPost[] = [
             "book cover design cost",
             "self publishing vs traditional publishing",
         ],
-        slug: "how-much-does-it-cost-to-self-publish-a-novel-2026-breakdown",
-        category: "Tips & Tricks",
+        slug: "cost-to-self-publish-novel",
+        category: "Publishing Costs & ISBN",
         title: "How Much Does It Cost to Self-Publish a Novel? (2026 Breakdown)",
         description:
             "Wondering how much it costs to self-publish a novel in 2026? Get a complete cost breakdown: editing, cover design, formatting, ISBNs, and marketing, with realistic budget tiers from $0 DIY to $5,000+ professional launch.",
@@ -1003,7 +1015,7 @@ export const blogPosts: BlogPost[] = [
             "Discover the cheapest way to publish a book in 2026. Learn budget-friendly self-publishing tips, Amazon KDP costs, free platforms, and where to invest wisely without sacrificing quality.",
         focusKeyphrase: "cheapest way to publish a book",
         slug: "what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide",
-        category: "Tips & Tricks",
+        category: "Publishing Costs & ISBN",
         title: "What Is the Cheapest Way to Publish a Book in 2026? A Smart Author's Budget Guide",
         description:
             "Discover the cheapest way to publish a book in 2026. Learn budget-friendly self-publishing tips, Amazon KDP costs, free platforms, and where to invest wisely without sacrificing quality.",
@@ -1020,7 +1032,7 @@ export const blogPosts: BlogPost[] = [
             "Learn how to turn your blog into a book or ebook — covering content restructuring, format choices, tool comparisons, publishing options, and how to price and sell your finished product.",
         focusKeyphrase: "turn blog into book",
         slug: "turn-your-blog-into-book",
-        category: "Tips & Tricks",
+        category: "Self-Publishing Guides",
         title: "How to Turn Your Blog into a Book: A Complete Step-by-Step Guide",
         description:
             "Learn how to turn your blog into a book or ebook — covering content restructuring, format choices, tool comparisons, publishing options, and how to price and sell your finished product.",
@@ -1037,7 +1049,7 @@ export const blogPosts: BlogPost[] = [
             "To publish a poetry eBook on Amazon KDP, the procedure includes more than just uploading your manuscript. Structuring your poems, mastering poetry eBook formatting, and marketing are all crucial steps that influence how readers perceive your work.",
         focusKeyphrase: "publish poetry ebook on amazon kdp",
         slug: "how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide",
-        category: "Tips & Tricks",
+        category: "Amazon KDP",
         title: "How to Publish a Poetry eBook on Amazon KDP (Step-by-Step Guide)",
         description:
             "To publish a poetry eBook on Amazon KDP, the procedure includes more than just uploading your manuscript. Structuring your poems, mastering poetry eBook formatting, and marketing are all crucial steps that influence how readers perceive your work.",
@@ -1071,7 +1083,7 @@ export const blogPosts: BlogPost[] = [
             "A complete guide to aviation ghostwriting — realistic costs, how the process works from discovery to final manuscript, and how to evaluate whether a ghostwriter can handle technically demanding aviation content.",
         focusKeyphrase: "aviation ghostwriting",
         slug: "ghostwriting-for-aviation",
-        category: "Ghostwriting",
+        category: "Writing & Editing",
         title: "Ghostwriting for Aviation: What It Costs, How It Works, and What to Look For",
         description:
             "Learn what aviation ghostwriting covers, how the process works, realistic pricing for memoirs and professional content, and how to hire a ghostwriter who can handle technically demanding aviation material.",

@@ -7,7 +7,7 @@ const blogSlugRedirects = [
   "how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide",
   "turn-your-blog-into-book",
   "ghostwriting-for-aviation",
-  "how-much-does-it-cost-to-self-publish-a-novel-2026-breakdown",
+  "cost-to-self-publish-novel",
 ].map((slug) => ({
   source: `/${slug}`,
   destination: `/blog/${slug}`,
@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
       {
         source: "/how-to-convert-your-blog-into-an-ebook-make-money-by-selling-it-online",
         destination: "/blog/turn-your-blog-into-book",
+        permanent: true,
+      },
+      {
+        source: "/how-much-does-it-cost-to-self-publish-a-novel-2026-breakdown",
+        destination: "/blog/cost-to-self-publish-novel",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-much-does-it-cost-to-self-publish-a-novel-2026-breakdown",
+        destination: "/blog/cost-to-self-publish-novel",
         permanent: true,
       },
       ...blogSlugRedirects,

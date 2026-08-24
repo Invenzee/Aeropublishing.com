@@ -36,12 +36,15 @@ function renderInlineText(text: string, keyPrefix: string) {
             return linkParts.map((linkPart, linkIdx) => {
                 if (linkIdx > 0 && linkIdx % 3 === 1) {
                     const url = linkParts[linkIdx + 1];
+                    const isInternal =
+                        url.startsWith("/") || url.includes("aeropublishing.com");
                     return (
                         <a
                             key={`${keyPrefix}-l-${linkIdx}`}
                             href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            {...(!isInternal
+                                ? { target: "_blank", rel: "noopener noreferrer" }
+                                : {})}
                             className="text-brand-secondary font-medium underline decoration-2 underline-offset-2 hover:text-brand-primary transition-colors duration-200"
                         >
                             {linkPart}

@@ -1,6 +1,36 @@
 import type { NextConfig } from "next";
 
+const blogSlugRedirects = [
+  "how-to-promote-your-ebook-on-booktok-instagram-linkedin",
+  "how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy",
+  "what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide",
+  "how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide",
+  "turn-your-blog-into-book",
+  "ghostwriting-for-aviation",
+  "how-much-does-it-cost-to-self-publish-a-novel-2026-breakdown",
+].map((slug) => ({
+  source: `/${slug}`,
+  destination: `/blog/${slug}`,
+  permanent: true,
+}));
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/how-to-convert-your-blog-into-an-ebook-make-money-by-selling-it-online",
+        destination: "/blog/turn-your-blog-into-book",
+        permanent: true,
+      },
+      ...blogSlugRedirects,
+    ];
+  },
+
   // Optimize images with modern formats
     images: {
     formats: ['image/avif', 'image/webp'],

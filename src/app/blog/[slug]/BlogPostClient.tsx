@@ -297,22 +297,24 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
             </section>
 
             {/* Featured Image */}
-            <div className="max-w-[900px] mx-auto px-6 -mt-12 relative z-10">
+            <div className="max-w-[1140px] mx-auto px-6 -mt-12 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="relative rounded-3xl overflow-hidden shadow-2xl aspect-16/7"
+                    className="relative rounded-3xl overflow-hidden shadow-2xl"
                 >
                     <Image
                         src={post.image}
                         alt={post.title}
-                        fill
-                        className="object-cover"
+                        width={1920}
+                        height={1623}
+                        sizes="(max-width: 1140px) 100vw, 1140px"
+                        className="w-full h-auto object-contain"
                         priority
                     />
                     {/* Subtle overlay gradient */}
-                    <div className="absolute inset-0 bg-linear-to-t from-brand-primary/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-brand-primary/20 to-transparent pointer-events-none" />
                 </motion.div>
             </div>
 

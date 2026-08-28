@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const blogSlugRedirects = [
   "how-to-promote-your-ebook-on-booktok-instagram-linkedin",
   "how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy",
-  "what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide",
+  "cheapest-way-to-publish-book",
   "how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide",
   "turn-your-blog-into-book",
   "ghostwriting-for-aviation",
@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
       {
         source: "/how-to-convert-your-blog-into-an-ebook-make-money-by-selling-it-online",
         destination: "/blog/turn-your-blog-into-book",
+        permanent: true,
+      },
+      {
+        source: "/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide",
+        destination: "/blog/cheapest-way-to-publish-book",
+        permanent: true,
+      },
+      {
+        source: "/blog/what-is-the-cheapest-way-to-publish-a-book-in-2026-a-smart-authors-budget-guide",
+        destination: "/blog/cheapest-way-to-publish-book",
         permanent: true,
       },
       {

@@ -1,21 +1,24 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import Button from "@/components/Button";
-import { CheckCircle2, ArrowLeft, Send, Sparkles } from "lucide-react";
-export default function ThankYouPage() {
+import { CheckCircle2, Sparkles } from "lucide-react";
+
+function ThankYouContent() {
+    const searchParams = useSearchParams();
+    const isManuscript = searchParams.get("type") === "manuscript";
+
     return (
         <main className="min-h-screen bg-white flex flex-col mt-12">
             <div className="flex-grow flex items-center justify-center relative overflow-hidden pt-20">
-                {/* Background Decorations */}
                 <div className="absolute top-1/4 -left-20 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-brand-secondary/5 rounded-full blur-3xl animate-pulse transition-all duration-1000" />
 
                 <div className="max-w-[1140px] mx-auto px-6 relative z-10 w-full">
                     <div className="flex flex-col items-center text-center">
-
-                        {/* Success Icon Animation */}
                         <motion.div
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
@@ -23,7 +26,7 @@ export default function ThankYouPage() {
                                 type: "spring",
                                 stiffness: 260,
                                 damping: 20,
-                                delay: 0.2
+                                delay: 0.2,
                             }}
                             className="relative mb-8"
                         >
@@ -35,12 +38,12 @@ export default function ThankYouPage() {
                             <motion.div
                                 animate={{
                                     rotate: [0, 10, -10, 0],
-                                    scale: [1, 1.1, 1]
+                                    scale: [1, 1.1, 1],
                                 }}
                                 transition={{
                                     repeat: Infinity,
                                     duration: 4,
-                                    ease: "easeInOut"
+                                    ease: "easeInOut",
                                 }}
                                 className="absolute -top-4 -right-4 text-brand-primary bg-white p-2 rounded-lg shadow-lg"
                             >
@@ -48,7 +51,6 @@ export default function ThankYouPage() {
                             </motion.div>
                         </motion.div>
 
-                        {/* Text Content */}
                         <motion.div
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -59,11 +61,12 @@ export default function ThankYouPage() {
                             </h1>
 
                             <p className="text-lg max-sm:text-md font-poppins text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                                Your message has reached us safely. Our publishing experts are already reviewing your request and will be in touch with you shortly.
+                                {isManuscript
+                                    ? "Your manuscript has reached us safely. A confirmation email is on its way, and our publishing experts will review your submission and be in touch shortly."
+                                    : "Your message has reached us safely. Our publishing experts are already reviewing your request and will be in touch with you shortly."}
                             </p>
                         </motion.div>
 
-                        {/* Action Buttons */}
                         <motion.div
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -80,5 +83,19 @@ export default function ThankYouPage() {
                 </div>
             </div>
         </main>
+    );
+}
+
+export default function ThankYouPage() {
+    return (
+        <Suspense
+            fallback={
+                <main className="min-h-screen bg-white flex items-center justify-center pt-20">
+                    <p className="font-poppins text-gray-500">Loading…</p>
+                </main>
+            }
+        >
+            <ThankYouContent />
+        </Suspense>
     );
 }

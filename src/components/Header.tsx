@@ -183,17 +183,25 @@ export default function Header() {
 
                             {/* CTA Button - Desktop */}
                             <div className="hidden md:flex items-center">
-                                <Button variant="secondary" className="!px-6 !py-2.5 !text-base" onClick={() => router.push("/contact-us")}>
-                                    Get Started
+                                <Button variant="secondary" className="!px-6 !py-2.5 !text-base !max-w-none whitespace-nowrap" onClick={() => router.push("/submit-manuscript")}>
+                                    Submit Manuscript
                                 </Button>
                             </div>
 
-                            {/* Mobile Menu Button */}
-                            <button
-                                onClick={toggleMobileMenu}
-                                className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                                aria-label="Toggle menu"
-                            >
+                            <div className="flex items-center gap-1 md:hidden">
+                                <Button
+                                    variant="secondary"
+                                    className="!px-3 !h-9 !text-xs !max-w-none whitespace-nowrap"
+                                    onClick={() => router.push("/submit-manuscript")}
+                                >
+                                    Submit
+                                </Button>
+                                {/* Mobile Menu Button */}
+                                <button
+                                    onClick={toggleMobileMenu}
+                                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                                    aria-label="Toggle menu"
+                                >
                                 <AnimatePresence mode="wait">
                                     {mobileMenuOpen ? (
                                         <motion.div
@@ -218,6 +226,7 @@ export default function Header() {
                                     )}
                                 </AnimatePresence>
                             </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,9 +252,9 @@ export default function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-[120px] right-0 bottom-0 w-[280px] bg-white shadow-2xl z-40 md:hidden overflow-y-auto"
+                            className="fixed top-[120px] right-0 bottom-0 w-[280px] bg-white shadow-2xl z-40 md:hidden flex flex-col"
                         >
-                            <div className="p-6 space-y-6">
+                            <div className="p-6 space-y-6 flex-1 overflow-y-auto">
                                 {/* Mobile Navigation */}
                                 <nav className="space-y-1">
                                     {navItems.map((item, index) => (
@@ -305,25 +314,6 @@ export default function Header() {
                                     ))}
                                 </nav>
 
-                                {/* Mobile CTA */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="pt-4 border-t border-gray-200"
-                                >
-                                    <Button
-                                        variant="secondary"
-                                        className="w-full !text-base"
-                                        onClick={() => {
-                                            router.push("/contact-us");
-                                            toggleMobileMenu();
-                                        }}
-                                    >
-                                        Get Started
-                                    </Button>
-                                </motion.div>
-
                                 {/* Decorative Element */}
                                 <motion.div
                                     initial={{ scale: 0, opacity: 0 }}
@@ -331,6 +321,20 @@ export default function Header() {
                                     transition={{ delay: 0.6, type: "spring" }}
                                     className="absolute bottom-6 right-6 w-32 h-32 bg-gradient-to-br from-brand-secondary/10 to-brand-accent/10 rounded-full blur-2xl -z-10"
                                 />
+                            </div>
+
+                            {/* Mobile CTA — pinned so it stays visible */}
+                            <div className="shrink-0 p-6 pt-4 border-t border-gray-200 bg-white">
+                                <Button
+                                    variant="secondary"
+                                    className="w-full !text-base !max-w-none"
+                                    onClick={() => {
+                                        router.push("/submit-manuscript");
+                                        toggleMobileMenu();
+                                    }}
+                                >
+                                    Submit Manuscript
+                                </Button>
                             </div>
                         </motion.div>
                     </>

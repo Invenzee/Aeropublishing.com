@@ -63,6 +63,9 @@ const nextConfig: NextConfig = {
   // Enable experimental features for better performance
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    serverActions: {
+      bodySizeLimit: '20mb',
+    },
   },
   
   // Reduce JavaScript bundle size

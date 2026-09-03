@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Syne, Poppins } from "next/font/google";
+import { Syne, Poppins, Raleway } from "next/font/google";
 import localFont from "next/font/local";
 import { Suspense } from "react";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import PromoPopup from "@/components/PromoPopup";
 import TrackingProvider from "@/components/TrackingProvider";
 import SiteScripts from "@/components/SiteScripts";
+import SiteChrome from "@/components/SiteChrome";
 
 const ShadedLarsh = localFont({
   src: "../../public/fonts/shaded-larsh.ttf",
@@ -25,6 +23,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -85,7 +90,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-3.webp" />
       </head>
       <body
-        className={`${syne.variable} ${poppins.variable} ${ShadedLarsh.variable} antialiased overflow-x-clip`}
+        className={`${syne.variable} ${poppins.variable} ${raleway.variable} ${ShadedLarsh.variable} antialiased overflow-x-clip`}
       >
         <div className="w-full max-w-full">
           <SiteScripts />
@@ -103,10 +108,7 @@ export default function RootLayout({
             <TrackingProvider />
           </Suspense>
 
-          <Header />
-          {children}
-          <Footer />
-          <PromoPopup />
+          <SiteChrome>{children}</SiteChrome>
         </div>
       </body>
     </html>

@@ -37,6 +37,9 @@ const staticRoutes: StaticRoute[] = [
     { path: "/terms-and-conditions", changeFrequency: "yearly", priority: 0.3 },
     { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
     { path: "/return-refund-policies", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/Cookbook/lp", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/Kids/lp", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/Editing/lp", changeFrequency: "monthly", priority: 0.8 },
 ];
 
 function parseDate(value: string) {

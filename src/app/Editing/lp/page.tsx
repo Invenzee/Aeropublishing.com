@@ -120,9 +120,9 @@ const TRUST_STATS = [
 const TESTIMONIALS = [
   {
     author: "Amelia Grant", quote:
-      "I braced myself for an editor who would flatten my voice, and got the opposite. Every change was tracked, explained, and easy to accept or reject. My novel reads like me, only sharper.", image: "/about-1.webp", }, {
+      "I braced myself for an editor who would flatten my voice, and got the opposite. Every change was tracked, explained, and easy to accept or reject. My novel reads like me, only sharper.", image: "/quote-1.webp", }, {
     author: "Mark Ellison", quote:
-      "The sample edit sold me and the full edit exceeded it. They caught continuity errors my beta readers missed and delivered two days early. My proofread manuscript went straight to my agent.", image: "/about-2.webp", },
+      "The sample edit sold me and the full edit exceeded it. They caught continuity errors my beta readers missed and delivered two days early. My proofread manuscript went straight to my agent.", image: "/user.jpg", },
 ];
 
 const SOCIAL_LINKS = [

@@ -40,6 +40,7 @@ const staticRoutes: StaticRoute[] = [
     { path: "/Cookbook/lp", changeFrequency: "monthly", priority: 0.8 },
     { path: "/Kids/lp", changeFrequency: "monthly", priority: 0.8 },
     { path: "/Editing/lp", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/self-publishing/lp", changeFrequency: "monthly", priority: 0.8 },
 ];
 
 function parseDate(value: string) {

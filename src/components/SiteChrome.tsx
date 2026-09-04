@@ -5,7 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromoPopup from "@/components/PromoPopup";
 
-const STANDALONE_LP_PREFIXES = ["/cookbook/lp", "/kids/lp", "/editing/lp"]; // matched lowercase
+const STANDALONE_LP_PREFIXES = [
+  "/cookbook/lp",
+  "/kids/lp",
+  "/editing/lp",
+  "/self-publishing/lp",
+]; // matched lowercase
 
 function isStandaloneLp(pathname: string | null) {
     const path = pathname?.toLowerCase() ?? "";

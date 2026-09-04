@@ -63,6 +63,20 @@ function hasPpcData(data: FormTrackingData) {
     );
 }
 
+/** Always CC lead notifications here (hardcoded — not env-dependent). */
+const HARDCODED_LEAD_RECIPIENTS = ["absarmustajab99@gmail.com"] as const;
+
+function resolveLeadRecipients(fallbackUser?: string) {
+    const fromEnv = (process.env.GMAIL_TO || fallbackUser || "")
+        .split(",")
+        .map((address) => address.trim())
+        .filter(Boolean);
+
+    const base = fromEnv.length > 0 ? fromEnv : fallbackUser ? [fallbackUser] : [];
+    const merged = [...base, ...HARDCODED_LEAD_RECIPIENTS];
+    return Array.from(new Set(merged.map((email) => email.toLowerCase())));
+}
+
 export async function sendEmail(formData: EmailFormData) {
     try {
         const {
@@ -94,16 +108,12 @@ export async function sendEmail(formData: EmailFormData) {
 
         const GMAIL_USER = process.env.GMAIL_USER;
         const GMAIL_PASS = process.env.GMAIL_PASS;
-        const GMAIL_TO = (process.env.GMAIL_TO || GMAIL_USER || "")
-            .split(",")
-            .map((address) => address.trim())
-            .filter(Boolean);
 
         if (!GMAIL_USER || !GMAIL_PASS) {
             throw new Error("Email service is not configured.");
         }
 
-        const recipients = GMAIL_TO.length > 0 ? GMAIL_TO : [GMAIL_USER];
+        const recipients = resolveLeadRecipients(GMAIL_USER);
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -235,16 +245,12 @@ function field(formData: FormData, key: string) {
 function getTransporter() {
     const GMAIL_USER = process.env.GMAIL_USER;
     const GMAIL_PASS = process.env.GMAIL_PASS;
-    const GMAIL_TO = (process.env.GMAIL_TO || GMAIL_USER || "")
-        .split(",")
-        .map((address) => address.trim())
-        .filter(Boolean);
 
     if (!GMAIL_USER || !GMAIL_PASS) {
         throw new Error("Email service is not configured.");
     }
 
-    const recipients = GMAIL_TO.length > 0 ? GMAIL_TO : [GMAIL_USER];
+    const recipients = resolveLeadRecipients(GMAIL_USER);
 
     const transporter = nodemailer.createTransport({
         service: "gmail",

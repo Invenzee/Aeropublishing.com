@@ -4,22 +4,25 @@ import Image from "next/image";
 import { useRef } from "react";
 import Reveal from "./Reveal";
 
-const books = [
-  "/cookbook/lp/book-4.webp",
+/** 4 unique book covers — carousel shows 4 at once and repeats these. */
+const BOOKS = [
   "/cookbook/lp/book-1.webp",
   "/cookbook/lp/book-2.webp",
   "/cookbook/lp/book-3.webp",
-  "/cookbook/lp/book-3.webp",
-];
+  "/cookbook/lp/book-4.webp",
+] as const;
+
+const REPEATS = 3;
+const carouselBooks = Array.from({ length: REPEATS }, () => BOOKS).flat();
 
 export default function CookbookOccasions() {
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (dir: -1 | 1) => {
-    scrollerRef.current?.scrollBy({
-      left: dir * 280,
-      behavior: "smooth",
-    });
+    const el = scrollerRef.current;
+    if (!el) return;
+    const step = el.clientWidth * 0.95;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
   return (
@@ -40,7 +43,7 @@ export default function CookbookOccasions() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="relative mt-12 flex items-center gap-3 sm:gap-6">
+        <Reveal delay={0.1} className="relative mt-12 flex items-center gap-2 sm:gap-4 lg:gap-5">
           <button
             type="button"
             aria-label="Previous cookbooks"
@@ -58,19 +61,19 @@ export default function CookbookOccasions() {
 
           <div
             ref={scrollerRef}
-            className="flex flex-1 snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-6 [&::-webkit-scrollbar]:hidden"
+            className="flex flex-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 lg:gap-5 [&::-webkit-scrollbar]:hidden"
           >
-            {books.map((src, i) => (
+            {carouselBooks.map((src, i) => (
               <div
                 key={`${src}-${i}`}
-                className="relative aspect-square w-[min(70vw,200px)] shrink-0 snap-center overflow-hidden transition-transform duration-300 hover:scale-[1.02] sm:w-[180px] lg:w-[200px]"
+                className="relative aspect-[3/4] w-[calc((100%-2.25rem)/4)] min-w-[calc((100%-2.25rem)/4)] shrink-0 snap-start overflow-hidden rounded-sm bg-[#f6f6f6] shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.02] max-sm:w-[calc((100%-0.75rem)/2)] max-sm:min-w-[calc((100%-0.75rem)/2)]"
               >
                 <Image
                   src={src}
-                  alt={`Aero Publishing cookbook cover sample ${i + 1}`}
+                  alt={`Aero Publishing cookbook cover sample ${(i % BOOKS.length) + 1}`}
                   fill
                   className="object-cover"
-                  sizes="200px"
+                  sizes="(max-width: 640px) 45vw, 220px"
                 />
               </div>
             ))}

@@ -54,6 +54,67 @@ const zendeskAgentOpenScript = `
 })();
 `;
 
+const zendeskMobileBackScript = `
+(function () {
+  var FLAG = '__zeChat';
+  var chatOpen = false;
+  var bound = false;
+
+  function closeWidget() {
+    if (typeof zE !== 'function') return;
+    try { zE('webWidget', 'close'); } catch (e) {}
+    try { zE('messenger', 'close'); } catch (e) {}
+  }
+
+  function onChatOpen() {
+    if (chatOpen) return;
+    chatOpen = true;
+    try {
+      if (history.state && history.state[FLAG]) return;
+      var next = history.state && typeof history.state === 'object'
+        ? Object.assign({}, history.state)
+        : {};
+      next[FLAG] = 1;
+      history.pushState(next, '', location.href);
+    } catch (e) {}
+  }
+
+  function onChatClose() {
+    if (!chatOpen) return;
+    chatOpen = false;
+    try {
+      if (history.state && history.state[FLAG]) history.back();
+    } catch (e) {}
+  }
+
+  window.addEventListener('popstate', function () {
+    if (!chatOpen) return;
+    chatOpen = false;
+    closeWidget();
+  });
+
+  function bind() {
+    if (bound || typeof zE !== 'function') return bound;
+    try {
+      zE('webWidget:on', 'open', onChatOpen);
+      zE('webWidget:on', 'close', onChatClose);
+      bound = true;
+    } catch (e) {}
+    try {
+      zE('messenger:on', 'open', onChatOpen);
+      zE('messenger:on', 'close', onChatClose);
+      bound = true;
+    } catch (e) {}
+    return bound;
+  }
+
+  var tries = 0;
+  var boot = setInterval(function () {
+    if (bind() || ++tries > 100) clearInterval(boot);
+  }, 200);
+})();
+`;
+
 const zendeskClearStaleInputScript = `
 (function () {
   var CLEAR_WINDOW_MS = 1500;
@@ -189,6 +250,11 @@ export default function SiteScripts() {
         id="zendesk-agent-open"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{ __html: zendeskAgentOpenScript }}
+      />
+      <Script
+        id="zendesk-mobile-back"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{ __html: zendeskMobileBackScript }}
       />
       <Script
         id="zendesk-clear-stale-input"

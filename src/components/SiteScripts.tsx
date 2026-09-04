@@ -6,29 +6,52 @@ const ZENDESK_SNIPPET_KEY = "f68a92a0-bfa9-4c30-96e9-0f8bc2601292";
 const GA_ID = "G-NDYR2R3WP0";
 const META_PIXEL_ID = "1595522894901835";
 
-const zendeskAutoOpenScript = `
-function initZendeskChat() {
-  if (typeof zE === 'function') {
-    zE(function() {
+const zendeskAgentOpenScript = `
+(function () {
+  function openOnAgentMessage(count) {
+    if (!count || count < 1 || typeof zE !== 'function') return;
+    try {
+      zE('webWidget', 'show');
       zE('webWidget', 'open');
-
-      zE('webWidget:on', 'chat:unreadMessages', function(number) {
-        if (number > 0) {
-          zE('webWidget', 'show');
-          zE('webWidget', 'open');
-        }
-      });
-    });
-  } else {
-    setTimeout(initZendeskChat, 300);
+    } catch (e) {}
+    try {
+      zE('messenger', 'open');
+    } catch (e) {}
   }
-}
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initZendeskChat);
-} else {
-  initZendeskChat();
-}
+  function keepClosed() {
+    if (typeof zE !== 'function') return;
+    try { zE('webWidget', 'close'); } catch (e) {}
+    try { zE('messenger', 'close'); } catch (e) {}
+  }
+
+  function bind() {
+    if (typeof zE !== 'function') return false;
+
+    try {
+      zE(function () {
+        keepClosed();
+        zE('webWidget:on', 'chat:unreadMessages', function (number) {
+          openOnAgentMessage(number);
+        });
+      });
+    } catch (e) {}
+
+    try {
+      zE('messenger', 'close');
+      zE('messenger:on', 'unreadMessages', function (count) {
+        openOnAgentMessage(count);
+      });
+    } catch (e) {}
+
+    return true;
+  }
+
+  var tries = 0;
+  var boot = setInterval(function () {
+    if (bind() || ++tries > 100) clearInterval(boot);
+  }, 200);
+})();
 `;
 
 const zendeskClearStaleInputScript = `
@@ -163,9 +186,9 @@ export default function SiteScripts() {
         strategy="lazyOnload"
       />
       <Script
-        id="zendesk-auto-open"
+        id="zendesk-agent-open"
         strategy="lazyOnload"
-        dangerouslySetInnerHTML={{ __html: zendeskAutoOpenScript }}
+        dangerouslySetInnerHTML={{ __html: zendeskAgentOpenScript }}
       />
       <Script
         id="zendesk-clear-stale-input"

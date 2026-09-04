@@ -960,6 +960,127 @@ A: Industry estimates suggest the median self-published novel sells fewer than 2
 [/FAQ]
 `;
 
+const selfPublishingTipsPostContent = `
+Most self-publishing tips fall into one of two categories: generic encouragement dressed up as advice, or so much information that a first-time author has no idea where to start.
+
+Here are the self-publishing tips that actually change outcomes: get real editing before you touch formatting, treat your book's metadata and categories as seriously as its cover, understand the trade-offs behind KDP Select before you enroll, and build your reader platform before launch day, not after. If you are self-publishing a book for beginners — learning the process for the first time — the rest of this guide breaks each of these down with the specific decisions and mistakes that separate books that find readers from books that quietly disappear.
+
+## Start With the Manuscript, Not the Upload Button
+
+If you are figuring out how to self-publish a book for the first time, the most common mistake is not a marketing mistake. It happens earlier, when a manuscript moves from draft to publish-ready without going through the right kind of editing for its actual problems.
+
+There are four distinct editing stages, and knowing which one your manuscript needs is the first real decision to get right: developmental editing addresses structure, pacing, and plot or argument logic; line editing works at the paragraph level for clarity and flow; copyediting catches grammar, consistency, and continuity; proofreading is the final pass after formatting. Skipping straight to proofreading because it is the cheapest option is a common mistake — a proofread cannot fix a structural problem, and readers notice pacing and clarity issues even when they cannot name them.
+
+Beta readers are a useful and often free supplement to professional editing, particularly for identifying whether your book delivers on its genre promise, but they are not a substitute for it. A beta reader tells you whether the book worked for them. An editor tells you why, and how to fix what did not.
+
+For manuscripts that have not yet been through a structural review, [developmental and line editing support](https://aeropublishing.com/book-editing/) is worth prioritizing before any spending on cover design or marketing — a beautifully packaged book with unresolved structural issues still underperforms.
+
+## Get Your Metadata and Categories Right Before You Publish
+
+Metadata is the step most self-publishing tips skip entirely, even though it does more to determine whether readers find your book than almost anything else you control. Your book's metadata — its title, subtitle, description, keywords, and category assignment — determines whether readers searching for what your book actually offers can find it.
+
+Every book needs a BISAC code, the industry-standard classification system that tells retailers and libraries what shelf your book belongs on. On Amazon KDP, you can select up to three relevant categories during title setup — a firm limit, since Amazon no longer accepts requests for additional categories through support. Categories can be updated later through your KDP Bookshelf, and choosing a focused niche over a crowded general category meaningfully affects whether your book can actually rank.
+
+Your book description deserves the same care as your first chapter. It needs to hook a browsing reader in the first two lines, before any "read more" cutoff, and use language that mirrors how your target reader actually searches and talks about books like yours — not abstract marketing language.
+
+## Design and Format Like You're Competing With Traditionally Published Books
+
+This applies to design and formatting too: your book competes in the same search results and genre categories as titles with a full publishing house behind them, and readers do not apply a different standard because your book is self-published.
+
+### The Cover: Pass the Thumbnail Test
+
+Most readers encounter your cover first as a small thumbnail in search results, not as a full-size image. A cover that looks striking at full resolution but unreadable or generic at thumbnail size is a cover that gets scrolled past. Study the top twenty books in your specific subgenre before designing anything — genre conventions in color, typography, and imagery exist because they help readers instantly recognize what kind of book they are looking at.
+
+Whether to design your own cover or hire a professional comes down to one honest question: can you produce something that would not look out of place next to the current bestsellers in your category? If the answer is genuinely yes, DIY tools can work. If there is any doubt, [custom book cover design](https://aeropublishing.com/book-cover-design/) built around your specific genre removes that risk.
+
+### Interior Formatting: Know the Technical Requirements
+
+Print and ebook formatting have different technical demands. Print books require attention to trim size, margins, and bleed — the area of the cover that extends past the trim line to avoid white edges after cutting. Ebooks need clean EPUB formatting that reflows properly across device sizes rather than a fixed layout designed for a printed page. A manuscript formatted correctly for KDP's ebook requirements is not automatically correct for a print-ready PDF, and the two are frequently confused by first-time self-publishers.
+
+[Professional book formatting](https://aeropublishing.com/book-formatting/) exists for exactly this reason: each format has its own technical spec, and mixing them up is one of the fastest ways to get a file rejected or a print copy that looks amateur on the page.
+
+## Understand Your Distribution and Pricing Options
+
+This is where most authors need genuine self publishing help — where you publish and how you price affect royalties, distribution reach, and how much control you retain, and the trade-offs are not always obvious from each platform's marketing copy. A handful of Amazon KDP tips make an outsized difference here, starting with understanding exactly what KDP Select commits you to before enrolling.
+
+| Platform | Cost | Distribution | Best For |
+| --- | --- | --- | --- |
+| Amazon KDP | Free | Amazon ebook and print-on-demand | Most authors — largest single audience, simplest setup |
+| Draft2Digital | Free (10% commission) | Apple Books, Kobo, Barnes & Noble, libraries | Authors who want retailers beyond Amazon without managing each account separately |
+| IngramSpark | ~$49 setup fee/title | Bookstores, libraries, global print | Authors targeting print sales through independent bookstores and library systems |
+| ACX | Free (royalty share) or paid narration | Audible, Amazon, Apple Books | Authors adding an audiobook edition after print/ebook are established |
+
+A couple of these numbers move: [ACX](https://www.acx.com/) shifted to a new royalty model in 2026 (50% for exclusive distribution, 30% for non-exclusive, calculated against pooled listening revenue rather than a flat per-sale cut), and [IngramSpark](https://www.ingramspark.com/)'s setup fee can change, so confirm current rates on each platform before you commit. [Amazon KDP](https://kdp.amazon.com/en_US/) remains free to publish, and [Draft2Digital](https://www.draft2digital.com/) still takes a 10% commission in exchange for aggregating the non-Amazon retailers from one account.
+
+The decision that generates the most confusion is whether to enroll in KDP Select. Select requires Amazon exclusivity — you cannot sell the ebook anywhere else, but it unlocks Kindle Unlimited page-read royalties, Countdown Deals, and free promotional days. For authors whose readership is concentrated on Amazon already, the trade-off is usually worth it. For authors who want their book available through library systems or Apple Books from day one, exclusivity is a real cost, not a minor detail to skip past when checking the enrollment box.
+
+## Protect the Business Side: ISBN, Copyright, and AI Disclosure
+
+A few administrative steps get overlooked because they feel less urgent than writing or design, but they affect your ownership of the book long after publication — and they rarely make it into shorter self-publishing tips lists.
+
+Amazon's free KDP ISBN works for Amazon-only distribution but lists "Independently published" as your publisher of record. Purchasing your own ISBN through [Bowker](https://www.bowker.com/isbn-us) gives you your own imprint name and consistent identification across every platform and format. If you plan to distribute through IngramSpark or expect library or academic interest, a Library of Congress Control Number (LCCN) may be worth considering. It is free, but you have to apply before publication, and it is only available to eligible U.S. authors and publishers through the Library of Congress's [Preassigned Control Number program](https://www.loc.gov/publish/pcn/).
+
+Copyright protection exists automatically the moment you write your book, but U.S. copyright registration creates a public record of your claim and comes with real enforcement advantages. For published work, registering promptly — generally before an infringement occurs or within three months of publication — helps preserve your eligibility for statutory damages and attorney's fees in qualifying infringement cases. It is a modest cost relative to the protection it provides.
+
+One area every author now needs to understand, regardless of whether they use AI tools at all: Amazon's [KDP content guidelines](https://kdp.amazon.com/en_US/help/topic/G200672390) require you to disclose during the publishing workflow whether your book contains AI-generated text, images, or translations. The distinction that matters is between AI-generated content — material an AI tool produced that appears in your book — and AI-assisted work, where you wrote the content and used AI tools to support editing or brainstorming. Only the former requires disclosure. The disclosure itself is private to Amazon and does not appear on your book's public listing, but undisclosed AI-generated content can result in a title being removed. Authors using any AI tool in their workflow should understand exactly which category their process falls into before publishing, since the two are easy to conflate.
+
+## Build Your Platform Before Launch Day, Not After
+
+Marketing tips for self published authors tend to focus on what happens after the book goes live, but the part most authors underestimate happens earlier: how much of a book's momentum is decided before launch day even arrives. An email list, a small advance reader (ARC) team, and a preorder period each solve a different part of the same problem — arriving at launch day with zero reviews and zero existing audience is the hardest possible starting position. A preorder period (available for Kindle eBooks, not print editions) creates a planned sales spike on release day; an ARC team helps generate honest reviews early; and an email list gives you a warm audience to notify the moment the book goes live.
+
+An ARC team can help you build early reader awareness and give interested readers the opportunity to leave honest reviews around launch, subject to each retailer's review policies — giving your book some social proof right when it matters most, rather than reviews trickling in over months. Building an email list, even a small one, before launch means you have a warm audience to notify on day one rather than relying entirely on cold discovery.
+
+For a practical breakdown of building visibility once the book is live, a step-by-step [Amazon launch strategy](https://aeropublishing.com/blog/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy) covers category selection, review timing, and launch-week sequencing in more depth than a general marketing overview can. Authors who want ongoing support after publication can also look at [professional book marketing services](https://aeropublishing.com/book-marketing/).
+
+## The Self-Publishing Checklist
+
+Use this self publishing checklist as a condensed, phase-based reference for tracking where you are in the process — think of it as the practical companion to the rest of this guide to self publishing:
+
+- Manuscript has been through developmental or line editing, not just self-review
+- Copyediting and proofreading completed after all content changes are final
+- Cover designed and tested at thumbnail size against comparable titles in your genre
+- Interior formatted correctly for each intended format (ebook EPUB, print PDF)
+- Book description written to hook a browsing reader in the first two lines
+- Categories and keywords researched, not guessed
+- ISBN secured (free KDP or purchased, depending on distribution plans)
+- Copyright registration filed
+- AI disclosure status confirmed accurately if any AI tools were used in content creation
+- ARC team recruited and briefed with a clear review-request timeline
+- Email list or launch announcement plan in place before publication date
+- Pricing and KDP Select decision made deliberately, not by default
+
+## Common Self-Publishing Mistakes That Are Easy to Avoid
+
+The same mistakes show up again and again across otherwise well-intentioned projects, which is why they are some of the most repeated self-publishing tips: skipping developmental editing because copyediting feels sufficient, choosing a cover based on personal taste rather than genre convention, publishing with zero pre-existing audience or review base, and treating marketing as something that starts after the book is live rather than months before. None of these are fatal individually, but they compound — a book with a weak cover and no early reviews has to work much harder to be discovered than one that addressed both before launch.
+
+## The Tips That Actually Compound
+
+Most self-publishing tips are individually reasonable advice and collectively overwhelming as a checklist. The ones that matter most are the ones that are easy to skip because they do not feel urgent: real editing before formatting, metadata before marketing, and platform-building before launch day rather than after.
+
+None of these require a large budget to get right. They require sequencing — doing the foundational work before the visible work, so that the cover, the launch, and the marketing spend all have something solid underneath them.
+
+If you are weighing which parts of this process to handle yourself and where professional support would change the outcome, Aero Publishing's [self-publishing services](https://aeropublishing.com/book-publishing/) cover editing, design, formatting, and launch strategy for authors who want that foundation built right the first time.
+
+## Frequently Asked Questions
+
+[FAQ]
+Q: What are common self-publishing mistakes?
+A: The most common mistakes are skipping developmental editing in favor of a cheaper proofread, using a DIY cover that does not match genre conventions, publishing without any pre-built audience or review base, and starting marketing only after the book is already live. Each of these individually is recoverable, but together they significantly slow a book's early discoverability.
+
+Q: What is the average cost to self-publish a book?
+A: The cost of self-publishing varies widely depending on genre, word count, and how much of the work you outsource. A DIY release using free tools and self-editing can cost very little, while professional editing, custom cover design, formatting, and marketing can push the total into the thousands of dollars — and illustrated children's books run higher still because of illustration costs.
+
+Q: What are the best platforms for self-publishing and distribution?
+A: Amazon KDP is the best starting point for most authors due to its free publishing model and largest single reader base. Draft2Digital is the most efficient option for reaching Apple Books, Kobo, and library systems through one account. IngramSpark remains the strongest option for authors targeting independent bookstores and library acquisitions specifically. Most established indie authors eventually use a combination rather than relying on a single platform.
+
+Q: Do I need a professional editor to self-publish?
+A: Technically, no platform requires it, but skipping professional editing entirely is one of the highest-risk cost-cutting decisions in self-publishing. At minimum, a copyedit and proofreading pass by someone other than the author catches errors and inconsistencies that are genuinely difficult to see in your own work. Developmental editing becomes increasingly important for a first novel or first long-form nonfiction project, where structural issues are harder to self-diagnose.
+
+Q: How long does self-publishing take from finished manuscript to published book?
+A: A professionally managed publishing process — editing, cover design, formatting, and a proper launch plan — can easily take several months from a finished manuscript to publication, and the exact timeline depends heavily on the manuscript's condition, how many editing passes it needs, and how far in advance you build your ARC team and email list. Authors relying only on free tools and self-editing can move considerably faster, though usually at some cost to final quality.
+[/FAQ]
+`;
+
 export const featuredPost: BlogPost = {
     metaTitle: "How to Become a Best-Selling Author on Amazon: A Step-by-Step Guide",
     metaDescription:
@@ -979,6 +1100,35 @@ export const featuredPost: BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "Self-Publishing Tips That Actually Move the Needle in 2026",
+        metaDescription:
+            "The self-publishing tips that actually matter: real editing, metadata and categories, distribution trade-offs, AI disclosure rules, and a practical checklist for your launch.",
+        focusKeyphrase: "self-publishing tips",
+        keywords: [
+            "self-publishing tips",
+            "how to self-publish a book",
+            "self publishing checklist",
+            "self-publishing a book for beginners",
+            "amazon kdp tips",
+            "kdp select",
+            "self-publishing mistakes",
+            "self publishing help",
+            "guide to self publishing",
+            "marketing tips for self published authors",
+        ],
+        slug: "self-publishing-tips",
+        category: "Self-Publishing Guides",
+        title: "Self-Publishing Tips That Actually Move the Needle in 2026",
+        description:
+            "The self-publishing tips that actually matter: real editing, metadata and categories, distribution trade-offs, AI disclosure rules, and a practical checklist for your launch.",
+        date: "04 September 2026",
+        image: "/main-blog-image.webp",
+        readTime: "10 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: selfPublishingTipsPostContent,
+    },
     {
         metaTitle: "How Much Does It Cost to Self-Publish a Novel? (2026 Breakdown)",
         metaDescription:

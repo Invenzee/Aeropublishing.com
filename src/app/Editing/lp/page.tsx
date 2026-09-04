@@ -14,11 +14,11 @@ import {
 } from "react-icons/fa6";
 
 const PHONE_DISPLAY = "(424) 282-3304";
-const PHONE_HREF = "tel:+14242823304";
+const PHONE_HREF = "tel:(424) 282-3304";
 const EMAIL = "admin@aeropublishing.com";
 const ADDRESS = "12508 Center St, South Gate, CA 90280, United States";
 const LOGO_SRC = "/editing-lp-logo.png";
-const POPUP_DELAY_MS = 30000;
+const POPUP_DELAY_MS = 60000;
 const POPUP_SESSION_KEY = "book-editing-lp-popup-dismissed";
 
 /* Editing LP forest emerald palette */
@@ -733,6 +733,11 @@ export default function BookEditingLpPage() {
   }, []);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem(POPUP_SESSION_KEY)) return;
+    } catch {
+      // ignore
+    }
     const timer = window.setTimeout(() => setPopupOpen(true), POPUP_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, []);
@@ -818,7 +823,9 @@ export default function BookEditingLpPage() {
               </div>
               <div className="p-6 sm:p-8 md:max-h-[90vh] md:overflow-y-auto">
                 <form
-                  onSubmit={(e) => handleLeadFormSubmit(e, "/Editing/lp-popup")}
+                  onSubmit={(e) => {
+                    void handleLeadFormSubmit(e, "/Editing/lp-popup");
+                  }}
                   className="space-y-3"
                 >
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

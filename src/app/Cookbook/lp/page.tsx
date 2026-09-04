@@ -9,6 +9,7 @@ import CookbookExpert from "./CookbookExpert";
 import CookbookSimple from "./CookbookSimple";
 import CookbookCulinary from "./CookbookCulinary";
 import CookbookFooter from "./CookbookFooter";
+import CookbookLeadPopup from "./CookbookLeadPopup";
 
 export const metadata: Metadata = {
   title: "Cookbook LP",
@@ -48,6 +49,7 @@ export default function CookbookLandingPage() {
       <CookbookSimple />
       <CookbookCulinary />
       <CookbookFooter />
+      <CookbookLeadPopup />
     </main>
   );
 }

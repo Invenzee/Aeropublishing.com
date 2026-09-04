@@ -14,10 +14,10 @@ import {
 } from "react-icons/fa6";
 
 const PHONE = "(424) 282-3304";
-const PHONE_HREF = "tel:+14242823304";
+const PHONE_HREF = "tel:(424) 282-3304";
 const PHONE_DISPLAY = "(424) 282-3304";
 const EMAIL = "admin@aeropublishing.com";
-const POPUP_DELAY_MS = 30000;
+const POPUP_DELAY_MS = 60000;
 const POPUP_SESSION_KEY = "childrens-book-lp-popup-dismissed";
 
 /* Kids LP logo palette */
@@ -643,6 +643,11 @@ export default function ChildrensBookLpPage() {
   }, []);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem(POPUP_SESSION_KEY)) return;
+    } catch {
+      // ignore
+    }
     const timer = window.setTimeout(() => setPopupOpen(true), POPUP_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, []);
@@ -728,7 +733,9 @@ export default function ChildrensBookLpPage() {
             </div>
             <div className="p-6 sm:p-8 md:max-h-[90vh] md:overflow-y-auto">
               <form
-                onSubmit={(e) => handleLeadFormSubmit(e, "/Kids/lp-popup")}
+                onSubmit={(e) => {
+                  void handleLeadFormSubmit(e, "/Kids/lp-popup");
+                }}
                 className="space-y-3"
               >
                 <input type="text" name="name" placeholder="Name" required className={FIELD_CLASS} />
@@ -1301,7 +1308,11 @@ export default function ChildrensBookLpPage() {
                   alt="Aero Publishing"
                   className="mb-5 w-40 transition-transform duration-300 hover:scale-105 sm:w-48"
                 />
-                <p className="mb-1 text-sm text-[#111]">{PHONE_DISPLAY}</p>
+                <p className="mb-1 text-sm text-[#111]">
+                  <a href={PHONE_HREF} className="transition-opacity duration-300 hover:opacity-80">
+                    {PHONE_DISPLAY}
+                  </a>
+                </p>
                 <p className="mb-1 text-sm text-[#111]">
                   <a href={`mailto:${EMAIL}`} className="break-all transition-opacity duration-300 hover:opacity-80">
                     {EMAIL}

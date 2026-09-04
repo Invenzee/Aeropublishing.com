@@ -100,8 +100,10 @@ export async function handleLeadFormSubmit(
   source?: string,
 ): Promise<void> {
   e.preventDefault();
+  e.stopPropagation();
+  const form = e.currentTarget;
   try {
-    await submitLeadForm(e.currentTarget, source);
+    await submitLeadForm(form, source);
   } catch (error) {
     window.alert(getSubmitErrorMessage(error));
   }

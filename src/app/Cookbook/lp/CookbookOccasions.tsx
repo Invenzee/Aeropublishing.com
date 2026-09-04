@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useRef } from "react";
 import Reveal from "./Reveal";
 
-/** 4 unique book covers — carousel shows 4 at once and repeats these. */
+/** 4 unique cookbook covers — carousel shows 4 at once and repeats these. */
 const BOOKS = [
-  "/cookbook/lp/book-1.webp",
-  "/cookbook/lp/book-2.webp",
-  "/cookbook/lp/book-3.webp",
-  "/cookbook/lp/book-4.webp",
+  { src: "/cookbook/lp/cover-1.webp", alt: "Harvest Table seasonal farm cookbook cover" },
+  { src: "/cookbook/lp/cover-2.webp", alt: "Sunday Kitchen comfort recipes cookbook cover" },
+  { src: "/cookbook/lp/cover-3.webp", alt: "Fire and Spice global flavors cookbook cover" },
+  { src: "/cookbook/lp/cover-4.webp", alt: "Sweet Season baking and desserts cookbook cover" },
 ] as const;
 
 const REPEATS = 3;
@@ -63,15 +63,16 @@ export default function CookbookOccasions() {
             ref={scrollerRef}
             className="flex flex-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 lg:gap-5 [&::-webkit-scrollbar]:hidden"
           >
-            {carouselBooks.map((src, i) => (
+            {carouselBooks.map((book, i) => (
               <div
-                key={`${src}-${i}`}
+                key={`${book.src}-${i}`}
                 className="relative aspect-[3/4] w-[calc((100%-2.25rem)/4)] min-w-[calc((100%-2.25rem)/4)] shrink-0 snap-start overflow-hidden rounded-sm bg-[#f6f6f6] shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:scale-[1.02] max-sm:w-[calc((100%-0.75rem)/2)] max-sm:min-w-[calc((100%-0.75rem)/2)]"
               >
                 <Image
-                  src={src}
-                  alt={`Aero Publishing cookbook cover sample ${(i % BOOKS.length) + 1}`}
+                  src={book.src}
+                  alt={book.alt}
                   fill
+                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 640px) 45vw, 220px"
                 />

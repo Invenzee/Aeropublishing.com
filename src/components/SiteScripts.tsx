@@ -3,7 +3,6 @@
 import Script from "next/script";
 
 const ZENDESK_SNIPPET_KEY = "f68a92a0-bfa9-4c30-96e9-0f8bc2601292";
-const GA_ID = "G-NDYR2R3WP0";
 const META_PIXEL_ID = "1595522894901835";
 
 const zendeskAgentOpenScript = `
@@ -195,28 +194,6 @@ const zendeskClearStaleInputScript = `
 export default function SiteScripts() {
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script
-        id="ga-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', {
-              send_page_view: false
-            });
-            window.addEventListener('load', function() {
-              gtag('event', 'page_view');
-            });
-          `,
-        }}
-      />
-
       <Script
         id="meta-pixel"
         strategy="lazyOnload"

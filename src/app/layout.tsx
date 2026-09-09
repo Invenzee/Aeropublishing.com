@@ -88,6 +88,20 @@ export default function RootLayout({
         <meta name="msvalidate.01" content="7000FF60495EE20E0D4689F671EDA603" />
         <meta name="google-site-verification" content="ROiFaEOVsREbtiohpnzCc7_R8WV_m6inTfBrUQsVtD4" />
         <link rel="icon" href="/favicon-3.webp" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-REWKX23V49"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-REWKX23V49');
+            `,
+          }}
+        />
       </head>
       <body
         className={`${syne.variable} ${poppins.variable} ${raleway.variable} ${ShadedLarsh.variable} antialiased overflow-x-clip`}

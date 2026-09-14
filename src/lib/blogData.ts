@@ -1081,6 +1081,203 @@ A: A professionally managed publishing process — editing, cover design, format
 [/FAQ]
 `;
 
+const arcReviewPostContent = `
+A book that launches with zero reviews looks unfinished, even when the writing inside it is excellent. Readers use review counts as a fast trust signal, and a blank one reads as untested reason enough for a browsing shopper to keep scrolling instead of clicking in. An ARC review — a review written from an Advance Reader Copy sent out before your official launch is how you close that gap before it opens.
+
+Most guides on this topic stop at "here's where to find ARC readers." This one goes further. You'll learn what ARC reviews actually cost once your time is factored in, how to screen reviewers before you hand out a free copy of your manuscript, and what to do when a review goes wrong — spoilers, a ghosted reviewer, or a leaked file. If you're deciding whether an ARC campaign is worth running before your launch, you need the full picture, not just the recruiting playbook.
+
+## What Is an ARC Review?
+
+ARC stands for Advance Reader Copy, sometimes called an Advance Review Copy: a pre-publication version of your book sent to readers before it goes on sale. An ARC review is what comes out of that exchange: a reader gets early access to your manuscript, reads it, and posts an honest review, usually timed to go live around your launch date.
+
+The arrangement runs on one rule: the author gives the book away for free and never requires a review or makes the free copy conditional on posting one. You're trading early access for an honest reaction, not buying a rating. That's exactly why Amazon and Goodreads treat compensated or required reviews as a policy violation. The reviewer can rate your book however they genuinely feel, including a rating you don't love.
+
+This is also where many first-time authors get into trouble. The moment a reviewer expects anything beyond the free copy (a paid boost, a swap arrangement tied to a specific rating), you're no longer dealing with an ARC review. You're dealing with an incentivized one, and that puts every review it produces at risk of removal.
+
+### ARC Review vs. Beta Read vs. Post-Launch Review
+
+It helps to separate an ARC review from two stages authors often lump together. A beta read happens earlier, on an unfinished or unpolished draft, and the feedback stays private: notes on pacing, plot holes, or character motivation that you use to revise before anyone outside your circle sees the book.
+
+An ARC review happens later, once your manuscript itself is essentially final (formatted and proofread), and the feedback is public: a review posted where other readers can see it. A post-launch review is simply any review posted after your official launch, often by a reader who bought the book rather than received it free. Each stage calls for a different kind of reader and a different kind of ask.
+
+## Why ARC Reviews Matter for Your Book Launch
+
+Reviews do two separate jobs at launch, and it's worth keeping them separate rather than folding them into one vague claim about "the algorithm."
+
+The first is reader psychology, and it's easy to defend. Someone scrolling a category page treats a book with reviews as vetted and a book without them as a risk, and that's true even for readers who never make it past the star rating, because the number itself does the persuading before a single word of the review gets read. A book that launches with reviews already in place gives a hesitant browser a reason to take the chance instead of scrolling past.
+
+The second is launch marketing, and it may be the bigger payoff of the two. A handful of strong ARC reviews give you quotable language before launch: the specific, enthusiastic sentence you can pull for your Amazon description, your back cover, or the ad creative your marketing runs on. Authors who skip the ARC stage often launch with no outside voice to borrow from, which makes every marketing asset harder to write and less persuasive. If you're building out a [launch marketing plan](https://aeropublishing.com/book-marketing/), having that reviewer language in hand before you start makes the whole campaign easier to write.
+
+## How Much Do ARC Reviews Actually Cost You?
+
+Cost is where most ARC advice gets vague, so let's get specific. Pricing on the major platforms varies by campaign size and shifts periodically, so treat the numbers below as planning ranges rather than fixed quotes, and confirm current pricing directly before you commit a budget.
+
+[Booksprout](https://booksprout.co/) offers a free tier for authors testing the process, plus paid tiers that commonly run paid tiers priced by campaign volume and reader count — worth checking current rates directly, since Booksprout has restructured pricing before. It's the cheapest formal option on this list, but claim rates and review completion can be inconsistent. Some authors report strong results; others report readers claiming a book and never posting.
+
+[BookSirens](https://booksirens.com/) uses a pay-per-download model: roughly $10 to list a title plus about $2 for every reader who downloads it, or a flat annual Author plan (around $100/year) for authors running multiple campaigns. BookSirens reports that roughly 75% of readers who download a book on the platform go on to post a review, averaged across all the books it lists. That's high for this category, though it's the platform's own reported figure rather than an independently verified statistic, and it won't hold for every title. Genre-matching is the likely reason for the strong average, since readers are shown books that already fit what they read.
+
+[NetGalley](https://www.netgalley.com/) sits at the top of the price range: a standard listing commonly runs $450–$600 for three to six months, with a discounted co-op rate available through groups like IBPA. You're paying for reach into a professional reviewer base (librarians, booksellers, media, and high-output bloggers), not for volume. NetGalley is generally most useful when your goals extend beyond Amazon reviews, so if your specific goal is Amazon review count, it's often the most expensive way to get there.
+
+The real ROI question isn't "which platform is cheapest." It's "which platform's audience actually reviews where I need reviews to land." A genre romance novel chasing Amazon review count is usually better served by a cheaper, genre-matched platform like BookSirens than by NetGalley's broader, pricier reach. A literary or nonfiction title angling for library and bookstore placement gets more value out of NetGalley's audience even at the higher price. If you're still finalizing your overall launch budget, it's worth weighing this spend against the rest of your [self-publishing costs](https://aeropublishing.com/blog/cheapest-way-to-publish-book) before you commit to a platform.
+
+### DIY vs. Platform vs. Managed PR Service (Comparison Table)
+
+Platform pricing only tells part of the story. The bigger decision is which delivery model fits your time, budget, and tolerance for managing the process yourself.
+
+| Approach | Typical Cost | Your Time Investment | Control Over Reviewer Quality | Potential Review Yield |
+| --- | --- | --- | --- | --- |
+| DIY (build your own ARC team) | Free to ~$10–20/month for a delivery tool | High — you recruit, screen, and follow up yourself | Highest — you approve every reader individually | Depends almost entirely on your outreach and screening |
+| ARC platform (BookSirens, Booksprout, NetGalley) | Roughly $30–$600+, depending on platform and campaign size | Low to moderate — the platform handles matching and reminders | Moderate — some platforms pre-vet readers, but you're drawing from a shared pool | Moderate to high on genre-matched platforms; lower on broad, unmatched ones |
+| Managed ARC/PR service | Roughly $95–$300+ per campaign, more for full publicity packages | Lowest — someone else runs recruitment and tracking for you | Moderate to high, dependent on that service's own screening standards | Depends heavily on the service's existing reader network and genre fit |
+
+A budget-limited debut author is usually better off on a genre-matched platform than paying for a managed service before they know how their book performs. An author with an established backlist and a marketing budget to match gets more mileage from NetGalley's trade-side reach. A time-poor author launching multiple titles a year is the clearest case for paying a managed service to take the logistics off their plate. The fee is buying back hours, not just reviews.
+
+## Where to Find ARC Reviewers
+
+ARC readers — people who've opted in to reading books before their official release, usually with the intention of sharing an honest review — turn up through dedicated ARC platforms, reader communities, and your own audience, though the exact pool varies by platform. These readers often call themselves ARC readers or ARC reviewers, and you'll find them congregating in a few predictable places well beyond the paid platforms already covered.
+
+Goodreads has genre-specific reader groups where members actively look for new ARCs in categories like romance, fantasy, or thriller, though it's worth confirming a given group is still active before you rely on it. Social platforms carry the same crowd under hashtags like #arcreaders and #bookstagram, where readers post about books they're currently reviewing. And if you've been building an author newsletter, your own subscriber list is often the highest-quality source of all, because these readers already know your writing and want you to succeed.
+
+Volume is tempting, but it's the wrong thing to optimize for. Ten reviewers who genuinely read your genre and finish books on schedule will outperform fifty who claimed a copy because it was free and never opened it. A reviewer's fit with your genre and their track record of following through matter far more than their follower count or how many other ARCs they've claimed, a distinction that becomes especially important once you start screening applicants, which is where a lot of authors under-invest.
+
+### NetGalley vs. BookSirens vs. Booksprout at a Glance
+
+- **NetGalley:** the highest-cost option in this comparison. Best when you want reach into librarians, booksellers, and media rather than just Amazon review count.
+- **BookSirens:** the mid-cost, pay-per-download option. Best for indie fiction authors chasing genre-matched Amazon and Goodreads reviews without a large upfront spend.
+- **Booksprout:** the free-tier, self-managed option. Best for authors testing the ARC process for the first time or running a very lean launch budget.
+
+Booksprout in particular asks more of you operationally, since you're managing claims and follow-ups yourself rather than relying on a curated match, which is part of why its results vary more from author to author. None of these three is objectively "best." They're built for different goals, and picking based on price alone is how authors end up with reviews in the wrong place for what they actually needed.
+
+### Building Your Own ARC Team
+
+Building your own team costs time instead of money, and for many first-time authors, that trade makes sense before their budget can support a paid platform. Start with your newsletter: even a small list of 50 to 100 engaged subscribers can be a strong starting pool, often stronger than a stranger pulled from a general platform, because these readers already chose to hear from you.
+
+From there, recruit through genre hashtags and Goodreads groups, and consider cross-promoting with authors in your genre who've built their own reader communities, a tactic that works well alongside a broader [social promotion strategy](https://aeropublishing.com/blog/how-to-promote-your-ebook-on-booktok-instagram-linkedin) if you're already active on BookTok or Instagram. A basic delivery tool like BookFunnel or StoryOrigin handles file distribution for a low monthly fee, which is usually the only real cost in a DIY approach. Keep a simple spreadsheet or form to track who signed up, what they requested, and whether they followed through, since this list becomes the foundation of your ARC team for every future release, not just this one.
+
+## How to Vet ARC Reviewers Before You Send a Copy
+
+This is the section most ARC guides skip, and it's the one that matters most once you've moved past "how do I find reviewers" to "how do I make sure the reviewers I found are worth my time." Screening protects two things: your review quality average, and your manuscript itself, since an unformatted or unfinished-looking ARC in the wrong hands can end up shared somewhere you never intended.
+
+You don't need anything elaborate. A short application form (three or four questions, built in a free tool like Google Forms) does most of the work. The point isn't to interrogate applicants; it's to filter out the small percentage of requesters who show no real intent to read or review, so you're not spending review copies, and follow-up time, on people who were never going to finish the book.
+
+There's a balance to strike. A form that's too long discourages the genuine readers you actually want, while a form that's too short filters out almost nobody. Three to five short questions is usually enough — sufficient to spot obvious mismatches without turning your ARC sign-up into a job application.
+
+Many first-time authors skip this step entirely because it feels like an extra barrier between them and reviews. In practice, it's the opposite: a lightweight screening step can improve your completion rate, because the readers who make it through are more likely to actually intend to read and review, rather than just collect free books.
+
+### Red Flags to Watch For
+
+A few patterns are worth treating as reasons to pass on an applicant rather than reasons for concern about a specific person:
+
+- No visible review history on Goodreads, Amazon, or the platform they're applying through
+- Genre interests that don't match your book at all (a reader who only lists horror requesting your cozy mystery)
+- A history of claiming ARCs and never posting a review, when that history is visible
+- Brand-new accounts with no activity, especially if several apply in a short window
+- Applications with generic, copy-pasted answers that show no real familiarity with your genre or book, or that suggest the reader is requesting far more ARCs than they could realistically finish
+
+None of these guarantee bad faith on their own. Together, or paired with a rushed or generic application, they're worth weighing before you send a free copy of unpublished work to a stranger.
+
+### Screening Questions to Ask in Your Application Form
+
+These questions cover most of what you need to know:
+
+- What genres do you typically read and review?
+- Roughly how many books do you read in a month? (This flags readers who take on more ARCs than they can realistically finish.)
+- Where do you usually post reviews — Amazon, Goodreads, a blog, social media?
+- Can you commit to posting a review within a set window of receiving the copy?
+
+Keep the form short enough that a genuine reader finishes it in under two minutes. The answers don't just screen applicants. They help you match specific readers to the platforms where you most need reviews, since a reader who only posts on TikTok isn't the right fit if your goal is Amazon review count.
+
+## ARC Review Timeline: When to Send and What to Expect
+
+Timing an ARC campaign is less about a fixed calendar and more about giving each stage enough room to work. Here's one practical timeline you can adapt: about twelve weeks out from launch, with roughly the first month for recruiting and screening readers, the second for distributing copies and letting readers actually read the book, and the final few weeks for follow-up reminders and collecting reviews before or during launch week. Treat it as a starting template rather than a fixed rule — a shorter or simpler book might only need six weeks, while a bigger campaign might need three months.
+
+Before you distribute anything, make sure the file itself is launch-ready: final formatting, a full proofread pass, and a short front-matter note identifying it as a pre-release copy, the expected publication date, and where you'd like the review posted. That note does double duty. It sets reader expectations, and it reminds reviewers that they're expected to disclose, in the review itself, that they received the book for free — a disclosure the reviewer needs to make where the review is posted, which your front-matter note can prompt but can't substitute for.
+
+Sending too early creates its own problem: readers finish the book, then forget to post by launch day because too much time passed between reading and reviewing. Sending too late is worse, since a rushed ARC window often means reviews trickle in for weeks after launch instead of landing in the window that gives your launch week the most useful social proof and marketing material. Most authors underestimate how long the full cycle takes, then get frustrated when reviews arrive after the release-week push has already passed.
+
+## ARC Review Rules: What's Allowed and What Gets You Flagged
+
+The core rule across the major platforms is similar: you can give away free copies in exchange for reviews, but you can never pay for, trade for, or promise anything in exchange for a specific rating or a positive one. Amazon allows readers to review free ARCs, provided you don't require a review in exchange or try to influence what it says. Goodreads runs on a similar principle, and its [guidelines for advance copies](https://help.goodreads.com/s/article/000001775) also ask reviewers to note how they got the book, so it's worth building reviewer disclosure into your process either way. A line like "I received a free copy in exchange for an honest review" is a safe, standard way for a reviewer to disclose that.
+
+[The FTC's rule on consumer reviews and testimonials](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers), in effect since October 2024, adds a legal layer on top of platform policy. It's aimed mainly at business conduct rather than individual reviewers, prohibiting fabricated reviews, undisclosed insider reviews, and compensation conditioned on a review expressing a particular opinion, with real penalties attached for violations. For authors, the practical takeaway matches what Amazon and Goodreads already enforce: never condition the free copy on a review or a specific outcome, and make sure any material connection between you and a reviewer is disclosed where the review is posted.
+
+### What's Acceptable
+
+A few practices are generally low-risk when they follow each platform's current rules:
+
+- Requesting an honest review, regardless of what rating the reader ends up giving. This is the entire premise of an ARC exchange.
+- Giving reviewers context about your book (genre, content warnings, comparable titles) so their review reflects an informed read, not confusion about what they signed up for.
+- Sending one polite follow-up reminder if a reviewer goes quiet, without pressuring them toward a specific rating or a faster turnaround.
+
+### What Can Get Your Reviews Removed
+
+- Offering payment, gift cards, or other incentives in exchange for a review, or for a review expressing a specific sentiment
+- Undisclosed relationships between reviewer and author, including reviews from friends, family, or others with a personal or financial connection to you, which platforms may flag through account-level signals even when the review itself reads as genuine
+- Participating in direct review swap arrangements, where you review another author's book in exchange for them reviewing yours
+- Pressuring a reviewer to change a rating or remove a review they've already posted
+
+Platforms can remove reviews that violate their policies, and unusual or coordinated review activity — a sudden cluster of reviews landing at once, for instance — can draw additional scrutiny even without a formal complaint. Keep your ARC process transparent, avoid review swaps and incentives, and check each platform's current guidelines before you run a campaign.
+
+## What to Do When an ARC Review Goes Wrong
+
+Most ARC advice stops at recruiting and screening, and skips what happens when something doesn't go as planned. It's worth having a plan before it happens rather than improvising in the moment. Running an ARC campaign means handing your unpublished work to strangers. Most of that goes fine, but a few situations come up often enough that you shouldn't be caught off guard: a review that misrepresents your book, a reviewer who disappears, and a file that ends up somewhere you never intended. None of these are common enough to avoid an ARC campaign over, but each has a right way and a wrong way to respond, and the wrong way usually does more damage to your author reputation than the original problem.
+
+### A Review Contains Spoilers or a Factual Error
+
+You can't ask a reviewer to change their opinion, but you can ask for a correction to something factually wrong: a character's name misspelled throughout, a plot detail stated incorrectly, or spoilers posted without a warning when the platform supports spoiler tags. Frame the message around the specific error, not the review's tone or rating, and keep it short: point to the exact line, explain what's inaccurate, and ask if they'd be willing to fix that one detail.
+
+Most reviewers are receptive to this when it's framed as a factual correction rather than a request to soften their opinion. Push any further than that (asking them to reconsider the rating, or to remove criticism you disagree with) and you're crossing from a reasonable request into exactly the kind of pressure that gets reviews flagged.
+
+### A Reviewer Ghosts You
+
+Some readers who commit to an ARC never post. One follow-up reminder, sent politely a week or two before your review deadline, is appropriate. A second reminder rarely changes the outcome and starts to feel like pressure, so it's usually better to write the review off and move your attention to readers who are actually engaging.
+
+Don't let one or two ghosted reviewers change how you run the next campaign. A quiet reviewer is a normal part of ARC distribution, not a sign your screening failed. Screening reduces this, but it never eliminates it entirely.
+
+### Your ARC File Gets Pirated or Leaked
+
+Basic protective steps reduce the risk without eliminating it: watermark each copy with the recipient's name or email, use a delivery platform that tracks downloads rather than emailing a raw file, and avoid sending a DRM-free file to anyone you haven't screened. None of this makes leaking impossible, but a personalized watermark can help you identify the original recipient if a copy later appears online.
+
+If a leak does occur, realistic recourse is limited for most indie authors. Pursuing legal action rarely makes financial sense against an anonymous pirate. A DMCA takedown request to the hosting site or platform is usually the most practical response, and it's worth having the process bookmarked before you need it rather than researching it for the first time while it's happening. For significant or repeated infringement, it's worth getting legal advice rather than handling it alone.
+
+## Common ARC Review Mistakes to Avoid
+
+- Casting too wide a net instead of screening, which trades review quality for review quantity and rarely pays off
+- Ignoring platform-specific guidelines. What's compliant on Booksprout isn't automatically compliant on NetGalley, and assuming otherwise risks a removed review.
+- Skipping the screening step because it feels like friction, then spending more time chasing ghosted reviewers than the screening would have taken
+- Sending ARCs too close to launch, leaving no room for readers to finish the book before the review window that matters most
+
+A pattern worth naming on its own: authors who treat ARC reviews as a one-time task for this launch, rather than a repeatable system they refine for every release, end up rebuilding their process, and their reader list, from scratch each time. Building a lean, repeatable ARC workflow now pays off on every future release, which is part of a broader set of [self-publishing habits worth building early](https://aeropublishing.com/blog/self-publishing-tips).
+
+## Is an ARC Review Campaign Right for Your Book?
+
+Running an ARC campaign is a genuine trade-off, not an automatic yes. If your launch timeline is under a few weeks, if your budget genuinely can't stretch to even a modest platform fee, or if your genre has a small enough readership that a handful of organic post-launch reviews will do the job, a full campaign may cost you more in time and stress than it returns. That's a legitimate call to make, not a shortcut you're taking.
+
+If you have several weeks before launch, a clear reason for wanting early reviews, and enough time or budget to manage the campaign, the trade-off usually favors running one. The cost ranges from free to a few hundred dollars; the vetting process takes an afternoon to set up once and reuse for every release; and the payoff, reviews in place before launch day plus language you can reuse in your marketing, compounds with every book you publish after this one.
+
+If you decide to move forward, the highest-leverage next steps are the ones this guide spent the most time on: screen before you send, not after something goes wrong, and treat the vetting form as a permanent part of your launch process, not a one-time task. Pairing a well-run ARC campaign with a solid [editing and proofreading pass](https://aeropublishing.com/book-editing) before you distribute anything gives reviewers the polished manuscript that earns the reviews you're working this hard to get.
+
+## Frequently Asked Questions
+
+[FAQ]
+Q: Do ARC reviewers get paid?
+A: No. Payment or compensation tied to a review, whether cash, gift cards, or free products beyond the book itself, violates Amazon's and Goodreads' policies. The FTC doesn't ban every incentive outright, but it does prohibit compensation conditioned on a review expressing a particular sentiment, and its disclosure rules can still apply. The only thing a reviewer receives is the free copy.
+
+Q: How many ARC reviewers do I need?
+A: There's no universal number. Start with a realistic group of genre-fit readers you can recruit, screen, and follow up with, and let that group grow with each release. Quality and genre fit matter more than hitting a specific count — the goal is genuine early reader feedback, not an arbitrary total.
+
+Q: Does Amazon allow reviews from readers who received an advance copy?
+A: Yes. Amazon allows readers to review free ARCs, as long as the author doesn't require a review in exchange for the copy or try to influence what it says. Reviewers should still disclose that they received the book for free, both as good practice and to meet disclosure norms on the platform where they post.
+
+Q: Do ARC reviews count toward Amazon's algorithm the same way verified purchase reviews do?
+A: ARC reviews are generally unverified, since the reviewer received the book rather than buying it, but they still count, display normally, and contribute to your overall review total and star rating. Amazon doesn't publish exactly how it weighs verified versus unverified reviews, so it's best to treat ARC reviews as one part of your review profile rather than the whole picture — building verified reviews after launch only strengthens it further.
+
+Q: Can I ask ARC reviewers to post on multiple platforms?
+A: Yes, you can invite ARC readers to share their honest review on more than one platform. Just check each platform's current rules first, and never require a specific rating or make the review copy conditional on posting anywhere.
+
+[/FAQ]
+`;
+
 export const featuredPost: BlogPost = {
     metaTitle: "How to Become a Best-Selling Author on Amazon: A Step-by-Step Guide",
     metaDescription:
@@ -1100,6 +1297,35 @@ export const featuredPost: BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "ARC Reviews for Authors: How to Get Early Reviews the Right Way (2026 Guide)",
+        metaDescription:
+            "What is an ARC review, and is it worth running before your launch? A practical guide to costs, vetting reviewers, platform rules, and what to do when a review goes wrong.",
+        focusKeyphrase: "ARC reviews for authors",
+        keywords: [
+            "ARC reviews for authors",
+            "what is an ARC review",
+            "advance reader copy",
+            "how to get ARC reviews",
+            "ARC reviewers",
+            "NetGalley",
+            "BookSirens",
+            "Booksprout",
+            "advance review copy",
+            "book launch reviews",
+        ],
+        slug: "arc-review-guide-for-authors",
+        category: "Book Marketing",
+        title: "ARC Reviews for Authors: How to Get Early Reviews the Right Way (2026 Guide)",
+        description:
+            "What is an ARC review, and is it worth running before your launch? A practical guide to costs, vetting reviewers, platform rules, and what to do when a review goes wrong.",
+        date: "14 September 2026",
+        image: "/blog-6.webp",
+        readTime: "12 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: arcReviewPostContent,
+    },
     {
         metaTitle: "Self-Publishing Tips That Actually Move the Needle in 2026",
         metaDescription:

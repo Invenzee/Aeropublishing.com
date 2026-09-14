@@ -9,6 +9,7 @@ const blogSlugRedirects = [
   "ghostwriting-for-aviation",
   "cost-to-self-publish-novel",
   "self-publishing-tips",
+  "arc-review-guide-for-authors",
 ].map((slug) => ({
   source: `/${slug}`,
   destination: `/blog/${slug}`,

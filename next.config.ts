@@ -10,6 +10,7 @@ const blogSlugRedirects = [
   "cost-to-self-publish-novel",
   "self-publishing-tips",
   "arc-review-guide-for-authors",
+  "two-isbns-same-book",
 ].map((slug) => ({
   source: `/${slug}`,
   destination: `/blog/${slug}`,

@@ -37,7 +37,9 @@ function renderInlineText(text: string, keyPrefix: string) {
                 if (linkIdx > 0 && linkIdx % 3 === 1) {
                     const url = linkParts[linkIdx + 1];
                     const isInternal =
-                        url.startsWith("/") || url.includes("aeropublishing.com");
+                        url.startsWith("/") ||
+                        url.startsWith("#") ||
+                        url.includes("aeropublishing.com");
                     return (
                         <a
                             key={`${keyPrefix}-l-${linkIdx}`}
@@ -77,7 +79,7 @@ function FAQAccordion({ items }: { items: { question: string; answer: string }[]
                     </button>
                     {openIndex === idx && (
                         <p className="px-5 py-4 text-gray-700 font-poppins text-[15px] leading-relaxed border-t border-gray-100">
-                            {item.answer}
+                            {renderInlineText(item.answer, `faq-${idx}`)}
                         </p>
                     )}
                 </div>
@@ -157,7 +159,9 @@ function renderMarkdownChunk(
                             <thead>
                                 <tr>
                                     {header.map((cell, idx) => (
-                                        <th key={idx} className="bg-brand-primary text-white px-4 py-3 text-left font-syne font-semibold">{cell}</th>
+                                        <th key={idx} className="bg-brand-primary text-white px-4 py-3 text-left font-syne font-semibold">
+                                            {renderInlineText(cell, `${keyPrefix}-th-${idx}`)}
+                                        </th>
                                     ))}
                                 </tr>
                             </thead>
@@ -165,7 +169,9 @@ function renderMarkdownChunk(
                                 {body.map((row, rowIdx) => (
                                     <tr key={rowIdx} className="hover:bg-gray-50">
                                         {row.map((cell, cellIdx) => (
-                                            <td key={cellIdx} className="border-t border-gray-100 px-4 py-3 text-gray-700 font-poppins align-top">{cell}</td>
+                                            <td key={cellIdx} className="border-t border-gray-100 px-4 py-3 text-gray-700 font-poppins align-top">
+                                                {renderInlineText(cell, `${keyPrefix}-td-${rowIdx}-${cellIdx}`)}
+                                            </td>
                                         ))}
                                     </tr>
                                 ))}

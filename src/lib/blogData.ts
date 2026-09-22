@@ -1278,6 +1278,209 @@ A: Yes, you can invite ARC readers to share their honest review on more than one
 [/FAQ]
 `;
 
+const twoIsbnsPostContent = `
+If you've spotted two ISBNs attached to what you're sure is the same book, you're not imagining things, and you probably don't have a crisis on your hands. One book can legitimately carry several ISBNs at once, because an ISBN identifies a specific product, not the story inside it. It only becomes a real problem when the same format and the same edition end up registered under two competing numbers. That's the version of "2 ISBN numbers, same book" that actually causes trouble, and it's rarer than the panic on author forums suggests. Below is a quick diagnosis table to sort out which situation you're in, followed by a full breakdown of each case and exactly what to do about it.
+
+## Quick Diagnosis: Which "Two ISBNs" Situation Do You Have?
+
+Before you read the whole article, find your situation below. Each row links to the section that covers it in more depth.
+
+| Situation | Normal or a problem? | What to do | Jump to |
+| --- | --- | --- | --- |
+| Paperback and hardcover show different ISBNs | Normal | Nothing. Each format is a separate product. | [Different formats](#section-3-when-two-isbns-are-completely-normal-different-formats) |
+| Print and ebook show different ISBNs | Normal | Nothing, unless you tried to reuse the print ISBN on the ebook file. | [Print vs. ebook](#section-5-print-vs-ebook) |
+| A new edition has a different ISBN than the old one | Normal, if the edition changed | Confirm the changes were substantial enough to justify it. | [Editions](#section-7-do-different-editions-have-the-same-isbn) |
+| One listing shows both a 10-digit and a 13-digit number | Normal | Nothing. They're two formats of the same identifier. | [ISBN-10 vs. ISBN-13](#section-10-isbn-10-vs-isbn-13-one-book-two-numbers) |
+| The exact same format and edition has two different ISBNs | A problem | Work out which platform holds which number, then fix it. | [How two ISBNs become a problem](#section-11-when-two-isbns-become-a-problem-same-book-same-format-two-numbers) |
+| Two unrelated books seem to share one ISBN, or a textbook listing looks wrong | Usually a misunderstanding, occasionally a real conflict | Check the edition details before assuming an error. | [Two books sharing an ISBN](#section-24-can-two-books-have-the-same-isbn-and-why-textbooks-look-confusing) |
+
+If your situation isn't obvious from the table, keep reading. The logic behind all six rows is the same, and it's explained next.
+
+## Why Can the Same Book Have Different ISBN Numbers?
+
+An ISBN doesn't identify your manuscript. It identifies a specific, sellable product: this exact format, in this exact edition, from this exact publisher. That distinction answers most of the confusion authors run into, because a single manuscript can turn into several different products the moment you publish it in more than one way.
+
+Retailers, wholesalers, and libraries rely on that specificity. When a bookstore orders "your book," they're actually ordering one particular ISBN, and they need to know whether that order will bring them a paperback, a hardcover, or an ebook file. Without separate numbers, none of those systems could tell the difference.
+
+### The Simple Rule: One Format + One Edition = One ISBN
+
+The rule worth remembering: one format, one edition, one ISBN. Change either variable, and you generally need a new number.
+
+Think of it as story versus product. The story, your actual words, stays constant across every version of the book. But each version you make sellable, paperback, ebook, second edition, is a distinct product with its own identity in the supply chain, and that's what the ISBN tracks.
+
+## When Two ISBNs Are Completely Normal: Different Formats
+
+This is the most common reason a book carries more than one ISBN, and it's also the easiest to explain: different formats are different physical or digital products, so they can't share a number. If your book exists as a paperback and an ebook, you should expect to see two ISBNs (or an ISBN and an ASIN) attached to it, and that's a sign your setup is working correctly, not a sign something's wrong.
+
+### Paperback vs. Hardcover
+
+A paperback and a hardcover of the same book are manufactured differently, priced differently, and often shelved differently in a bookstore. Retail and library systems treat them as separate products, which means each one needs its own ISBN. There's no workaround here and no reason to want one; trying to force a single ISBN across both formats would just create the same-format conflict described later in this article.
+
+### Print vs. Ebook
+
+Can you use the same ISBN for print and ebook? No. A print ISBN and an ebook ISBN identify different product types, and reusing one for the other confuses every system downstream, from retailer catalogs to library records.
+
+That said, ebooks are a partial exception to the "every format needs an ISBN" rule. If you publish exclusively through Amazon Kindle Direct Publishing, you don't need an ISBN for the ebook at all. Amazon assigns your Kindle edition an ASIN (Amazon Standard Identification Number) instead, and that's sufficient for a book that only ever sells through Amazon's own store. If you're setting up that KDP-only ebook workflow for the first time, [publishing an ebook on KDP](https://aeropublishing.com/blog/how-to-publish-a-poetry-ebook-on-amazon-kdp-step-by-step-guide) walks through the process end to end. If you plan to distribute the ebook more widely, through Apple Books, Kobo, or an aggregator like Draft2Digital, check that retailer's or distributor's ISBN requirements; where one is required or recommended, use a dedicated ebook ISBN, separate from whatever ISBN covers your print version.
+
+### Audiobooks, Large Print, and Other Formats
+
+The same logic extends to every other format you produce. An audiobook, a large-print edition, and a special hardcover run each count as a distinct product and each needs its own ISBN if you intend to distribute it beyond a single platform's walled garden. Authors adding an audio edition for the first time are often surprised that narration and production are their own project entirely, separate from the identifier question; if that's the stage you're at, [audiobook production](https://aeropublishing.com/audio-book-narration) support can help you plan the format before you're stuck deciding on ISBNs for a file that doesn't exist yet.
+
+## Do Different Editions Have the Same ISBN?
+
+Formats are the easy case. Editions are where authors start second-guessing themselves, because "edition" doesn't have an obvious line the way "hardcover versus paperback" does. The short answer: a new or substantially revised edition needs a new ISBN, while an unchanged reprint or a minor correction usually doesn't.
+
+The practical test, borrowed from how the US ISBN agency actually frames it, is whether a reader or bookseller would reasonably feel they'd received a different product than they expected. That's a more useful standard than counting a percentage of changed words, and it's the one worth applying to your own book.
+
+### New Edition vs. Reprint vs. Typo Fix
+
+A reprint with no content changes doesn't need a new ISBN; you're simply printing more copies of the same product. A typo fix or a small grammar correction doesn't need one either, even though the file technically changed, because the product a reader receives is still functionally identical.
+
+A genuine new edition does need a new ISBN. That can include substantial content revisions, added or removed material, a new preface or afterword, or other changes substantial enough that a customer might reasonably feel they received a different product. If you're not sure which category your revision falls into, ask whether a reader who bought the old version would feel misled by the differences in the new one. If the answer is yes, treat it as a new edition.
+
+### Changes That Don't Need a New ISBN
+
+A price change never requires a new ISBN. Neither does a cover refresh, as long as the interior content is unchanged, and neither does switching to a different printer for the same format and edition. These are business and production decisions, not changes to the product identity the ISBN tracks.
+
+One change that authors sometimes miss is switching publishers. Because an ISBN is registered to a specific publisher of record, moving the same edition under a different publisher name may require a new ISBN, even if not a single word of the manuscript changed. This isn't automatic in every case, though; rights-reversion situations in particular can be more nuanced, and an author who gets publishing rights back doesn't necessarily have to abandon the original ISBN. If you're changing publishers or substantially changing the imprint associated with the ISBN, check with your national ISBN agency before reusing or retiring the existing number.
+
+## ISBN-10 vs. ISBN-13: One Book, Two Numbers
+
+Here's a case that trips people up and that most articles on this topic skip entirely. If you're looking at a book's listing and see two numbers, a 10-digit one and a 13-digit one, that's not a duplicate registration. It's the same ISBN shown in two different formats.
+
+The ISBN system transitioned to 13-digit ISBNs on January 1, 2007, to align the standard with the same numbering system used for other retail products worldwide. Every ISBN issued since then is 13 digits and begins with the prefix 978 or 979. Older books that were registered before the switch often still display their original 10-digit number alongside a corresponding 13-digit equivalent. These aren't two separate ISBN assignments; ISBN-10 and ISBN-13 are two representations of the same identifier, mathematically convertible from one to the other. You don't need to buy a second ISBN, register anything new, or worry that your listing is broken; you can typically tell them apart by length and by the 978 or 979 prefix on the longer one.
+
+Amazon also assigns every book in its catalog an ASIN (Amazon Standard Identification Number). For many print books with a 978-prefix ISBN, the ASIN is built directly from the 10-digit equivalent; for newer 979-prefix ISBNs, which don't have a 10-digit form, Amazon assigns an ASIN that isn't derived from the ISBN at all. Either way, the ASIN is Amazon's internal catalog identifier, not a second ISBN or a second registration you need to manage.
+
+## When Two ISBNs Become a Problem: Same Book, Same Format, Two Numbers
+
+Everything above describes normal, expected behavior. This section covers the actual mistake: the same format and the same edition of your book registered under two different ISBNs. Unlike the scenarios above, this one genuinely needs fixing.
+
+### How It Happens
+
+The most common cause is publishing the same edition through two different platforms without realizing each one assigned or expected its own ISBN. An author starts with a free KDP ISBN, later adds IngramSpark for wider distribution, and ends up with a second number attached to what's supposed to be the identical paperback. Republishing after switching platforms entirely, buying a new ISBN without checking whether one already exists for that format, or accepting a free ISBN from more than one aggregator can all produce the same result: one book, one product, two competing identifiers.
+
+### What It Does to Your Book
+
+Fragmented data is the most consistent consequence. Using two ISBNs for what's otherwise the same format and edition can create separate product records in some distribution and cataloging systems, making it harder to maintain consistent metadata and product information. Retailers and libraries that pull bibliographic records may also show inconsistent publisher names or metadata for what's supposed to be a single product, which can look unprofessional or simply confuse a buyer trying to figure out which listing is the "real" one.
+
+It's worth being cautious here: how exactly this affects review counts, search ranking, or specific retailer behavior varies by platform and isn't something that can be stated as a universal rule. If you're troubleshooting a specific case, that's a good reason to check directly with the platform rather than rely on forum folklore.
+
+### When It's a Deliberate Trade-Off
+
+Not every two-ISBN situation is a mistake, even outside the format and edition cases already covered. Some authors knowingly use different ISBNs for the same underlying book on different channels, for example, a free KDP ISBN for an Amazon-only print run and an owned ISBN for the same paperback on IngramSpark. That's a deliberate distribution choice rather than an accidental duplicate, but it still means the two ISBNs represent separate product records in the supply chain, not one unified listing. It's a conscious trade-off between cost and control, and it usually comes down to budget. If you're weighing that trade-off closely, [publishing on a tight budget](https://aeropublishing.com/blog/cheapest-way-to-publish-book) covers the cost side in more depth. It's exactly the scenario the next section walks through in detail.
+
+## Can I Use the Same ISBN for KDP and IngramSpark?
+
+Most indie authors actually get stuck here, and it's also where advice online tends to be the least reliable, because platform behavior changes and individual account histories vary. What follows is currently accurate, and it's worth understanding why you'll still see conflicting accounts of it elsewhere.
+
+### The Short Answer, and Why Advice Conflicts
+
+In principle, if you own your own ISBN, you can use it across multiple platforms for the same format and edition, because the publisher of record is you, not the platform. In practice, authors frequently run into an "ISBN already in use" error on IngramSpark, and occasionally on Barnes & Noble Press or Draft2Digital, even when they own the ISBN outright.
+
+One documented source of that error is KDP's Expanded Distribution setting. KDP's own requirements state that a paperback's ISBN "must not have been submitted for distribution through another service" to qualify for Expanded Distribution. If you're using IngramSpark for the same print edition while that setting is enabled on KDP, it can create a distribution conflict; KDP doesn't publish the exact technical mechanism IngramSpark uses to detect it, but the conflict itself is well documented. The fix, in that case, is to turn off Expanded Distribution on KDP, then, if you own the ISBN, use IngramSpark's title-transfer process; KDP has to confirm the release with IngramSpark's support team before the transfer completes. That's different from a free KDP ISBN, which cannot be transferred to another platform under any circumstances; if that's what you're using, you'll need a separate, owned ISBN for IngramSpark instead.
+
+### Your Three Real Options
+
+| Option | How it works | Pros | Cons |
+| --- | --- | --- | --- |
+| Own ISBN on both platforms | You purchase one ISBN (typically from Bowker) and use it for the same format and edition on KDP and IngramSpark. | You're the publisher of record everywhere; full portability if you switch distributors later. | Costs money upfront; you may need to resolve an Expanded Distribution conflict on the way in. |
+| KDP free ISBN, own ISBN on IngramSpark | You use KDP's free print ISBN for Amazon only, and a separately purchased ISBN for the exact same paperback on IngramSpark. | No upfront cost for the KDP side. | You now have two ISBN records for the same format and edition. This can be workable when it's an intentional, budget-driven trade-off, but it can fragment metadata and create confusion for retailers, libraries, and readers if it isn't deliberate. |
+| Own ISBN on one platform, free retailer ISBN on another | You buy an ISBN for your primary platform and accept a different platform's free, non-portable ISBN elsewhere. | Lower cost than buying enough ISBNs for every channel. | You give up a single, unified publisher-of-record identity; harder to track combined sales and reviews. |
+
+The clearest of the three, if your budget allows it, is owning your ISBN and using it everywhere. It's generally the cleanest option if your goal is to maintain one consistent publisher-of-record identity and ISBN across platforms.
+
+### Which Option Fits Which Author
+
+If you're publishing exclusively through Amazon and don't need your own publisher or imprint identity attached to the ISBN, KDP's free ISBN is a reasonable, low-friction choice. If you want wide distribution across multiple retailers and eventually into physical bookstores, buying your own ISBN before you first publish avoids the headache of untangling a free, platform-locked number later. Authors specifically targeting bookstores and libraries may consider IngramSpark distribution with an owned ISBN, particularly when they want their print edition available through Ingram's distribution network. A [publishing services partner](https://aeropublishing.com/book-publishing/) can help you sequence which platforms to set up first if you're juggling more than one goal at once.
+
+## How to Fix Duplicate or Conflicting ISBNs, Step by Step
+
+If you've already published with two ISBNs attached to the same format and edition, here's a practical path to untangling it. Some of these steps depend on platform-specific policy that can shift over time, so treat this as a starting framework and confirm current procedures with each platform's support team before acting.
+
+### Step 1: Find Every Place the ISBN Lives
+
+Start by listing every platform where your book is live: KDP, IngramSpark, any other distributor, and your ISBN agency account if you own one. For each, note which ISBN is attached to which listing. This sounds tedious, but you can't fix a conflict you haven't fully mapped, and it's common to discover a third, forgotten listing (an old CreateSpace title, for instance) still holding a number you thought was retired.
+
+### Step 2: Resolve the "ISBN Already in Use" Error
+
+If IngramSpark or another platform is rejecting your ISBN as already in use, check first whether KDP's Expanded Distribution setting is enabled, and turn it off if it is. From there, you may need to contact KDP support directly and ask them to release the ISBN for use elsewhere, a step some authors describe as a formal title release or title transfer request. If the ISBN was never yours to begin with (a free KDP or platform ISBN), releasing it won't help, because that number is locked to its original platform; in that case, you'll need a new, owned ISBN for the second platform instead. When account-specific issues persist, IngramSpark, KDP, and Bowker support are the right contacts, since only they can see the account-level details behind the error.
+
+### Step 3: What to Do If the Wrong ISBN Is on the Cover or Barcode
+
+If the mismatch has already made it into print, your interior files, copyright page, and back-cover barcode all need to match whichever ISBN you're standardizing on. That typically means correcting your files, re-uploading them to whichever platform needs the fix, and generating a new barcode image, since a barcode is tied to the specific ISBN it encodes and can't simply be edited in place. Some platforms charge a small re-upload or file-revision fee; confirm current costs with the platform before assuming there's no charge. If your interior or cover files need professional correction as part of this process, that's squarely [book formatting](https://aeropublishing.com/book-formatting) and [book cover design](https://aeropublishing.com/book-cover-design/) territory rather than something to patch together manually.
+
+### Example: An Author Who Published on KDP and IngramSpark
+
+Here's a hypothetical, illustrative walkthrough, not a real client case. An author publishes a paperback on KDP using their own ISBN and checks the Expanded Distribution box. Months later, they decide to distribute the same paperback through IngramSpark using that same ISBN. Because the ISBN is already being used for KDP Expanded Distribution, they need to remove Expanded Distribution and complete the appropriate title-transfer process before IngramSpark can use that ISBN. Once the transfer is completed, the paperback can use the same ISBN across both platforms without creating a second ISBN for the same format and edition.
+
+## Can Two Books Have the Same ISBN? (And Why Textbooks Look Confusing)
+
+By design, no. Two different books sharing one ISBN would defeat the entire purpose of the system, which exists specifically so that every distinct product in the book trade has exactly one unambiguous identifier.
+
+### Can Two Different Books Share One ISBN?
+
+If you genuinely encounter two unrelated titles listed under the same ISBN, that's a real conflict, not a normal quirk. Treat it as a metadata or cataloging problem, most often traced to a misprint or a data-entry error somewhere in the supply chain, and verify the records with the publisher and ISBN agency. If you suspect this has happened to your own book, or you're a reader who's found a mismatched listing, the right contacts are the ISBN agency (Bowker in the US) and whichever publisher or platform originally registered the number.
+
+### Why Your Textbook Shows a Different ISBN
+
+Students searching this question are usually looking at a textbook, not troubleshooting their own publishing setup, so this section stays brief. Textbooks frequently have international editions, new editions released annually or by semester, and bundled versions that include access codes, and each of those variations legitimately carries its own ISBN even though the core content overlaps heavily. If your assigned reading and your purchased book show different ISBNs, check the edition number and whether an access code is required before assuming you bought the wrong thing; a quick comparison against your syllabus or your school's bookstore listing usually resolves it.
+
+## Is an ISBN the Same as a Barcode?
+
+No, and this is a common point of confusion. The ISBN is the identifier itself, a string of digits. The barcode is the scannable, machine-readable image of that identifier, printed on the back cover so retail scanners and warehouse systems can read it instantly.
+
+A barcode isn't automatically included when you register an ISBN; agencies like Bowker sell barcode generation as a separate add-on. In practice, most self-published authors never need to buy one separately, because print-on-demand platforms like KDP and IngramSpark generate and place the barcode on your cover automatically as part of the upload process. Where this does matter is if you're working with an offset printer for a traditional print run, since you'll need a barcode-ready file before it ever reaches KDP or IngramSpark's systems. And because a barcode simply encodes the ISBN it's attached to, a new ISBN requires a barcode that encodes the new number.
+
+## ISBN vs. Other Book and Publication Numbers
+
+A few related identifiers get confused with the ISBN, so it's worth separating them in one place. An ASIN is Amazon's internal catalog number, used across its store for every product type, not just books; for many print books it's built directly from the ISBN-10, but it isn't an ISBN itself. A DOI (Digital Object Identifier) identifies a specific digital document, most often used for academic articles rather than trade books. An ISSN identifies a serial publication, like a magazine or journal, as an ongoing title rather than a single, standalone product. And no, not all ISBNs are "the same" in any meaningful sense beyond sharing a 13-digit structure; each one is unique to a specific format and edition, which is the whole point of the system.
+
+## How Many ISBNs Should You Buy? Planning Ahead
+
+Once you understand that each format needs its own number, the planning question becomes straightforward arithmetic. A paperback, a hardcover, an ebook, and an audiobook of the same title can each require their own ISBN when those formats are assigned ISBNs for distribution, up to four separate numbers instead of one. The exception, as covered earlier, is a platform like KDP that doesn't require an ISBN for its Kindle ebook edition; account for that when you're counting how many you actually need to buy. Add a second edition down the line, and you'll need at least one more per format you carry forward.
+
+In the US, buying a block of ISBNs from Bowker can reduce the per-ISBN cost compared with purchasing them one at a time, and ISBNs don't expire, so unused numbers in a block simply wait for your next format or next book. If you're planning more than one format for this title, or you expect to publish again, a block purchase is usually the more economical route rather than buying one ISBN at a time as each need comes up. ISBNs are just one line in a bigger budget; if you want the full picture, the full [cost of self-publishing a novel](https://aeropublishing.com/blog/cost-to-self-publish-novel) breaks down what else to plan for. If you'd rather not manage that planning and purchasing process yourself, that's exactly the kind of setup work a [book publishing service](https://aeropublishing.com/book-publishing/) can take off your plate, particularly if you're coordinating several formats and platforms at once.
+
+## Pre-Publication ISBN Checklist
+
+Before you upload anything, run through this list:
+
+- Each format has its own ISBN where applicable. Do not reuse a print ISBN for another format.
+- The ISBN on your copyright page matches the ISBN in your platform metadata exactly.
+- The ISBN encoded in your barcode matches the ISBN on your copyright page.
+- Title, subtitle, author name, and publisher name are consistent across every platform.
+- No single ISBN is assigned to more than one format or edition.
+- KDP's Expanded Distribution setting is set deliberately, not left on by default, if you're also using IngramSpark.
+- You know whether each ISBN in use is owned by you or provided free by a platform, and what that means for portability.
+- Every ISBN you've purchased or been assigned is logged in one place, with its format, edition, and platform noted.
+
+## Conclusion
+
+The rule underneath every scenario in this article is the same one: different formats and different editions legitimately get different ISBNs, but the same format and the same edition normally should not be assigned two different ISBNs. Once you can sort your situation into "normal" or "needs fixing" using that rule, most of the anxiety around seeing a second number disappears.
+
+If you've read through the diagnosis table and landed on a genuine conflict, particularly the KDP-and-IngramSpark scenario many indie authors hit, working through it methodically (map every listing, resolve the Expanded Distribution flag, confirm with platform support) will get you to a clean, single-ISBN setup. And if you'd rather have someone experienced with ISBN and distribution setup handle it directly, that's exactly the kind of groundwork worth getting right before you publish, not after.
+
+## Frequently Asked Questions
+
+[FAQ]
+Q: Can I reuse the ISBN from an out-of-print edition?
+A: Generally, no, if you're publishing that content as a genuinely new edition or under a different publisher. An ISBN is tied to a specific product and publisher of record, so reissuing a substantially revised or differently published version usually calls for a new number, even if the original edition is no longer available.
+
+Q: Does an ISBN protect my copyright?
+A: No. An ISBN is purely an identifier for the book trade; it carries no legal or copyright protection, a point the [International ISBN Agency](https://www.isbn-international.org/) makes explicit. In the US, your work is automatically protected by copyright the moment you create it, and formal registration with the US Copyright Office is a separate process entirely.
+
+Q: Can I change an ISBN after my book is published?
+A: Not simply by editing the ISBN field on an existing listing. On KDP, for example, changing the ISBN selection after publication may require unpublishing and republishing the book. Other platforms have their own procedures, so changing an ISBN can affect the product record and its history differently depending on the platform.
+
+Q: Do I need a new ISBN if I switch publishers or republish?
+A: Yes, typically. Because the ISBN records a specific publisher of record, moving the same edition under a new publisher name is treated as a new product, even when the manuscript itself hasn't changed.
+
+Q: Do I need an ISBN to publish an ebook on KDP?
+A: No. Kindle ebooks sold exclusively through Amazon use an Amazon-assigned ASIN instead of an ISBN. You only need a dedicated ISBN for that ebook if you plan to distribute it through other retailers or aggregators beyond Amazon's own store.
+[/FAQ]
+`;
+
 export const featuredPost: BlogPost = {
     metaTitle: "How to Become a Best-Selling Author on Amazon: A Step-by-Step Guide",
     metaDescription:
@@ -1297,6 +1500,35 @@ export const featuredPost: BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "Two ISBNs for the Same Book? What's Normal vs. a Mistake",
+        metaDescription:
+            "Same book, two ISBNs? Learn when it's normal (formats, editions, ISBN-10 vs. 13), when it's a mistake (KDP + IngramSpark), and how to fix it.",
+        focusKeyphrase: "two ISBNs same book",
+        keywords: [
+            "two ISBNs same book",
+            "can a book have two ISBNs",
+            "2 ISBN numbers same book",
+            "ISBN-10 vs ISBN-13",
+            "same ISBN for print and ebook",
+            "KDP IngramSpark ISBN",
+            "ISBN already in use",
+            "do I need an ISBN for KDP ebook",
+            "how many ISBNs should I buy",
+            "ISBN vs barcode",
+        ],
+        slug: "two-isbns-same-book",
+        category: "Publishing Costs & ISBN",
+        title: "Can a Book Have Two ISBNs? When It's Normal, When It's a Mistake, and How to Fix It",
+        description:
+            "Same book, two ISBNs? Learn when it's normal (formats, editions, ISBN-10 vs. 13), when it's a mistake (KDP + IngramSpark), and how to fix it.",
+        date: "22 September 2026",
+        image: "/blog-2.webp",
+        readTime: "14 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: twoIsbnsPostContent,
+    },
     {
         metaTitle: "ARC Reviews for Authors: How to Get Early Reviews the Right Way (2026 Guide)",
         metaDescription:

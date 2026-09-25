@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "../Button";
+import PhoneButtons from "../PhoneButtons";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -94,9 +95,7 @@ export default function HeroSection({ title, description, showButton = true, cla
 
                     {showButton && (
                         <div className={`flex flex-wrap gap-4 pt-4 ${hasForm ? 'justify-start' : 'justify-center'}`}>
-                            <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+14242823304">+1424 282 3304</a>
-                            </Button>
+                            <PhoneButtons variant="primary" />
                             <Button
                                 variant="secondary"
                                 className="max-sm:text-[14px] max-sm:px-4"

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { BlogPost } from "@/lib/blogData";
 import Button from "@/components/Button";
+import PhoneButtons from "@/components/PhoneButtons";
 import { openZendeskChat } from "@/lib/zendesk";
 
 interface TocItem {
@@ -465,9 +466,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                                     Get expert help with editing, cover design, formatting, and global distribution.
                                 </p>
                                 <div className="flex flex-col gap-3">
-                                    <Button variant="secondary" className="w-full justify-center">
-                                        <a href="tel:+14242823304">Call Us: +1424 282 3304</a>
-                                    </Button>
+                                    <PhoneButtons variant="secondary" className="w-full justify-center" />
                                     <button
                                         onClick={openZendeskChat}
                                         className="w-full h-10 rounded-full border border-white/40 text-white font-poppins text-sm font-semibold hover:bg-white/10 transition-colors duration-200"

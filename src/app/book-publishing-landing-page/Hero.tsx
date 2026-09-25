@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/Button";
+import PhoneButtons from "@/components/PhoneButtons";
 import { sendEmail } from "@/app/actions/email";
 import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
@@ -75,9 +76,7 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-wrap gap-4 pt-4">
-                            <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                                <a href="tel:+14242823304">+1424 282 3304</a>
-                            </Button>
+                            <PhoneButtons variant="primary" />
                             <Button
                                 variant="secondary"
                                 className="max-sm:text-[14px] max-sm:px-4"

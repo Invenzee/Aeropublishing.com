@@ -277,7 +277,9 @@ function authorThankYouHtml(name: string, bookTitle: string) {
         </p>
         <p style="color: #333; line-height: 1.7;">
           If you have questions in the meantime, reply to this email or call
-          <a href="tel:+14242823304" style="color: #FE695B; text-decoration: none;">+1 424 282 3304</a>.
+          <a href="tel:+14242823304" style="color: #FE695B; text-decoration: none;">+1 424 282 3304</a>
+          or
+          <a href="tel:+442033148312" style="color: #FE695B; text-decoration: none;">+44 020 3314 8312</a>.
         </p>
         <p style="color: #333; line-height: 1.7; margin-bottom: 0;">Warmly,<br/>The Aero Publishing Team</p>
         <footer style="margin-top: 28px; font-size: 12px; color: #777; text-align: center; border-top: 1px solid #eee; padding-top: 16px;">
@@ -464,7 +466,7 @@ Manuscript File: ${uploadedFile.name}
                 to: email,
                 replyTo: GMAIL_USER,
                 subject: "Thank you for submitting your manuscript | Aero Publishing",
-                text: `Dear ${fullName || "Author"},\n\nThank you for trusting Aero Publishing with your manuscript, "${bookTitle}". Our editorial team has received your submission and will be in touch shortly.\n\nIf you have questions, reply to this email or call +1 424 282 3304.\n\nWarmly,\nThe Aero Publishing Team`,
+                text: `Dear ${fullName || "Author"},\n\nThank you for trusting Aero Publishing with your manuscript, "${bookTitle}". Our editorial team has received your submission and will be in touch shortly.\n\nIf you have questions, reply to this email or call +1 424 282 3304 or +44 020 3314 8312.\n\nWarmly,\nThe Aero Publishing Team`,
                 html: authorThankYouHtml(fullName, bookTitle),
             });
         } catch (thankYouError) {

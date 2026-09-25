@@ -67,6 +67,13 @@ export default function Header() {
                             <span>+1424 282 3304</span>
                         </a>
                         <a
+                            href="tel:+442033148312"
+                            className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors"
+                        >
+                            <Phone size={13} className="shrink-0" />
+                            <span>+44 020 3314 8312</span>
+                        </a>
+                        <a
                             href="mailto:admin@aeropublishing.com"
                             className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors min-w-0"
                         >

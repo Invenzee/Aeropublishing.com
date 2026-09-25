@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/Button";
+import PhoneButtons from "@/components/PhoneButtons";
 import { openZendeskChat } from "@/lib/zendesk";
 import Image from "next/image";
 
@@ -79,9 +80,7 @@ export default function PartnerBenefitsSection() {
                 </div>
                 {/* Buttons as requested */}
                 <div className="flex flex-wrap gap-4 pt-4 mt-10">
-                    <Button font="poppins" variant="primary" className="max-sm:text-[14px] max-sm:px-4">
-                        <a href="tel:+14242823304">+1424 282 3304</a>
-                    </Button>
+                    <PhoneButtons variant="primary" />
                     <Button
                         variant="secondary"
                         className="max-sm:text-[14px] max-sm:px-4"

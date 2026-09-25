@@ -234,6 +234,10 @@ export default function ManuscriptForm() {
                                     <Phone size={16} />
                                     +1 424 282 3304
                                 </a>
+                                <a href="tel:+442033148312" className="flex items-center gap-3 text-sm hover:text-brand-secondary transition-colors">
+                                    <Phone size={16} />
+                                    +44 020 3314 8312
+                                </a>
                                 <a href="mailto:admin@aeropublishing.com" className="flex items-center gap-3 text-sm hover:text-brand-secondary transition-colors">
                                     <Mail size={16} />
                                     admin@aeropublishing.com

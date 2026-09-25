@@ -15,6 +15,8 @@ import {
 
 const PHONE_DISPLAY = "(424) 282-3304";
 const PHONE_HREF = "tel:(424) 282-3304";
+const UK_PHONE_DISPLAY = "+44 020 3314 8312";
+const UK_PHONE_HREF = "tel:+442033148312";
 const EMAIL = "admin@aeropublishing.com";
 const ADDRESS = "12508 Center St, South Gate, CA 90280, United States";
 const LOGO_SRC = "/editing-lp-logo.png";
@@ -184,13 +186,9 @@ function ChatNowButton({ className = "" }: { className?: string }) {
 
 function PhoneBlock({ onDark = false }: { onDark?: boolean }) {
   return (
-    <a
-      href={PHONE_HREF}
-      className="group inline-flex items-center gap-3"
-      aria-label={`Call us at ${PHONE_DISPLAY}`}
-    >
+    <div className="inline-flex items-center gap-3">
       <span
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white sm:h-10 sm:w-10"
         style={{ backgroundColor: PRIMARY }}
       >
         <FaPhone className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
@@ -201,14 +199,20 @@ function PhoneBlock({ onDark = false }: { onDark?: boolean }) {
         >
           Call Us Now
         </span>
-        <span
-          className={`block text-[13px] font-bold sm:text-sm ${onDark ? "text-white" : "text-[#111]"
-            }`}
+        <a
+          href={PHONE_HREF}
+          className={`block text-[13px] font-bold hover:opacity-70 sm:text-sm ${onDark ? "text-white" : "text-[#111]"}`}
         >
           {PHONE_DISPLAY}
-        </span>
+        </a>
+        <a
+          href={UK_PHONE_HREF}
+          className={`block text-[13px] font-bold hover:opacity-70 sm:text-sm ${onDark ? "text-white" : "text-[#111]"}`}
+        >
+          {UK_PHONE_DISPLAY}
+        </a>
       </span>
-    </a>
+    </div>
   );
 }
 
@@ -801,6 +805,10 @@ export default function BookEditingLpPage() {
                       <a href={PHONE_HREF} className="hover:underline">
                         {PHONE_DISPLAY}
                       </a>
+                      <br />
+                      <a href={UK_PHONE_HREF} className="hover:underline">
+                        {UK_PHONE_DISPLAY}
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -1250,9 +1258,15 @@ export default function BookEditingLpPage() {
                       </p>
                       <a
                         href={PHONE_HREF}
-                        className="text-sm font-bold text-[#111] transition-opacity duration-300 hover:opacity-70"
+                        className="block text-sm font-bold text-[#111] transition-opacity duration-300 hover:opacity-70"
                       >
-                        {PHONE_DISPLAY}
+                        US: {PHONE_DISPLAY}
+                      </a>
+                      <a
+                        href={UK_PHONE_HREF}
+                        className="block text-sm font-bold text-[#111] transition-opacity duration-300 hover:opacity-70"
+                      >
+                        UK: {UK_PHONE_DISPLAY}
                       </a>
                     </div>
                   </div>

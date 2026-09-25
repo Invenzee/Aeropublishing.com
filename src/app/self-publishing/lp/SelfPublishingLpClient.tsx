@@ -71,6 +71,7 @@ export default function SelfPublishingLpClient() {
   <div className="promo">
     Sign up this month and save <b>30%</b> on your publishing package
     {'\u00a0'}·{'\u00a0'} <a href="tel:(424) 282-3304">(424) 282-3304</a>
+    {'\u00a0'}·{'\u00a0'} <a href="tel:+442033148312">+44 020 3314 8312</a>
   </div>
 
   <header className="hdr">
@@ -96,6 +97,7 @@ export default function SelfPublishingLpClient() {
       </nav>
 
       <a className="hdr-tel" href="tel:(424) 282-3304">(424) 282-3304</a>
+      <a className="hdr-tel" href="tel:+442033148312">+44 020 3314 8312</a>
       <a className="btn btn-grad hdr-cta" href="#quote">
         <span className="hdr-cta-full">Free manuscript review</span>
         <span className="hdr-cta-short">Free review</span>
@@ -680,6 +682,7 @@ export default function SelfPublishingLpClient() {
     <div className="final-cta">
       <a className="btn btn-white" href="#quote">Get my free manuscript review</a>
       <a className="btn btn-line" href="tel:(424) 282-3304">Call (424) 282-3304</a>
+      <a className="btn btn-line" href="tel:+442033148312">Call +44 020 3314 8312</a>
     </div>
   </div>
 </section>
@@ -698,7 +701,8 @@ export default function SelfPublishingLpClient() {
       </a>
       <p className="ftr-blurb">We bring your story to life with expert guidance, from the first outline to the finished book on sale, in stores that can actually order it.</p>
       <p className="ftr-addr">
-        <a href="tel:(424) 282-3304">(424) 282-3304</a><br />
+        <a href="tel:(424) 282-3304">US: (424) 282-3304</a><br />
+        <a href="tel:+442033148312">UK: +44 020 3314 8312</a><br />
         <a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a>
       </p>
     </div>
@@ -723,6 +727,7 @@ export default function SelfPublishingLpClient() {
     <div><h4>Get started</h4><ul>
       <li><a href="#quote">Free manuscript review</a></li>
       <li><a href="tel:(424) 282-3304">(424) 282-3304</a></li>
+      <li><a href="tel:+442033148312">+44 020 3314 8312</a></li>
     </ul>
     <p className="ftr-blurb" style={{marginTop: 14}}>Consultations run Monday to Friday, usually within the same week.</p></div>
   </div>
@@ -744,6 +749,7 @@ export default function SelfPublishingLpClient() {
 {/* ================= STICKY MOBILE BAR ================= */}
 <div className="dock">
   <a className="btn btn-line-ink" href="tel:(424) 282-3304">Call now</a>
+  <a className="btn btn-line-ink" href="tel:+442033148312">UK +44 020 3314 8312</a>
   <a className="btn btn-grad" href="#quote">Free review</a>
 </div>
 

@@ -67,7 +67,8 @@ export default function Footer() {
                     <h4 className="text-[#36C0E7] font-syne font-bold text-lg mb-4">Contact</h4>
                         <div className="flex flex-col gap-4 font-poppins text-sm opacity-90 ">
                             <p>12508 Center St, South Gate,<br /> CA 90280, United States</p>
-                            <a href="tel:+14242823304">+1424 282 3304</a>
+                            <a href="tel:+14242823304">US: +1424 282 3304</a>
+                            <a href="tel:+442033148312">UK: +44 020 3314 8312</a>
                             <a href="mailto:admin@aeropublishing.com">admin@aeropublishing.com</a>
                         </div>
                         <h4 className="text-[#36C0E7] font-syne font-bold text-lg mb-4">Social Media</h4>

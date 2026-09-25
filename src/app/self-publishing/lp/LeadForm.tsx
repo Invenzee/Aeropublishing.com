@@ -192,7 +192,7 @@ export default function LeadForm({
 
       {error ? (
         <p className="form-ok form-err" role="alert" style={{ display: "block" }}>
-          That did not go through. Please call (424) 282-3304 and we will take your details over the
+          That did not go through. Please call (424) 282-3304 or +44 020 3314 8312 and we will take your details over the
           phone.
         </p>
       ) : null}

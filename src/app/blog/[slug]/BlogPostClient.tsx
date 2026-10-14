@@ -309,15 +309,14 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                     initial={{ opacity: 0, y: 30, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="relative rounded-3xl overflow-hidden shadow-2xl"
+                    className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl"
                 >
                     <Image
                         src={post.image}
                         alt={post.title}
-                        width={1920}
-                        height={1623}
+                        fill
                         sizes="(max-width: 1140px) 100vw, 1140px"
-                        className="w-full h-auto object-contain"
+                        className="object-cover"
                         priority
                     />
                     {/* Subtle overlay gradient */}

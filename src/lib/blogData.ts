@@ -1481,6 +1481,185 @@ A: No. Kindle ebooks sold exclusively through Amazon use an Amazon-assigned ASIN
 [/FAQ]
 `;
 
+const kdpPrintLooksBadPostContent = `
+You uploaded the file. The previewer didn't flag a single error. Then the proof copy arrived, and something was clearly wrong: a thin white strip running down one edge, text crowding into the spine, colors that looked nothing like what you designed on screen.
+
+If that's where you are right now, the first thing to understand is that this probably isn't a sign you were careless, and it isn't automatically KDP's fault either. The digital preview and the physical book come from two different processes. One checks whether your file meets a set of technical requirements. The other involves ink, paper, a cutting blade, and a bound spine, none of which a screen can fully simulate.
+
+Most KDP print problems trace back to a small number of file-level issues, and nearly all of them are preventable before you ever upload. This article walks through the seven most common causes, what each one looks like once the book is printed, and how to fix it. It also covers how to tell a file problem apart from an actual printing error, and how to check your book properly before you approve it for sale.
+
+## Why the KDP Preview Can't Tell You What Your Print Will Look Like
+
+### What the KDP Print Previewer Actually Checks
+
+The KDP Print Previewer is a compliance tool, not a print simulator. It confirms that your file meets a list of technical requirements: correct trim size, margins that fall within KDP's minimums, fonts that render without errors, no stray content sitting outside the page boundary where it shouldn't. If your file passes those checks, the previewer approves it.
+
+What it cannot do is show you how ink will sit on paper, how tightly the binding will pull pages toward the spine, or how precisely the cutting machine will trim the edge. Those are physical outcomes of a manufacturing process, and no on-screen tool replicates them. Authors regularly pass the previewer without a single warning and still receive a copy with a formatting problem, because the previewer approved the file's structure, not its printed appearance.
+
+### Screens and Paper Are Different Media
+
+A monitor emits light. Paper reflects it. That distinction alone explains why colors, contrast, and fine detail read differently in print than they do on a backlit display, regardless of how carefully the file was built. A deep navy that looks rich on screen can print noticeably flatter on matte paper. This isn't a flaw in your design; it's a property of the two mediums. Understanding that gap is what makes the rest of this article make sense: the previewer is checking one thing, and your eyes evaluating a monitor are judging another.
+
+## 7 Reasons Your KDP Print Book Looks Wrong (And How to Fix Each One)
+
+Each entry below covers one cause: what it looks like once the book is printed, why it happens, and what to do about it.
+
+### 1. The Inside Margin Is Too Narrow for a Bound Book
+
+**Symptom:** Text or page numbers disappear into the spine, or words sit uncomfortably close to the binding.
+
+**Cause:** A margin that looks spacious on a flat screen becomes cramped once the pages are glued into a spine. The thicker the book, the more page surface gets pulled into the binding, which is why KDP's required inside margin, known as the gutter, increases as page count rises. A 400-page novel needs a noticeably wider gutter than a 100-page one, and a margin set with a shorter book in mind will read as too tight on a longer manuscript.
+
+**Fix:** Use mirrored margins rather than identical left and right margins, and check your gutter width against [KDP's page-count requirements](https://kdp.amazon.com/en_US/help/topic/GVBQ3CMEQW3W2VL6) before finalizing your layout. The inside margin should always be larger than the outside margin on a bound book. That isn't a style preference; it's a structural requirement.
+
+### 2. Bleed Is Missing From the Design File, Not Just the KDP Setting
+
+**Symptom:** A thin white strip runs along one or more edges of the page, even on pages where nothing about the design suggests there should be a border.
+
+**Cause:** This is one of the most common print problems, and one of the most misunderstood. Bleed means extending artwork, a background color, or any element meant to reach the edge of the page beyond the trim line, so that minor cutting imprecision doesn't expose unprinted paper. Many authors assume that selecting "bleed" in KDP's settings handles this automatically. It doesn't. If the artwork in the design file stops exactly at the trim line, there's nothing for the cutting blade to trim into, so any imprecision in the cut exposes white paper.
+
+**Fix:** Rebuild the affected pages so that any edge-to-edge element extends 0.125" beyond the trim line, then re-export and re-upload. This has to happen in the design file itself, before export. It isn't something a KDP setting can retroactively add.
+
+### 3. The Trim Size in Your File Doesn't Match What You Selected on KDP
+
+**Symptom:** Layout irregularities that weren't visible in the design software, such as text sitting near unexpected edges, odd spacing, or page breaks that land in the wrong places.
+
+**Cause:** Trim size is a pre-design decision, not a setting to adjust at the end. Designing a manuscript at 8.5 × 11 and then selecting 6 × 9 on KDP, or changing trim size after formatting is already complete, forces text to reflow, images to shift or crop, and tables to compress in ways that aren't always obvious from a quick scroll through the file.
+
+**Fix:** Confirm your trim size before formatting begins, and lock the page size in your design software before placing any content. If you need to change trim size partway through, reformat from that size rather than resizing an existing layout. Resizing after the fact tends to produce exactly the kind of inconsistencies that only show up once the book is printed.
+
+### 4. Images Are Below 300 DPI
+
+**Symptom:** Illustrations, photos, or graphics that look sharp on screen print blurry, pixelated, or muddy.
+
+**Cause:** A 72 DPI image, the typical resolution for web and screen display, looks perfectly crisp on a backlit monitor because the screen has far fewer pixels per inch than a printed page needs. At print resolution, that same image doesn't have enough data to render sharply. KDP does not upscale resolution for you. Whatever DPI is embedded in your PDF is what goes to the printer.
+
+**Fix:** Source or re-export every image at [300 DPI minimum](https://kdp.amazon.com/en_US/help/topic/G202169030) before placing it in your design file. Enlarging a low-resolution image and re-exporting it does not add resolution; it only stretches the same limited data across more space, which tends to make the blur worse, not better.
+
+### 5. The File Was Designed in RGB, Not CMYK
+
+**Symptom:** Colors that looked vivid on screen print noticeably darker, duller, or shifted. Bright reds turn brick, neon colors disappear entirely.
+
+**Cause:** RGB is a light-based color system. Screens generate color by combining red, green, and blue light, which can produce extremely vivid, saturated colors, including shades that simply don't exist in ink. CMYK is the ink-based system printers use. A file designed in RGB and sent to print without conversion will shift, because the printer is attempting to approximate colors its ink physically cannot reproduce.
+
+**Fix:** Design in CMYK from the start if possible, since this avoids surprises later. If the file was built in RGB, convert it to CMYK before final export, and review the converted file carefully. Some shades shift significantly during conversion, and what looked fine as RGB may need manual adjustment once it's in CMYK.
+
+### 6. Fonts Weren't Embedded in the Exported PDF
+
+**Symptom:** Character spacing looks different than expected, text shifts toward the margins, or the overall feel of a page changes in ways that don't match the design file.
+
+**Cause:** If a font isn't embedded inside the exported PDF, the system reading that file, whether KDP's or the printer's, may substitute a different font to fill the gap. A substituted font rarely matches the spacing of the original, which can cascade into margin issues, overflow, or a page that simply looks different from what was designed. This is a PDF export setting, not a design decision, which is why it's easy to overlook.
+
+**Fix:** Confirm that "embed all fonts" (sometimes labeled "embed subset" or similar) is selected at the point of PDF export. This has nothing to do with which font you chose in your design software; it has to do with how the PDF carries that font forward.
+
+### 7. The PDF Export Itself Changed Something
+
+**Symptom:** Problems visible in the printed book that weren't present, or weren't noticed, in the design software view.
+
+**Cause:** The exported PDF is the actual file KDP prints. Not the design file, not the project you've been editing for months: the PDF. Export settings can silently compress images, flatten transparency effects incorrectly, shift page dimensions by a fraction of an inch, or embed elements differently depending on how the export was configured. None of this is visible unless you look at the exported file itself.
+
+**Fix:** Open the exported PDF at 100% zoom and review it page by page, as its own standalone document rather than a quick scroll. Look at image quality, margins, page edges, font rendering, and anything that sits near a trim or bleed line. This step isn't optional. It's the last checkpoint before the file leaves your hands.
+
+## Normal KDP Print Variation vs. a Genuine Printing Defect
+
+Once you've ruled out the file-level causes above, a different question comes up: is what you're looking at a problem with your file, or a problem with how KDP printed it? This is one of the most common points of confusion in author communities, and the answer usually comes down to tolerance.
+
+### Variation That's Within Tolerance
+
+KDP prints through more than 20 facilities across the country, and your order goes to whichever one has capacity at the time. That means two orders of the same book, placed months apart, can come from entirely different printers and look slightly different as a result. KDP's own documentation allows for a small amount of trim variation between copies, which is a built-in part of how print-on-demand works, not an error.
+
+A few other things fall into the same category: mild page waviness shortly after printing, which KDP attributes to humidity and which typically settles within a few weeks, and slight color shifts between separate orders of the same file. None of these indicate a problem with your PDF.
+
+### Issues Worth Contacting KDP Support About
+
+Some problems exceed normal variance and are worth escalating. Text disappearing into the spine well beyond what binding compression would explain, a book that measures noticeably smaller than its stated trim size, or print quality well below a previous order of the same file are legitimate manufacturing defects.
+
+The strongest way to make that case is with documentation: clear photos of the defect alongside the affected page from your uploaded PDF, so KDP support can see the discrepancy between what you submitted and what arrived. KDP support distinguishes between file issues and printing errors, and arriving with a direct comparison makes that distinction easy for them to confirm.
+
+## How to Check Your KDP Book Before You Publish
+
+### Review the Actual PDF, Not Just the Preview
+
+Open your exported PDF at 100% zoom and go through every page. Check image quality, margins, how close elements sit to the trim or bleed line, and font rendering. If a problem exists in that file, it will exist in the printed copy. KDP treats file-level issues as the publisher's responsibility, not a printing error, which makes this review the most important quality check you'll do before uploading.
+
+### Order a Physical Proof Copy Before Going Live
+
+No digital tool, including KDP's own previewer, can tell you how paper absorbs ink, how a spine feels under your hand, how a cover's finish reflects light, or how dark colors read under room lighting instead of a backlit screen. Order a proof copy and review it under natural light rather than overhead fluorescent lighting, which can distort how colors appear. Check full spreads, not just individual pages in isolation, and compare the physical book side by side against your uploaded PDF before approving the file for sale. This is also the point where a second set of eyes on [print-ready production](https://aeropublishing.com/book-printing) helps, since problems that are easy to miss in your own file are often obvious to someone reviewing it fresh.
+
+### Finalize the Interior Before Finishing the Cover
+
+Spine width on a paperback or hardcover is calculated directly from final page count. Add or remove even a handful of pages after the cover file is created, and the spine calculation is wrong, which means the cover needs to be rebuilt before you can publish. Treat the cover as the last step in the process rather than something built in parallel with the interior, and loop in [cover design](https://aeropublishing.com/book-cover-design/) only once the interior page count is locked.
+
+## Book Types That Need Extra Care With KDP Formatting
+
+Not every book carries the same formatting risk. The causes above apply to every print book, but some categories have far less margin for error.
+
+### Children's Books and Heavily Illustrated Books
+
+Full-bleed color artwork, hand-painted illustrations, and page-edge design elements mean that bleed setup, CMYK conversion, and 300 DPI image preparation all have to be correct on every affected page, not just most of them. When visuals carry the reading experience the way they do in a children's book, a single formatting lapse is far more noticeable than the same lapse in a text-heavy novel. It's also worth knowing that print-on-demand is widely acknowledged in self-publishing communities as less consistent for color-heavy illustrated work than offset printing, a structural trade-off of the POD model rather than something formatting alone can fully solve. Authors in this category are often better served treating interior formatting and [children's book publishing](https://aeropublishing.com/children-book) as a specialized workflow from the start, rather than applying general paperback formatting advice to a book where every page is doing more visual work.
+
+### Workbooks, Activity Books, and Puzzle Books
+
+Repeated layout elements, such as answer boxes, grids, activity frames, and tables, can drift by small, inconsistent amounts from page to page without ever looking wrong in a design view. A table positioned two millimeters higher on page 14 than on page 16 is invisible when you're editing one page at a time, and obvious once you're holding the finished book and flipping through it. These formats benefit from a dedicated consistency review across the entire document, not a page-by-page spot check.
+
+## DIY Formatting vs. Hiring a Professional: How to Decide
+
+### Signs the Problem Is DIY-Fixable
+
+If you can trace the issue to one identifiable decision point, such as bleed that wasn't built into the design file, a trim size mismatch, or fonts that weren't embedded at export, it's usually fixable without bringing in outside help. Text-heavy books with standard formatting and no color elements, like novels, memoirs, and essay collections, have a meaningfully lower formatting failure rate and a more straightforward recovery path when something does go wrong.
+
+### Signs It's Worth Bringing In a Professional
+
+Children's books, illustrated workbooks, activity books, and any format where visual layout complexity is central to the product carry substantially higher formatting risk, and the cost of a reprint after an error is real money, not a hypothetical. If you've already fixed the same problem more than once, or you're publishing multiple titles and can't absorb repeated troubleshooting cycles across a catalog, the time and reprint cost of continuing to self-format often exceeds what [professional book formatting](https://aeropublishing.com/book-formatting) would have cost from the start.
+
+This is usually where authors who've been through two or three reprint cycles start looking at a formatting service less as an added expense and more as the faster, cheaper path, which by that point it often is. It's also worth weighing against the overall [cost of self-publishing a novel](https://aeropublishing.com/blog/cost-to-self-publish-novel) or illustrated book: a few reprint runs can quietly add up to more than professional formatting would have cost on the first attempt.
+
+## KDP Formatting Checklist: Before You Upload and Before You Approve
+
+Use this as a pre-upload and pre-approval reference. Bookmark it and run through it before your next file goes live.
+
+**Before uploading your file:**
+
+- Trim size confirmed and locked before design began
+- Bleed built into the design file itself, with artwork extending 0.125" beyond the trim line
+- All images verified at 300 DPI in their original files
+- Color mode set to CMYK for any color interior or cover
+- Fonts embedded in your PDF export settings
+- Exported PDF reviewed at 100% zoom, page by page
+- Interior page count finalized before the cover file is created
+
+**Before approving for sale:**
+
+- Physical proof copy ordered
+- Proof reviewed under natural light, not a screen
+- Full spreads checked for alignment consistency, not just individual pages
+- Cover spine width confirmed against final page count
+- Proof compared side by side with the uploaded PDF
+
+Illustrated, activity, and children's books carry higher risk at nearly every item on this list. It's worth going through it more slowly for those formats.
+
+## Conclusion
+
+The core issue behind most KDP print problems isn't carelessness. It's that the digital preview approves a file's structure, not its printed appearance. Once you understand that gap, the seven causes above stop looking like a random list of things that can go wrong and start looking like a predictable set of checkpoints: margins, bleed, trim size, resolution, color mode, font embedding, and the export itself.
+
+Catch those seven before you upload, and order a physical proof before you approve the file for sale, and you'll avoid the vast majority of print surprises. Illustrated, activity, and children's books deserve extra scrutiny at every step, since the formatting variables stack in a way they don't for a straightforward novel.
+
+If you've already been through this more than once and the same issue keeps resurfacing, that's usually the clearest sign that bringing in [professional support for the rest of the self-publishing process](https://aeropublishing.com/book-publishing/) will cost less, in time and reprints, than continuing to troubleshoot it alone.
+
+## Frequently Asked Questions
+
+[FAQ]
+Q: Can I fix formatting issues after my KDP book is already published?
+A: Yes. You can upload a revised interior or cover file through KDP Bookshelf at any time. The update goes through a review process, and the book re-publishes once approved. Already-printed copies aren't recalled; any copies ordered after the update use the new file, though existing inventory in Amazon's fulfillment centers may take a little longer to cycle through.
+
+Q: Do I need a different file for a KDP eBook and a KDP print book?
+A: Yes, always. An eBook uses a reflowable format where text and images adjust based on the reader's screen and font settings. A print book requires a fixed-layout, print-ready PDF built to exact trim dimensions, with bleed, embedded fonts, and 300 DPI images. Adapting an eBook file for print, or the reverse, is one of the more common sources of formatting problems.
+
+Q: Can I use the same cover file for my KDP eBook and print book?
+A: No. An eBook cover is a single flat image sized to specific pixel dimensions. A print cover is a full-wrap PDF that includes the front cover, spine, and back cover, with bleed on every outer edge, and the spine width is calculated from page count and paper type, which makes every print cover file specific to that particular book.
+[/FAQ]
+`;
+
 export const featuredPost: BlogPost = {
     metaTitle: "How to Become a Best-Selling Author on Amazon: A Step-by-Step Guide",
     metaDescription:
@@ -1500,6 +1679,35 @@ export const featuredPost: BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "Why Your KDP Book Looks Bad in Print: 7 Causes & Fixes",
+        metaDescription:
+            "Your KDP preview passed, so why does the printed copy look wrong? This guide explains the 7 formatting causes, how to tell a file error from a printing error, and what to check before you order another copy.",
+        focusKeyphrase: "KDP book looks bad in print",
+        keywords: [
+            "KDP book looks bad in print",
+            "why KDP print looks different from preview",
+            "KDP print formatting problems",
+            "KDP bleed white edge",
+            "KDP gutter margin",
+            "KDP RGB vs CMYK",
+            "KDP 300 DPI",
+            "KDP print preview vs printed book",
+            "how to fix KDP print quality",
+            "KDP proof copy checklist",
+        ],
+        slug: "why-kdp-books-look-bad-in-print",
+        category: "Book Design & Formatting",
+        title: "Why Your KDP Book Looks Fine on Amazon but Terrible in Print: 7 Causes and How to Fix Them",
+        description:
+            "Your KDP preview passed, so why does the printed copy look wrong? This guide explains the 7 formatting causes, how to tell a file error from a printing error, and what to check before you order another copy.",
+        date: "14 October 2026",
+        image: "/book-printing-1.webp",
+        readTime: "12 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: kdpPrintLooksBadPostContent,
+    },
     {
         metaTitle: "Two ISBNs for the Same Book? What's Normal vs. a Mistake",
         metaDescription:

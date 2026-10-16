@@ -12,6 +12,7 @@ const blogSlugRedirects = [
   "arc-review-guide-for-authors",
   "two-isbns-same-book",
   "why-kdp-books-look-bad-in-print",
+  "kdp-vs-ingramspark",
 ].map((slug) => ({
   source: `/${slug}`,
   destination: `/blog/${slug}`,

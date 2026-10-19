@@ -1662,7 +1662,6 @@ A: No. An eBook cover is a single flat image sized to specific pixel dimensions.
 
 const kdpVsIngramSparkPostContent = `
 Search "KDP vs IngramSpark" and nearly every result lands on the same conclusion: use both. That advice isn't wrong, exactly, but it's incomplete. For an author who doesn't yet need bookstore or library placement, setting up IngramSpark too early means taking on extra ISBN, file-preparation, and distribution-management work for a service they're not using, along with a real risk: locking an ISBN out of one platform by configuring the other incorrectly.
-
 This article works differently. Instead of defaulting to "both," it walks through exactly when KDP alone covers everything you need, when IngramSpark earns its place alongside it, and when adding it just adds cost and complexity. You'll also get the one mistake that causes most of the KDP-and-IngramSpark headaches authors run into, how to avoid it, and what to do if you've already made it, plus a clean, paperback-only royalty comparison so the numbers aren't buried under ebook math that doesn't apply to your situation.
 
 ## Quick Answer: Do You Need Both Platforms?
@@ -1677,7 +1676,7 @@ Use KDP alone if you're selling primarily on Amazon, don't have an active bookst
 | Typical paperback royalty | Higher per copy on Amazon sales | Lower per copy, adjustable through your wholesale discount setting |
 | Best for | Amazon-focused authors, fast launches, single-title market tests | Authors pursuing bookstore or library placement, a jacketed hardcover edition, or broad print reach |
 
-If you're still unsure which column describes your book, the self-assessment in the next section will settle it in under a minute. And if you'd rather have someone confirm the right setup for your specific book, [a quick publishing consultation](https://aeropublishing.com/contact-us/) usually settles it faster than trial and error.
+If you're still unsure which column describes your book, the self-assessment in the next section will settle it in under a minute. And if you'd rather have someone confirm the right setup for your specific book, [a quick publishing consultation](https://aeropublishing.com/contact-us) usually settles it faster than trial and error.
 
 ## KDP vs. IngramSpark: The Core Difference
 
@@ -1685,25 +1684,20 @@ The simplest way to understand these two platforms is to stop thinking of them a
 
 ### What KDP Does Well
 
-KDP remains the fastest and simplest way to get a paperback listed for sale. Setup is free, review times are typically measured in hours, and there's no wholesale discount to configure for Amazon sales because KDP sells directly through Amazon's retail listing. For an author whose readers buy almost exclusively on Amazon, KDP also pays a higher per-copy royalty than IngramSpark on equivalent Amazon sales, since IngramSpark's own Amazon channel runs through a reseller relationship rather than a direct listing. Aero Publishing's [Amazon publishing services](https://aeropublishing.com/amazon-publishing/) cover that KDP-first path if you want the listing, files, and categories handled without building the account yourself.
+KDP remains the fastest and simplest way to get a paperback listed for sale. Setup is free, review times are typically measured in hours, and there's no wholesale discount to configure for Amazon sales because KDP sells directly through Amazon's retail listing. For an author whose readers buy almost exclusively on Amazon, KDP also pays a higher per-copy royalty than IngramSpark on equivalent Amazon sales, since IngramSpark's own Amazon channel runs through a reseller relationship rather than a direct listing.
 
 ### What IngramSpark Does Well
 
-IngramSpark's real value isn't that it's "bigger" than KDP. It's that it gives independent authors access to Ingram's established wholesale distribution network, which many bookstores, libraries, and retailers use to source books, along with control over the wholesale discount and return settings that can make a title more suitable for trade distribution. A bookstore buyer or school librarian isn't browsing Amazon for inventory; they're typically ordering through a wholesaler such as Ingram. [IngramSpark](https://www.ingramspark.com/) also offers hardcover editions with dust jackets, a format that isn't currently available through KDP, and its global distribution network reaches retailers and libraries beyond Amazon's own marketplaces.
+IngramSpark's real value isn't that it's "bigger" than KDP. It's that it gives independent authors access to Ingram's established wholesale distribution network, which many bookstores, libraries, and retailers use to source books, along with control over the wholesale discount and return settings that can make a title more suitable for trade distribution. A bookstore buyer or school librarian isn't browsing Amazon for inventory; they're typically ordering through a wholesaler such as Ingram. IngramSpark also offers hardcover editions with dust jackets, a format that isn't currently available through KDP, and its global distribution network reaches retailers and libraries beyond Amazon's own marketplaces.
 
 ## Do You Need Both Platforms? Answer These Questions
 
 Rather than reading pros-and-cons lists and guessing where you fit, run through these four questions. They're the same questions worth answering before you upload a single file to either platform.
-
 **1. Are you actively targeting bookstores or libraries?** Not "would it be nice if a bookstore carried my book," but do you have outreach planned: consignment conversations, a library donation program, an indie bookstore launch event? If yes, consider whether IngramSpark's wholesale distribution network, discount options, and return settings fit your strategy. If no, move to question two.
-
 **2. Do you want a hardcover edition with a dust jacket?** KDP's hardcovers are case laminate only, with no dust jacket option. If a jacketed hardcover is part of your plan, IngramSpark is the route to it within this two-platform decision (a few other print-on-demand services, such as Lulu, also offer jacketed hardcovers), regardless of how you answer the other questions.
-
 **3. Do you already own your ISBN, or are you willing to buy one?** This matters because KDP's free ISBN can't be used on IngramSpark. If you're committed to KDP-only, this question is irrelevant. If both platforms are on the table, you'll need to buy your own, covered in more detail below.
-
 **4. Are you planning a print pre-order?** KDP's pre-order feature covers Kindle ebooks only, while IngramSpark lets you set up print pre-orders that can appear across multiple retailers.
-
-If you answered yes to question one, IngramSpark is worth serious consideration; if you answered yes to question two, you'll need it (or another service that offers jacketed hardcovers) for that format. In both cases, the real debate is timing, and whether its distribution features justify the extra setup work. If you answered no to both and you're mainly validating a new title, KDP alone is a reasonable starting point. First-time authors who want a simpler launch checklist can also start with these [self-publishing tips](https://aeropublishing.com/blog/self-publishing-tips).
+If you answered yes to question one, IngramSpark is worth serious consideration; if you answered yes to question two, you'll need it (or another service that offers jacketed hardcovers) for that format. In both cases, the real debate is timing, and whether its distribution features justify the extra setup work. If you answered no to both and you're mainly validating a new title, KDP alone is a reasonable starting point.
 
 ## When You Should Use Both Platforms
 
@@ -1711,7 +1705,7 @@ Three scenarios can justify the extra setup work, and each one involves somethin
 
 ### You Want Bookstore and Library Placement
 
-If a reader walks into an independent bookstore and asks the owner to order your book, the store may use a wholesale distributor such as Ingram to source it. KDP's [Expanded Distribution](https://kdp.amazon.com/en_US/help/topic/G200172310) can also make eligible paperbacks available to bookstores, libraries, and other distributors, but KDP is clear that enrolling doesn't guarantee a particular retailer or library will accept or order your book, and it pays a lower royalty. IngramSpark gives you access to Ingram's established wholesale distribution network, along with control over the wholesale discount and return settings that can matter when you're targeting bookstores.
+If a reader walks into an independent bookstore and asks the owner to order your book, the store may use a wholesale distributor such as Ingram to source it. KDP's Expanded Distribution can also make eligible paperbacks available to bookstores, libraries, and other distributors, but KDP is clear that enrolling doesn't guarantee a particular retailer or library will accept or order your book, and it pays a lower royalty. IngramSpark gives you access to Ingram's established wholesale distribution network, along with control over the wholesale discount and return settings that can matter when you're targeting bookstores.
 
 ### You're Planning a Hardcover with a Dust Jacket
 
@@ -1720,7 +1714,6 @@ IngramSpark offers hardcover editions with dust jackets, a format that isn't cur
 ### You Want Maximum Global Reach
 
 Amazon's own marketplaces already provide substantial international reach, while IngramSpark adds access to its global print and wholesale distribution network, including retailers and libraries in markets beyond Amazon's direct marketplaces. For authors with an international readership or ambitions beyond Amazon's own ecosystem, IngramSpark can add meaningful distribution reach.
-
 You don't need all three reasons to justify adding IngramSpark, but you should be able to point to at least one concrete, active reason rather than a general sense that more distribution is always better.
 
 ## When You Shouldn't Use Both (Yet)
@@ -1738,7 +1731,6 @@ A common mistake is treating platform setup as a one-time decision made before a
 ### You Need a Fast, Uncomplicated Launch
 
 Running both platforms simultaneously means two file uploads, two review cycles, and two sets of formatting requirements to get right, including the spine-width and ISBN-matching details covered later in this article. Authors publishing under a tight deadline, or publishing their first book at all, are often better served starting with one platform and adding the second once the pressure is off. A rushed dual-platform setup is where most of the ISBN and distribution mistakes in the next section actually happen.
-
 None of this is permanent. KDP-only today doesn't rule out IngramSpark in six months; it just means today isn't the day to take on the extra complexity.
 
 ## The #1 Mistake: KDP Expanded Distribution vs. IngramSpark Conflicts
@@ -1755,28 +1747,21 @@ The fix is sequencing, not complexity. Decide your ISBN and distribution strateg
 
 ### How to Fix It If You Already Made the Mistake
 
-If Expanded Distribution is already enabled and you want to add IngramSpark, the first step is to remove the book from Expanded Distribution in KDP. KDP notes that changes to a book's details can take up to eight weeks to update through Expanded Distribution, so don't assume removing the book is instant. What happens next depends on the ISBN. If you used your own ISBN, IngramSpark's title-transfer process can move the title to your IngramSpark account once Expanded Distribution has been removed and KDP confirms the transfer with IngramSpark's support team. If the book uses a free KDP ISBN, that ISBN can't be transferred to IngramSpark, so you'll need to set the book up as a new title with a new ISBN. (If a book has never been in Expanded Distribution, you can upload it to IngramSpark as a new title with your own ISBN, with no transfer form required.) If you'd rather not manage the back-and-forth yourself, [a publishing service that handles distribution setup](https://aeropublishing.com/book-publishing/) can coordinate the steps for you.
+If Expanded Distribution is already enabled and you want to add IngramSpark, the first step is to remove the book from Expanded Distribution in KDP. KDP notes that changes to a book's details can take up to eight weeks to update through Expanded Distribution, so don't assume removing the book is instant. What happens next depends on the ISBN. If you used your own ISBN, IngramSpark's title-transfer process can move the title to your IngramSpark account once Expanded Distribution has been removed and KDP confirms the transfer with IngramSpark's support team. If the book uses a free KDP ISBN, that ISBN can't be transferred to IngramSpark, so you'll need to set the book up as a new title with a new ISBN. (If a book has never been in Expanded Distribution, you can upload it to IngramSpark as a new title with your own ISBN, with no transfer form required.) If you'd rather not manage the back-and-forth yourself, a publishing service that handles distribution setup can coordinate the steps for you.
 
 ## ISBN Rules When Publishing on Both Platforms
 
 ISBN confusion causes a disproportionate number of the problems authors run into across both platforms, and the rules are more straightforward than they first appear.
-
-Start with ownership. KDP's free ISBN is convenient, but it's registered to Amazon and can't be transferred or reused on IngramSpark. If there's any chance you'll want both platforms, now or later, buy your own ISBN through [Bowker](https://www.myidentifiers.com/) rather than accepting KDP's free one. A single ISBN costs considerably more than buying in a block of ten, so if you're planning multiple titles or multiple formats, the block purchase usually pays for itself.
-
-Next, formats. Use the same ISBN across both platforms for a single format; the same paperback edition should carry one ISBN whether it's sold through KDP or IngramSpark. Using different ISBNs for what is intended to be the same format and edition can create separate product records and make metadata, sales reporting, and retailer matching more complicated. What does need separate ISBNs is each distinct print format: your paperback and your hardcover, for example. An ebook generally gets its own ISBN when it's distributed through services that require one (IngramSpark does), although Kindle ebooks published through KDP don't need an ISBN. If you're already staring at two numbers on one book, [when two ISBNs are normal and when they're a mistake](https://aeropublishing.com/blog/two-isbns-same-book) walks through the same problem from the identifier side.
-
+Start with ownership. KDP's free ISBN is convenient, but it's registered to Amazon and can't be transferred or reused on IngramSpark. If there's any chance you'll want both platforms, now or later, buy your own ISBN through Bowker rather than accepting KDP's free one. A single ISBN costs considerably more than buying in a block of ten, so if you're planning multiple titles or multiple formats, the block purchase usually pays for itself.
+Next, formats. Use the same ISBN across both platforms for a single format; the same paperback edition should carry one ISBN whether it's sold through KDP or IngramSpark. Using different ISBNs for what is intended to be the same format and edition can create separate product records and make metadata, sales reporting, and retailer matching more complicated. What does need separate ISBNs is each distinct print format: your paperback and your hardcover, for example. An ebook generally gets its own ISBN when it's distributed through services that require one (IngramSpark does), although Kindle ebooks published through KDP don't need an ISBN.
 The owned-ISBN decision rule is simple. If you're KDP-only and have no plans to expand, the free ISBN works fine. The moment IngramSpark, a hardcover edition, or wider print distribution enters the plan, buy your own ISBN before you publish anything.
 
 ## Paperback Royalties: KDP vs. IngramSpark by the Numbers
 
-Royalty comparisons online tend to blend print and ebook numbers together, which muddies the actual paperback math. Here's a clean, print-only example using a standard 300-page, 6×9, black-and-white paperback priced at $14.99, a common setup for a debut novel or nonfiction title. The figures below use the printing-cost formulas each platform currently publishes: $4.60 on KDP (a $1.00 fixed cost plus $0.012 per page) and $5.71 on IngramSpark ($1.33 plus $0.0146 per page on 50 lb white paper). Treat them as illustrative rather than guaranteed: actual costs vary by platform, market, trim size, page count, paper, and other specifications, and both platforms can adjust their rates. For the broader budget around editing, covers, and launch spend, see the [cost of self-publishing a novel](https://aeropublishing.com/blog/cost-to-self-publish-novel) and the [cheapest way to publish a book](https://aeropublishing.com/blog/cheapest-way-to-publish-book).
-
+Royalty comparisons online tend to blend print and ebook numbers together, which muddies the actual paperback math. Here's a clean, print-only example using a standard 300-page, 6×9, black-and-white paperback priced at $14.99, a common setup for a debut novel or nonfiction title. The figures below use the printing-cost formulas each platform currently publishes: $4.60 on KDP (a $1.00 fixed cost plus $0.012 per page) and $5.71 on IngramSpark ($1.33 plus $0.0146 per page on 50 lb white paper). Treat them as illustrative rather than guaranteed: actual costs vary by platform, market, trim size, page count, paper, and other specifications, and both platforms can adjust their rates.
 **On KDP, Amazon channel only:** At $14.99, the paperback qualifies for KDP's 60% royalty rate (the 60% tier currently applies at $9.99 and above; books priced at $9.98 or below earn 50%). Printing cost for this format comes to $4.60. Royalty works out to (0.60 × $14.99) − $4.60, or roughly $4.39 per copy.
-
 **On KDP with Expanded Distribution enabled:** The same book, sold through Expanded Distribution's additional retailers, drops to a 40% rate: (0.40 × $14.99) − $4.60, or roughly $1.40 per copy. That's a steep cut, and Expanded Distribution doesn't guarantee that any particular bookstore or library will accept or order your book.
-
 **On IngramSpark at a 45% wholesale discount:** IngramSpark pays list price minus your chosen wholesale discount, minus printing cost and a 1.875% market access fee (based on list price) on distributed sales. A 45% discount is workable for some online retail channels, but it's below the 53% to 55% IngramSpark recommends for US bookstore availability; below 53%, the title receives what IngramSpark describes as a "short discount," which can limit its appeal to bookstores. At 45%, royalty runs around (0.55 × $14.99) − $5.71 − $0.28, or roughly $2.25 per copy. IngramSpark's printing cost runs noticeably higher than KDP's for comparable specs.
-
 **On IngramSpark at a 55% wholesale discount:** IngramSpark recommends a 53% to 55% discount in the US because that's more consistent with standard trade terms and can make a title more attractive to bookstores. At a 55% setting: (0.45 × $14.99) − $5.71 − $0.28, or roughly $0.75 per copy.
 
 | Channel | Rate / Discount | Estimated Royalty (per $14.99 copy) |
@@ -1791,47 +1776,36 @@ These figures are illustrative and based on each platform's published rates; you
 ## Setting Up Your Paperback on Both Platforms (Overview)
 
 Once you've decided both platforms are worth the setup, sequencing prevents most of the formatting and ISBN problems authors run into. Follow this order:
-
 - **Secure your own ISBN** before uploading anything, ideally through Bowker as discussed above.
 - **Finalize your interior file** as a print-ready PDF, formatted to the trim size you've chosen.
 - **Prepare two separate cover files.** KDP and IngramSpark use different paper stock and printing specifications, which means their spine-width calculations differ even for the same page count. A cover sized for one platform's spine width will look wrong on the other: text crowding the spine edge, or a visible gap where it shouldn't be.
 - **Publish on KDP first.** Order a proof copy and review it physically before moving on.
 - **Publish on IngramSpark second**, using the ISBN and files confirmed correct from your KDP proof.
-
-Two common mistakes account for many of the formatting problems that show up after a dual-platform launch. The first is reusing a single cover file across both platforms without adjusting for spine width, which produces a cover that's either too tight or has a visible white gap at the spine on one of the two editions. The second is uploading the wrong ISBN to one platform, usually a leftover free KDP ISBN accidentally applied to an IngramSpark listing, or a mismatch between the ISBN on the file's barcode and the ISBN entered in the platform's metadata. If a printed proof already looks off, [why KDP books look fine on Amazon but terrible in print](https://aeropublishing.com/blog/why-kdp-books-look-bad-in-print) covers the file-level causes.
-
-Authors who'd rather not manage both file sets and both review queues themselves often have [a formatting and distribution team](https://aeropublishing.com/book-formatting/) handle the dual setup in one pass.
+Two common mistakes account for many of the formatting problems that show up after a dual-platform launch. The first is reusing a single cover file across both platforms without adjusting for spine width, which produces a cover that's either too tight or has a visible white gap at the spine on one of the two editions. The second is uploading the wrong ISBN to one platform, usually a leftover free KDP ISBN accidentally applied to an IngramSpark listing, or a mismatch between the ISBN on the file's barcode and the ISBN entered in the platform's metadata.
+Authors who'd rather not manage both file sets and both review queues themselves often have [a formatting and distribution team](https://aeropublishing.com/book-formatting) handle the dual setup in one pass.
 
 ## Common Formatting and ISBN Mistakes We See
 
 Beyond the Expanded Distribution conflict and spine-width mismatch already covered, a couple of other patterns are worth naming directly.
-
 Mismatched trim and bleed specifications cause more rejected proofs than almost anything else. An interior file formatted for a 6×9 trim but uploaded against a 5.5×8.5 setting, or a cover missing the required bleed margin, gets flagged in review on one platform and sometimes passes on the other, creating a paperback that looks correct in the file preview but prints with cropped text or a visible white edge.
-
 Inconsistent ISBNs across listings can create separate or competing product records. This can happen when an author publishes on KDP with one ISBN, later adds IngramSpark with a different ISBN for what's supposed to be the same paperback, and leaves IngramSpark's Amazon channel enabled. The result can make retailer matching, metadata management, sales reporting, and customer discovery more complicated, particularly when the two records aren't correctly linked or recognized as the same edition, which is the kind of fragmentation the ISBN rules earlier in this article are meant to prevent.
-
-Both of these are avoidable with the sequence outlined above. [Formatting](https://aeropublishing.com/book-formatting/), [cover design](https://aeropublishing.com/book-cover-design/), and [book printing support](https://aeropublishing.com/book-printing/) exist specifically to catch these details before a proof gets rejected.
+Both of these are avoidable with the sequence outlined above. [Formatting](https://aeropublishing.com/book-formatting), [cover design](https://aeropublishing.com/book-cover-design/), and [book printing support](https://aeropublishing.com/book-printing) exist specifically to catch these details before a proof gets rejected.
 
 ## Make the Right Call for Your Book
 
 The decision underneath all of this is simpler than the platforms make it feel. KDP covers Amazon sales efficiently and simply, and it can reach beyond Amazon through Expanded Distribution. IngramSpark earns its place only when you have a specific, active reason, such as bookstore or library outreach with control over wholesale terms, a jacketed hardcover edition, or distribution reach Amazon doesn't cover, to take on its added setup and ISBN requirements. Neither platform is universally better than the other. They're built for different distribution needs, and the right choice depends on what your book actually requires right now, not on what sounds more comprehensive.
-
 If you take one thing from this article, let it be the sequencing: decide your ISBN strategy and your Expanded Distribution setting before you publish anywhere, not after. That single decision prevents the conflict that's slowest to untangle afterward.
-
-If you're still weighing which setup fits your book, or you're untangling an Expanded Distribution conflict you've already run into, [contact Aero Publishing](https://aeropublishing.com/contact-us/) for a quick ISBN and distribution review. [Full publishing support](https://aeropublishing.com/book-publishing/) can also handle the dual-platform setup from ISBN strategy through file upload.
+If you're still weighing which setup fits your book, or you're untangling an Expanded Distribution conflict you've already run into, a quick ISBN and distribution review can usually settle it faster than working through the support queues alone.
 
 ## Frequently Asked Questions
 
 [FAQ]
 Q: Should I disable Amazon distribution in IngramSpark if I'm already publishing through KDP?
 A: Generally, yes. If KDP is already handling your Amazon sales, leaving IngramSpark's Amazon channel active can put a second source for the same book in competition with your KDP edition, sometimes at a different price or with different availability. Disabling IngramSpark's Amazon channel keeps your KDP edition as the primary Amazon sales channel for the book.
-
 Q: Can I switch from KDP Expanded Distribution to IngramSpark later, after I've already published?
 A: Yes, but not instantly. You'll need to remove the book from Expanded Distribution in KDP and allow time for the change to take effect (KDP notes that updates can take up to eight weeks to pass through Expanded Distribution). If you own the ISBN, IngramSpark's title-transfer process can then move the title to your IngramSpark account once KDP confirms the transfer. If the book uses a free KDP ISBN, it can't be transferred, and you'll need to set it up as a new title with a new ISBN. It's possible, just not a same-day switch.
-
 Q: Is IngramSpark worth it for a first-time, single-title author?
 A: It depends on what that author is actually trying to do. If there's no active bookstore or library outreach plan and the goal is simply to get a first book selling, KDP alone is usually the better starting point. IngramSpark is easier to justify once there's a specific bookstore, library, or hardcover goal driving the decision.
-
 Q: How much wholesale discount should I offer bookstores on IngramSpark, and should I allow returns?
 A: IngramSpark recommends a 53% to 55% wholesale discount in the US because that's more consistent with standard trade terms and can make a title more attractive to bookstores; titles below 53% receive what IngramSpark describes as a "short discount," which can limit their appeal to bookstores. IngramSpark accepts lower discounts (currently as low as 40%, although it sets the minimum and can change it), which can make sense if you're mainly selling online, since a lower discount leaves more per copy. Returnable status paired with a 53% to 55% discount generally gives the widest bookstore availability, but you're charged for returned copies (the wholesale cost plus a handling fee), so weigh it against your royalty margin at whatever discount you choose.
 [/FAQ]

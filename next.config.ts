@@ -14,11 +14,13 @@ const blogSlugRedirects = [
   "why-kdp-books-look-bad-in-print",
   "kdp-vs-ingramspark",
   "get-your-self-published-book-into-independent-bookstores",
-].map((slug) => ({)
-  source: `/${slug}`,
-  destination: `/blog/${slug}`,
-  permanent: true,
-}));
+].map((slug) => {
+  return {
+    source: `/${slug}`,
+    destination: `/blog/${slug}`,
+    permanent: true,
+  };
+});
 
 const nextConfig: NextConfig = {
   async redirects() {

@@ -13,7 +13,8 @@ const blogSlugRedirects = [
   "two-isbns-same-book",
   "why-kdp-books-look-bad-in-print",
   "kdp-vs-ingramspark",
-].map((slug) => ({
+  "get-your-self-published-book-into-independent-bookstores",
+].map((slug) => ({)
   source: `/${slug}`,
   destination: `/blog/${slug}`,
   permanent: true,

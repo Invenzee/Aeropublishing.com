@@ -160,7 +160,7 @@ function renderMarkdownChunk(
                             <thead>
                                 <tr>
                                     {header.map((cell, idx) => (
-                                        <th key={idx} className="bg-brand-primary text-white px-4 py-3 text-left font-syne font-semibold">
+                                        <th key={idx} className="bg-brand-primary text-white px-4 py-3 text-left font-syne font-semibold [&_strong]:text-white">
                                             {renderInlineText(cell, `${keyPrefix}-th-${idx}`)}
                                         </th>
                                     ))}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function WhyAeroSection({ features, highlightTitle, normalTitle, boldTitle, description, imageUrl = "/why-aero-book.webp", eyebrowTitle = "Why Aero", noImageRadius = false, imageContain = false, imageWidthPercent }: { features: any[], highlightTitle: string, normalTitle: string, boldTitle: string, description: string, imageUrl?: string, eyebrowTitle?: string, noImageRadius?: boolean, imageContain?: boolean, imageWidthPercent?: number }) {
+export default function WhyAeroSection({ features, highlightTitle, normalTitle, boldTitle, description, imageUrl = "/why-aero-book.webp", imageAlt = "Open book", eyebrowTitle = "Why Aero", noImageRadius = false, imageContain = false, imageWidthPercent }: { features: any[], highlightTitle: string, normalTitle: string, boldTitle: string, description: string, imageUrl?: string, imageAlt?: string, eyebrowTitle?: string, noImageRadius?: boolean, imageContain?: boolean, imageWidthPercent?: number }) {
     return (
         <section
             className="relative py-20 bg-contain bg-top bg-no-repeat max-sm:py-12 w-full max-w-full overflow-x-clip overflow-hidden"
@@ -94,7 +94,7 @@ export default function WhyAeroSection({ features, highlightTitle, normalTitle, 
                         >
                             <Image
                                 src={imageUrl}
-                                alt="Open book"
+                                alt={imageAlt}
                                 fill
                                 className={`${
                                     imageContain

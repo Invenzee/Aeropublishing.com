@@ -15,6 +15,7 @@ const staticRoutes: StaticRoute[] = [
     { path: "/book-editing", changeFrequency: "monthly", priority: 0.9 },
     { path: "/book-publishing", changeFrequency: "monthly", priority: 0.9 },
     { path: "/book-marketing", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/book-signing", changeFrequency: "monthly", priority: 0.7 },
     { path: "/services", changeFrequency: "monthly", priority: 0.8 },
     { path: "/about", changeFrequency: "monthly", priority: 0.8 },
     { path: "/portfolio", changeFrequency: "weekly", priority: 0.8 },

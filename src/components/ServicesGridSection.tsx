@@ -24,6 +24,18 @@ import Link from "next/link";
 
 const services = [
     {
+        icon: PenTool,
+        title: "Book Signing",
+        description: "Connect with readers through a thoughtfully planned book signing event tailored to your book and audience.",
+        features: [
+            "Event Strategy & Venue Outreach",
+            "Promotion & Reader Invitations",
+            "Signing Day Preparation"
+        ],
+        link: "/book-signing",
+        color: "#3F3774"
+    },
+    {
         icon: BookOpen,
         title: "Book Publishing",
         description: "Full creative control. Pro results. Everything you need to publish, promote, and sell – without the stress!",

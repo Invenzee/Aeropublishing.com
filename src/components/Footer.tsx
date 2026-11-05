@@ -54,6 +54,7 @@ export default function Footer() {
                             <li><Link href="/book-editing">Book Editing</Link></li>
                             <li><Link href="/book-publishing">Book Publishing</Link></li>
                             <li><Link href="/book-marketing">Book Marketing</Link></li>
+                            <li><Link href="/book-signing">Book Signing</Link></li>
                             <li><Link href="/audio-book-narration">Audio Book Narration</Link></li>
                             <li><Link href="/authors-website">Authors Website</Link></li>
                             <li><Link href="/book-cover-design">Book Cover Design</Link></li>

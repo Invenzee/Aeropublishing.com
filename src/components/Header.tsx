@@ -35,6 +35,7 @@ const navItems: NavItem[] = [
             { name: "Ghostwriting", href: "/ghost-writing" },
             { name: "Proof Reading", href: "/proof-reading" },
             { name: "Video Trailer", href: "/video-trailer" },
+            { name: "Book Signing", href: "/book-signing" },
         ]
     },
     { name: "Portfolio", href: "/portfolio" },

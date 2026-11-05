@@ -17,7 +17,7 @@ const badges = [
     "/hero-badge-4.webp",
 ]
 
-export default function HeroSection({ title, description, showButton = true, className = "", hasForm = true }: { title: string, description: string, showButton?: boolean, className?: string, hasForm?: boolean }) {
+export default function HeroSection({ title, description, showButton = true, className = "", hasForm = true, backgroundImage }: { title: string, description: string, showButton?: boolean, className?: string, hasForm?: boolean, backgroundImage?: string }) {
 
     const router = useRouter();
     const [isMobile, setIsMobile] = useState(false);
@@ -75,21 +75,28 @@ export default function HeroSection({ title, description, showButton = true, cla
     };
 
     return (
-        <section className={`${className} relative min-h-screen flex items-center pt-[120px] overflow-hidden bg-[url('/hero-bg.webp')] bg-cover bg-center`}>
-            <div className="max-w-[1140px] mx-auto my-24 relative z-10 w-full flex justify-between gap-5 items-center max-sm:flex-col max-sm:my-12 max-sm:px-6">
+        <section className={`${className} relative min-h-screen flex items-center pt-[120px] overflow-hidden ${backgroundImage ? 'bg-[#211d3d]' : "bg-[url('/hero-bg.webp')] bg-cover bg-center"}`}>
+            {backgroundImage && (
+                <>
+                    <Image src={backgroundImage} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#211d3d]/95 via-[#211d3d]/80 to-[#211d3d]/55" />
+                </>
+            )}
+            <div className={`max-w-[1140px] mx-auto my-24 relative z-10 w-full flex justify-between items-center max-sm:my-12 ${backgroundImage ? 'flex-col gap-10 px-6 lg:flex-row lg:gap-16' : 'gap-5 max-sm:flex-col max-sm:px-6'}`}>
 
                 {/* Left Column: Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className={`space-y-2 ${hasForm ? '' : 'mx-auto'}`}
+                    className={`space-y-2 ${hasForm ? '' : 'mx-auto'} ${backgroundImage && hasForm ? 'w-full lg:w-1/2' : ''}`}
                 >
-                    <h1 className={`text-[60px] font-syne font-semibold leading-[1.1] text-brand-primary max-sm:text-[40px] ${hasForm ? 'text-left' : 'text-center'}`}>
+                    {backgroundImage && <p className="mb-5 font-poppins text-sm font-medium uppercase tracking-[0.2em] text-[#FFD0C9]">Your story. Their signed copy.</p>}
+                    <h1 className={`text-[60px] font-syne font-semibold leading-[1.1] ${backgroundImage ? 'text-white' : 'text-brand-primary'} max-sm:text-[40px] ${hasForm ? 'text-left' : 'text-center'}`}>
                         {title}
                     </h1>
 
-                    <p className={`text-black font-poppins text-md leading-relaxed max-sm:text-[14px] ${hasForm ? 'max-w-4xl text-left' : 'max-w-2xl text-center'}`}>
+                    <p className={`${backgroundImage ? 'text-white/90' : 'text-black'} font-poppins text-md leading-relaxed max-sm:text-[14px] ${hasForm ? 'max-w-4xl text-left' : 'max-w-2xl text-center'}`}>
                         {description}
                     </p>
 
@@ -113,9 +120,9 @@ export default function HeroSection({ title, description, showButton = true, cla
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="flex flex-col items-center lg:items-end w-full mt-4"
+                        className={`flex flex-col items-center lg:items-end w-full mt-4 ${backgroundImage ? 'lg:w-1/2' : ''}`}
                     >
-                        <div className="w-full max-w-md">
+                        <div className={`w-full max-w-md ${backgroundImage ? 'rounded-3xl border border-white/30 bg-white/95 p-7 shadow-2xl backdrop-blur-sm sm:p-8' : ''}`}>
                             <div className="text-center mb-6">
                                 <h2 className="text-2xl font-syne font-bold text-brand-black max-sm:text-[24px]">Talk to a Publishing Expert</h2>
                                 <p className="text-lg font-syne text-black max-sm:text-[14px]">Speak with a dedicated publishing consultant today</p>

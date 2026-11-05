@@ -72,6 +72,7 @@ export default function BookSigningPage() {
         <main className="min-h-screen bg-white pb-20">
             <HeroSection
                 title="Book Signing"
+                backgroundImage="/book-signing-hero.webp"
                 description="Bring your story off the page and into the hands of your readers. Aero Publishing helps you plan and promote a book signing with thoughtful event coordination, venue outreach, and personal support from preparation to the final signature."
             />
             <FeatureSection
@@ -84,7 +85,7 @@ export default function BookSigningPage() {
                     'Clear Scope, Budget & Author Approval',
                 ]}
                 imageSrc="/book-signing-1.webp"
-                imageAlt="Author signing a book for a reader at a bookstore event"
+                imageAlt="Open book and fountain pen on a prepared bookstore signing table"
                 hasFeatures={true}
                 ctaText="Plan Your Book Signing"
             />
@@ -135,15 +136,15 @@ export default function BookSigningPage() {
                 title={{ prefix: 'Meet the Readers Behind Every', highlight: 'Signature' }}
                 description="Your book deserves a moment worth sharing. Whether you imagine an intimate bookstore gathering, a library conversation, or a community launch, Aero Publishing helps turn your idea into a practical event plan. Tell us about your book, preferred location, and goals, and we will outline the next steps for a signing that feels personal, prepared, and true to you."
                 imageSrc="/book-signing-3.webp"
-                imageAlt="Author handing a signed book to a reader"
+                imageAlt="Navy hardback books with a cream ribbon beside an open book and pen"
                 isReversed={true}
                 ctaText="Discuss Your Event"
             />
             <ConnectWithUsSection />
-            <TestimonialsSection />
+            <TestimonialsSection showPortraits={false} />
             <WhyChooseUsSection />
-            <AuthorsShowcaseSection />
-            <PromoSection />
+            <AuthorsShowcaseSection showPortraits={false} />
+            <PromoSection imageSrc="/book-signing-3.webp" />
             <FAQSection faqs={faqs} />
         </main>
     );

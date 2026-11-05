@@ -101,7 +101,7 @@ const reviews = [
 const row1 = [...reviews, ...reviews, ...reviews];
 const row2 = [...reviews].reverse().concat([...reviews].reverse());
 
-export default function AuthorsShowcaseSection() {
+export default function AuthorsShowcaseSection({ showPortraits = true }: { showPortraits?: boolean }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const row1Ref = useRef<HTMLDivElement>(null);
     const row2Ref = useRef<HTMLDivElement>(null);
@@ -161,7 +161,7 @@ export default function AuthorsShowcaseSection() {
             {/* Mobile: stacked cards — no wide w-max rows */}
             <div className="md:hidden px-6 space-y-4 pb-10">
                 {reviews.slice(0, 4).map((item, i) => (
-                    <ReviewCard key={`mobile-${i}`} item={item} />
+                    <ReviewCard key={`mobile-${i}`} item={item} showPortraits={showPortraits} />
                 ))}
             </div>
 
@@ -176,7 +176,7 @@ export default function AuthorsShowcaseSection() {
                 <div className="w-full overflow-x-clip overflow-hidden">
                     <div ref={row1Ref} className="flex items-start gap-6 w-max pl-10 will-change-transform">
                         {row1.map((item, i) => (
-                            <ReviewCard key={`r1-${i}`} item={item} />
+                            <ReviewCard key={`r1-${i}`} item={item} showPortraits={showPortraits} />
                         ))}
                     </div>
                 </div>
@@ -184,7 +184,7 @@ export default function AuthorsShowcaseSection() {
                 <div className="w-full overflow-x-clip overflow-hidden">
                     <div ref={row2Ref} className="flex items-start gap-6 w-max will-change-transform">
                         {row2.map((item, i) => (
-                            <ReviewCard key={`r2-${i}`} item={item} />
+                            <ReviewCard key={`r2-${i}`} item={item} showPortraits={showPortraits} />
                         ))}
                     </div>
                 </div>
@@ -218,8 +218,8 @@ function getInitials(name: string): string {
     return (words[0][0] + words[words.length - 1][0]).toUpperCase();
 }
 
-function ReviewCard({ item }: { item: any }) {
-    const hasAvatar = item.avatar && item.avatar.trim() !== '' && !item.avatar.includes('testimonial.webp');
+function ReviewCard({ item, showPortraits }: { item: any; showPortraits: boolean }) {
+    const hasAvatar = showPortraits && item.avatar && item.avatar.trim() !== '' && !item.avatar.includes('testimonial.webp');
     
     return (
         <div className={`bg-white p-5 max-sm:p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col gap-3 shrink-0 transition-all hover:shadow-md min-h-[320px] max-sm:min-h-auto ${item.width}`}>

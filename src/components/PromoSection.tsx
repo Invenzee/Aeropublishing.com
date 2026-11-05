@@ -7,7 +7,7 @@ import { getFormTrackingPayload } from "@/lib/tracking";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function PromoSection() {
+export default function PromoSection({ imageSrc = "/popup-image.webp" }: { imageSrc?: string }) {
     const router = useRouter();
 
     return (
@@ -119,7 +119,7 @@ export default function PromoSection() {
                     {/* Right Side: Image */}
                     <div className="w-full md:w-1/2 relative bg-[#1A2E35] max-md:w-full min-h-[300px] min-w-0">
                         <Image
-                            src="/popup-image.webp"
+                            src={imageSrc}
                             alt="Book cover"
                             className="w-full h-full object-cover filter drop-shadow-2xl brightness-110"
                             width={500}

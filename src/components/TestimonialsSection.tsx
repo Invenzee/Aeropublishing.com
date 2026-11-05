@@ -33,7 +33,7 @@ const testimonials = [
     }
 ];
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ showPortraits = true }: { showPortraits?: boolean }) {
     const [activeId, setActiveId] = useState(testimonials[0].id);
 
     const activeTestimonial = testimonials.find((t) => t.id === activeId) || testimonials[0];
@@ -101,14 +101,14 @@ export default function TestimonialsSection() {
                             </div>
 
                             {/* Author Profile Image */}
-                            <div className="relative">
+                            {showPortraits && <div className="relative">
                                 <div className="w-32 h-40 rounded-lg overflow-hidden border-2 border-white shadow-md">
                                     <Image src='/testimonial.webp' alt='Testimonial author' fill className="object-cover" loading="lazy" />
                                 </div>
                                 <div className="absolute -top-2 -right-2 text-brand-secondary bg-white leading-[1] text-xl p-2 rounded-sm font-serif">
                                     <FaQuoteRight />
                                 </div>
-                            </div>
+                            </div>}
                         </div>
 
                         <AnimatePresence mode="wait">
@@ -151,9 +151,9 @@ export default function TestimonialsSection() {
                             </p>
 
                             <div className="mt-auto flex flex-col items-center gap-2 relative z-10">
-                                <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-200">
+                                {showPortraits && <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-200">
                                     <Image src={testimonial.authorImage} alt={testimonial.name} width={48} height={48} className="object-cover" loading="lazy" quality={75} />
-                                </div>
+                                </div>}
                                 <span className="font-syne font-bold text-brand-primary text-sm">
                                     {testimonial.name}
                                 </span>

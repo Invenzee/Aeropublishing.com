@@ -1977,7 +1977,316 @@ export const featuredPost: BlogPost = {
     content: bestsellerPostContent,
 };
 
+const selfPublishedBookMarketingContent = `
+You published the book, told your family and friends, and watched sales stay flat. That is the most common starting point for indie authors, and it rarely means the book is the problem. Readers cannot buy what they never see, and a new title competes with millions of others while you work with limited time, money, and no built-in audience.
+
+This guide explains how to market a self-published book in a sequence you can follow: find your readers, get the book ready to convert, build a list you own, promote with free and paid channels, and measure what happens. It ends with a 90-day plan you can start today.
+
+## How to Market a Self-Published Book: The Quick Answer
+
+Marketing a self-published book comes down to six steps, done in order:
+
+- Identify your target readers. Study comparable books and decide exactly who the book is for before choosing any channel.
+- Make the book ready to sell. Check the cover, description, sample pages, price, editing, and metadata so visitors have a reason to buy.
+- Build an author platform. Set up a simple website and an email list you control, independent of any retailer or social network.
+- Collect honest reviews. Send advance copies to likely readers without requiring or rewarding a review.
+- Promote through channels that fit your genre. Combine free outreach with one small, carefully tested paid channel.
+- Measure and adjust. Track clicks, sales, costs, and profit, then fix the weakest link before spending more.
+
+The rest of this article explains each step and shows how to fit them into 90 days.
+
+## 1. Identify Your Target Readers and Position Your Book
+
+A significant amount of wasted marketing spend can come from skipping this step. An author picks Instagram because everyone is there, then runs ads against keywords that attract readers who never wanted this kind of book. Decide who the book is for first. The channels follow from that answer.
+
+### Research Comparable Books and Reader Expectations
+
+Pick five to ten comparable titles: same genre, a similar promise, published in the last few years, and clearly still selling. Then study them the way a reader would.
+
+- Read their Amazon listings. Note cover style, subtitle, how the description opens, and which categories they sit in.
+- Read Goodreads reviews, especially the three- and four-star ones. They show what readers expected and what disappointed them.
+- Browse reader communities on Reddit, Facebook, and Goodreads groups to see how people actually ask for recommendations.
+
+Finish with one sentence: "This book is for [type of reader] who enjoyed [comparable titles] and wants [specific promise]." That sentence will guide your cover, description, and ad targeting later.
+
+### Choose Marketing Channels Based on Your Book's Genre
+
+A common mistake is treating every channel as equally useful. Where readers discover books depends heavily on what they read, so treat the examples below as starting points rather than fixed rules. The real test is where your own readers and book buyers spend their time.
+
+- Fiction: Readers often follow authors and series. Email newsletters, reader groups, BookTok and Bookstagram, and reader-focused promotion newsletters tend to matter most.
+- Nonfiction: Many nonfiction readers look for information, solutions, or guidance on a particular subject. Website content, search visibility, podcast interviews, and professional communities carry more weight.
+- Children's books: Buyers and decision-makers include parents, grandparents, teachers, librarians, homeschool families, and gift buyers, depending on the book. Libraries, school and community events, parenting groups, and print availability often matter more than eBook ads.
+
+## 2. Get Your Book Ready to Sell Before You Promote It
+
+Getting people to your book page is only half the job. The page itself has to persuade them. Many first-time authors underestimate this, then pay for traffic that lands on a weak cover, a vague description, and a typo in the first paragraph of the sample.
+
+Advertising amplifies whatever is already there. If the listing converts poorly, ads will simply deliver more people to a listing that converts poorly.
+
+### Review Your Book Cover, Description, Sample Pages, and Pricing
+
+Place your cover beside the comparable titles you chose earlier and shrink it to thumbnail size. Does it signal the right genre at a glance? Is the title still readable?
+
+Then read your description as a stranger would. Compare these two openings for an imagined thriller:
+
+- Weak: "Maya's debut novel is a gripping story of loss, secrets, and the search for truth."
+- Stronger: "Three weeks after her father's funeral, Maya finds a key taped inside his watch. The lock it opens belongs to a man who died ten years ago."
+
+The second gives a reader something concrete to want. Finally, read the opening pages of your sample and compare your price with similar books in your format. Price too high without reviews to support it, and readers hesitate. Price far below the norm, and some readers may read it as a signal about quality.
+
+### Check Editing, Proofreading, and Book Formatting
+
+Readers forgive an imperfect marketing campaign more readily than a book that is hard to read. Typos, inconsistent spacing, broken chapter links in an eBook, or cramped margins in print erode trust, and they can surface in reviews that remain visible on your listing for a long time. Professional formatting will not prevent every negative review, but it removes a cause you can control.
+
+If your manuscript has only had a pass from friends, consider a professional [book editing and proofreading](/book-editing) review. If the interior looks uneven on a Kindle or in print, [professional book formatting](/book-formatting) is worth fixing before launch.
+
+### Optimize Book Metadata and Retailer Listings
+
+Metadata is the information retailers use to categorize and show your book: title, subtitle, keywords, categories, description, and author details. Inaccurate or thin metadata makes a book harder to find even when everything else is strong. If you publish in multiple formats or through multiple retailers, confirm that each edition has its own correct ISBN information where distribution requires it.
+
+Use this checklist before spending any money:
+
+- ☐ Cover matches genre conventions and reads clearly at thumbnail size
+- ☐ Description opens with a hook and speaks to the target reader
+- ☐ Sample pages are clean and engaging from the first page
+- ☐ Price is in line with comparable titles for the same format
+- ☐ Manuscript is professionally edited and proofread
+- ☐ Print and eBook formatting display correctly on real devices
+- ☐ Title, subtitle, keywords, and categories are accurate and relevant
+- ☐ Author name and biography are consistent across every retailer
+- ☐ Book is available on the retailers your readers use
+
+If the checklist exposes gaps you would rather not tackle alone, Aero Publishing's [book cover design](/book-cover-design), editing, and formatting services can be handled before you invest in promotion.
+
+## 3. Build an Author Platform and Email List
+
+An author platform is your ability to reach readers directly: a website, an email list, and a social presence that readers actually follow. It matters because a retailer or social network controls the reach it gives you, and that can change without notice. An email list gives you a more direct way to reach readers without depending entirely on the algorithms and policies of social networks or retailers.
+
+You do not need a large platform to begin. You need a place to send readers and a way to collect their email addresses. Make sure subscribers knowingly opt in, and add a short privacy notice explaining how you will use their address.
+
+### Create an Author Website or Book Landing Page
+
+A single page can do the job. Include a short author biography, the book description, purchase links for each retailer, an email signup form, and one clear call to action. If you write nonfiction, add a few helpful articles on the topic your book covers, since they give search engines and readers a reason to find you. If you would rather not build it yourself, an [author website service](/authors-website) can set one up.
+
+### Grow Your Email List With a Reader Magnet
+
+A reader magnet is a free item offered in exchange for an email address. Fiction authors often offer a sample chapter, bonus scene, or short prequel. Nonfiction authors do better with a practical resource, such as a worksheet, checklist, or template that supports the book's promise.
+
+A simple welcome sequence can run across four emails:
+
+- Day 0: Deliver the reader magnet and introduce yourself in a few lines.
+- Day 3: Share something useful or personal about why you wrote the book.
+- Day 7: Offer a deeper piece of value, such as an excerpt or a practical tip.
+- Day 10: Invite readers to look at the book, with a direct link.
+
+## 4. Promote Your Self-Published Book With Free and Low-Cost Strategies
+
+Free promotion costs time instead of money, which makes it the right starting point for most authors. The trick is to pick a few activities and do them consistently rather than spreading yourself across everything.
+
+### Use Social Media and Content Marketing Strategically
+
+Choose one or two platforms where your comparable titles' readers already gather. Share excerpts, the story behind the book, and posts that speak to what readers care about, instead of repeating "buy my book." Short-form video on TikTok and Instagram can work for certain fiction genres and audiences, though no author needs to use every format. Facebook groups can suit nonfiction and local audiences. For platform-specific tactics, this guide on [promoting an eBook on BookTok, Instagram, and LinkedIn](/blog/how-to-promote-your-ebook-on-booktok-instagram-linkedin) goes deeper.
+
+### Reach Book Bloggers, Podcasters, Book Clubs, and Local Communities
+
+Targeted outreach usually beats mass emailing. Build a short list of reviewers, podcast hosts, library staff, local bookstores, and book clubs that already serve your type of reader. Read or listen to their recent work before writing.
+
+A good pitch is short and specific. It names something you noticed about their work, explains in two sentences why your book fits their audience, and makes a low-effort offer, such as a free copy or a brief interview topic. Expect many non-replies. That is normal, and a polite follow-up after a week or two is reasonable.
+
+A pitch can be as simple as this:
+
+Hi [Name], I enjoyed your recent episode on [topic]. My new book, [Title], is a [genre and one-line premise] for readers who like [comparable title], so I thought your listeners might enjoy it. I would be glad to send a free copy or suggest a few talking points. No obligation either way. Thank you for considering it. [Your name]
+
+### Get Honest Book Reviews With ARCs and a Launch Team
+
+An advance reader copy (ARC) is a free early copy given to readers before or around launch, in the hope of honest reviews. Send ARCs to likely readers from your outreach, email list, and a small launch team of volunteers.
+
+One rule matters above the rest: a free copy cannot be conditioned on a review, and you cannot reward or steer what a reviewer says. Amazon's guidelines restrict incentivized and required reviews, and violations can lead to removed reviews or account problems. Check the current guidelines before you start. Separately, US Federal Trade Commission guidance says reviewers should disclose a material connection, such as receiving a free copy, when they publish a review, so encourage ARC readers to mention that they received a complimentary copy. This guide to [getting early reviews the right way](/blog/arc-review-guide-for-authors) covers the process in more detail.
+
+## 5. How to Market a Self-Published Book on Amazon
+
+Amazon is where many readers of self-published books buy, so its tools deserve attention. Visibility there depends on accurate information, the author tools you have access to, and promotions you are eligible for. Nothing here is a shortcut, and Amazon's rules and features change, so confirm current details in KDP's help pages.
+
+### Improve Amazon Keywords, Categories, and Book Detail Pages
+
+Keywords and categories help Amazon understand who might want your book. KDP currently provides up to seven keyword fields and lets you choose up to three categories per format, but accurate choices only help position the book. They do not guarantee visibility or rankings. Choose search terms readers would actually type, not just words you like. Pick categories that accurately describe the book, since misplaced categories can attract the wrong buyers and lead to disappointed reviews. Then treat the detail page as a sales page: a strong description, a clear cover, and a clean author name. For a wider view of launch tactics, see this [Amazon launch strategy guide](/blog/how-to-become-a-best-selling-author-on-amazon-a-step-by-step-launch-strategy).
+
+### Use Amazon Author Central and A+ Content
+
+These two tools do different jobs. Author Central manages your author presence: biography, photo, and a page that lists your books. A+ Content enhances individual book detail pages with images and extra sections, where available to eligible books. One is about you as an author, the other about how a specific book page looks. If you want hands-on help with your listing, Aero Publishing offers [Amazon publishing support](/amazon-publishing).
+
+### Explore Kindle Promotions and Discounted Book Campaigns
+
+Kindle Countdown Deals and Free Book Promotions are available to Kindle eBooks enrolled in KDP Select, a 90-day program that renews automatically unless you turn renewal off and requires the enrolled eBook to be exclusive to the Kindle Store. Print books and audiobooks can still be sold elsewhere. In each enrollment term you can use one promotion type, a Countdown Deal or free days, but not both. Read KDP's current conditions before you build a campaign around them, because exclusivity means you cannot sell that eBook through other retailers or your own website while it is enrolled.
+
+## 6. Where to Advertise Self-Published Books Without Wasting Money
+
+Advertising on three platforms at once does not triple your results. It usually triples your confusion. The better question is which one channel fits your book, your budget, and your time.
+
+### Compare Amazon Ads, Facebook/Instagram Ads, and Book Promotion Services
+
+Amazon Ads place your book in front of people who are already searching or browsing for books, so purchase intent is high, but the listing has to close the sale. That is why they tend to suit authors with a polished listing and some reviews. Meta advertising on Facebook and Instagram introduces your book to people based on interests, even when they are not shopping for a book, so it works more like awareness building than answering a search. You also have to produce the ad creative and manage targeting. Reader-focused promotion newsletters, such as BookBub-style services, feature discounted or free books to subscribers who opted in to book recommendations, and often suit fiction authors with a price promotion planned. Eligibility and availability vary by service and genre. Whichever channel you choose, judge it against your royalty per sale, not clicks or visibility alone.
+
+| Channel | Best for | Budget consideration | Effort required | Best-fit author |
+| --- | --- | --- | --- | --- |
+| Amazon Ads | Readers actively browsing for books | Small test budgets are possible; costs vary by competition | Moderate: keyword research and monitoring | Author with a polished listing and reviews |
+| Facebook/Instagram Ads | Building awareness and email signups | Needs enough spend to test audiences and creative | High: design, copy, and targeting | Author comfortable with visuals and testing |
+| Promotion newsletters | Short bursts of visibility with a discount | Fees vary by service and genre; some are selective | Low to moderate: application and promo planning | Fiction author with a price promotion and solid reviews |
+| Organic (email, social, outreach) | Steady, relationship-based growth | Little cash, a lot of time | Moderate to high, ongoing | Author with limited budget |
+
+### Start With a Small, Measurable Advertising Test
+
+In practice, a controlled test teaches more than a big campaign. Follow this order:
+
+- Pick one platform.
+- Define one goal, such as sales or email signups.
+- Test a limited set of keywords or audiences.
+- Track click-through rate (CTR), the share of people who see your ad and click it, along with sales and cost.
+- Review the results before changing anything or adding budget.
+
+Increasing spending on an ad you have not yet understood is how modest losses turn into large ones.
+
+## 7. Create a 90-Day Book Marketing Plan
+
+Most marketing advice lists tactics. The harder part is sequence: what to do first, what to hold back, and when to judge results. This plan assumes an upcoming launch. If your book is already published, treat Day 1 as today and skip anything that depends on a launch date, such as preorders.
+
+### Days 1–30: Research Your Audience and Prepare Your Book
+
+Spend the first month on foundations. Research readers, study comparable titles, run the readiness checklist, and finalize metadata. Set up your landing page and reader magnet, and begin reaching out to potential ARC readers early, since reviewers need lead time.
+
+### Days 31–60: Build Interest and Execute Your Launch
+
+Announce the book to your email list, follow up with ARC readers, and share promotional content on your chosen platforms. Coordinate launch communications and any partnerships, such as a podcast guest spot or a library event. If your budget allows, run a small advertising test.
+
+### Days 61–90: Improve Results and Continue Promoting
+
+Review what the data shows. Revise weak listing elements, keep engaging readers through email, and keep the activities that produced sales or subscribers. Drop what did not.
+
+Treat the table below as a suggested sequence, not a universal schedule. ARC distribution, website setup, and ad preparation take some authors longer, so stretch a phase if you need to. If your book is already published, skip the launch-dependent tasks, such as ARCs timed to a launch date, and run the evergreen ones: reader research, listing fixes, email list building, outreach, ad testing, and review.
+
+| Timeline | Marketing task and what you produce | Priority | Success metric |
+| --- | --- | --- | --- |
+| Days 1–10 | Define your reader and study the market: a one-sentence reader statement, 5–10 comparable titles, and a list of reader communities | High | Statement and comparable-title list written |
+| Days 11–20 | Run the readiness checklist: a revised description, final metadata, and a list of fixed gaps | High | All checklist items cleared |
+| Days 21–30 | Build your platform: a live landing page with a signup form, a reader magnet, and an outreach list of reviewers, podcasts, and clubs | Medium | Signup form tested; outreach list ready |
+| Days 31–45 | Launch (launch-dependent): send ARCs, announce to your email list, and schedule excerpts and reader-focused posts | High | ARCs delivered; announcement sent; open and click rates recorded |
+| Days 46–60 | Follow up and test: reviewer follow-ups, targeted outreach, and one controlled ad test | Medium | Pitches sent; ad clicks, cost per click, and sales logged |
+| Days 61–75 | Review sales, ad costs, email signups, and outreach responses | High | One-page results summary |
+| Days 76–90 | Improve the weakest listing element, keep what worked, drop what did not, and draft the next 90 days | High | Next 90-day plan written |
+
+### Free Download: 90-Day Self-Published Book Marketing Toolkit
+
+A marketing plan is easier to follow when you have a way to organize your tasks and measure your progress. To help you put the strategies above into practice, Aero Publishing has created a free 90-Day Self-Published Book Marketing Toolkit.
+
+The toolkit includes two practical resources you can use throughout your marketing campaign:
+
+- Fillable 90-Day Book Marketing Planner (PDF): Define your target readers, organize your marketing goals, complete preparation checklists, and plan promotional activities. Fill in the worksheets digitally, save your progress, and return to them as needed.
+- 90-Day Book Marketing Tracker (Excel): Record weekly marketing activities, track advertising expenses, monitor book sales and email subscribers, and use automated calculations to review your campaign's performance.
+
+Whether you're preparing to launch your first book or trying to increase sales of an existing title, these resources can help you stay organized, manage your marketing budget, and make more informed decisions over the next 90 days.
+
+[Get Your Free 90-Day Book Marketing Toolkit](/downloads/Aero_Publishing_90_Day_Book_Marketing_Toolkit.zip)
+
+Need help turning your marketing plan into action? Explore Aero Publishing's [book marketing support](/book-marketing) to see how professional guidance can support your goals.
+
+## 8. How Much Does It Cost to Market a Self-Published Book?
+
+There is no standard figure. The right budget depends on your goals, available time, book format, royalty per copy, and marketing experience. One helpful distinction is between upfront production costs, such as editing, cover design, and formatting, and ongoing promotion costs, such as ads and newsletter features.
+
+### Choose a Marketing Budget That Fits Your Situation
+
+These are illustrative approaches, not prescriptions:
+
+- No-cost approach: Focus on email, outreach, reader communities, and ARCs. It costs time, and results build slowly.
+- Small-budget approach: Keep the organic work going and add one small ad test or a single promotion newsletter feature.
+- Larger-budget approach: Invest in professional production and ongoing ad testing, but only after your listing has proven it converts.
+
+### Calculate Your Break-Even Point Before Increasing Ad Spend
+
+The break-even point is the number of sales where your royalties equal your advertising spend. Here is a simple example using hypothetical figures, not typical results. Suppose your eBook earns roughly $3.30 per copy after fees, and you spend $150 on ads.
+
+- Copies needed to break even: $150 ÷ $3.30, or about 46 copies.
+- If your ads cost about $0.40 per click, that spend buys about 375 clicks, and you would need roughly 12 percent of clickers to buy just to break even.
+
+At that point the campaign has recovered its advertising spend, but that does not mean the book is profitable overall. Editing, cover design, formatting, software, and other publishing costs still need to be covered before you are in profit. Your actual royalty depends on price, format, and retailer terms, so check your own numbers.
+
+The same math puts big income claims in perspective. At $3.30 per copy, earning $1,000,000 in royalties would take roughly 300,000 copies, before any costs. That is possible for some books, but no tactic guarantees it, and it is not a reasonable expectation for most.
+
+## 9. Measure Book Marketing Results and Fix What's Not Working
+
+Likes, impressions, and ranking spikes feel good, but they are poor measures of whether marketing is working. What matters is whether readers are buying and whether the money you spend comes back.
+
+### Track the Book Marketing Metrics That Matter
+
+Focus on impressions (how often your ad or post was shown), clicks, CTR, email subscriber growth, sales, ad costs, royalties, and profit. Retailers often limit the conversion data they share, so you may need to estimate by comparing your ad clicks with sales over the same period.
+
+Here is how to read the numbers. Clicks without sales get their own checklist in the next section.
+
+| What you see | What to investigate |
+| --- | --- |
+| Few impressions | Targeting, keyword relevance, or how far the campaign reaches |
+| Impressions but few clicks | Cover, ad creative, or messaging |
+| Sales but no profit | Cost per click, royalty per copy, and campaign efficiency |
+| Email signups but few purchases | The welcome sequence and how closely the reader magnet matches the book |
+
+### What to Do When Your Book Gets Clicks but Few Sales
+
+This is a common and frustrating pattern, and more ad spend rarely fixes it. Work through these in order:
+
+- Targeting: Are you attracting readers outside your genre?
+- Cover: Does it look like the books your target readers buy?
+- Description: Does it hook the reader in the first two lines?
+- Price: Is it out of line with comparable titles?
+- Reviews: Does the book have too few reviews to feel safe?
+
+Fix the weakest item, then test again before spending more.
+
+## 10. Should You Market Your Book Yourself or Hire Professional Help?
+
+Doing it yourself gives you full control and costs the least cash, but it takes time and a willingness to learn ad platforms, email tools, and outreach. Hiring help saves time and fills skill gaps, but costs money, and you still need to be involved.
+
+Professional help tends to be most useful at specific moments: when your cover or interior holds the book back, when you lack time to run campaigns, or when you have tested a few things and need a clearer strategy. No service can guarantee sales or rankings, and a good one will say so.
+
+If you want support suited to your publishing stage, Aero Publishing's [book marketing services](/book-marketing) are one option to explore.
+
+## Conclusion: Start Marketing Your Book One Step at a Time
+
+Knowing how to market a self-published book is less about finding a secret tactic and more about order. Prepare a book readers will want to buy, reach the people it is written for, choose a few promotional activities you can sustain, and let your results tell you what to keep.
+
+The most useful insight is also the simplest: fix the listing before you pay for traffic. Your next step is to open the 90-day plan above and complete the first ten days. If you would like support along the way, Aero Publishing's book publishing and marketing services are there when you need them.
+
+[FAQ]
+Q: Can I Market a Self-Published Book Without Social Media?
+A: Yes. Email marketing, reader communities, book clubs, search visibility through a website, and targeted outreach to reviewers and podcasts all work without social media. Social platforms can help, but they are one route among several.
+Q: How Do Self-Published Authors Get Noticed Without Followers?
+A: Start with audience research and a strong listing, then use targeted outreach and discoverability tools such as accurate keywords and categories. You do not need an existing following to begin. You need readers who match your book.
+Q: Is It Too Late to Market a Book Published Months or Years Ago?
+A: No. You can refresh the cover and description, correct metadata, gather new reviews, and plan a relaunch with a new promotion. An older book gets a second chance when you improve how it is presented and reach new readers.
+Q: Does a Self-Published Book Need to Go Viral to Succeed?
+A: No. Viral attention is unpredictable and rarely repeatable. Steady discovery, word of mouth, and repeat sales from readers who finish the book and look for more usually build a more reliable result.
+Q: Do Self-Published Books Typically Sell Well?
+A: Results vary widely. Sales depend on genre, quality, audience fit, discoverability, and how consistently the author markets. Many books sell modestly, so the goal is to improve your odds with a sound plan, not to expect a particular outcome.
+Q: Can a Book Marketing Company Guarantee Sales or Bestseller Status?
+A: No, and be cautious of any that does. A marketing company can help with strategy, listings, outreach, and campaigns, but readers decide what they buy, and rankings and sales depend on many factors beyond anyone's control.
+[/FAQ]
+`;
+
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "How to Market a Self-Published Book: 90-Day Plan",
+        metaDescription: "Learn how to market a self-published book with a practical 90-day plan. Discover free promotion strategies, Amazon ads, and ways to boost book sales.",
+        focusKeyphrase: "how to market a self-published book",
+        slug: "how-to-market-self-published-book",
+        category: "Book Marketing",
+        title: "How to Market a Self-Published Book: A Practical 90-Day Plan for Indie Authors",
+        description: "Learn how to market a self-published book with a practical 90-day plan. Discover free promotion strategies, Amazon ads, and ways to boost book sales.",
+        date: "9 November 2026",
+        image: "/self-published-book-marketing.webp",
+        readTime: "21 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: selfPublishedBookMarketingContent,
+    },
     {
         metaTitle: "How to Get Your Self-Published Book Into Bookstores",
         metaDescription:

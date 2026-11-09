@@ -45,6 +45,7 @@ function renderInlineText(text: string, keyPrefix: string) {
                         <a
                             key={`${keyPrefix}-l-${linkIdx}`}
                             href={url}
+                            download={url.startsWith("/downloads/") && url.endsWith(".zip") ? true : undefined}
                             {...(!isInternal
                                 ? { target: "_blank", rel: "noopener noreferrer" }
                                 : {})}

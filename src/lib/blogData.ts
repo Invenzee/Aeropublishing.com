@@ -2255,6 +2255,8 @@ Knowing how to market a self-published book is less about finding a secret tacti
 
 The most useful insight is also the simplest: fix the listing before you pay for traffic. Your next step is to open the 90-day plan above and complete the first ten days. If you would like support along the way, Aero Publishing's book publishing and marketing services are there when you need them.
 
+## Frequently Asked Questions About Self-Published Book Marketing
+
 [FAQ]
 Q: Can I Market a Self-Published Book Without Social Media?
 A: Yes. Email marketing, reader communities, book clubs, search visibility through a website, and targeted outreach to reviewers and podcasts all work without social media. Social platforms can help, but they are one route among several.

@@ -2249,7 +2249,7 @@ Professional help tends to be most useful at specific moments: when your cover o
 
 If you want support suited to your publishing stage, Aero Publishing's [book marketing services](/book-marketing) are one option to explore.
 
-## Conclusion: Start Marketing Your Book One Step at a Time
+## Start Marketing Your Book One Step at a Time
 
 Knowing how to market a self-published book is less about finding a secret tactic and more about order. Prepare a book readers will want to buy, reach the people it is written for, choose a few promotional activities you can sustain, and let your results tell you what to keep.
 

@@ -6,8 +6,8 @@ import { handleLeadFormSubmit } from "@/lib/submit-form";
 
 const DELAY_MS = 60000;
 const SESSION_KEY = "self-publishing-lp-popup-dismissed";
-const PHONE_HREF = "tel:(424) 460-3488";
-const PHONE_DISPLAY = "(424) 460-3488";
+const PHONE_HREF = "tel:+14244603488";
+const PHONE_DISPLAY = "+1 424 460 3488";
 const UK_PHONE_HREF = "tel:+442033148312";
 const UK_PHONE_DISPLAY = "+44 020 3314 8312";
 const EMAIL = "admin@aeropublishing.com";
@@ -154,7 +154,7 @@ export default function SelfPublishingLeadPopup({ blocked = false }: SelfPublish
                 type="tel"
                 required
                 autoComplete="tel"
-                placeholder="(424) 460-3488"
+                placeholder="+1 424 460 3488"
                 className="h-12 w-full rounded-[10px] border-[1.5px] border-[#DFE9F5] bg-[#F4F8FD] px-4 text-[15px] text-[#0C1B33] outline-none transition focus:border-[#2E7BF6] focus:bg-white focus:shadow-[0_0_0_4px_rgba(46,123,246,.14)]"
               />
             </label>

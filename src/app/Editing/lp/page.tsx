@@ -13,8 +13,8 @@ import {
   FaCheck, FaChevronDown, FaCircleCheck, FaClipboardList, FaEnvelope, FaFacebookF, FaHatWizard, FaHeart, FaInstagram, FaLandmark, FaLayerGroup, FaLightbulb, FaLinkedinIn, FaLocationDot, FaMagnifyingGlass, FaPhone, FaRocket, FaUserPen, FaUserSecret, FaXmark,
 } from "react-icons/fa6";
 
-const PHONE_DISPLAY = "(424) 460-3488";
-const PHONE_HREF = "tel:(424) 460-3488";
+const PHONE_DISPLAY = "+1 424 460 3488";
+const PHONE_HREF = "tel:+14244603488";
 const UK_PHONE_DISPLAY = "+44 020 3314 8312";
 const UK_PHONE_HREF = "tel:+442033148312";
 const EMAIL = "admin@aeropublishing.com";

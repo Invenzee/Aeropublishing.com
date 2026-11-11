@@ -65,7 +65,7 @@ export default function Header() {
                             className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors"
                         >
                             <Phone size={13} className="shrink-0" />
-                            <span>+1424 460 3488</span>
+                            <span>+1 424 460 3488</span>
                         </a>
                         <a
                             href="tel:+442033148312"

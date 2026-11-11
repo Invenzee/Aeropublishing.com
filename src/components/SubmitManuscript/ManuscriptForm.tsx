@@ -230,9 +230,9 @@ export default function ManuscriptForm() {
                             </ul>
 
                             <div className="relative mt-8 pt-6 border-t border-white/15 space-y-3">
-                                <a href="tel:+14242823304" className="flex items-center gap-3 text-sm hover:text-brand-secondary transition-colors">
+                                <a href="tel:+14244603488" className="flex items-center gap-3 text-sm hover:text-brand-secondary transition-colors">
                                     <Phone size={16} />
-                                    +1 424 282 3304
+                                    +1 424 460 3488
                                 </a>
                                 <a href="tel:+442033148312" className="flex items-center gap-3 text-sm hover:text-brand-secondary transition-colors">
                                     <Phone size={16} />
@@ -278,7 +278,7 @@ export default function ManuscriptForm() {
                                     </label>
                                     <label className="block">
                                         <span className={labelClass}>Phone *</span>
-                                        <input name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder="+1 424 282 3304" />
+                                        <input name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder="+1 424 460 3488" />
                                     </label>
                                 </div>
                             </section>

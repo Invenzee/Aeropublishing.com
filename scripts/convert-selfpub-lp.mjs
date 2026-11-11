@@ -11,8 +11,8 @@ body = body.replace(/<script[\s\S]*?<\/script>/g, "");
 const repl = [
   [/Stamford Publishers/g, "Aero Publishing"],
   [/stamfordpublishers\.com/g, "aeropublishing.com"],
-  [/\(562\) 573-2551/g, "(424) 282-3304"],
-  [/\+15625732551/g, "+14242823304"],
+  [/\(562\) 573-2551/g, "(424) 460-3488"],
+  [/\+15625732551/g, "+14244603488"],
   [/sales@stamfordpublishers\.com/g, "admin@aeropublishing.com"],
   [/https:\/\/www\.aeropublishing\.com\/book-writing/g, "/ghost-writing"],
   [/https:\/\/www\.aeropublishing\.com\/book-editing/g, "/book-editing"],

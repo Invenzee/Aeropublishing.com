@@ -61,11 +61,11 @@ export default function Header() {
                 <div className="w-full min-h-10 bg-brand-primary flex items-center justify-between gap-2 px-4 sm:px-8 lg:px-24 py-1.5 sm:py-0 sm:h-10">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 min-w-0 flex-1">
                         <a
-                            href="tel:+14242823304"
+                            href="tel:+14244603488"
                             className="flex items-center gap-1.5 text-white text-[11px] sm:text-sm font-poppins hover:text-white/90 transition-colors"
                         >
                             <Phone size={13} className="shrink-0" />
-                            <span>+1424 282 3304</span>
+                            <span>+1424 460 3488</span>
                         </a>
                         <a
                             href="tel:+442033148312"

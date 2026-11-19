@@ -1959,6 +1959,235 @@ A: Yes, through your distributor's title settings. Changing status doesn't erase
 [/FAQ]
 `;
 
+const republishAmazonPostContent = `
+Amazon KDP gives you three different tools for this, and mixing them up is the easiest way to damage a listing that’s already working.
+
+## Quick Answer: Republish, Update, or Unpublish?
+
+If something has changed since you first clicked "publish," you have three distinct options on Amazon KDP. Mixing them up is the easiest way to damage a listing that still works. Learning how to republish a book on Amazon starts with working out which of the three you actually need.
+
+**Updating** means editing your existing listing in place. You keep the same ASIN (and, for print, the same ISBN), the same reviews and the same sales history.
+
+**Unpublishing** pulls your book from sale without deleting it. Amazon doesn't let you erase a published book, so unpublishing just makes it unavailable to buy.
+
+**Republishing**, as most authors use the word, means creating a new listing that doesn't automatically inherit the old one's reviews or sales history. KDP's own term for this is publishing a new edition. Every new listing gets its own ASIN. Print editions need an ISBN, and a new edition generally means a new one. Kindle ebooks don't require an ISBN on KDP at all.
+
+Which route is right depends on how big the change is and what you need to carry forward. The next section breaks that down by scenario.
+
+## Republish vs. Update vs. Unpublish on Amazon: What's the Difference?
+
+**Updating a listing** happens inside your existing KDP Bookshelf entry. You edit the book details or content, change what needs changing (a description, a price, a typo, a keyword), and save. Reviews, sales rank and any Kindle Unlimited enrollment are untouched, because it's still the same product.
+
+**Unpublishing a book** removes it from sale. According to [KDP's help page on removing or unpublishing a book](https://kdp.amazon.com/en_US/help/topic/G4QJH4ENN4FZRFMP), new copies can no longer be sold on Amazon, though third parties can still sell used copies. Only drafts that were never published can be deleted outright.
+
+**Republishing** means creating a brand-new product listing: a new ASIN, a new ISBN for print, and a listing that starts without the old one's review history or sales rank. KDP's guidance says that for significant edits, such as a new title or manuscript, you unpublish the current book and then publish a new edition.
+
+One terminology note. KDP's documentation calls this route a new edition, and uses "republish" mainly for putting an unpublished title back on sale. This guide uses "republish" the way authors search for it, and flags the difference where it matters.
+
+Re-uploading a corrected file under the same ISBN is an update, even if it felt like a major project. Only creating a new listing counts as republishing in the sense used here.
+
+Yes, a self-published book can be republished, including an older title, as long as you hold the rights (covered below) and the change genuinely calls for a new edition.
+
+### Which Path Applies to You?
+
+| **Your situation** | **What you actually need** |
+| --- | --- |
+| Fixing a typo, broken link, or metadata error | Update |
+| Changing the price, description, or keywords | Update |
+| A proofreading pass with no major rewrite | Update |
+| Rights reverted from a previous publisher | New edition (new ISBN for print) |
+| Small cover refresh, same title and author name | Update (upload the new cover to the existing listing) |
+| New cover as part of a rebrand that also changes the title, author name, or other core details | New edition |
+| Substantial rewrite (new chapters, page count change of more than 10%) | New edition (new ISBN for print) |
+| Book has been live for years but isn't selling | Usually update first; a new listing alone won't fix positioning, reviews, or marketing |
+| Ghostwritten manuscript going out under a new author name | New edition, after the rights check and author-name restriction below |
+
+If your situation doesn't fit neatly, the ISBN section below gives you the decision criteria rather than a lookup.
+
+## Before You Touch Anything: Confirm You Have the Rights to Republish
+
+Confirm you're legally free to republish before you unpublish anything. This step gets skipped more often than it should, and skipping it causes the messiest problems later: takedown disputes, conflicts with a former publisher, or a ghostwriting agreement that never transferred what you assumed it did.
+
+If another publisher previously released your book, review the original agreement to see whether the rights have reverted to you. Conditions and procedures vary by contract. Some require a formal letter after the book goes out of print or sales fall below a threshold, and a title going unavailable doesn't mean rights returned automatically. Don't republish until you have written confirmation.
+
+If the manuscript was ghostwritten, review the agreement to confirm who owns the copyright and whether you may republish under your name. Payment alone doesn't guarantee every relevant right is transferred, so the agreement should clearly cover ownership, usage and publication. If you're sorting through those terms for the first time, [ghostwriting support](https://aeropublishing.com/ghost-writing) from someone who knows how these agreements are structured can save a dispute later.
+
+If you also plan to change the credited author name, a change to the primary author name generally requires a new edition. KDP also states that significant changes to both the title and the author name aren't allowed. If you're changing both, contact KDP before proceeding.
+
+## Do You Need a New ISBN to Republish?
+
+Start with format, because the answer differs. Kindle ebooks don't need an ISBN on KDP. An ebook is identified by its ASIN, and supplying your own ISBN is optional. Print books do need one, either KDP's free ISBN or one you own.
+
+For print, this decision shapes everything downstream, and it's hard to undo. A print ISBN is locked to that exact edition once published. You can't swap it later, only create a new edition with a new one.
+
+A new edition (and, for print, a new ISBN) is warranted when a reader or distributor would reasonably consider the book a different edition. Per [KDP's Books Titles & Editions guidance](https://kdp.amazon.com/en_US/help/topic/GW7J4WEKBVU25YEC), the usual markers are:
+
+- A significantly revised manuscript (KDP cites a page-count change of more than 10% as one marker)
+- A new title or subtitle
+- A change in primary author name
+- A trim size change
+- A move from a KDP-assigned ISBN to one you own through Bowker, the official U.S. ISBN agency, or a similar registrar
+
+An update is enough for a corrected typo, a new description, refreshed keywords or changes to contributors.
+
+Covers sit in between. KDP lets you upload updated cover art to a published book as long as the title and author name on it stay the same, so a straightforward refresh is generally an update. A cover becomes part of a new edition when it comes with other core changes. KDP's edition guidance also lists the cover among core details, so check its current rules before a major redesign rather than assuming either way.
+
+The cost of guessing wrong runs in both directions. Reusing an old ISBN after a substantive rewrite can create inconsistent records across Amazon, library systems and distributors, since an ISBN is meant to represent one specific edition. Creating a new edition for a change that didn't need one means starting a new listing without the old reviews and sales history, for no real benefit. If you want a deeper look at second-ISBN scenarios, this guide on [when a second ISBN is normal and when it's a mistake](https://aeropublishing.com/blog/two-isbns-same-book) goes further.
+
+One more point for print authors. Moving from a KDP-assigned ISBN to your own, say to publish under your own imprint, is itself a reason for a new edition, even if nothing else changes. Owning the ISBN also matters if you want to distribute the same print edition elsewhere, since KDP's free ISBN works only through KDP. [Self-publishing support](https://aeropublishing.com/book-publishing/) with ISBN and imprint setup, done before you publish, can save you from redoing the whole republish.
+
+## How to Unpublish Your Book on Amazon KDP
+
+Unpublishing is the easy part, mechanically. The steps are the same for an ebook or a paperback:
+
+- Log in to KDP and open your Bookshelf.
+- Click the ellipsis ("...") next to the title.
+- Select **Unpublish**.
+- Confirm when prompted.
+
+KDP says it takes up to 72 hours for a book to be unpublished. Ebook and paperback versions are unpublished separately, so you can pull the paperback while the ebook stays live.
+
+Can you republish after unpublishing? Yes. KDP states that individual formats can be unpublished and republished, which is how you take a title down temporarily and put the same listing back on sale.
+
+### What Happens Immediately After
+
+An unpublished ebook comes down from the Kindle Store and stops appearing in search. A paperback stops accepting new print-on-demand orders, but its footprint doesn't vanish the same way.
+
+### What Stays Visible: Resellers and Used Copies
+
+Physical copies already sold don't disappear, and used copies can keep circulating through third-party resellers. The book can also remain in library catalogs, Goodreads and other databases that pulled in the listing earlier. KDP doesn't control any of that, and there's no mechanism to force removal.
+
+If a clean break matters because you don't want the old cover or title associated with your name, plan for that lingering footprint rather than assuming unpublishing erases it.
+
+## How to Republish an Ebook on Amazon KDP (Step-by-Step)
+
+Once you've confirmed your rights and settled the edition question, republishing an ebook means going through KDP's new-title flow rather than editing the old listing:
+
+- **Start a new title.** From your Bookshelf, click "+ Create new title" and choose **Create eBook**. This opens a fresh listing, separate from the original.
+- **Enter book details.** Fill in the title, subtitle, series information, edition number if this is a revised edition, author name, description and contributors. For a genuine new edition, consider stating that on the copyright page inside the manuscript, since it's the cleanest record of the book's publishing history.
+- **Set categories and keywords.** These don't carry over from the old listing, so you'll choose categories and the seven keyword fields from scratch. Review them rather than copying the old ones, since category competition shifts over time.
+- **Decide whether to add an ISBN.** Kindle ebooks don't require one. KDP assigns an ASIN automatically, so you can leave the ISBN and imprint fields blank. Supplying your own is optional.
+- **Upload your manuscript file.** If a significant rewrite is the reason for republishing, make sure the file is fully edited and formatted before upload. Broken reflowable formatting, inconsistent headings or a messy table of contents are common reasons a republished title underperforms, because readers notice and say so in reviews. If your file needs cleanup, [professional book formatting](https://aeropublishing.com/book-formatting) before you upload costs far less than a second round of bad reviews.
+- **Upload your cover.** It needs to meet KDP's current specifications for the new listing, and it's uploaded independently of the old one.
+- **Preview the book.** Use KDP's previewer to check that the manuscript and cover render correctly across devices.
+- **Set pricing, royalty and territories.** Choose your royalty plan, 35% or 70% depending on price and marketplace eligibility, and the territories where you hold distribution rights.
+- **Decide on KDP Select.** If exclusivity and Kindle Unlimited matter to you, this is where you opt in. The timing considerations are covered below.
+- **Click Publish.** For a new listing, KDP's [publishing timelines page](https://kdp.amazon.com/en_US/help/topic/G202173620) estimates up to 72 hours for the detail page to appear, though many go live sooner. When you put a previously unpublished title back on sale, the estimate is 12 hours for English-language titles and 48 hours for other languages. These are estimates, so check your Bookshelf for the actual status.
+
+Once the new ebook is live, go back and unpublish the old listing if you haven't already, so customers aren't choosing between two versions of the same book.
+
+## How to Republish a Paperback on Amazon KDP
+
+The paperback process has the same basic shape, a new title and a new listing, but print adds a few irreversible decisions and a longer timeline:
+
+- **Start a new paperback title.** From the Bookshelf, click "+ Create new title" and choose **Create paperback**.
+- **Enter book details and choose your ISBN.** Every KDP paperback requires an ISBN. You can use a free KDP-assigned one or supply your own.
+- **Select your print options.** This is the step that catches authors off guard. Trim size and ink type (black-and-white or color) are locked after publication, and changing either means a new edition. KDP does allow certain paper-type switches on existing black-and-white titles, so check its current print-option rules before assuming you need a replacement listing for that. Moving from a 5x8 trim to 6x9, or from black-and-white to color interior, does require a new edition.
+- **Upload your print-ready interior and cover.** The interior must be a correctly formatted PDF with margins and bleed matching your chosen trim size. The cover is built in KDP's Cover Creator or uploaded as a single wraparound PDF sized to your exact page count and trim. Text crowding the gutter and spines that don't match the final page count are common problems, and they usually trace back to files built for the wrong trim size. If that sounds familiar, this explanation of [why a KDP book can look fine on Amazon but terrible in print](https://aeropublishing.com/blog/why-kdp-books-look-bad-in-print) covers the causes, and [custom book cover design](https://aeropublishing.com/book-cover-design/) can rebuild a cover to the new specifications.
+- **Order a proof copy.** It's technically optional, but strongly recommended, because the on-screen previewer won't catch every print issue.
+- **Set pricing and publish.** Your list price must clear KDP's minimum based on print cost.
+
+### How Long It Takes
+
+KDP's timelines page estimates up to 72 hours for a new or republished paperback to become available on Amazon.com, and up to 5 days in other marketplaces. It can run longer if the file needs a second look.
+
+Expanded Distribution or IngramSpark adds more time, and those timelines vary by retailer. Check KDP's Expanded Distribution help page and IngramSpark's published timelines for current figures, and treat any number as a planning estimate. If you're deciding between the two, this comparison of [choosing or combining KDP and IngramSpark distribution](https://aeropublishing.com/blog/kdp-vs-ingramspark) helps.
+
+## What Happens to Your Reviews When You Republish
+
+Reviews are usually the first thing authors ask about, and the answer is that sharing is possible but never guaranteed. [KDP's customer reviews help page](https://kdp.amazon.com/en_US/help/topic/G202101910) says reviews can be shared between different versions of a book when the new version's metadata matches the previous version. It points authors to its [book-linking guidance](https://kdp.amazon.com/en_US/help/topic/G200652220) for how linking works.
+
+In practice, the title and author name on the new listing need to match the original closely. If you changed the title or credited author as part of the republish, don't expect reviews to be shared. Read KDP's current linking requirements before you create the new listing, and plan for the possibility that you won't keep the old review history.
+
+KDP's documentation doesn't describe a formal review-transfer request process, and author reports are mixed even when metadata matches. Some report reviews linking after contacting KDP support or Author Central, while others find requests denied, especially when the new listing is a genuinely different edition. Treat any outcome as unguaranteed.
+
+If sharing doesn't happen, rebuilding review volume from zero is a real cost, and it's worth weighing against simply updating whenever the change is borderline. For authors willing to rebuild, [rebuilding review volume with ARC readers](https://aeropublishing.com/blog/arc-review-guide-for-authors) can help you reach potential reviewers ahead of the relaunch. Readers must stay free to decide whether to review and what to say, and all reviews must follow Amazon's customer review policies.
+
+## KDP Select Exclusivity: What Happens When You Unpublish
+
+If your ebook is enrolled in KDP Select and Kindle Unlimited, timing matters more than most authors expect. According to [KDP's Select enrollment page](https://kdp.amazon.com/en_US/help/topic/GD9PMU58BV24QFZ7), you can unpublish an enrolled title at any time and republish it later. Unpublishing pauses the enrollment period, and it resumes when you republish.
+
+The title must remain exclusive to Amazon for the rest of its current 90-day term. That's simple when you republish the same listing. It gets murkier if you create a genuinely new listing with a new ASIN, since that's technically a different product from the one the commitment applied to.
+
+KDP's documentation doesn't spell out that scenario. If your plan involves a new listing while a Select commitment is still running on the old one, confirm the details with KDP support before enrolling the new listing, rather than assuming the old commitment simply disappears.
+
+## Will Your Old Listing Disappear? Author Page Permanence
+
+Many authors assume unpublishing quietly removes a book from their public presence on Amazon. That isn't how Author Central works. Unpublished titles frequently remain on an author's page indefinitely, sitting beside titles that are still for sale.
+
+For most authors, that's harmless. It matters if you're republishing specifically to distance yourself from the original, because of a bad early cover, an outdated title or content you've since rewritten. In that case, plan to review and update your Author Central page after the new listing goes live, rather than expecting the switch to happen on its own.
+
+## Relaunching: Marketing Your Republished Book Like a New Release
+
+From Amazon's perspective, a republished book is a new product listing. It doesn't automatically inherit the previous listing's sales history or review count, and any review sharing depends on Amazon's linking and review policies. That means it needs the same groundwork as any new launch, focused on what you control: listing quality, accurate metadata, reviews gathered within Amazon's rules, advertising, and outside promotion.
+
+A practical relaunch checklist:
+
+- **Line up early readers before the broad launch,** through an ARC campaign or early-reader outreach, so the new listing isn't sitting at zero when readers find it.
+- **Refresh your categories and keywords** rather than copying the old listing's choices.
+- **Coordinate the launch date** across pre-orders, advertising and promotion rather than letting the listing go live quietly.
+- **Update your author page, website and newsletter** to point to the new listing, so returning readers don't land on an unpublished page.
+- **Consider paid advertising** for the first few weeks, since the new listing has no history for Amazon's organic ranking to draw on.
+
+For a fuller framework, [building a 90-day relaunch plan](https://aeropublishing.com/blog/how-to-market-self-published-book) gives this checklist more depth, and promoting an ebook through social media covers channel-specific tactics for BookTok, Instagram and LinkedIn. If you'd rather hand the campaign off, [book marketing support](https://aeropublishing.com/book-marketing) can plan the relaunch around your genre.
+
+## Royalty and Cost Considerations When Republishing Independently
+
+KDP doesn't charge a listing fee, but republishing isn't free. Costs tend to cluster in three areas:
+
+**ISBN costs** apply if you're moving a print edition away from a free KDP-assigned ISBN. A single ISBN from Bowker costs more per unit than a block of ten, so a block is usually better value if you'll publish more titles.
+
+**File rework** applies if the trigger involves the interior or cover. A reformatted interior, new cover or corrected print file all carry real costs, whether you do the work or pay for it, and those costs are the same whether you call the result an update or a republish.
+
+**A new print proof** is worth ordering for paperback republishes. Budget the price of the proof plus shipping.
+
+Royalties don't change structurally just because you republish, but ebooks and print books use different calculations. Kindle ebook royalties follow the 35% or 70% option, depending on price and marketplace eligibility. Paperback royalties come from the applicable print royalty rate minus printing costs. Check KDP's current pricing rules for your format and marketplace before setting the new list price.
+
+The real financial impact of republishing sits in one-time setup costs, not an ongoing royalty penalty. For a benchmark, typical self-publishing cost ranges are a reasonable starting point, adjusted for whichever files you can reuse.
+
+## 5 Mistakes That Cost Authors Sales When Republishing
+
+Most republishing damage traces back to a handful of avoidable mistakes. Treat these as a pre-publish checklist.
+
+- **Reusing a print ISBN after a substantive change.** If the manuscript, title or author name changed enough to count as a new edition, keeping the old ISBN creates inconsistent records. Settle the edition question before you open the Bookshelf.
+- **Skipping the rights check.** Relisting a book you don't clearly have the right to relist is the fastest route to a dispute. That includes a reversion that was never confirmed in writing and a ghostwriting agreement whose ownership terms were never settled.
+- **Launching with an unformatted or unproofed interior.** Republishes are often triggered by manuscript problems that will reappear in the new listing if they aren't fixed before upload. A round of professional manuscript editing and a formatting check costs less than reviews complaining about layout.
+- **Ignoring your KDP Select status.** Enrolling a new listing while an old commitment may still be active, without confirming with KDP support, risks a conflict you'll have to untangle afterward.
+- **Treating the republish as a passive event.** A listing that goes live without a launch plan tends to underperform even the original release. Reviews, refreshed categories, and a coordinated launch date are what give it a chance.
+
+## Key Takeaways
+
+- Updating, unpublishing and republishing are different actions. Decide which one fits before you touch your Bookshelf.
+- Substantive changes (major rewrite, new title, new author name) call for a new edition, and for print a new ISBN. Kindle ebooks don't need an ISBN.
+- Unpublished books can linger through used copies, library catalogs and your author page.
+- Review sharing is possible when metadata matches but never guaranteed, and a new listing doesn't automatically inherit reviews or sales history.
+
+## Conclusion
+
+The KDP steps themselves are straightforward. What trips authors up is the decision beforehand: whether this is an update or a new edition, and whether the rights are truly yours to republish. Settle those two questions first, then check your final files against KDP's specifications before you click publish. Your next step: write down which of the three actions applies, and confirm your rights in writing.
+
+## FAQ
+
+[FAQ]
+
+Q: What happens if I unpublish a book on Amazon?
+A: New copies can no longer be sold. An ebook leaves Kindle Store search and a paperback stops accepting new print orders. Published titles can't be deleted, and unpublishing can take up to 72 hours.
+
+Q: Can I publish a book on Amazon and then publish it elsewhere too?
+A: Yes, as long as the ebook isn't enrolled in KDP Select. Select exclusivity applies to the enrolled Kindle ebook, not the print edition. If you distribute the same print edition through other services, use an ISBN you own rather than KDP's free ISBN, which works only through KDP.
+
+Q: Do pre-orders carry over if I republish a book?
+A: Not automatically, as far as I can verify. A republished listing is a new product, so set up any new pre-order under the new listing rather than assuming the old one transfers. KDP's pre-order help pages don't address this scenario directly, so confirm with KDP support before planning a launch around it.
+
+Q: What happens to my Kindle Unlimited enrollment if I republish?
+A: If you republish the same listing after a temporary unpublish, enrollment pauses and resumes. If you create a new listing, you'd enroll it separately, and it's worth confirming with KDP support how any remaining commitment applies.
+
+Q: Does the republishing process differ outside the US (UK, Canada, Australia and other marketplaces)?
+A: The core mechanics are broadly similar, but details like ISBN requirements, pricing minimums and tax handling can vary by country. This guide is written for Amazon.com, so confirm marketplace-specific requirements on KDP's help pages if you publish mainly elsewhere.
+
+[/FAQ]
+`;
+
 export const featuredPost: BlogPost = {
     metaTitle: "How to Become a Best-Selling Author on Amazon: A Step-by-Step Guide",
     metaDescription:
@@ -2274,6 +2503,33 @@ A: No, and be cautious of any that does. A marketing company can help with strat
 `;
 
 export const blogPosts: BlogPost[] = [
+    {
+        metaTitle: "How to Republish a Book on Amazon: KDP Guide",
+        metaDescription:
+            "Learn how to republish a book on Amazon KDP. Understand when to update or unpublish, ISBN requirements, review sharing, and ebook and paperback relaunch steps.",
+        focusKeyphrase: "how to republish a book on Amazon",
+        keywords: [
+            "how to republish a book on Amazon",
+            "republish a book on Amazon KDP",
+            "update vs unpublish vs republish KDP",
+            "KDP new edition ISBN",
+            "Amazon KDP unpublish book",
+            "KDP review sharing new edition",
+            "republish ebook on Amazon",
+            "republish paperback on KDP",
+        ],
+        slug: "how-to-republish-a-book-on-amazon",
+        category: "Amazon KDP",
+        title: "How to Republish a Book on Amazon: The Complete KDP Guide (Ebook & Paperback)",
+        description:
+            "Learn how to republish a book on Amazon KDP. Understand when to update or unpublish, ISBN requirements, review sharing, and ebook and paperback relaunch steps.",
+        date: "19 November 2026",
+        image: "/republish-book-amazon-blog.webp",
+        readTime: "16 min read",
+        author: "Aero Publishing Team",
+        authorRole: "Publishing Experts",
+        content: republishAmazonPostContent,
+    },
     {
         metaTitle: "How to Market a Self-Published Book: 90-Day Plan",
         metaDescription: "Learn how to market a self-published book with a practical 90-day plan. Discover free promotion strategies, Amazon ads, and ways to boost book sales.",

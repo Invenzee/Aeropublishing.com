@@ -14,6 +14,7 @@ const blogSlugRedirects = [
   "why-kdp-books-look-bad-in-print",
   "kdp-vs-ingramspark",
   "get-your-self-published-book-into-independent-bookstores",
+  "how-to-republish-a-book-on-amazon",
 ].map((slug) => {
   return {
     source: `/${slug}`,

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { coverFileName, coverGenres, coverThemes } from "@/lib/cover-prompt";
+import { COVER_IDEA_MIN, coverFileName, coverGenres, coverThemes } from "@/lib/cover-prompt";
 
 type CoverResponse = {
   image?: unknown;
@@ -11,7 +11,8 @@ type CoverResponse = {
 };
 
 const STEPS = ["Book", "Genre", "Colours", "Idea"] as const;
-const IDEA_MIN = 200;
+
+type CoverIdea = { label: string; text: string };
 
 const COVER_PHASES = [
   "Checking your details",
@@ -27,7 +28,7 @@ const COVER_PHASES = [
 const CARDS = [
   {
     title: "Instant AI concepts",
-    body: "One cover built from your own title, genre, colours and idea.",
+    body: "Two directions from your title, author, genre and colours. You choose one.",
   },
   {
     title: "Polished by real designers",
@@ -51,7 +52,10 @@ function Spark() {
 export default function CoverStudioSection() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [idea, setIdea] = useState("");
+  const [ideas, setIdeas] = useState<CoverIdea[]>([]);
+  const [pickedIdea, setPickedIdea] = useState<number | null>(null);
+  const [ideasLoading, setIdeasLoading] = useState(false);
+  const [ideasUsed, setIdeasUsed] = useState(false);
   const [theme, setTheme] = useState<number | null>(null);
   const [genre, setGenre] = useState("");
   const [image, setImage] = useState<string | null>(null);
@@ -62,6 +66,7 @@ export default function CoverStudioSection() {
   const [step, setStep] = useState(0);
   const [reached, setReached] = useState(0);
   const coverRequest = useRef<AbortController | null>(null);
+  const ideaRequest = useRef<AbortController | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -69,6 +74,12 @@ export default function CoverStudioSection() {
       .then((response) => response.json())
       .then((data: CoverResponse) => {
         if (!cancelled && data?.used === true) setUsed(true);
+      })
+      .catch(() => {});
+    fetch("/api/cover/ideas")
+      .then((response) => response.json())
+      .then((data: { used?: unknown }) => {
+        if (!cancelled && data?.used === true) setIdeasUsed(true);
       })
       .catch(() => {});
     return () => {
@@ -90,21 +101,29 @@ export default function CoverStudioSection() {
   useEffect(() => {
     return () => {
       coverRequest.current?.abort();
+      ideaRequest.current?.abort();
     };
   }, []);
 
   const picked = theme === null ? undefined : coverThemes[theme];
   const cur = picked ?? { name: "", bg: "#3F3774", fg: "#FFFFFF", mo: "#FE695B" };
-  const ideaText = idea.trim();
+  const chosen = pickedIdea === null ? undefined : ideas[pickedIdea];
+  const ideaText = chosen?.text.trim() ?? "";
   const displayTitle = title.trim() || "Your Book Title";
   const displayAuthor = author.trim() || "Your Name";
-  const coverTag = ideaText
-    ? ideaText.length > 34
-      ? ideaText.slice(0, 34) + "…"
-      : ideaText
+  const coverTag = chosen
+    ? chosen.label
     : picked
       ? "A " + picked.name + " cover"
       : "Your cover";
+
+  function resetIdeas() {
+    if (ideasUsed) return;
+    ideaRequest.current?.abort();
+    setIdeas([]);
+    setPickedIdea(null);
+    setIdeasLoading(false);
+  }
 
   function clearArt() {
     if (used || image) return;
@@ -120,8 +139,8 @@ export default function CoverStudioSection() {
     }
     if (index === 1 && !genre) return "Choose a genre to continue.";
     if (index === 2 && theme === null) return "Choose a colour theme to continue.";
-    if (index === 3 && idea.trim().length < IDEA_MIN) {
-      return `Describe the cover in at least ${IDEA_MIN} characters. ${idea.trim().length} so far.`;
+    if (index === 3 && ideaText.length < COVER_IDEA_MIN) {
+      return ideas.length ? "Choose one of the two ideas." : "Generate two ideas, then choose one.";
     }
     return "";
   }
@@ -194,6 +213,68 @@ export default function CoverStudioSection() {
     setStep((current) => Math.max(0, current - 1));
   }
 
+  async function generateIdeas() {
+    if (ideasUsed) {
+      setError("A pair of ideas was already created from this connection.");
+      return;
+    }
+    for (let index = 0; index < 3; index += 1) {
+      const message = stepError(index);
+      if (message) {
+        setStep(index);
+        setError(message);
+        return;
+      }
+    }
+    if (!picked) return;
+
+    ideaRequest.current?.abort();
+    const controller = new AbortController();
+    ideaRequest.current = controller;
+    setIdeasLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/cover/ideas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          title: title.trim(),
+          author: author.trim(),
+          theme: picked.name,
+          genre,
+        }),
+      });
+      const data = (await response.json().catch(() => null)) as { ideas?: unknown; error?: unknown; used?: unknown } | null;
+      if (controller.signal.aborted) return;
+      if (data?.used === true) setIdeasUsed(true);
+      const next = Array.isArray(data?.ideas)
+        ? data.ideas.filter(
+            (item): item is CoverIdea =>
+              !!item &&
+              typeof item === "object" &&
+              typeof (item as CoverIdea).label === "string" &&
+              typeof (item as CoverIdea).text === "string" &&
+              (item as CoverIdea).text.trim().length >= COVER_IDEA_MIN,
+          )
+        : [];
+      if (!response.ok || next.length !== 2) {
+        const message = data && typeof data.error === "string" ? data.error : "The ideas could not be written. Try again.";
+        throw new Error(message);
+      }
+      setIdeas(next.slice(0, 2));
+      setPickedIdea(null);
+      setIdeasUsed(true);
+    } catch (err) {
+      if (err instanceof DOMException && err.name === "AbortError") return;
+      if (controller.signal.aborted) return;
+      setError(err instanceof Error ? err.message : "The ideas could not be written. Try again.");
+    } finally {
+      if (ideaRequest.current === controller) setIdeasLoading(false);
+    }
+  }
+
   async function generateCover() {
     if (used) {
       setError("A cover was already created from this connection.");
@@ -225,7 +306,7 @@ export default function CoverStudioSection() {
           author: author.trim(),
           theme: picked.name,
           genre,
-          idea: idea.trim(),
+          idea: ideaText,
         }),
       });
       const type = response.headers.get("content-type") || "";
@@ -277,7 +358,7 @@ export default function CoverStudioSection() {
             , in minutes.
           </h2>
           <p className="max-w-2xl font-poppins text-[16px] leading-relaxed text-brand-gray max-sm:text-[14px]">
-            Move through the steps with Next. At the end, one cover is designed from your title, genre, colours and idea.
+            Move through the steps with Next. At the end, generate two cover ideas and design the one you choose.
           </p>
         </motion.div>
 
@@ -346,6 +427,7 @@ export default function CoverStudioSection() {
                     className={`${fieldClass} min-h-[52px]`}
                     onChange={(event) => {
                       setTitle(event.target.value);
+                      resetIdeas();
                       clearArt();
                     }}
                   />
@@ -359,6 +441,7 @@ export default function CoverStudioSection() {
                     className={`${fieldClass} min-h-[52px]`}
                     onChange={(event) => {
                       setAuthor(event.target.value);
+                      resetIdeas();
                       clearArt();
                     }}
                   />
@@ -380,6 +463,7 @@ export default function CoverStudioSection() {
                     className={`${fieldClass} form-select form-select-arrow-dark min-h-[52px]`}
                     onChange={(event) => {
                       setGenre(event.target.value);
+                      resetIdeas();
                       clearArt();
                     }}
                   >
@@ -413,6 +497,7 @@ export default function CoverStudioSection() {
                         aria-pressed={index === theme}
                         onClick={() => {
                           setTheme(index);
+                          resetIdeas();
                           clearArt();
                         }}
                       >
@@ -436,26 +521,47 @@ export default function CoverStudioSection() {
                   <div className="flex items-start gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary font-poppins text-sm font-bold text-white">4</div>
                     <div className="flex min-w-0 flex-col">
-                      <label htmlFor="c-idea" className="font-poppins text-[17px] font-bold leading-snug text-black">The idea</label>
-                      <span className="font-poppins text-sm font-medium leading-snug text-brand-gray">At least 200 characters, so the cover is specific to this book.</span>
+                      <div id="c-idea-label" className="font-poppins text-[17px] font-bold leading-snug text-black">The idea</div>
+                      <span className="font-poppins text-sm font-medium leading-snug text-brand-gray">Two directions written from your title, author, genre, and colours. Choose one.</span>
                     </div>
                   </div>
-                  <textarea
-                    id="c-idea"
-                    rows={5}
-                    maxLength={800}
-                    required
-                    placeholder="Describe the scene, mood, and what the title should feel like. Be specific — this needs at least 200 characters."
-                    value={idea}
-                    className={`${fieldClass} resize-y py-3.5`}
-                    onChange={(event) => {
-                      setIdea(event.target.value);
-                      clearArt();
-                    }}
-                  />
-                  <p className={`m-0 text-right font-poppins text-[13px] font-bold ${idea.trim().length >= IDEA_MIN ? "text-[#1f7a45]" : "text-brand-gray"}`}>
-                    {idea.trim().length} / {IDEA_MIN} characters minimum
-                  </p>
+                  {ideasLoading && ideas.length === 0 && (
+                    <p className="m-0 rounded-xl bg-[#fafafa] px-4 py-3.5 text-center font-poppins text-[15px] font-semibold text-brand-primary" role="status">
+                      Reading the book and writing two directions…
+                    </p>
+                  )}
+                  {ideas.length > 0 && (
+                    <div className="flex flex-col gap-2.5" role="radiogroup" aria-labelledby="c-idea-label">
+                      {ideas.map((item, index) => {
+                        const selected = index === pickedIdea;
+                        return (
+                          <button
+                            key={`${item.label}-${index}`}
+                            type="button"
+                            role="radio"
+                            aria-checked={selected}
+                            className={`flex items-start gap-3 rounded-xl border px-3.5 py-3.5 text-left transition ${
+                              selected
+                                ? "border-brand-primary bg-white shadow-[inset_0_0_0_1px_#3F3774]"
+                                : "border-[#d7d7d7] bg-[#fafafa] hover:border-brand-primary"
+                            }`}
+                            onClick={() => setPickedIdea(index)}
+                          >
+                            <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full font-poppins text-[12px] font-bold ${selected ? "bg-brand-primary text-white" : "bg-[#eceaf3] text-brand-primary"}`}>
+                              {index + 1}
+                            </span>
+                            <span className="min-w-0">
+                              <span className="block font-poppins text-[15px] font-bold text-black">{item.label}</span>
+                              <span className="mt-1 block font-poppins text-[14px] leading-relaxed text-brand-gray">{item.text}</span>
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                  {ideas.length > 0 && !chosen && !ideasLoading && (
+                    <p className="m-0 font-poppins text-[13px] font-semibold text-brand-gray">Choose one, then generate the cover.</p>
+                  )}
                 </>
               )}
 
@@ -483,12 +589,22 @@ export default function CoverStudioSection() {
                   >
                     Next
                   </button>
+                ) : ideas.length === 0 ? (
+                  <button
+                    type="button"
+                    className="inline-flex min-h-14 flex-1 items-center justify-center gap-2 rounded-xl bg-brand-primary px-4 font-poppins text-[16px] font-bold text-white shadow-[0_8px_20px_rgba(63,55,116,0.18)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-[#eceaf3] disabled:text-brand-primary disabled:shadow-none"
+                    onClick={generateIdeas}
+                    disabled={ideasLoading || ideasUsed}
+                  >
+                    <Spark />
+                    {ideasUsed ? "Used" : ideasLoading ? "Writing ideas…" : "Generate ideas"}
+                  </button>
                 ) : (
                   <button
                     type="button"
                     className="inline-flex min-h-14 flex-1 items-center justify-center gap-2 rounded-xl bg-brand-primary px-4 font-poppins text-[16px] font-bold text-white shadow-[0_8px_20px_rgba(63,55,116,0.18)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-[#eceaf3] disabled:text-brand-primary disabled:shadow-none"
                     onClick={generateCover}
-                    disabled={loading || used}
+                    disabled={loading || used || ideasLoading || !chosen}
                   >
                     <Spark />
                     {used ? "Used" : loading ? "Generating…" : "Generate"}

@@ -81,17 +81,14 @@ export async function POST(request: Request) {
   if (!genre) {
     return Response.json({ error: "Choose a genre." }, { status: 400 });
   }
-  if (!title || !author || !idea) {
-    return Response.json(
-      { error: "Add the book title, author name, and cover idea." },
-      { status: 400 },
-    );
+  if (!title || !author) {
+    return Response.json({ error: "Add the book title and author name." }, { status: 400 });
+  }
+  if (!idea) {
+    return Response.json({ error: "Choose a cover idea." }, { status: 400 });
   }
   if (idea.length < 200) {
-    return Response.json(
-      { error: "Describe the cover in at least 200 characters." },
-      { status: 400 },
-    );
+    return Response.json({ error: "Choose a fuller cover idea." }, { status: 400 });
   }
   if (title.length > 120 || author.length > 80 || idea.length > 800) {
     return Response.json(

@@ -38,3 +38,36 @@ export async function markCoverUsed(request: Request) {
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify([...keys, key]), "utf8");
 }
+
+function ideaStorePath() {
+  const dir = process.env.VERCEL ? os.tmpdir() : path.join(process.cwd(), "data");
+  return path.join(dir, "cover-ideas.json");
+}
+
+async function readIdeaKeys() {
+  try {
+    const raw = await readFile(ideaStorePath(), "utf8");
+    const parsed = JSON.parse(raw) as unknown;
+    if (Array.isArray(parsed)) return parsed.filter((item): item is string => typeof item === "string");
+    if (!parsed || typeof parsed !== "object") return [];
+    return Object.entries(parsed)
+      .filter(([, value]) => typeof value === "number" && value > 0)
+      .map(([key]) => key);
+  } catch {
+    return [];
+  }
+}
+
+export async function coverIdeasAlreadyUsed(request: Request) {
+  const keys = await readIdeaKeys();
+  return keys.includes(clientKey(request));
+}
+
+export async function markCoverIdea(request: Request) {
+  const key = clientKey(request);
+  const keys = await readIdeaKeys();
+  if (keys.includes(key)) return;
+  const file = ideaStorePath();
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, JSON.stringify([...keys, key]), "utf8");
+}

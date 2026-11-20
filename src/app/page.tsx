@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import CounterSection from "@/components/CounterSection";
 import WhyAeroSection from "@/components/WhyAeroSection";
+import CoverStudioSection from "@/components/CoverStudioSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import ConnectWithUsSection from "@/components/ConnectWithUsSection";
@@ -72,6 +73,7 @@ export default function Home() {
       <HeroSection />
       <CounterSection />
       <WhyAeroSection description="" highlightTitle="Publishing" normalTitle="Your Book Should Be " boldTitle="Simple, Transparent, and Author-First" features={features} />
+      <CoverStudioSection />
       <PortfolioSection />
       <LogoCarousel />
       <HowWeWorkSection />

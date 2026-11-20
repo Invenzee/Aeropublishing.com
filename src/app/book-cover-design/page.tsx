@@ -9,6 +9,7 @@ import PromoSection from '@/components/PromoSection';
 import FAQSection from '@/components/FAQSection';
 import HowWeWorkSection from '@/components/HowWeWorkSection';
 import WhyAeroSection from '@/components/WhyAeroSection';
+import CoverStudioSection from '@/components/CoverStudioSection';
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Custom Book Cover Design Services – Aero Publishing",
@@ -101,6 +102,7 @@ export default function page() {
                 imageContain
                 imageWidthPercent={80}
             />
+            <CoverStudioSection />
             <BenefitsGridSection
                 subtitle="Why Book Cover Design with Aero?"
                 title={{

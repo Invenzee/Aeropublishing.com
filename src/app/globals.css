@@ -192,3 +192,138 @@ h6 .font-shaded {
 .form-select-arrow-white {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
 }
+
+.aero-cover-book {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 2 / 3;
+  box-sizing: border-box;
+  padding: 28px 24px 28px 32px;
+  border-radius: 3px 12px 12px 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  transform: rotateX(2deg) rotateY(-7deg);
+  transform-style: preserve-3d;
+  transition: background-color 0.45s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    inset 12px 0 14px rgba(0, 0, 0, 0.28),
+    inset 16px 0 0 rgba(255, 255, 255, 0.08),
+    8px 0 0 -5px rgba(255, 255, 255, 0.72),
+    13px 0 0 -7px rgba(183, 183, 183, 0.95),
+    18px 1px 0 -10px rgba(63, 55, 116, 0.18),
+    0 28px 48px rgba(63, 55, 116, 0.22);
+}
+
+.aero-cover-book::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.32), rgba(255, 255, 255, 0.16) 46%, rgba(0, 0, 0, 0.16));
+  pointer-events: none;
+}
+
+.aero-cover-book.is-loading {
+  background: #fff;
+  color: #3f3774;
+  box-shadow: 0 24px 48px rgba(63, 55, 116, 0.08);
+}
+
+.aero-cover-art {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aero-cover-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #3f3774;
+  text-align: center;
+}
+
+.aero-cover-orbit {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0 250deg, #3f3774 310deg, #fe695b 360deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+}
+
+.aero-cover-phase {
+  margin: 0;
+  min-height: 2.6em;
+  max-width: 220px;
+  font-family: var(--font-syne), sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .aero-cover-book.is-loading {
+    animation: aero-cover-glow 2.2s ease-in-out infinite;
+  }
+
+  .aero-cover-orbit {
+    animation: aero-cover-spin 0.9s linear infinite;
+  }
+
+  .aero-cover-phase {
+    animation: aero-cover-phase 0.3s ease-out;
+  }
+
+  .aero-cover-art {
+    animation: aero-cover-unveil 0.55s ease-out both;
+  }
+
+  .aero-cover-error {
+    animation: aero-cover-shake 0.42s ease-out;
+  }
+}
+
+@keyframes aero-cover-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes aero-cover-phase {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aero-cover-unveil {
+  from { opacity: 0; transform: scale(0.96); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes aero-cover-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes aero-cover-glow {
+  0%, 100% { box-shadow: 0 24px 48px rgba(63, 55, 116, 0.08), 0 0 0 0 rgba(254, 105, 91, 0); }
+  50% { box-shadow: 0 24px 48px rgba(63, 55, 116, 0.1), 0 0 0 8px rgba(254, 105, 91, 0.16); }
+}

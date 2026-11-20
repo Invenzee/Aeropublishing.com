@@ -15,8 +15,6 @@ import {
 
 const PHONE_DISPLAY = "+1 424 460 3488";
 const PHONE_HREF = "tel:+14244603488";
-const UK_PHONE_DISPLAY = "+44 020 3314 8312";
-const UK_PHONE_HREF = "tel:+442033148312";
 const EMAIL = "admin@aeropublishing.com";
 const ADDRESS = "12508 Center St, South Gate, CA 90280, United States";
 const LOGO_SRC = "/editing-lp-logo.png";
@@ -204,12 +202,6 @@ function PhoneBlock({ onDark = false }: { onDark?: boolean }) {
           className={`block text-[13px] font-bold hover:opacity-70 sm:text-sm ${onDark ? "text-white" : "text-[#111]"}`}
         >
           {PHONE_DISPLAY}
-        </a>
-        <a
-          href={UK_PHONE_HREF}
-          className={`block text-[13px] font-bold hover:opacity-70 sm:text-sm ${onDark ? "text-white" : "text-[#111]"}`}
-        >
-          {UK_PHONE_DISPLAY}
         </a>
       </span>
     </div>
@@ -805,10 +797,6 @@ export default function BookEditingLpPage() {
                       <a href={PHONE_HREF} className="hover:underline">
                         {PHONE_DISPLAY}
                       </a>
-                      <br />
-                      <a href={UK_PHONE_HREF} className="hover:underline">
-                        {UK_PHONE_DISPLAY}
-                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -1261,12 +1249,6 @@ export default function BookEditingLpPage() {
                         className="block text-sm font-bold text-[#111] transition-opacity duration-300 hover:opacity-70"
                       >
                         US: {PHONE_DISPLAY}
-                      </a>
-                      <a
-                        href={UK_PHONE_HREF}
-                        className="block text-sm font-bold text-[#111] transition-opacity duration-300 hover:opacity-70"
-                      >
-                        UK: {UK_PHONE_DISPLAY}
                       </a>
                     </div>
                   </div>

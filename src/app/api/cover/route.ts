@@ -1,4 +1,12 @@
-import { buildCoverPrompt, coverModel, findCoverGenre, findCoverTheme } from "@/lib/cover-prompt";
+import {
+  COVER_IDEA_MAX,
+  COVER_IDEA_MIN,
+  buildCoverPrompt,
+  coverModel,
+  findCoverDirection,
+  findCoverGenre,
+  findCoverTheme,
+} from "@/lib/cover-prompt";
 import { coverAlreadyUsed, markCoverUsed } from "@/lib/cover-limit";
 
 export const runtime = "nodejs";
@@ -62,6 +70,7 @@ export async function POST(request: Request) {
     theme?: unknown;
     genre?: unknown;
     idea?: unknown;
+    direction?: unknown;
   };
   try {
     payload = await request.json();
@@ -74,6 +83,7 @@ export async function POST(request: Request) {
   const title = typeof payload.title === "string" ? payload.title.trim() : "";
   const author = typeof payload.author === "string" ? payload.author.trim() : "";
   const idea = typeof payload.idea === "string" ? payload.idea.trim() : "";
+  const direction = findCoverDirection(payload.direction);
 
   if (!theme) {
     return Response.json({ error: "Choose a colour theme." }, { status: 400 });
@@ -87,10 +97,10 @@ export async function POST(request: Request) {
   if (!idea) {
     return Response.json({ error: "Choose a cover idea." }, { status: 400 });
   }
-  if (idea.length < 200) {
+  if (idea.length < COVER_IDEA_MIN) {
     return Response.json({ error: "Choose a fuller cover idea." }, { status: 400 });
   }
-  if (title.length > 120 || author.length > 80 || idea.length > 800) {
+  if (title.length > 120 || author.length > 80 || idea.length > COVER_IDEA_MAX) {
     return Response.json(
       { error: "Shorten the title, author name, or cover idea and try again." },
       { status: 400 },
@@ -123,7 +133,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: coverModel.openrouter,
-        prompt: buildCoverPrompt({ title, author, theme, idea, genre }),
+        prompt: buildCoverPrompt({ title, author, theme, idea, genre, direction }),
         aspect_ratio: "2:3",
         output_format: "jpeg",
         quality: coverModel.quality,

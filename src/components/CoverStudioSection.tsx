@@ -2,7 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { COVER_IDEA_MIN, coverFileName, coverGenres, coverThemes } from "@/lib/cover-prompt";
+import {
+  COVER_IDEA_MIN,
+  COVER_PREMISE_MAX,
+  coverFileName,
+  coverGenres,
+  coverThemes,
+  type CoverDirection,
+} from "@/lib/cover-prompt";
 
 type CoverResponse = {
   image?: unknown;
@@ -12,7 +19,7 @@ type CoverResponse = {
 
 const STEPS = ["Book", "Genre", "Colours", "Idea"] as const;
 
-type CoverIdea = { label: string; text: string };
+type CoverIdea = { label: string; text: string; direction?: CoverDirection };
 
 const COVER_PHASES = [
   "Checking your details",
@@ -52,6 +59,7 @@ function Spark() {
 export default function CoverStudioSection() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [premise, setPremise] = useState("");
   const [ideas, setIdeas] = useState<CoverIdea[]>([]);
   const [pickedIdea, setPickedIdea] = useState<number | null>(null);
   const [ideasLoading, setIdeasLoading] = useState(false);
@@ -107,6 +115,7 @@ export default function CoverStudioSection() {
 
   const picked = theme === null ? undefined : coverThemes[theme];
   const cur = picked ?? { name: "", bg: "#3F3774", fg: "#FFFFFF", mo: "#FE695B" };
+  const bookDetailsLocked = ideasLoading || ideas.length > 0;
   const chosen = pickedIdea === null ? undefined : ideas[pickedIdea];
   const ideaText = chosen?.text.trim() ?? "";
   const displayTitle = title.trim() || "Your Book Title";
@@ -244,6 +253,7 @@ export default function CoverStudioSection() {
           author: author.trim(),
           theme: picked.name,
           genre,
+          premise: premise.trim(),
         }),
       });
       const data = (await response.json().catch(() => null)) as { ideas?: unknown; error?: unknown; used?: unknown } | null;
@@ -307,6 +317,7 @@ export default function CoverStudioSection() {
           theme: picked.name,
           genre,
           idea: ideaText,
+          direction: chosen?.direction,
         }),
       });
       const type = response.headers.get("content-type") || "";
@@ -409,6 +420,9 @@ export default function CoverStudioSection() {
             </div>
 
             <section className="flex flex-col gap-3.5 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_8px_28px_rgba(63,55,116,0.06)]">
+              {step < 3 && ideas.length > 0 && (
+                <p className="m-0 font-poppins text-sm text-brand-gray">These details are set for your generated ideas.</p>
+              )}
               {step === 0 && (
                 <>
                   <div className="flex items-start gap-3">
@@ -424,6 +438,7 @@ export default function CoverStudioSection() {
                     maxLength={120}
                     placeholder="e.g. The Quiet Founder"
                     value={title}
+                    readOnly={bookDetailsLocked}
                     className={`${fieldClass} min-h-[52px]`}
                     onChange={(event) => {
                       setTitle(event.target.value);
@@ -438,9 +453,25 @@ export default function CoverStudioSection() {
                     maxLength={80}
                     placeholder="e.g. Jane Smith"
                     value={author}
+                    readOnly={bookDetailsLocked}
                     className={`${fieldClass} min-h-[52px]`}
                     onChange={(event) => {
                       setAuthor(event.target.value);
+                      resetIdeas();
+                      clearArt();
+                    }}
+                  />
+                  <label className="font-poppins text-[15px] font-bold text-black" htmlFor="c-premise">What is the book about? (optional)</label>
+                  <textarea
+                    id="c-premise"
+                    rows={3}
+                    maxLength={COVER_PREMISE_MAX}
+                    placeholder="A sentence or two about the story, subject, or intended reader"
+                    value={premise}
+                    readOnly={bookDetailsLocked}
+                    className={`${fieldClass} resize-y py-3`}
+                    onChange={(event) => {
+                      setPremise(event.target.value);
                       resetIdeas();
                       clearArt();
                     }}
@@ -460,6 +491,7 @@ export default function CoverStudioSection() {
                   <select
                     id="c-genre"
                     value={genre}
+                    disabled={bookDetailsLocked}
                     className={`${fieldClass} form-select form-select-arrow-dark min-h-[52px]`}
                     onChange={(event) => {
                       setGenre(event.target.value);
@@ -495,6 +527,7 @@ export default function CoverStudioSection() {
                             : "border-[#d7d7d7] bg-[#fafafa] hover:border-brand-primary"
                         }`}
                         aria-pressed={index === theme}
+                        disabled={bookDetailsLocked}
                         onClick={() => {
                           setTheme(index);
                           resetIdeas();
@@ -522,12 +555,12 @@ export default function CoverStudioSection() {
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary font-poppins text-sm font-bold text-white">4</div>
                     <div className="flex min-w-0 flex-col">
                       <div id="c-idea-label" className="font-poppins text-[17px] font-bold leading-snug text-black">The idea</div>
-                      <span className="font-poppins text-sm font-medium leading-snug text-brand-gray">Two directions written from your title, author, genre, and colours. Choose one.</span>
+                      <span className="font-poppins text-sm font-medium leading-snug text-brand-gray">Choose between a lettering-led direction and an artwork-led direction.</span>
                     </div>
                   </div>
                   {ideasLoading && ideas.length === 0 && (
                     <p className="m-0 rounded-xl bg-[#fafafa] px-4 py-3.5 text-center font-poppins text-[15px] font-semibold text-brand-primary" role="status">
-                      Reading the book and writing two directions…
+                      Writing two directions for your book…
                     </p>
                   )}
                   {ideas.length > 0 && (
@@ -540,6 +573,7 @@ export default function CoverStudioSection() {
                             type="button"
                             role="radio"
                             aria-checked={selected}
+                            disabled={loading || used}
                             className={`flex items-start gap-3 rounded-xl border px-3.5 py-3.5 text-left transition ${
                               selected
                                 ? "border-brand-primary bg-white shadow-[inset_0_0_0_1px_#3F3774]"

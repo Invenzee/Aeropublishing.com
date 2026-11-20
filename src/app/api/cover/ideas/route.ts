@@ -2,10 +2,13 @@ import { coverIdeasAlreadyUsed, markCoverIdea } from "@/lib/cover-limit";
 import {
   COVER_IDEA_MAX,
   COVER_IDEA_MIN,
+  COVER_PREMISE_MAX,
   buildCoverIdeaPrompt,
+  coverDirections,
   coverIdeaModel,
   findCoverGenre,
   findCoverTheme,
+  type CoverDirection,
 } from "@/lib/cover-prompt";
 
 export const runtime = "nodejs";
@@ -13,7 +16,7 @@ export const maxDuration = 60;
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
-type CoverIdea = { label: string; text: string };
+type CoverIdea = { label: string; text: string; direction: CoverDirection };
 
 function usedCookie() {
   const secure = process.env.VERCEL ? "; Secure" : "";
@@ -65,22 +68,24 @@ function fitText(value: string) {
 function asIdeas(value: unknown): CoverIdea[] | null {
   if (!value || typeof value !== "object") return null;
   const raw = (value as { ideas?: unknown }).ideas;
-  if (!Array.isArray(raw)) return null;
+  if (!Array.isArray(raw) || raw.length !== coverDirections.length) return null;
   const ideas: CoverIdea[] = [];
-  for (const item of raw) {
-    const labelSource = typeof item === "string" ? "" : item && typeof item === "object" ? (item as { label?: unknown }).label : "";
-    const textSource = typeof item === "string" ? item : item && typeof item === "object" ? (item as { text?: unknown }).text : "";
-    if (typeof textSource !== "string") continue;
-    const text = fitText(textSource);
-    if (text.length < COVER_IDEA_MIN) continue;
-    const label = (typeof labelSource === "string" ? cleanText(labelSource).slice(0, 48) : "") || `Direction ${ideas.length + 1}`;
-    ideas.push({ label, text });
+  for (const [index, direction] of coverDirections.entries()) {
+    const item: unknown = raw[index];
+    if (!item || typeof item !== "object") return null;
+    const candidate = item as { direction?: unknown; label?: unknown; text?: unknown };
+    if (candidate.direction !== direction || typeof candidate.label !== "string" || typeof candidate.text !== "string") {
+      return null;
+    }
+    const label = cleanText(candidate.label).slice(0, 48);
+    const text = fitText(candidate.text);
+    if (!label || text.length < COVER_IDEA_MIN || !/[.!?]["']?$/.test(text)) return null;
+    ideas.push({ label, text, direction });
   }
-  if (ideas.length < 2) return null;
   const [first, second] = ideas;
   const left = first.text.toLowerCase();
   const right = second.text.toLowerCase();
-  if (left === right) return null;
+  if (left === right || first.label.toLowerCase() === second.label.toLowerCase()) return null;
   return [first, second];
 }
 
@@ -129,9 +134,9 @@ async function askForIdeas(key: string, request: Request, prompt: string, reason
         { role: "user", content: prompt },
       ],
       temperature: 0.8,
-      max_tokens: 1600,
+      max_tokens: reasoning ? 2600 : 1600,
       response_format: { type: "json_object" },
-      ...(reasoning ? { reasoning: { effort: "medium", exclude: true } } : {}),
+      ...(reasoning ? { reasoning: { effort: "low", exclude: true } } : {}),
     }),
   });
   const body = await response.text();
@@ -149,6 +154,7 @@ export async function POST(request: Request) {
     author?: unknown;
     theme?: unknown;
     genre?: unknown;
+    premise?: unknown;
     pass?: unknown;
   };
   try {
@@ -161,6 +167,7 @@ export async function POST(request: Request) {
   const genre = typeof payload.genre === "string" ? findCoverGenre(payload.genre) : undefined;
   const title = typeof payload.title === "string" ? payload.title.trim() : "";
   const author = typeof payload.author === "string" ? payload.author.trim() : "";
+  const premise = typeof payload.premise === "string" ? payload.premise.trim() : "";
   const pass = typeof payload.pass === "number" && payload.pass >= 1 && payload.pass <= 20 ? Math.floor(payload.pass) : 1;
 
   if (!theme) return Response.json({ error: "Choose a colour theme." }, { status: 400 });
@@ -170,6 +177,9 @@ export async function POST(request: Request) {
   }
   if (title.length > 120 || author.length > 80) {
     return Response.json({ error: "Shorten the title or author name and try again." }, { status: 400 });
+  }
+  if (premise.length > COVER_PREMISE_MAX) {
+    return Response.json({ error: "Shorten the book description and try again." }, { status: 400 });
   }
   if (await alreadyUsed(request)) {
     return Response.json(
@@ -186,7 +196,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const prompt = buildCoverIdeaPrompt({ title, author, theme, genre, pass });
+  const prompt = buildCoverIdeaPrompt({ title, author, theme, genre, premise, pass });
 
   try {
     let { response, body } = await askForIdeas(key, request, prompt, true);
@@ -207,7 +217,7 @@ export async function POST(request: Request) {
     const content = messageText(parsed.choices?.[0]?.message?.content);
     let ideas = parseIdeas(content);
     if (!ideas) {
-      const again = await askForIdeas(key, request, `${prompt}\n\nThe last reply was unusable. Return only the JSON object, with two concepts of 50 to 70 words each.`, false);
+      const again = await askForIdeas(key, request, `${prompt}\n\nThe last reply was unusable. Return the JSON object with two distinct labels and two complete concepts in the requested order and length.`, false);
       if (again.response.ok) {
         const second = JSON.parse(again.body) as { choices?: { message?: { content?: unknown } }[] };
         ideas = parseIdeas(messageText(second.choices?.[0]?.message?.content));

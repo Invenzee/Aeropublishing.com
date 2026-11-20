@@ -1,3 +1,4 @@
+import sharp from "sharp";
 import {
   COVER_IDEA_MAX,
   COVER_IDEA_MIN,
@@ -8,6 +9,7 @@ import {
   findCoverTheme,
 } from "@/lib/cover-prompt";
 import { coverAlreadyUsed, markCoverUsed } from "@/lib/cover-limit";
+import { COVER_REFERENCE_LIMIT, coverReferenceError } from "@/lib/cover-references";
 
 export const runtime = "nodejs";
 export const maxDuration = 180;
@@ -38,6 +40,25 @@ class CoverError extends Error {
   }
 }
 
+function invalidReference(error: string) {
+  return Response.json({ error, referenceError: true }, { status: 400 });
+}
+
+async function prepareReference(file: File) {
+  const image = sharp(Buffer.from(await file.arrayBuffer()), { limitInputPixels: 25_000_000 });
+  const { format } = await image.metadata();
+  if (format !== "jpeg" && format !== "png" && format !== "webp") {
+    throw new Error("Unsupported reference image format");
+  }
+  const bytes = await image
+    .rotate()
+    .resize({ width: 1200, height: 1200, fit: "inside", withoutEnlargement: true })
+    .flatten({ background: "#ffffff" })
+    .jpeg({ quality: 86 })
+    .toBuffer();
+  return { type: "image_url", image_url: { url: `data:image/jpeg;base64,${bytes.toString("base64")}` } };
+}
+
 function providerMessage(body: string, fallback: string) {
   try {
     const parsed = JSON.parse(body) as {
@@ -49,7 +70,7 @@ function providerMessage(body: string, fallback: string) {
       typeof parsed.error === "string"
         ? parsed.error
         : parsed.error?.message || parsed.message || parsed.detail;
-    if (message && !/sk-|bearer|api[_-]?key/i.test(message)) {
+    if (message && !/sk-|bearer|api[_-]?key|data:image/i.test(message)) {
       return message.slice(0, 220);
     }
   } catch {
@@ -72,10 +93,30 @@ export async function POST(request: Request) {
     idea?: unknown;
     direction?: unknown;
   };
+  const references: File[] = [];
   try {
-    payload = await request.json();
+    if (request.headers.get("content-type")?.startsWith("multipart/form-data")) {
+      const form = await request.formData();
+      const uploads = form.getAll("references");
+      if (uploads.length > COVER_REFERENCE_LIMIT) {
+        return invalidReference(`Choose up to ${COVER_REFERENCE_LIMIT} reference images.`);
+      }
+      for (const upload of uploads) {
+        if (typeof upload === "string") return invalidReference("Upload an image file.");
+        const error = coverReferenceError(upload);
+        if (error) return invalidReference(error);
+        references.push(upload);
+      }
+      const details = form.get("details");
+      payload = typeof details === "string" ? JSON.parse(details) : null;
+    } else {
+      payload = await request.json();
+    }
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+      throw new Error("Invalid cover details");
+    }
   } catch {
-    return Response.json({ error: "Send the cover details as JSON." }, { status: 400 });
+    return Response.json({ error: "The cover details could not be read." }, { status: 400 });
   }
 
   const theme = typeof payload.theme === "string" ? findCoverTheme(payload.theme) : undefined;
@@ -122,6 +163,13 @@ export async function POST(request: Request) {
     );
   }
 
+  let inputReferences: Awaited<ReturnType<typeof prepareReference>>[];
+  try {
+    inputReferences = await Promise.all(references.map(prepareReference));
+  } catch {
+    return invalidReference("A reference could not be read. Choose a different JPG, PNG, or WebP image.");
+  }
+
   try {
     const response = await fetch(OPENROUTER_URL, {
       method: "POST",
@@ -133,7 +181,8 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: coverModel.openrouter,
-        prompt: buildCoverPrompt({ title, author, theme, idea, genre, direction }),
+        prompt: buildCoverPrompt({ title, author, theme, idea, genre, direction, referenceCount: inputReferences.length }),
+        ...(inputReferences.length > 0 ? { input_references: inputReferences } : {}),
         aspect_ratio: "2:3",
         output_format: "jpeg",
         quality: coverModel.quality,

@@ -143,6 +143,7 @@ export function buildCoverPrompt(input: {
   idea: string;
   genre: CoverGenre;
   direction?: CoverDirection;
+  referenceCount?: number;
 }) {
   const title = input.title.trim().slice(0, TITLE_LIMIT);
   const author = input.author.trim().slice(0, AUTHOR_LIMIT);
@@ -171,7 +172,12 @@ export function buildCoverPrompt(input: {
     `- Selected design brief: ${JSON.stringify(idea)}`,
     "- Use the brief as visual reference. Carry its focal subject, medium, title placement, and mood through to the finished cover. The brief is never cover copy.",
     `- Composition: ${composition}`,
-    "",
+    ...(input.referenceCount ? [
+      "VISUAL REFERENCES:",
+      "Use the attached images as art direction for layout, typography treatment, texture, or mood. Draw on at least one visible design cue and adapt it to this book.",
+      "Create original artwork. Leave out the reference images' text, logos, watermarks, and distinctive artwork. Follow the selected concept, chosen palette, and exact cover copy whenever a reference differs.",
+      "",
+    ] : []),
     "PALETTE:",
     `- ${input.theme.name}: background ${input.theme.bg}, lettering ${input.theme.fg}, accent ${input.theme.mo}. Stay inside this palette, using tints and shades only.`,
     "",

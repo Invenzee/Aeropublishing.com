@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   COVER_IDEA_MIN,
@@ -10,14 +10,18 @@ import {
   coverThemes,
   type CoverDirection,
 } from "@/lib/cover-prompt";
+import { COVER_REFERENCE_LIMIT, coverReferenceError, coverReferenceTypes } from "@/lib/cover-references";
 
 type CoverResponse = {
   image?: unknown;
   error?: unknown;
   used?: unknown;
+  referenceError?: unknown;
 };
 
-const STEPS = ["Book", "Genre", "Colours", "Idea"] as const;
+const STEPS = ["Book", "Genre", "Colours", "References", "Idea"] as const;
+const REFERENCES_STEP = STEPS.indexOf("References");
+const IDEA_STEP = STEPS.indexOf("Idea");
 
 type CoverIdea = { label: string; text: string; direction?: CoverDirection };
 
@@ -56,10 +60,23 @@ function Spark() {
   );
 }
 
+function ReferenceThumbnail({ file }: { file: File }) {
+  const attachPreview = useCallback((element: HTMLImageElement | null) => {
+    if (!element) return;
+    const url = URL.createObjectURL(file);
+    element.src = url;
+    return () => URL.revokeObjectURL(url);
+  }, [file]);
+
+  // eslint-disable-next-line @next/next/no-img-element -- Local files are previewed with browser object URLs.
+  return <img ref={attachPreview} alt="" width={44} height={58} className="h-[58px] w-11 shrink-0 rounded-md bg-[#eceaf3] object-contain" />;
+}
+
 export default function CoverStudioSection() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [premise, setPremise] = useState("");
+  const [references, setReferences] = useState<File[]>([]);
   const [ideas, setIdeas] = useState<CoverIdea[]>([]);
   const [pickedIdea, setPickedIdea] = useState<number | null>(null);
   const [ideasLoading, setIdeasLoading] = useState(false);
@@ -116,6 +133,7 @@ export default function CoverStudioSection() {
   const picked = theme === null ? undefined : coverThemes[theme];
   const cur = picked ?? { name: "", bg: "#3F3774", fg: "#FFFFFF", mo: "#FE695B" };
   const bookDetailsLocked = ideasLoading || ideas.length > 0;
+  const referencesLocked = loading || used;
   const chosen = pickedIdea === null ? undefined : ideas[pickedIdea];
   const ideaText = chosen?.text.trim() ?? "";
   const displayTitle = title.trim() || "Your Book Title";
@@ -141,6 +159,26 @@ export default function CoverStudioSection() {
     setError("");
   }
 
+  function addReferences(files: File[]) {
+    const next = [...references];
+    for (const file of files) {
+      const message = coverReferenceError(file);
+      if (message) {
+        setError(message);
+        return;
+      }
+      if (!next.some((reference) => reference.name === file.name && reference.size === file.size && reference.lastModified === file.lastModified)) {
+        next.push(file);
+      }
+    }
+    if (next.length > COVER_REFERENCE_LIMIT) {
+      setError(`Choose up to ${COVER_REFERENCE_LIMIT} reference images.`);
+      return;
+    }
+    setReferences(next);
+    setError("");
+  }
+
   function stepError(index: number) {
     if (index === 0) {
       if (!title.trim()) return "Add the book title to continue.";
@@ -148,7 +186,7 @@ export default function CoverStudioSection() {
     }
     if (index === 1 && !genre) return "Choose a genre to continue.";
     if (index === 2 && theme === null) return "Choose a colour theme to continue.";
-    if (index === 3 && ideaText.length < COVER_IDEA_MIN) {
+    if (index === IDEA_STEP && ideaText.length < COVER_IDEA_MIN) {
       return ideas.length ? "Choose one of the two ideas." : "Generate two ideas, then choose one.";
     }
     return "";
@@ -212,7 +250,7 @@ export default function CoverStudioSection() {
       return;
     }
     setError("");
-    const next = Math.min(3, step + 1);
+    const next = Math.min(IDEA_STEP, step + 1);
     setReached((max) => Math.max(max, next));
     setStep(next);
   }
@@ -227,7 +265,7 @@ export default function CoverStudioSection() {
       setError("A pair of ideas was already created from this connection.");
       return;
     }
-    for (let index = 0; index < 3; index += 1) {
+    for (let index = 0; index < IDEA_STEP; index += 1) {
       const message = stepError(index);
       if (message) {
         setStep(index);
@@ -290,7 +328,7 @@ export default function CoverStudioSection() {
       setError("A cover was already created from this connection.");
       return;
     }
-    for (let index = 0; index < 4; index += 1) {
+    for (let index = 0; index <= IDEA_STEP; index += 1) {
       const message = stepError(index);
       if (message) {
         setStep(index);
@@ -307,18 +345,23 @@ export default function CoverStudioSection() {
     setError("");
 
     try {
+      const form = new FormData();
+      form.set("details", JSON.stringify({
+        title: title.trim(),
+        author: author.trim(),
+        theme: picked.name,
+        genre,
+        idea: ideaText,
+        direction: chosen?.direction,
+      }));
+      for (const reference of references) {
+        form.append("references", reference);
+      }
+
       const response = await fetch("/api/cover", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         signal: controller.signal,
-        body: JSON.stringify({
-          title: title.trim(),
-          author: author.trim(),
-          theme: picked.name,
-          genre,
-          idea: ideaText,
-          direction: chosen?.direction,
-        }),
+        body: form,
       });
       const type = response.headers.get("content-type") || "";
       if (controller.signal.aborted) return;
@@ -335,6 +378,7 @@ export default function CoverStudioSection() {
       const data = (await response.json().catch(() => null)) as CoverResponse | null;
       if (controller.signal.aborted) return;
       if (data?.used === true) setUsed(true);
+      if (data?.referenceError === true) setStep(REFERENCES_STEP);
       const message = data && typeof data.error === "string" ? data.error : "The cover could not be created. Try again.";
       throw new Error(message);
     } catch (err) {
@@ -375,11 +419,11 @@ export default function CoverStudioSection() {
 
         <div className="grid items-start gap-9 lg:grid-cols-2">
           <form className="flex min-w-0 flex-col gap-3.5" onSubmit={(event) => event.preventDefault()}>
-            <div className="relative grid grid-cols-4" aria-label="Cover steps">
-              <span className="pointer-events-none absolute top-[21px] left-[12.5%] h-0.5 w-3/4 bg-[#e4e4e4]" aria-hidden="true" />
+            <div className="relative grid grid-cols-5" aria-label="Cover steps">
+              <span className="pointer-events-none absolute top-[21px] left-[10%] h-0.5 w-4/5 bg-[#e4e4e4]" aria-hidden="true" />
               <span
-                className="pointer-events-none absolute top-[21px] left-[12.5%] h-0.5 w-3/4 origin-left bg-brand-primary transition-transform duration-500"
-                style={{ transform: `scaleX(${step / 3})` }}
+                className="pointer-events-none absolute top-[21px] left-[10%] h-0.5 w-4/5 origin-left bg-brand-primary transition-transform duration-500"
+                style={{ transform: `scaleX(${step / IDEA_STEP})` }}
                 aria-hidden="true"
               />
               {STEPS.map((label, index) => {
@@ -420,7 +464,7 @@ export default function CoverStudioSection() {
             </div>
 
             <section className="flex flex-col gap-3.5 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_8px_28px_rgba(63,55,116,0.06)]">
-              {step < 3 && ideas.length > 0 && (
+              {step < IDEA_STEP && ideas.length > 0 && (
                 <p className="m-0 font-poppins text-sm text-brand-gray">These details are set for your generated ideas.</p>
               )}
               {step === 0 && (
@@ -457,21 +501,6 @@ export default function CoverStudioSection() {
                     className={`${fieldClass} min-h-[52px]`}
                     onChange={(event) => {
                       setAuthor(event.target.value);
-                      resetIdeas();
-                      clearArt();
-                    }}
-                  />
-                  <label className="font-poppins text-[15px] font-bold text-black" htmlFor="c-premise">What is the book about? (optional)</label>
-                  <textarea
-                    id="c-premise"
-                    rows={3}
-                    maxLength={COVER_PREMISE_MAX}
-                    placeholder="A sentence or two about the story, subject, or intended reader"
-                    value={premise}
-                    readOnly={bookDetailsLocked}
-                    className={`${fieldClass} resize-y py-3`}
-                    onChange={(event) => {
-                      setPremise(event.target.value);
                       resetIdeas();
                       clearArt();
                     }}
@@ -549,10 +578,72 @@ export default function CoverStudioSection() {
                 </>
               )}
 
-              {step === 3 && (
+              {step === REFERENCES_STEP && (
                 <>
                   <div className="flex items-start gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary font-poppins text-sm font-bold text-white">4</div>
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <label htmlFor="c-references" className="font-poppins text-[17px] font-bold leading-snug text-black">Upload reference covers (optional)</label>
+                      <span id="c-references-help" className="font-poppins text-sm leading-snug text-brand-gray">Add up to {COVER_REFERENCE_LIMIT} JPG, PNG, or WebP images, 2 MB each. The image model uses them to guide the design of your cover.</span>
+                    </div>
+                  </div>
+                  <input
+                    id="c-references"
+                    type="file"
+                    multiple
+                    accept={coverReferenceTypes.join(",")}
+                    aria-describedby="c-references-help"
+                    disabled={referencesLocked}
+                    className={`${fieldClass} min-w-0 py-2 text-sm file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[#eceaf3] file:px-3 file:py-2 file:font-semibold file:text-brand-primary disabled:opacity-60`}
+                    onChange={(event) => {
+                      addReferences(Array.from(event.currentTarget.files ?? []));
+                      event.currentTarget.value = "";
+                    }}
+                  />
+                  {references.length > 0 && (
+                    <ul className="m-0 grid gap-2 p-0" aria-label="Selected reference images">
+                      {references.map((file) => (
+                        <li key={`${file.name}-${file.size}-${file.lastModified}`} className="flex min-w-0 items-center gap-3 rounded-xl border border-black/10 p-2">
+                          <ReferenceThumbnail file={file} />
+                          <span className="min-w-0 flex-1 truncate font-poppins text-sm text-brand-gray" title={file.name}>{file.name}</span>
+                          <button
+                            type="button"
+                            disabled={referencesLocked}
+                            aria-label={`Remove ${file.name}`}
+                            className="rounded-lg px-2 py-2 font-poppins text-sm font-semibold text-brand-primary hover:bg-[#eceaf3] disabled:opacity-60"
+                            onClick={() => {
+                              setReferences((current) => current.filter((reference) => reference !== file));
+                              setError("");
+                            }}
+                          >
+                            Remove
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <label className="font-poppins text-[15px] font-bold text-black" htmlFor="c-premise">What is the book about? (optional)</label>
+                  <textarea
+                    id="c-premise"
+                    rows={3}
+                    maxLength={COVER_PREMISE_MAX}
+                    placeholder="A sentence or two about the story, subject, or intended reader"
+                    value={premise}
+                    readOnly={bookDetailsLocked}
+                    className={`${fieldClass} resize-y py-3`}
+                    onChange={(event) => {
+                      setPremise(event.target.value);
+                      resetIdeas();
+                      clearArt();
+                    }}
+                  />
+                </>
+              )}
+
+              {step === IDEA_STEP && (
+                <>
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary font-poppins text-sm font-bold text-white">5</div>
                     <div className="flex min-w-0 flex-col">
                       <div id="c-idea-label" className="font-poppins text-[17px] font-bold leading-snug text-black">The idea</div>
                       <span className="font-poppins text-sm font-medium leading-snug text-brand-gray">Choose between a lettering-led direction and an artwork-led direction.</span>
@@ -615,7 +706,7 @@ export default function CoverStudioSection() {
                     Back
                   </button>
                 )}
-                {step < 3 ? (
+                {step < IDEA_STEP ? (
                   <button
                     type="button"
                     className="inline-flex min-h-14 flex-1 items-center justify-center rounded-xl bg-brand-primary px-4 font-poppins text-[16px] font-bold text-white shadow-[0_8px_20px_rgba(63,55,116,0.18)] transition hover:brightness-110"

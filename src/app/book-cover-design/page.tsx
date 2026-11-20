@@ -71,6 +71,7 @@ export default function page() {
                 title="Book Cover Design"
                 description="All-inclusive packages with copyright protection and a 7-day money-back guarantee. Design your book cover with confidence."
             />
+            <CoverStudioSection />
             <FeatureSection
                 subtitle="Book Cover Design Made Effortless:"
                 title={{
@@ -102,7 +103,6 @@ export default function page() {
                 imageContain
                 imageWidthPercent={80}
             />
-            <CoverStudioSection />
             <BenefitsGridSection
                 subtitle="Why Book Cover Design with Aero?"
                 title={{
